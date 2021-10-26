@@ -1,0 +1,62 @@
+Login Succeeded
+post_latest: Pulling from rodrigoalveslima/buzzblog
+f3ef4ff62e0d: Pulling fs layer
+7b3e5776f9ad: Pulling fs layer
+c9d0f53e837b: Pulling fs layer
+ff665fada5fe: Pulling fs layer
+17f5cdcdccb2: Pulling fs layer
+15c76cf8faae: Pulling fs layer
+07ad4496312a: Pulling fs layer
+0c17844afb42: Pulling fs layer
+53255e3969d8: Pulling fs layer
+17f5cdcdccb2: Waiting
+21dd6600c94a: Pulling fs layer
+1a2a27a538de: Pulling fs layer
+fff922d452cd: Pulling fs layer
+15c76cf8faae: Waiting
+1a2a27a538de: Waiting
+fff922d452cd: Waiting
+0c17844afb42: Waiting
+07ad4496312a: Waiting
+ff665fada5fe: Waiting
+53255e3969d8: Waiting
+21dd6600c94a: Waiting
+7b3e5776f9ad: Verifying Checksum
+7b3e5776f9ad: Download complete
+ff665fada5fe: Verifying Checksum
+ff665fada5fe: Download complete
+f3ef4ff62e0d: Verifying Checksum
+f3ef4ff62e0d: Download complete
+17f5cdcdccb2: Verifying Checksum
+17f5cdcdccb2: Download complete
+15c76cf8faae: Verifying Checksum
+15c76cf8faae: Download complete
+07ad4496312a: Verifying Checksum
+07ad4496312a: Download complete
+0c17844afb42: Verifying Checksum
+0c17844afb42: Download complete
+53255e3969d8: Verifying Checksum
+53255e3969d8: Download complete
+21dd6600c94a: Verifying Checksum
+21dd6600c94a: Download complete
+1a2a27a538de: Verifying Checksum
+1a2a27a538de: Download complete
+f3ef4ff62e0d: Pull complete
+7b3e5776f9ad: Pull complete
+fff922d452cd: Verifying Checksum
+fff922d452cd: Download complete
+c9d0f53e837b: Verifying Checksum
+c9d0f53e837b: Download complete
+c9d0f53e837b: Pull complete
+ff665fada5fe: Pull complete
+17f5cdcdccb2: Pull complete
+15c76cf8faae: Pull complete
+07ad4496312a: Pull complete
+0c17844afb42: Pull complete
+53255e3969d8: Pull complete
+21dd6600c94a: Pull complete
+1a2a27a538de: Pull complete
+fff922d452cd: Pull complete
+Digest: sha256:bb02d1deda2645ca69da14f2a630d14deae68a6ce65422992d515a42545752c2
+Status: Downloaded newer image for rodrigoalveslima/buzzblog:post_latest
+docker.io/rodrigoalveslima/buzzblog:post_latest

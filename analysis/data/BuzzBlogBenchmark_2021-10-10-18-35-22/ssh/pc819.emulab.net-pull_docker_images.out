@@ -1,0 +1,70 @@
+Login Succeeded
+loadgen_v0.1: Pulling from rodrigoalveslima/buzzblog
+d960726af2be: Pulling fs layer
+e8d62473a22d: Pulling fs layer
+8962bc0fad55: Pulling fs layer
+65d943ee54c1: Pulling fs layer
+532f6f723709: Pulling fs layer
+1334e0fe2851: Pulling fs layer
+062ada600c9e: Pulling fs layer
+aec2e3a89371: Pulling fs layer
+65d943ee54c1: Waiting
+1ec7c3bcb4b2: Pulling fs layer
+532f6f723709: Waiting
+9c0f5b04023a: Pulling fs layer
+aec2e3a89371: Waiting
+1ec7c3bcb4b2: Waiting
+062ada600c9e: Waiting
+1334e0fe2851: Waiting
+8bedf2b00c7b: Pulling fs layer
+5b34da878a80: Pulling fs layer
+9bf4ae7f87ae: Pulling fs layer
+d700a83107e1: Pulling fs layer
+8bedf2b00c7b: Waiting
+5b34da878a80: Waiting
+9bf4ae7f87ae: Waiting
+5b05134623a4: Pulling fs layer
+d700a83107e1: Waiting
+5b05134623a4: Waiting
+8962bc0fad55: Verifying Checksum
+8962bc0fad55: Download complete
+e8d62473a22d: Verifying Checksum
+e8d62473a22d: Download complete
+d960726af2be: Verifying Checksum
+d960726af2be: Download complete
+1334e0fe2851: Verifying Checksum
+1334e0fe2851: Download complete
+65d943ee54c1: Verifying Checksum
+65d943ee54c1: Download complete
+aec2e3a89371: Download complete
+062ada600c9e: Verifying Checksum
+062ada600c9e: Download complete
+9c0f5b04023a: Download complete
+1ec7c3bcb4b2: Verifying Checksum
+8bedf2b00c7b: Download complete
+5b34da878a80: Download complete
+9bf4ae7f87ae: Download complete
+532f6f723709: Verifying Checksum
+532f6f723709: Download complete
+d700a83107e1: Verifying Checksum
+d700a83107e1: Download complete
+d960726af2be: Pull complete
+5b05134623a4: Verifying Checksum
+5b05134623a4: Download complete
+e8d62473a22d: Pull complete
+8962bc0fad55: Pull complete
+65d943ee54c1: Pull complete
+532f6f723709: Pull complete
+1334e0fe2851: Pull complete
+062ada600c9e: Pull complete
+aec2e3a89371: Pull complete
+1ec7c3bcb4b2: Pull complete
+9c0f5b04023a: Pull complete
+8bedf2b00c7b: Pull complete
+5b34da878a80: Pull complete
+9bf4ae7f87ae: Pull complete
+d700a83107e1: Pull complete
+5b05134623a4: Pull complete
+Digest: sha256:a45d85e832012605639fdcbc3f83630d873886317b3d333d0e543bcd630b507c
+Status: Downloaded newer image for rodrigoalveslima/buzzblog:loadgen_v0.1
+docker.io/rodrigoalveslima/buzzblog:loadgen_v0.1

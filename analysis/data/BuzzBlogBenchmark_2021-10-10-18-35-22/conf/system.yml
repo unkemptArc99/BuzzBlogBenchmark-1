@@ -1,0 +1,585 @@
+pc701.emulab.net:
+  containers:
+    follow_service:
+      image: rodrigoalveslima/buzzblog:follow_latest
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        env:
+        - port=9091
+        - threads=8
+        - backend_filepath=/etc/opt/BuzzBlogApp/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        - postgres_dbname=postgres
+        name: follow_service
+        publish: 9091:9091
+        volume: /etc/opt/BuzzBlogApp:/etc/opt/BuzzBlogApp
+      start_order: 2
+  kernel:
+    net.core.somaxconn: 128
+    net.ipv4.ip_local_port_range: 32768 65535
+    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_tw_reuse: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    radvisor:
+      command: radvisor run docker
+      dirpath: /tmp/radvisor
+      niceness: 19
+      options:
+        buffer: 16MiB
+        directory: /tmp/radvisor
+        interval: 50ms
+        poll: 1s
+        quiet: ''
+    tcplife-bpfcc:
+      dirpath: /tmp/tcplife-bpfcc
+      log: /tmp/tcplife-bpfcc/tcplife-bpfcc.log
+      niceness: 19
+      options:
+        csv: ''
+        time: ''
+        timestamp: ''
+        wide: ''
+  ssh:
+    key_filename: /home/ral/.ssh/id_rsa
+    port: 22
+    username: ral
+pc713.emulab.net:
+  containers:
+    like_service:
+      image: rodrigoalveslima/buzzblog:like_latest
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        env:
+        - port=9092
+        - threads=8
+        - backend_filepath=/etc/opt/BuzzBlogApp/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        - postgres_dbname=postgres
+        name: like_service
+        publish: 9092:9092
+        volume: /etc/opt/BuzzBlogApp:/etc/opt/BuzzBlogApp
+      start_order: 2
+  kernel:
+    net.core.somaxconn: 128
+    net.ipv4.ip_local_port_range: 32768 65535
+    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_tw_reuse: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    radvisor:
+      command: radvisor run docker
+      dirpath: /tmp/radvisor
+      niceness: 19
+      options:
+        buffer: 16MiB
+        directory: /tmp/radvisor
+        interval: 50ms
+        poll: 1s
+        quiet: ''
+    tcplife-bpfcc:
+      dirpath: /tmp/tcplife-bpfcc
+      log: /tmp/tcplife-bpfcc/tcplife-bpfcc.log
+      niceness: 19
+      options:
+        csv: ''
+        time: ''
+        timestamp: ''
+        wide: ''
+  ssh:
+    key_filename: /home/ral/.ssh/id_rsa
+    port: 22
+    username: ral
+pc715.emulab.net:
+  containers:
+    uniquepair_database:
+      image: postgres:13.1 -c max_connections=128
+      options:
+        detach: ''
+        env:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=postgres
+        - POSTGRES_HOST_AUTH_METHOD=trust
+        name: uniquepair_database
+        publish: 5435:5432
+        volume: /var/lib/postgresql/BuzzBlogApp/uniquepair/data:/var/lib/postgresql/data
+      start_order: 1
+  kernel:
+    net.core.somaxconn: 128
+    net.ipv4.ip_local_port_range: 32768 65535
+    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_tw_reuse: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    radvisor:
+      command: radvisor run docker
+      dirpath: /tmp/radvisor
+      niceness: 19
+      options:
+        buffer: 16MiB
+        directory: /tmp/radvisor
+        interval: 50ms
+        poll: 1s
+        quiet: ''
+    tcplife-bpfcc:
+      dirpath: /tmp/tcplife-bpfcc
+      log: /tmp/tcplife-bpfcc/tcplife-bpfcc.log
+      niceness: 19
+      options:
+        csv: ''
+        time: ''
+        timestamp: ''
+        wide: ''
+  ssh:
+    key_filename: /home/ral/.ssh/id_rsa
+    port: 22
+    username: ral
+pc722.emulab.net:
+  containers:
+    apigateway1:
+      image: rodrigoalveslima/buzzblog:apigateway_latest
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway1
+        publish: 8080:81
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlogApp:/etc/opt/BuzzBlogApp
+      start_order: 3
+    apigateway2:
+      image: rodrigoalveslima/buzzblog:apigateway_latest
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway2
+        publish: 8081:81
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlogApp:/etc/opt/BuzzBlogApp
+      start_order: 3
+    apigateway3:
+      image: rodrigoalveslima/buzzblog:apigateway_latest
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway3
+        publish: 8082:81
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlogApp:/etc/opt/BuzzBlogApp
+      start_order: 3
+    apigateway4:
+      image: rodrigoalveslima/buzzblog:apigateway_latest
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway4
+        publish: 8083:81
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlogApp:/etc/opt/BuzzBlogApp
+      start_order: 3
+    loadbalancer:
+      image: nginx:1.18.0
+      options:
+        detach: ''
+        name: loadbalancer
+        publish: 8888:80
+        volume: /etc/nginx:/etc/nginx
+      start_order: 3
+  kernel:
+    net.core.somaxconn: 128
+    net.ipv4.ip_local_port_range: 32768 65535
+    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_tw_reuse: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    radvisor:
+      command: radvisor run docker
+      dirpath: /tmp/radvisor
+      niceness: 19
+      options:
+        buffer: 16MiB
+        directory: /tmp/radvisor
+        interval: 50ms
+        poll: 1s
+        quiet: ''
+    tcplife-bpfcc:
+      dirpath: /tmp/tcplife-bpfcc
+      log: /tmp/tcplife-bpfcc/tcplife-bpfcc.log
+      niceness: 19
+      options:
+        csv: ''
+        time: ''
+        timestamp: ''
+        wide: ''
+  ssh:
+    key_filename: /home/ral/.ssh/id_rsa
+    port: 22
+    username: ral
+  templates:
+    gunicorn.conf.py:
+      output: /etc/gunicorn/gunicorn.conf.py
+      params:
+        bind: 0.0.0.0:81
+        threads: 4
+    nginx.conf:
+      output: /etc/nginx/nginx.conf
+      params:
+        apigateway_servers:
+        - 172.17.0.1:8080
+        - 172.17.0.1:8081
+        - 172.17.0.1:8082
+        - 172.17.0.1:8083
+        port: 80
+        worker_connections: 512
+        worker_processes: 8
+pc735.emulab.net:
+  containers:
+    post_database:
+      image: postgres:13.1 -c max_connections=128
+      options:
+        detach: ''
+        env:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=postgres
+        - POSTGRES_HOST_AUTH_METHOD=trust
+        name: post_database
+        publish: 5434:5432
+        volume: /var/lib/postgresql/BuzzBlogApp/post/data:/var/lib/postgresql/data
+      start_order: 1
+  kernel:
+    net.core.somaxconn: 128
+    net.ipv4.ip_local_port_range: 32768 65535
+    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_tw_reuse: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    radvisor:
+      command: radvisor run docker
+      dirpath: /tmp/radvisor
+      niceness: 19
+      options:
+        buffer: 16MiB
+        directory: /tmp/radvisor
+        interval: 50ms
+        poll: 1s
+        quiet: ''
+    tcplife-bpfcc:
+      dirpath: /tmp/tcplife-bpfcc
+      log: /tmp/tcplife-bpfcc/tcplife-bpfcc.log
+      niceness: 19
+      options:
+        csv: ''
+        time: ''
+        timestamp: ''
+        wide: ''
+  ssh:
+    key_filename: /home/ral/.ssh/id_rsa
+    port: 22
+    username: ral
+pc736.emulab.net:
+  containers:
+    account_database:
+      image: postgres:13.1 -c max_connections=128
+      options:
+        detach: ''
+        env:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=postgres
+        - POSTGRES_HOST_AUTH_METHOD=trust
+        name: account_database
+        publish: 5433:5432
+        volume: /var/lib/postgresql/BuzzBlogApp/account/data:/var/lib/postgresql/data
+      start_order: 1
+  kernel:
+    net.core.somaxconn: 128
+    net.ipv4.ip_local_port_range: 32768 65535
+    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_tw_reuse: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    radvisor:
+      command: radvisor run docker
+      dirpath: /tmp/radvisor
+      niceness: 19
+      options:
+        buffer: 16MiB
+        directory: /tmp/radvisor
+        interval: 50ms
+        poll: 1s
+        quiet: ''
+    tcplife-bpfcc:
+      dirpath: /tmp/tcplife-bpfcc
+      log: /tmp/tcplife-bpfcc/tcplife-bpfcc.log
+      niceness: 19
+      options:
+        csv: ''
+        time: ''
+        timestamp: ''
+        wide: ''
+  ssh:
+    key_filename: /home/ral/.ssh/id_rsa
+    port: 22
+    username: ral
+pc805.emulab.net:
+  containers:
+    account_service:
+      image: rodrigoalveslima/buzzblog:account_latest
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        env:
+        - port=9090
+        - threads=8
+        - backend_filepath=/etc/opt/BuzzBlogApp/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        - postgres_dbname=postgres
+        name: account_service
+        publish: 9090:9090
+        volume: /etc/opt/BuzzBlogApp:/etc/opt/BuzzBlogApp
+      start_order: 2
+  kernel:
+    net.core.somaxconn: 128
+    net.ipv4.ip_local_port_range: 32768 65535
+    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_tw_reuse: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    radvisor:
+      command: radvisor run docker
+      dirpath: /tmp/radvisor
+      niceness: 19
+      options:
+        buffer: 16MiB
+        directory: /tmp/radvisor
+        interval: 50ms
+        poll: 1s
+        quiet: ''
+    tcplife-bpfcc:
+      dirpath: /tmp/tcplife-bpfcc
+      log: /tmp/tcplife-bpfcc/tcplife-bpfcc.log
+      niceness: 19
+      options:
+        csv: ''
+        time: ''
+        timestamp: ''
+        wide: ''
+  ssh:
+    key_filename: /home/ral/.ssh/id_rsa
+    port: 22
+    username: ral
+pc807.emulab.net:
+  containers:
+    uniquepair_service:
+      image: rodrigoalveslima/buzzblog:uniquepair_latest
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        env:
+        - port=9094
+        - threads=8
+        - backend_filepath=/etc/opt/BuzzBlogApp/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        - postgres_dbname=postgres
+        name: uniquepair_service
+        publish: 9094:9094
+        volume: /etc/opt/BuzzBlogApp:/etc/opt/BuzzBlogApp
+      start_order: 2
+  kernel:
+    net.core.somaxconn: 128
+    net.ipv4.ip_local_port_range: 32768 65535
+    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_tw_reuse: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    radvisor:
+      command: radvisor run docker
+      dirpath: /tmp/radvisor
+      niceness: 19
+      options:
+        buffer: 16MiB
+        directory: /tmp/radvisor
+        interval: 50ms
+        poll: 1s
+        quiet: ''
+    tcplife-bpfcc:
+      dirpath: /tmp/tcplife-bpfcc
+      log: /tmp/tcplife-bpfcc/tcplife-bpfcc.log
+      niceness: 19
+      options:
+        csv: ''
+        time: ''
+        timestamp: ''
+        wide: ''
+  ssh:
+    key_filename: /home/ral/.ssh/id_rsa
+    port: 22
+    username: ral
+pc809.emulab.net:
+  containers:
+    post_service:
+      image: rodrigoalveslima/buzzblog:post_latest
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        env:
+        - port=9093
+        - threads=8
+        - backend_filepath=/etc/opt/BuzzBlogApp/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        - postgres_dbname=postgres
+        name: post_service
+        publish: 9093:9093
+        volume: /etc/opt/BuzzBlogApp:/etc/opt/BuzzBlogApp
+      start_order: 2
+  kernel:
+    net.core.somaxconn: 128
+    net.ipv4.ip_local_port_range: 32768 65535
+    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_tw_reuse: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    radvisor:
+      command: radvisor run docker
+      dirpath: /tmp/radvisor
+      niceness: 19
+      options:
+        buffer: 16MiB
+        directory: /tmp/radvisor
+        interval: 50ms
+        poll: 1s
+        quiet: ''
+    tcplife-bpfcc:
+      dirpath: /tmp/tcplife-bpfcc
+      log: /tmp/tcplife-bpfcc/tcplife-bpfcc.log
+      niceness: 19
+      options:
+        csv: ''
+        time: ''
+        timestamp: ''
+        wide: ''
+  ssh:
+    key_filename: /home/ral/.ssh/id_rsa
+    port: 22
+    username: ral
+pc819.emulab.net:
+  containers:
+    loadgen:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=pc722.emulab.net
+        - port=8888
+        name: loadgen
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+  ssh:
+    key_filename: /home/ral/.ssh/id_rsa
+    port: 22
+    username: ral
