@@ -173,7 +173,7 @@
         publish: "9090:9090"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "0-3"
+        cpuset-cpus: "0-7"
         memory: "8g"
         env:
           - "port=9090"
@@ -230,7 +230,7 @@
         publish: "5433:5432"
         volume: "/var/lib/postgresql/BuzzBlog/account/data:/var/lib/postgresql/data"
         detach: ""
-        cpuset-cpus: "0-3"
+        cpuset-cpus: "0-7"
         memory: "8g"
         env:
           - "POSTGRES_USER=postgres"
@@ -287,7 +287,7 @@
         publish: "9091:9091"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "0-3"
+        cpuset-cpus: "0-7"
         memory: "8g"
         env:
           - "port=9091"
@@ -346,7 +346,7 @@
         publish: "9092:9092"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "0-3"
+        cpuset-cpus: "0-7"
         memory: "8g"
         env:
           - "port=9092"
@@ -405,7 +405,7 @@
         publish: "9093:9093"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "0-3"
+        cpuset-cpus: "0-7"
         memory: "8g"
         env:
           - "port=9093"
@@ -462,7 +462,7 @@
         publish: "5434:5432"
         volume: "/var/lib/postgresql/BuzzBlog/post/data:/var/lib/postgresql/data"
         detach: ""
-        cpuset-cpus: "0-3"
+        cpuset-cpus: "0-7"
         memory: "8g"
         env:
           - "POSTGRES_USER=postgres"
@@ -519,7 +519,7 @@
         publish: "9094:9094"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "0-3"
+        cpuset-cpus: "0-7"
         memory: "8g"
         env:
           - "port=9094"
@@ -576,7 +576,7 @@
         publish: "5435:5432"
         volume: "/var/lib/postgresql/BuzzBlog/uniquepair/data:/var/lib/postgresql/data"
         detach: ""
-        cpuset-cpus: "0-3"
+        cpuset-cpus: "0-7"
         memory: "8g"
         env:
           - "POSTGRES_USER=postgres"
