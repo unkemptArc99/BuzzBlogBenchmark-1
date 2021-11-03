@@ -168,6 +168,7 @@
       start_order: 2
       logs:
         - "/tmp/calls.log"
+        - "/tmp/queries.log"
       options:
         name: "account_service"
         publish: "9090:9090"
@@ -400,6 +401,7 @@
       start_order: 2
       logs:
         - "/tmp/calls.log"
+        - "/tmp/queries.log"
       options:
         name: "post_service"
         publish: "9093:9093"
@@ -514,6 +516,7 @@
       start_order: 2
       logs:
         - "/tmp/calls.log"
+        - "/tmp/queries.log"
       options:
         name: "uniquepair_service"
         publish: "9094:9094"
