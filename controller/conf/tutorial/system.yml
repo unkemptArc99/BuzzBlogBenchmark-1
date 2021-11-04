@@ -29,6 +29,18 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      niceness: 19
+    runqlen-bpfcc:
+      dirpath: "/tmp/runqlen-bpfcc"
+      log: "/tmp/runqlen-bpfcc/runqlen-bpfcc.log"
+      niceness: 19
+    runqlat-bpfcc:
+      dirpath: "/tmp/runqlat-bpfcc"
+      log: "/tmp/runqlat-bpfcc/runqlat-bpfcc.log"
+      niceness: 19
 {{apigateway_node}}:
   ssh:
     username: "{{username}}"
@@ -152,6 +164,18 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      niceness: 19
+    runqlen-bpfcc:
+      dirpath: "/tmp/runqlen-bpfcc"
+      log: "/tmp/runqlen-bpfcc/runqlen-bpfcc.log"
+      niceness: 19
+    runqlat-bpfcc:
+      dirpath: "/tmp/runqlat-bpfcc"
+      log: "/tmp/runqlat-bpfcc/runqlat-bpfcc.log"
+      niceness: 19
 {{account_service_node}}:
   ssh:
     username: "{{username}}"
@@ -212,6 +236,18 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      niceness: 19
+    runqlen-bpfcc:
+      dirpath: "/tmp/runqlen-bpfcc"
+      log: "/tmp/runqlen-bpfcc/runqlen-bpfcc.log"
+      niceness: 19
+    runqlat-bpfcc:
+      dirpath: "/tmp/runqlat-bpfcc"
+      log: "/tmp/runqlat-bpfcc/runqlat-bpfcc.log"
+      niceness: 19
 {{account_database_node}}:
   ssh:
     username: "{{username}}"
@@ -267,6 +303,18 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      niceness: 19
+    runqlen-bpfcc:
+      dirpath: "/tmp/runqlen-bpfcc"
+      log: "/tmp/runqlen-bpfcc/runqlen-bpfcc.log"
+      niceness: 19
+    runqlat-bpfcc:
+      dirpath: "/tmp/runqlat-bpfcc"
+      log: "/tmp/runqlat-bpfcc/runqlat-bpfcc.log"
+      niceness: 19
 {{follow_service_node}}:
   ssh:
     username: "{{username}}"
@@ -326,6 +374,18 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      niceness: 19
+    runqlen-bpfcc:
+      dirpath: "/tmp/runqlen-bpfcc"
+      log: "/tmp/runqlen-bpfcc/runqlen-bpfcc.log"
+      niceness: 19
+    runqlat-bpfcc:
+      dirpath: "/tmp/runqlat-bpfcc"
+      log: "/tmp/runqlat-bpfcc/runqlat-bpfcc.log"
+      niceness: 19
 {{like_service_node}}:
   ssh:
     username: "{{username}}"
@@ -385,6 +445,18 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      niceness: 19
+    runqlen-bpfcc:
+      dirpath: "/tmp/runqlen-bpfcc"
+      log: "/tmp/runqlen-bpfcc/runqlen-bpfcc.log"
+      niceness: 19
+    runqlat-bpfcc:
+      dirpath: "/tmp/runqlat-bpfcc"
+      log: "/tmp/runqlat-bpfcc/runqlat-bpfcc.log"
+      niceness: 19
 {{post_service_node}}:
   ssh:
     username: "{{username}}"
@@ -445,6 +517,18 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      niceness: 19
+    runqlen-bpfcc:
+      dirpath: "/tmp/runqlen-bpfcc"
+      log: "/tmp/runqlen-bpfcc/runqlen-bpfcc.log"
+      niceness: 19
+    runqlat-bpfcc:
+      dirpath: "/tmp/runqlat-bpfcc"
+      log: "/tmp/runqlat-bpfcc/runqlat-bpfcc.log"
+      niceness: 19
 {{post_database_node}}:
   ssh:
     username: "{{username}}"
@@ -500,6 +584,18 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      niceness: 19
+    runqlen-bpfcc:
+      dirpath: "/tmp/runqlen-bpfcc"
+      log: "/tmp/runqlen-bpfcc/runqlen-bpfcc.log"
+      niceness: 19
+    runqlat-bpfcc:
+      dirpath: "/tmp/runqlat-bpfcc"
+      log: "/tmp/runqlat-bpfcc/runqlat-bpfcc.log"
+      niceness: 19
 {{uniquepair_service_node}}:
   ssh:
     username: "{{username}}"
@@ -560,6 +656,18 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      niceness: 19
+    runqlen-bpfcc:
+      dirpath: "/tmp/runqlen-bpfcc"
+      log: "/tmp/runqlen-bpfcc/runqlen-bpfcc.log"
+      niceness: 19
+    runqlat-bpfcc:
+      dirpath: "/tmp/runqlat-bpfcc"
+      log: "/tmp/runqlat-bpfcc/runqlat-bpfcc.log"
+      niceness: 19
 {{uniquepair_database_node}}:
   ssh:
     username: "{{username}}"
@@ -615,3 +723,15 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      niceness: 19
+    runqlen-bpfcc:
+      dirpath: "/tmp/runqlen-bpfcc"
+      log: "/tmp/runqlen-bpfcc/runqlen-bpfcc.log"
+      niceness: 19
+    runqlat-bpfcc:
+      dirpath: "/tmp/runqlat-bpfcc"
+      log: "/tmp/runqlat-bpfcc/runqlat-bpfcc.log"
+      niceness: 19

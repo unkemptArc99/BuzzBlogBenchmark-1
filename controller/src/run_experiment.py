@@ -294,8 +294,12 @@ def start_containers():
 @nodes_with_monitor(".+")
 def stop_monitors(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
-    ssh_client.exec("sudo pkill %s" %
-        monitor_conf.get("command", monitor_name).split(' ')[0])
+    if monitor_name in ["klockstat-bpfcc", "runqlen-bpfcc", "runqlat-bpfcc"]:
+      ssh_client.exec("sudo pkill -signal 2 %s" %
+          monitor_conf.get("command", monitor_name).split(' ')[0])
+    else:
+      ssh_client.exec("sudo pkill %s" %
+          monitor_conf.get("command", monitor_name).split(' ')[0])
 
 
 @nodes_with_monitor(".+")
