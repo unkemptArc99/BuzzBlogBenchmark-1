@@ -266,7 +266,7 @@ def start_monitors(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
     ssh_client.exec("mkdir -p %s" % monitor_conf["dirpath"])
     if monitor_name in ["klockstat-bpfcc"]:
-      ssh_client.exec("sudo nohup " + monitor_name.get("command", monitor_name) + 
+      ssh_client.exec("sudo nohup " + monitor_conf.get("command", monitor_name) + 
           " > {log} 2>&1 < /dev/null &".format(log=monitor_conf.get("log", "/dev/null")))
     else:
       ssh_client.exec("sudo nohup nice -n %s " %
