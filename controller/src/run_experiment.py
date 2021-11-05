@@ -265,14 +265,18 @@ def setup_databases(node_hostname, node_conf, ssh_client):
 def start_monitors(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
     ssh_client.exec("mkdir -p %s" % monitor_conf["dirpath"])
-    ssh_client.exec("sudo nohup nice -n %s " %
-        monitor_conf.get("niceness", 19) +
-        "stdbuf -oL -eL " +
-        monitor_conf.get("command", monitor_name) + " " +
-        " ".join(["--%s %s" % (param, value) for (param, value) in
-            monitor_conf.get("options", {}).items()]) + " " +
-        "> {log} 2>&1 < /dev/null &".format(
-            log=monitor_conf.get("log", "/dev/null")))
+    if monitor_name in ["klockstat-bpfcc"]:
+      ssh_client.exec("sudo nohup " + monitor_name.get("command", monitor_name) + 
+          " > {log} 2>&1 < /dev/null &".format(log=monitor_conf.get("log", "/dev/null")))
+    else:
+      ssh_client.exec("sudo nohup nice -n %s " %
+          monitor_conf.get("niceness", 19) +
+          "stdbuf -oL -eL " +
+          monitor_conf.get("command", monitor_name) + " " +
+          " ".join(["--%s %s" % (param, value) for (param, value) in
+              monitor_conf.get("options", {}).items()]) + " " +
+          "> {log} 2>&1 < /dev/null &".format(
+              log=monitor_conf.get("log", "/dev/null")))
 
 
 def start_containers():
@@ -295,9 +299,9 @@ def start_containers():
 def stop_monitors(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
     ssh_client.exec("echo %s" % monitor_name)
-    if monitor_name in ["klockstat-bpfcc", "runqlen-bpfcc", "runqlat-bpfcc"]:
-      ssh_client.exec("sudo pkill --signal 2 %s" %
-        monitor_conf.get("command", monitor_name).split(' ')[0])
+    if monitor_name in ["klockstat-bpfcc"]:
+      ssh_client.exec("sudo pkill -2 -f \"sudo nohup %s" %
+          monitor_conf.get("command", monitor_name) + "\"")
     ssh_client.exec("sudo pkill %s" %
         monitor_conf.get("command", monitor_name).split(' ')[0])
 

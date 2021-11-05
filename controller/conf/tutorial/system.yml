@@ -32,6 +32,7 @@
     klockstat-bpfcc:
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      command: "/usr/bin/python3 -u /usr/sbin/klockstat-bpfcc"
       niceness: 19
     runqlen-bpfcc:
       dirpath: "/tmp/runqlen-bpfcc"
@@ -167,6 +168,7 @@
     klockstat-bpfcc:
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      command: "/usr/bin/python3 -u /usr/sbin/klockstat-bpfcc"
       niceness: 19
     runqlen-bpfcc:
       dirpath: "/tmp/runqlen-bpfcc"
@@ -239,6 +241,7 @@
     klockstat-bpfcc:
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      command: "/usr/bin/python3 -u /usr/sbin/klockstat-bpfcc"
       niceness: 19
     runqlen-bpfcc:
       dirpath: "/tmp/runqlen-bpfcc"
@@ -306,6 +309,7 @@
     klockstat-bpfcc:
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      command: "/usr/bin/python3 -u /usr/sbin/klockstat-bpfcc"
       niceness: 19
     runqlen-bpfcc:
       dirpath: "/tmp/runqlen-bpfcc"
@@ -377,6 +381,7 @@
     klockstat-bpfcc:
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      command: "/usr/bin/python3 -u /usr/sbin/klockstat-bpfcc"
       niceness: 19
     runqlen-bpfcc:
       dirpath: "/tmp/runqlen-bpfcc"
@@ -448,6 +453,7 @@
     klockstat-bpfcc:
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      command: "/usr/bin/python3 -u /usr/sbin/klockstat-bpfcc"
       niceness: 19
     runqlen-bpfcc:
       dirpath: "/tmp/runqlen-bpfcc"
@@ -520,6 +526,7 @@
     klockstat-bpfcc:
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      command: "/usr/bin/python3 -u /usr/sbin/klockstat-bpfcc"
       niceness: 19
     runqlen-bpfcc:
       dirpath: "/tmp/runqlen-bpfcc"
@@ -587,6 +594,7 @@
     klockstat-bpfcc:
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      command: "/usr/bin/python3 -u /usr/sbin/klockstat-bpfcc"
       niceness: 19
     runqlen-bpfcc:
       dirpath: "/tmp/runqlen-bpfcc"
@@ -659,6 +667,7 @@
     klockstat-bpfcc:
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      command: "/usr/bin/python3 -u /usr/sbin/klockstat-bpfcc"
       niceness: 19
     runqlen-bpfcc:
       dirpath: "/tmp/runqlen-bpfcc"
@@ -726,6 +735,7 @@
     klockstat-bpfcc:
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
+      command: "/usr/bin/python3 -u /usr/sbin/klockstat-bpfcc"
       niceness: 19
     runqlen-bpfcc:
       dirpath: "/tmp/runqlen-bpfcc"
