@@ -1,0 +1,70 @@
+Login Succeeded
+loadgen_v0.1: Pulling from rodrigoalveslima/buzzblog
+07471e81507f: Pulling fs layer
+c6cef1aa2170: Pulling fs layer
+13a51f13be8e: Pulling fs layer
+def39d67a1a7: Pulling fs layer
+a8367252e08e: Pulling fs layer
+0e0383f87c27: Pulling fs layer
+210c98d9edfa: Pulling fs layer
+ab9ae619bdbe: Pulling fs layer
+379a7735866f: Pulling fs layer
+f73b3aaa8ddb: Pulling fs layer
+def39d67a1a7: Waiting
+0e0fcae9736b: Pulling fs layer
+a8367252e08e: Waiting
+0e0383f87c27: Waiting
+b86f2ec9c77f: Pulling fs layer
+210c98d9edfa: Waiting
+b44cb6d7c4f8: Pulling fs layer
+3e1fc4daaff2: Pulling fs layer
+379a7735866f: Waiting
+f73b3aaa8ddb: Waiting
+7c3128f85741: Pulling fs layer
+b44cb6d7c4f8: Waiting
+7c3128f85741: Waiting
+13a51f13be8e: Verifying Checksum
+13a51f13be8e: Download complete
+c6cef1aa2170: Verifying Checksum
+c6cef1aa2170: Download complete
+07471e81507f: Verifying Checksum
+07471e81507f: Download complete
+def39d67a1a7: Verifying Checksum
+def39d67a1a7: Download complete
+a8367252e08e: Verifying Checksum
+a8367252e08e: Download complete
+07471e81507f: Pull complete
+c6cef1aa2170: Pull complete
+13a51f13be8e: Pull complete
+ab9ae619bdbe: Download complete
+0e0383f87c27: Verifying Checksum
+0e0383f87c27: Download complete
+379a7735866f: Verifying Checksum
+379a7735866f: Download complete
+210c98d9edfa: Verifying Checksum
+210c98d9edfa: Download complete
+f73b3aaa8ddb: Download complete
+0e0fcae9736b: Download complete
+b86f2ec9c77f: Verifying Checksum
+b86f2ec9c77f: Download complete
+b44cb6d7c4f8: Verifying Checksum
+b44cb6d7c4f8: Download complete
+def39d67a1a7: Pull complete
+3e1fc4daaff2: Verifying Checksum
+3e1fc4daaff2: Download complete
+7c3128f85741: Verifying Checksum
+7c3128f85741: Download complete
+a8367252e08e: Pull complete
+0e0383f87c27: Pull complete
+210c98d9edfa: Pull complete
+ab9ae619bdbe: Pull complete
+379a7735866f: Pull complete
+f73b3aaa8ddb: Pull complete
+0e0fcae9736b: Pull complete
+b86f2ec9c77f: Pull complete
+b44cb6d7c4f8: Pull complete
+3e1fc4daaff2: Pull complete
+7c3128f85741: Pull complete
+Digest: sha256:8edf723908a55b1c79a4bc7864fe120d121427f87f7c59351f7964260e6350fc
+Status: Downloaded newer image for rodrigoalveslima/buzzblog:loadgen_v0.1
+docker.io/rodrigoalveslima/buzzblog:loadgen_v0.1
