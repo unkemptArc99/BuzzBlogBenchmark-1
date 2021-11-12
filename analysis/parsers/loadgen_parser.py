@@ -31,10 +31,11 @@ class LoadgenParser(BaseParser):
         super().__init__(logfile)
 
     def parse(self):
-        data = {"timestamp": [], "method": [], "url": [], "status_code": [], "latency": [], "status": [], "type": [],
-                "rw": []}
+        data = {"timestamp": [], "method": [], "url": [], "request_id": [], "status_code": [], "latency": [],
+                "status": [], "type": [], "rw": []}
         for log in self._logfile:
             timestamp, method, url, status_code, latency = re.match(REQUEST_LOG_PATTERN, log.decode("utf-8")).groups()
+            request_id = re.findall(r"request_id=([a-zA-Z0-9]+)&?", url)
             url = re.sub("limit=\d+&?", "", url)
             url = re.sub("offset=\d+&?", "", url)
             url = re.sub("request_id=[a-zA-Z0-9]+&?", "", url)
@@ -44,6 +45,7 @@ class LoadgenParser(BaseParser):
             data["timestamp"].append(timestamp)
             data["method"].append(method)
             data["url"].append(url)
+            data["request_id"].append(request_id[0] if request_id else "")
             data["status_code"].append(int(status_code))
             data["latency"].append(float(latency))
             data["status"].append("successful" if int(status_code) == 200 else "failed")
