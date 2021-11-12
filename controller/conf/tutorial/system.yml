@@ -29,6 +29,9 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{apigateway_node}}:
   ssh:
     username: "{{username}}"
@@ -152,6 +155,9 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{account_service_node}}:
   ssh:
     username: "{{username}}"
@@ -212,6 +218,9 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{account_database_node}}:
   ssh:
     username: "{{username}}"
@@ -267,6 +276,9 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{follow_service_node}}:
   ssh:
     username: "{{username}}"
@@ -326,6 +338,9 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{like_service_node}}:
   ssh:
     username: "{{username}}"
@@ -385,6 +400,9 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{post_service_node}}:
   ssh:
     username: "{{username}}"
@@ -445,6 +463,9 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{post_database_node}}:
   ssh:
     username: "{{username}}"
@@ -500,6 +521,9 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{uniquepair_service_node}}:
   ssh:
     username: "{{username}}"
@@ -560,6 +584,9 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{uniquepair_database_node}}:
   ssh:
     username: "{{username}}"
@@ -615,3 +642,6 @@
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
