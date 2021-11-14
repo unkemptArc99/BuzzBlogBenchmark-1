@@ -57,6 +57,7 @@ ssh -o StrictHostKeyChecking=no ${username}@${controller_node} "
   ssh-keygen -F github.com || ssh-keyscan github.com >> ~/.ssh/known_hosts
   git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
   mv BuzzBlogBenchmark/controller/conf/tutorial/* .
+  mv BuzzBlogBenchmark/controller/tools/* .
   rm -rf BuzzBlogBenchmark
 
   # Set up configuration files.
@@ -71,4 +72,64 @@ ssh -o StrictHostKeyChecking=no ${username}@${controller_node} "
   sed -i \"s/{{post_database_node}}/${post_database_node}/g\" system.yml
   sed -i \"s/{{uniquepair_service_node}}/${uniquepair_service_node}/g\" system.yml
   sed -i \"s/{{uniquepair_database_node}}/${uniquepair_database_node}/g\" system.yml
+"
+
+ssh -o StrictHostKeyChecking=no ${username}@${loadgen_node} "
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
+  mv BuzzBlogBenchmark/controller/tools/* .
+  rm -rf BuzzBlogBenchmark
+"
+
+ssh -o StrictHostKeyChecking=no ${username}@${apigateway_node} "
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
+  mv BuzzBlogBenchmark/controller/tools/* .
+  rm -rf BuzzBlogBenchmark
+"
+
+ssh -o StrictHostKeyChecking=no ${username}@${account_service_node} "
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
+  mv BuzzBlogBenchmark/controller/tools/* .
+  rm -rf BuzzBlogBenchmark
+"
+
+ssh -o StrictHostKeyChecking=no ${username}@${account_database_node} "
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
+  mv BuzzBlogBenchmark/controller/tools/* .
+  rm -rf BuzzBlogBenchmark
+"
+
+ssh -o StrictHostKeyChecking=no ${username}@${follow_service_node} "
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
+  mv BuzzBlogBenchmark/controller/tools/* .
+  rm -rf BuzzBlogBenchmark
+"
+
+ssh -o StrictHostKeyChecking=no ${username}@${like_service_node} "
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
+  mv BuzzBlogBenchmark/controller/tools/* .
+  rm -rf BuzzBlogBenchmark
+"
+
+ssh -o StrictHostKeyChecking=no ${username}@${post_service_node} "
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
+  mv BuzzBlogBenchmark/controller/tools/* .
+  rm -rf BuzzBlogBenchmark
+"
+
+ssh -o StrictHostKeyChecking=no ${username}@${post_database_node} "
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
+  mv BuzzBlogBenchmark/controller/tools/* .
+  rm -rf BuzzBlogBenchmark
+"
+
+ssh -o StrictHostKeyChecking=no ${username}@${uniquepair_service_node} "
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
+  mv BuzzBlogBenchmark/controller/tools/* .
+  rm -rf BuzzBlogBenchmark
+"
+
+ssh -o StrictHostKeyChecking=no ${username}@${uniquepair_database_node} "
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b klockstat BuzzBlogBenchmark
+  mv BuzzBlogBenchmark/controller/tools/* .
+  rm -rf BuzzBlogBenchmark
 "
