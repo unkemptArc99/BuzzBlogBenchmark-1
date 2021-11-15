@@ -39,7 +39,7 @@ pc722.emulab.net:
         volume:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
-          - "hostname=pc732.emulab.net"
+          - "hostname=pc722.emulab.net"
           - "port=8888"
     loadbalancer:
       image: "nginx:1.18.0"
