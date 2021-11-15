@@ -10,7 +10,7 @@ from parsers.loadgen_parser import LoadgenParser
 
 
 def get_node_names(experiment_dirname):
-    return os.listdir(os.path.join(os.pardir, "data", experiment_dirname, "logs"))
+    return os.listdir(os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs"))
 
 
 def get_rpc_logfiles(experiment_dirname):
@@ -19,9 +19,11 @@ def get_rpc_logfiles(experiment_dirname):
         r"^.+_service.*\.tar\.gz$",
     ]
     for node_name in get_node_names(experiment_dirname):
-        for tarball_name in os.listdir(os.path.join(os.pardir, "data", experiment_dirname, "logs", node_name)):
+        for tarball_name in os.listdir(os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname,
+                "logs",  node_name)):
             if sum([1 if re.match(tarball_pattern, tarball_name) else 0 for tarball_pattern in tarball_patterns]):
-                tarball_path = os.path.join(os.pardir, "data", experiment_dirname, "logs", node_name, tarball_name)
+                tarball_path = os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs",
+                        node_name, tarball_name)
                 with tarfile.open(tarball_path, "r:gz") as tar:
                     for filename in tar.getnames():
                         if filename.endswith("calls.log"):
@@ -34,9 +36,11 @@ def get_query_logfiles(experiment_dirname):
         r"^.+_service.*\.tar\.gz$",
     ]
     for node_name in get_node_names(experiment_dirname):
-        for tarball_name in os.listdir(os.path.join(os.pardir, "data", experiment_dirname, "logs", node_name)):
+        for tarball_name in os.listdir(os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname,
+                "logs", node_name)):
             if sum([1 if re.match(tarball_pattern, tarball_name) else 0 for tarball_pattern in tarball_patterns]):
-                tarball_path = os.path.join(os.pardir, "data", experiment_dirname, "logs", node_name, tarball_name)
+                tarball_path = os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs",
+                        node_name, tarball_name)
                 with tarfile.open(tarball_path, "r:gz") as tar:
                     for filename in tar.getnames():
                         if filename.endswith("queries.log"):
@@ -46,7 +50,8 @@ def get_query_logfiles(experiment_dirname):
 
 def get_loadgen_logfiles(experiment_dirname):
     for node_name in get_node_names(experiment_dirname):
-        tarball_path = os.path.join(os.pardir, "data", experiment_dirname, "logs", node_name, "loadgen.tar.gz")
+        tarball_path = os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs", node_name,
+                "loadgen.tar.gz")
         if os.path.exists(tarball_path):
             with tarfile.open(tarball_path, "r:gz") as tar:
                 for filename in tar.getnames():
@@ -57,7 +62,8 @@ def get_loadgen_logfiles(experiment_dirname):
 
 def get_collectl_cpu_logfiles(experiment_dirname):
     for node_name in get_node_names(experiment_dirname):
-        tarball_path = os.path.join(os.pardir, "data", experiment_dirname, "logs", node_name, "collectl.tar.gz")
+        tarball_path = os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs", node_name,
+                "collectl.tar.gz")
         with tarfile.open(tarball_path, "r:gz") as tar:
             for filename in tar.getnames():
                 if filename.endswith(".cpu.gz"):
@@ -67,7 +73,8 @@ def get_collectl_cpu_logfiles(experiment_dirname):
 
 def get_collectl_mem_logfiles(experiment_dirname):
     for node_name in get_node_names(experiment_dirname):
-        tarball_path = os.path.join(os.pardir, "data", experiment_dirname, "logs", node_name, "collectl.tar.gz")
+        tarball_path = os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs", node_name,
+                "collectl.tar.gz")
         with tarfile.open(tarball_path, "r:gz") as tar:
             for filename in tar.getnames():
                 if filename.endswith(".numa.gz"):
@@ -77,7 +84,8 @@ def get_collectl_mem_logfiles(experiment_dirname):
 
 def get_collectl_dsk_logfiles(experiment_dirname):
     for node_name in get_node_names(experiment_dirname):
-        tarball_path = os.path.join(os.pardir, "data", experiment_dirname, "logs", node_name, "collectl.tar.gz")
+        tarball_path = os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs", node_name,
+                "collectl.tar.gz")
         with tarfile.open(tarball_path, "r:gz") as tar:
             for filename in tar.getnames():
                 if filename.endswith(".dsk.gz"):
