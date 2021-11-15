@@ -30,7 +30,7 @@
         options: "Tm"
         plot: ""
     klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{apigateway_node}}:
@@ -157,7 +157,7 @@
         interval: "50ms"
         buffer: "16MiB"
     klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{account_service_node}}:
@@ -221,7 +221,7 @@
         interval: "50ms"
         buffer: "16MiB"
     klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{account_database_node}}:
@@ -280,7 +280,7 @@
         interval: "50ms"
         buffer: "16MiB"
     klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{follow_service_node}}:
@@ -343,7 +343,7 @@
         interval: "50ms"
         buffer: "16MiB"
     klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{like_service_node}}:
@@ -406,7 +406,7 @@
         interval: "50ms"
         buffer: "16MiB"
     klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{post_service_node}}:
@@ -470,7 +470,7 @@
         interval: "50ms"
         buffer: "16MiB"
     klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{post_database_node}}:
@@ -529,7 +529,7 @@
         interval: "50ms"
         buffer: "16MiB"
     klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{uniquepair_service_node}}:
@@ -593,7 +593,7 @@
         interval: "50ms"
         buffer: "16MiB"
     klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
 {{uniquepair_database_node}}:
@@ -652,6 +652,6 @@
         interval: "50ms"
         buffer: "16MiB"
     klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
       dirpath: "/tmp/klockstat-bpfcc"
       log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
