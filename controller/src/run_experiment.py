@@ -295,7 +295,6 @@ def start_containers():
 def stop_monitors(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
     if monitor_name == "klockstat-bpfcc":
-      ssh_client.exec("sudo pkill -2 -f \"sudo nohup nice -n 19 stdbuf -oL -eL /users/abhishar/klockstat-bpfcc\"")
       return
     ssh_client.exec("sudo pkill %s" %
         monitor_conf.get("command", monitor_name).split(' ')[0])
