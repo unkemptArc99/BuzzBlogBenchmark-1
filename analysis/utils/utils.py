@@ -10,7 +10,9 @@ from parsers.loadgen_parser import LoadgenParser
 
 
 def get_node_names(experiment_dirname):
-    return os.listdir(os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs"))
+    return [dirname
+            for dirname in os.listdir(os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs"))
+            if not dirname.startswith('.')]
 
 
 def get_rpc_logfiles(experiment_dirname):
