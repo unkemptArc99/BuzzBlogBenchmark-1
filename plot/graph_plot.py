@@ -21,14 +21,15 @@ def plot(plotData, figName, xlabel, ylabel, title, start):
     plt.savefig(figName)
     plt.close()
 
-def plot_time(x, y, figName):
+def plot_time(x, y, figName, title, ylabel):
     x = [i / 1e6 for i in x]
     end = x[-1]
     xt = range(0, math.ceil(end), 50)
+    plt.figure(figsize=(24,12))
     plt.plot(x, y, ds='steps-post')
     plt.xlabel("Time (in ms)")
-    plt.ylabel("Number of locks held")
-    plt.title("Number of Locks Held v/s Time")
+    plt.ylabel(ylabel)
+    plt.title(title)
     plt.tight_layout()
     plt.savefig(figName)
     plt.close()
@@ -62,8 +63,17 @@ def inputToTimeXY(time_data):
     mp = {}
     for line in time_data:
         words = line.split()
-        mp[int(words[0])] = 1
-        mp[int(words[1])] = -1
+        if int(words[0]) in mp:
+            mp[int(words[0])] += 1
+        else:
+            mp[int(words[0])] = 1
+        if int(words[1]) > 0:
+            if int(words[1]) in mp:
+                mp[int(words[1])] -= 1
+            else:
+                mp[int(words[1])] = -1
+        elif int(words[1]) < 0:
+            mp[int(words[0])] -= 1
     mp = dict(sorted(mp.items()))
     x = list(mp.keys())
     y = list(mp.values())
@@ -73,12 +83,13 @@ def inputToTimeXY(time_data):
     return x,y
 
 def parseInput():
-    with open("out.log") as f:
+    with open("lock_BuzzBlogBenchmark_2021-12-02-00-05-43.log") as f:
         lines = f.readlines()
         index = 0
         indexSpin = 0
         indexHold = 0
-        indexTime = 0
+        indexHeldTime = 0
+        indexSpinTime = 0
         while True:
             words = lines[index].split()
             if words:
@@ -88,22 +99,27 @@ def parseInput():
                     elif indexHold == 0:
                         indexHold = index
                 if words[0] == "Start":
-                    if indexTime == 0:
-                        indexTime = index
+                    if indexHeldTime == 0:
+                        indexHeldTime = index
+                    elif indexSpinTime == 0:
+                        indexSpinTime = index
                         break
             index += 1
         spinData = lines[indexSpin+1:indexHold-1]
-        holdData = lines[indexHold+1:indexTime-3]
-        timeData = lines[indexTime+1:]
-        return spinData, holdData, timeData
+        holdData = lines[indexHold+1:indexHeldTime-3]
+        heldTimeData = lines[indexHeldTime+1:indexSpinTime-4]
+        spinTimeData = lines[indexSpinTime+1:]
+        return spinData, holdData, heldTimeData, spinTimeData
 
 if __name__ == '__main__':
-    SPIN_DATA , HOLD_DATA, TIME_DATA = parseInput()
+    SPIN_DATA , HOLD_DATA, HELD_TIME_DATA, SPIN_TIME_DATA = parseInput()
     SPIN_MAP = inputToMap(SPIN_DATA)
     plot(SPIN_MAP, "spin.png", "Process PID and Name", "Avg. Time wait for locks (in ns)", "Processes that were trying to get locks", 0)
     plot(SPIN_MAP, "spin_10.png", "Process PID and Name", "Avg. Time wait for locks (in ns)", "Top 10 Processes that were trying to get locks", -10)
     HOLD_MAP = inputToMap(HOLD_DATA)
     plot(HOLD_MAP, "hold.png", "Process PID and Name", "Avg. Time held locks (in ns)", "Processes that held locks", 0)
     plot(HOLD_MAP, "hold_10.png", "Process PID and Name", "Avg. Time held locks (in ns)", "Top 10 Processes that held locks", -10)
-    TIME_X, TIME_Y = inputToTimeXY(TIME_DATA)
-    plot_time(TIME_X, TIME_Y, "time.png")
+    HELD_TIME_X, HELD_TIME_Y = inputToTimeXY(HELD_TIME_DATA)
+    plot_time(HELD_TIME_X, HELD_TIME_Y, "held_time.png", "Number of locks held v/s time", "Number of locks held")
+    SPIN_TIME_X, SPIN_TIME_Y = inputToTimeXY(SPIN_TIME_DATA)
+    plot_time(SPIN_TIME_X, SPIN_TIME_Y, "spin_time.png", "Number of process trying to acquire locks v/s time", "Number of processes")

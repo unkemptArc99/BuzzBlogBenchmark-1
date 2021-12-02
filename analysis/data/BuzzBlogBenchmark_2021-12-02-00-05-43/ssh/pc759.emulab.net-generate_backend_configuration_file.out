@@ -1,0 +1,19 @@
+account:
+  database: pc759.emulab.net:5433
+  service:
+  - pc759.emulab.net:9090
+follow:
+  service:
+  - pc759.emulab.net:9091
+like:
+  service:
+  - pc759.emulab.net:9092
+post:
+  database: pc759.emulab.net:5434
+  service:
+  - pc759.emulab.net:9093
+uniquepair:
+  database: pc759.emulab.net:5435
+  service:
+  - pc759.emulab.net:9094
+

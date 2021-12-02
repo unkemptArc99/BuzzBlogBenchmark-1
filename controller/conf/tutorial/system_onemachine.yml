@@ -1,7 +1,7 @@
 # Copyright (C) 2020 Georgia Tech Center for Experimental Research in Computer
 # Systems
 
-pc722.emulab.net:
+pc759.emulab.net:
   ssh:
     username: "abhishar"
     port: 22
@@ -39,7 +39,7 @@ pc722.emulab.net:
         volume:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
-          - "hostname=pc722.emulab.net"
+          - "hostname=pc759.emulab.net"
           - "port=8888"
     loadbalancer:
       image: "nginx:1.18.0"
@@ -279,7 +279,3 @@ pc722.emulab.net:
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
-    klockstat-bpfcc:
-      command: "/usr/bin/python3 -u /users/abhishar/klockstat-bpfcc"
-      dirpath: "/tmp/klockstat-bpfcc"
-      log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"

@@ -15,8 +15,11 @@ import ctypes as ct
 from time import sleep, strftime, time_ns
 from datetime import datetime, timedelta
 import errno
-from sys import stderr
+from sys import stderr, stdout
 from psutil import boot_time
+import os
+
+f = open("lock.log", "a+")
 
 examples = """
     klockstat                           # trace system wide
@@ -105,6 +108,7 @@ BPF_HASH(time_held,  struct depth_id, u64);
 BPF_HASH(stack,      struct depth_id, int);
 BPF_HASH(stackpid,   int, struct proc_name);
 BPF_HASH(times,      u64, u64);
+BPF_HASH(spin_times, u64, u64);
 
 BPF_HASH(aq_report_count, int, u64);
 BPF_HASH(aq_report_max,   int, u64);
@@ -174,6 +178,9 @@ int mutex_lock_enter(struct pt_regs *ctx)
 
     u64 ts = bpf_ktime_get_ns();
     time_aq.update(&id, &ts);
+
+    u64 temp = 0;
+    spin_times.update(&ts, &temp);
 
     *depth += 1;
     return 0;
@@ -300,6 +307,7 @@ int mutex_lock_return(struct pt_regs *ctx)
     time_held.update(&did, &cur);
     u64 temp = 0;
     times.update(&cur, &temp);
+    spin_times.update(aq, &cur);
     return 0;
 }
 
@@ -364,7 +372,7 @@ def sort_list(maxs, totals, counts):
         if (field == "acq_count" or field == "hld_count"):
             return counts
 
-    print("Wrong sort argument: %s", args.sort)
+    f.write("Wrong sort argument: %s", args.sort)
     exit(-1)
 
 def display(sort, maxs, totals, counts):
@@ -389,17 +397,17 @@ def display(sort, maxs, totals, counts):
         pname = stackpid[k].name
         pid = stackpid[k].pid
 
-        print("%40s %40s %10lu %10lu %6lu %10lu %10lu" % (caller, pname, pid, avg, counts[k].value, maxs[k].value, totals[k].value))
+        f.write("\n%40s %40s %10lu %10lu %6lu %10lu %10lu" % (caller, pname, pid, avg, counts[k].value, maxs[k].value, totals[k].value))
 
         for addr in stack[1:args.stacks]:
-            print("%40s" %  b.ksym(addr, show_offset=True))
+            f.write("\n%40s" %  b.ksym(addr, show_offset=True))
 
 def display_times(held_times: dict):
-    print("\n\n")
-    print("%20s %20s" % ("Start Time", "End Time"))
+    f.write("\n\n\n\n")
+    f.write("%20s %20s\n" % ("Start Time", "End Time"))
     keys = held_times.keys()
     for k in keys:
-        print("%20d %20d" % (k, held_times[k]))
+        f.write("%20d %20d\n" % (k, held_times[k]))
 
 
 if args.tid:  # TID trumps PID
@@ -424,6 +432,7 @@ b.attach_kprobe(event="mutex_lock", fn_name="mutex_lock_enter")
 enabled = b.get_table("enabled");
 stackpid = b.get_table("stackpid")
 times = b.get_table("times")
+spin_times = b.get_table("spin_times")
 stack_traces = b.get_table("stack_traces")
 aq_counts = b.get_table("aq_report_count")
 aq_maxs   = b.get_table("aq_report_max")
@@ -436,7 +445,7 @@ hl_totals = b.get_table("hl_report_total")
 aq_sort = sort_list(aq_maxs, aq_totals, aq_counts)
 hl_sort = sort_list(hl_maxs, hl_totals, hl_counts)
 
-print("Tracing lock events... Hit Ctrl-C to end.")
+f.write("Tracing lock events... Hit Ctrl-C to end.")
 
 # duration and interval are mutualy exclusive
 exiting = 0 if args.interval else 1
@@ -454,6 +463,7 @@ has_enomem     = False
 hold_data_timer = 0.05
 
 held_times = {}
+spin_times_dict = {}
 
 while (1):
     enabled[ct.c_int(0)] = ct.c_int(1)
@@ -466,16 +476,28 @@ while (1):
     enabled[ct.c_int(0)] = ct.c_int(0)
 
     for k, v in sorted(times.items(), key=lambda times: times[0].value):
-        held_times[k.value - start_time] = v.value - start_time
+        if v.value < 0:
+            held_times[k.value - start_time] = 0
+        else:
+            held_times[k.value - start_time] = v.value - start_time
+    times.clear()
+    
+    for k, v in sorted(spin_times.items(), key=lambda spin_times: spin_times[0].value):
+        if v.value < 0:
+            spin_times_dict[k.value - start_time] = 0
+        else:
+            spin_times_dict[k.value - start_time] = v.value - start_time
+    spin_times.clear()
 
     if exiting:
-        print("\n%40s %40s %10s %10s %6s %10s %10s" % ("Caller", "Process", "PID", "Avg Spin", "Count", "Max spin", "Total spin"))
+        f.write("\n\n%40s %40s %10s %10s %6s %10s %10s" % ("Caller", "Process", "PID", "Avg Spin", "Count", "Max spin", "Total spin"))
         display(aq_sort, aq_maxs, aq_totals, aq_counts)
 
-        print("\n%40s %40s %10s %10s %6s %10s %10s" % ("Caller", "Process", "PID", "Avg Hold", "Count", "Max hold", "Total hold"))
+        f.write("\n\n%40s %40s %10s %10s %6s %10s %10s" % ("Caller", "Process", "PID", "Avg Hold", "Count", "Max hold", "Total hold"))
         display(hl_sort, hl_maxs, hl_totals, hl_counts)
 
         display_times(held_times)
+        display_times(spin_times_dict)
         break;
 
     # stack_traces.clear()
@@ -486,8 +508,8 @@ while (1):
     # hl_maxs.clear()
     # hl_totals.clear()
 
-if missing_stacks > 0:
-    enomem_str = " Consider increasing --stack-storage-size."
-    print("WARNING: %d stack traces lost and could not be displayed.%s" %
-        (missing_stacks, (enomem_str if has_enomem else "")),
-        file=stderr)
+# if missing_stacks > 0:
+#     enomem_str = " Consider increasing --stack-storage-size."
+#     f.write("WARNING: %d stack traces lost and could not be displayed.%s" %
+#         missing_stacks, (enomem_str if has_enomem else ""))
+f.close()

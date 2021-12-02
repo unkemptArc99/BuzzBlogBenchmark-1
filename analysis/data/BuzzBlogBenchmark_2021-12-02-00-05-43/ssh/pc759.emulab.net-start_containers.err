@@ -1,0 +1,120 @@
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+Unable to find image 'rodrigoalveslima/buzzblog:post_v0.1' locally
+post_v0.1: Pulling from rodrigoalveslima/buzzblog
+7b1a6ab2e44d: Already exists
+2ed76fb87ed3: Pulling fs layer
+8831d92f3b7e: Pulling fs layer
+7b8b52fe3c33: Pulling fs layer
+fb8ad0725449: Pulling fs layer
+c3f96b049033: Pulling fs layer
+fed953271e5b: Pulling fs layer
+5052b2792edf: Pulling fs layer
+21b8d6b627a8: Pulling fs layer
+9b3539c8ed56: Pulling fs layer
+af4caabd6f2e: Pulling fs layer
+3fd0eeafee81: Pulling fs layer
+3fd0eeafee81: Waiting
+af4caabd6f2e: Waiting
+21b8d6b627a8: Waiting
+5052b2792edf: Waiting
+fed953271e5b: Waiting
+c3f96b049033: Waiting
+2ed76fb87ed3: Verifying Checksum
+2ed76fb87ed3: Download complete
+2ed76fb87ed3: Pull complete
+7b8b52fe3c33: Download complete
+fb8ad0725449: Verifying Checksum
+fb8ad0725449: Download complete
+c3f96b049033: Verifying Checksum
+c3f96b049033: Download complete
+fed953271e5b: Download complete
+5052b2792edf: Verifying Checksum
+5052b2792edf: Download complete
+21b8d6b627a8: Verifying Checksum
+21b8d6b627a8: Download complete
+9b3539c8ed56: Download complete
+af4caabd6f2e: Verifying Checksum
+af4caabd6f2e: Download complete
+3fd0eeafee81: Download complete
+8831d92f3b7e: Verifying Checksum
+8831d92f3b7e: Download complete
+8831d92f3b7e: Pull complete
+7b8b52fe3c33: Pull complete
+fb8ad0725449: Pull complete
+c3f96b049033: Pull complete
+fed953271e5b: Pull complete
+5052b2792edf: Pull complete
+21b8d6b627a8: Pull complete
+9b3539c8ed56: Pull complete
+af4caabd6f2e: Pull complete
+3fd0eeafee81: Pull complete
+Digest: sha256:24d81dc3b9d0788c82c83a0be74e82b1ff11870e338ea29b408d5f3352e6bffe
+Status: Downloaded newer image for rodrigoalveslima/buzzblog:post_v0.1
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+Unable to find image 'rodrigoalveslima/buzzblog:uniquepair_v0.1' locally
+uniquepair_v0.1: Pulling from rodrigoalveslima/buzzblog
+7b1a6ab2e44d: Already exists
+52caa429583b: Pulling fs layer
+cf79ec62219d: Pulling fs layer
+24fe1f582144: Pulling fs layer
+10890088062c: Pulling fs layer
+aab5da1cfb23: Pulling fs layer
+06800799781b: Pulling fs layer
+53dd9209710b: Pulling fs layer
+df45294e91d5: Pulling fs layer
+f85ae0031485: Pulling fs layer
+9bcdf43e1ff9: Pulling fs layer
+d53cc03a09df: Pulling fs layer
+d53cc03a09df: Waiting
+f85ae0031485: Waiting
+9bcdf43e1ff9: Waiting
+df45294e91d5: Waiting
+06800799781b: Waiting
+10890088062c: Waiting
+aab5da1cfb23: Waiting
+53dd9209710b: Waiting
+52caa429583b: Verifying Checksum
+52caa429583b: Download complete
+52caa429583b: Pull complete
+24fe1f582144: Verifying Checksum
+24fe1f582144: Download complete
+10890088062c: Verifying Checksum
+10890088062c: Download complete
+aab5da1cfb23: Verifying Checksum
+aab5da1cfb23: Download complete
+06800799781b: Verifying Checksum
+06800799781b: Download complete
+53dd9209710b: Verifying Checksum
+53dd9209710b: Download complete
+df45294e91d5: Verifying Checksum
+df45294e91d5: Download complete
+f85ae0031485: Verifying Checksum
+f85ae0031485: Download complete
+9bcdf43e1ff9: Download complete
+d53cc03a09df: Verifying Checksum
+d53cc03a09df: Download complete
+cf79ec62219d: Verifying Checksum
+cf79ec62219d: Download complete
+cf79ec62219d: Pull complete
+24fe1f582144: Pull complete
+10890088062c: Pull complete
+aab5da1cfb23: Pull complete
+06800799781b: Pull complete
+53dd9209710b: Pull complete
+df45294e91d5: Pull complete
+f85ae0031485: Pull complete
+9bcdf43e1ff9: Pull complete
+d53cc03a09df: Pull complete
+Digest: sha256:0fa7142f4ce614fa34d4ac193fa7ebc752b1a0d62ab1065755cab0c8e57acfac
+Status: Downloaded newer image for rodrigoalveslima/buzzblog:uniquepair_v0.1
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.

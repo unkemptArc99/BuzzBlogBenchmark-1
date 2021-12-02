@@ -1,0 +1,278 @@
+pc759.emulab.net:
+  containers:
+    account_database:
+      image: postgres:13.1 -c max_connections=128
+      options:
+        cpuset-cpus: 0-3
+        detach: ''
+        env:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=postgres
+        - POSTGRES_HOST_AUTH_METHOD=trust
+        memory: 8g
+        name: account_database
+        publish: 5433:5432
+        volume: /var/lib/postgresql/BuzzBlog/account/data:/var/lib/postgresql/data
+      start_order: 1
+    account_service:
+      image: rodrigoalveslima/buzzblog:account_v0.1
+      logs:
+      - /tmp/calls.log
+      - /tmp/queries.log
+      options:
+        cpuset-cpus: 0-7
+        detach: ''
+        env:
+        - port=9090
+        - threads=8
+        - backend_filepath=/etc/opt/BuzzBlog/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        - postgres_dbname=postgres
+        memory: 8g
+        name: account_service
+        publish: 9090:9090
+        volume: /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 2
+    apigateway1:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        cpuset-cpus: 2-3
+        detach: ''
+        memory: 8g
+        name: apigateway1
+        publish: 8080:81
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway2:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        cpuset-cpus: 4-5
+        detach: ''
+        memory: 8g
+        name: apigateway2
+        publish: 8081:81
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway3:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        cpuset-cpus: 6-7
+        detach: ''
+        memory: 8g
+        name: apigateway3
+        publish: 8082:81
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway4:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        cpuset-cpus: 8-9
+        detach: ''
+        memory: 8g
+        name: apigateway4
+        publish: 8083:81
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    follow_service:
+      image: rodrigoalveslima/buzzblog:follow_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        cpuset-cpus: 0-7
+        detach: ''
+        env:
+        - port=9091
+        - threads=8
+        - backend_filepath=/etc/opt/BuzzBlog/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        - postgres_dbname=postgres
+        memory: 8g
+        name: follow_service
+        publish: 9091:9091
+        volume: /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 2
+    like_service:
+      image: rodrigoalveslima/buzzblog:like_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        cpuset-cpus: 0-7
+        detach: ''
+        env:
+        - port=9092
+        - threads=8
+        - backend_filepath=/etc/opt/BuzzBlog/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        - postgres_dbname=postgres
+        memory: 8g
+        name: like_service
+        publish: 9092:9092
+        volume: /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 2
+    loadbalancer:
+      image: nginx:1.18.0
+      options:
+        cpuset-cpus: 0-1
+        detach: ''
+        memory: 8g
+        name: loadbalancer
+        publish: 8888:80
+        volume: /etc/nginx:/etc/nginx
+      start_order: 3
+    loadgen:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=pc759.emulab.net
+        - port=8888
+        name: loadgen
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    post_database:
+      image: postgres:13.1 -c max_connections=128
+      options:
+        cpuset-cpus: 8-11
+        detach: ''
+        env:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=postgres
+        - POSTGRES_HOST_AUTH_METHOD=trust
+        memory: 8g
+        name: post_database
+        publish: 5434:5432
+        volume: /var/lib/postgresql/BuzzBlog/post/data:/var/lib/postgresql/data
+      start_order: 1
+    post_service:
+      image: rodrigoalveslima/buzzblog:post_v0.1
+      logs:
+      - /tmp/calls.log
+      - /tmp/queries.log
+      options:
+        cpuset-cpus: 0-7
+        detach: ''
+        env:
+        - port=9093
+        - threads=8
+        - backend_filepath=/etc/opt/BuzzBlog/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        - postgres_dbname=postgres
+        memory: 8g
+        name: post_service
+        publish: 9093:9093
+        volume: /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 2
+    uniquepair_database:
+      image: postgres:13.1 -c max_connections=128
+      options:
+        cpuset-cpus: 4-7
+        detach: ''
+        env:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=postgres
+        - POSTGRES_HOST_AUTH_METHOD=trust
+        memory: 8g
+        name: uniquepair_database
+        publish: 5435:5432
+        volume: /var/lib/postgresql/BuzzBlog/uniquepair/data:/var/lib/postgresql/data
+      start_order: 1
+    uniquepair_service:
+      image: rodrigoalveslima/buzzblog:uniquepair_v0.1
+      logs:
+      - /tmp/calls.log
+      - /tmp/queries.log
+      options:
+        cpuset-cpus: 0-7
+        detach: ''
+        env:
+        - port=9094
+        - threads=8
+        - backend_filepath=/etc/opt/BuzzBlog/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        - postgres_dbname=postgres
+        memory: 8g
+        name: uniquepair_service
+        publish: 9094:9094
+        volume: /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 2
+  kernel:
+    net.core.somaxconn: 128
+    net.ipv4.ip_local_port_range: 32768 65535
+    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_tw_reuse: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.05'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    radvisor:
+      command: radvisor run docker
+      dirpath: /tmp/radvisor
+      niceness: 19
+      options:
+        buffer: 16MiB
+        directory: /tmp/radvisor
+        interval: 50ms
+        poll: 1s
+        quiet: ''
+    tcplife-bpfcc:
+      dirpath: /tmp/tcplife-bpfcc
+      log: /tmp/tcplife-bpfcc/tcplife-bpfcc.log
+      niceness: 19
+      options:
+        csv: ''
+        time: ''
+        timestamp: ''
+        wide: ''
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+  templates:
+    gunicorn.conf.py:
+      output: /etc/gunicorn/gunicorn.conf.py
+      params:
+        bind: 0.0.0.0:81
+        threads: 16
+    nginx.conf:
+      output: /etc/nginx/nginx.conf
+      params:
+        apigateway_servers:
+        - 172.17.0.1:8080
+        - 172.17.0.1:8081
+        - 172.17.0.1:8082
+        - 172.17.0.1:8083
+        port: 80
+        worker_connections: 512
+        worker_processes: 8
