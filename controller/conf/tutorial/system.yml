@@ -14,6 +14,7 @@
         - "/var/log/loadgen.log"
       options:
         name: "loadgen"
+        ulimit: "nofile=131072:131072"
         volume:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
@@ -36,7 +37,7 @@
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_tw_reuse: 1
-    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
     net.core.somaxconn: 128
   templates:
@@ -55,18 +56,17 @@
       output: "/etc/gunicorn/gunicorn.conf.py"
       params:
         bind: "0.0.0.0:81"
-        threads: 16
+        threads: 64
   containers:
     loadbalancer:
       image: "nginx:1.18.0"
       start_order: 3
       options:
         name: "loadbalancer"
+        ulimit: "nofile=131072:131072"
         publish: "8888:80"
         volume: "/etc/nginx:/etc/nginx"
         detach: ""
-        cpuset-cpus: "0-1"
-        memory: "8g"
     apigateway1:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -74,13 +74,12 @@
         - "/tmp/calls.log"
       options:
         name: "apigateway1"
+        ulimit: "nofile=131072:131072"
         publish: "8080:81"
         volume:
           - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "2-3"
-        memory: "8g"
     apigateway2:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -88,13 +87,12 @@
         - "/tmp/calls.log"
       options:
         name: "apigateway2"
+        ulimit: "nofile=131072:131072"
         publish: "8081:81"
         volume:
           - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "4-5"
-        memory: "8g"
     apigateway3:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -102,13 +100,12 @@
         - "/tmp/calls.log"
       options:
         name: "apigateway3"
+        ulimit: "nofile=131072:131072"
         publish: "8082:81"
         volume:
           - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "6-7"
-        memory: "8g"
     apigateway4:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -116,13 +113,12 @@
         - "/tmp/calls.log"
       options:
         name: "apigateway4"
+        ulimit: "nofile=131072:131072"
         publish: "8083:81"
         volume:
           - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "8-9"
-        memory: "8g"
   monitors:
     collectl:
       dirpath: "/tmp/collectl"
@@ -133,25 +129,6 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
-    tcplife-bpfcc:
-      dirpath: "/tmp/tcplife-bpfcc"
-      log: "/tmp/tcplife-bpfcc/tcplife-bpfcc.log"
-      niceness: 19
-      options:
-        wide: ""
-        csv: ""
-        timestamp: ""
-        time: ""
-    radvisor:
-      dirpath: "/tmp/radvisor"
-      command: "radvisor run docker"
-      niceness: 19
-      options:
-        quiet: ""
-        directory: "/tmp/radvisor"
-        poll: "1s"
-        interval: "50ms"
-        buffer: "16MiB"
 {{account_service_node}}:
   ssh:
     username: "{{username}}"
@@ -159,7 +136,7 @@
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_tw_reuse: 1
-    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
     net.core.somaxconn: 128
   containers:
@@ -171,6 +148,7 @@
         - "/tmp/queries.log"
       options:
         name: "account_service"
+        ulimit: "nofile=131072:131072"
         publish: "9090:9090"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
@@ -178,7 +156,7 @@
         memory: "8g"
         env:
           - "port=9090"
-          - "threads=8"
+          - "threads=64"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -193,25 +171,6 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
-    tcplife-bpfcc:
-      dirpath: "/tmp/tcplife-bpfcc"
-      log: "/tmp/tcplife-bpfcc/tcplife-bpfcc.log"
-      niceness: 19
-      options:
-        wide: ""
-        csv: ""
-        timestamp: ""
-        time: ""
-    radvisor:
-      dirpath: "/tmp/radvisor"
-      command: "radvisor run docker"
-      niceness: 19
-      options:
-        quiet: ""
-        directory: "/tmp/radvisor"
-        poll: "1s"
-        interval: "50ms"
-        buffer: "16MiB"
 {{account_database_node}}:
   ssh:
     username: "{{username}}"
@@ -219,19 +178,20 @@
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_tw_reuse: 1
-    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
     net.core.somaxconn: 128
   containers:
     account_database:
-      image: "postgres:13.1 -c max_connections=128"
+      image: "postgres:13.1 -c max_connections=512"
       start_order: 1
       options:
         name: "account_database"
+        ulimit: "nofile=131072:131072"
         publish: "5433:5432"
         volume: "/var/lib/postgresql/BuzzBlog/account/data:/var/lib/postgresql/data"
         detach: ""
-        cpuset-cpus: "0-7"
+        cpuset-cpus: "0-31"
         memory: "8g"
         env:
           - "POSTGRES_USER=postgres"
@@ -248,25 +208,6 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
-    tcplife-bpfcc:
-      dirpath: "/tmp/tcplife-bpfcc"
-      log: "/tmp/tcplife-bpfcc/tcplife-bpfcc.log"
-      niceness: 19
-      options:
-        wide: ""
-        csv: ""
-        timestamp: ""
-        time: ""
-    radvisor:
-      dirpath: "/tmp/radvisor"
-      command: "radvisor run docker"
-      niceness: 19
-      options:
-        quiet: ""
-        directory: "/tmp/radvisor"
-        poll: "1s"
-        interval: "50ms"
-        buffer: "16MiB"
 {{follow_service_node}}:
   ssh:
     username: "{{username}}"
@@ -274,7 +215,7 @@
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_tw_reuse: 1
-    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
     net.core.somaxconn: 128
   containers:
@@ -285,6 +226,7 @@
         - "/tmp/calls.log"
       options:
         name: "follow_service"
+        ulimit: "nofile=131072:131072"
         publish: "9091:9091"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
@@ -292,7 +234,7 @@
         memory: "8g"
         env:
           - "port=9091"
-          - "threads=8"
+          - "threads=64"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -307,25 +249,6 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
-    tcplife-bpfcc:
-      dirpath: "/tmp/tcplife-bpfcc"
-      log: "/tmp/tcplife-bpfcc/tcplife-bpfcc.log"
-      niceness: 19
-      options:
-        wide: ""
-        csv: ""
-        timestamp: ""
-        time: ""
-    radvisor:
-      dirpath: "/tmp/radvisor"
-      command: "radvisor run docker"
-      niceness: 19
-      options:
-        quiet: ""
-        directory: "/tmp/radvisor"
-        poll: "1s"
-        interval: "50ms"
-        buffer: "16MiB"
 {{like_service_node}}:
   ssh:
     username: "{{username}}"
@@ -333,7 +256,7 @@
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_tw_reuse: 1
-    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
     net.core.somaxconn: 128
   containers:
@@ -344,6 +267,7 @@
         - "/tmp/calls.log"
       options:
         name: "like_service"
+        ulimit: "nofile=131072:131072"
         publish: "9092:9092"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
@@ -351,7 +275,7 @@
         memory: "8g"
         env:
           - "port=9092"
-          - "threads=8"
+          - "threads=64"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -366,25 +290,6 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
-    tcplife-bpfcc:
-      dirpath: "/tmp/tcplife-bpfcc"
-      log: "/tmp/tcplife-bpfcc/tcplife-bpfcc.log"
-      niceness: 19
-      options:
-        wide: ""
-        csv: ""
-        timestamp: ""
-        time: ""
-    radvisor:
-      dirpath: "/tmp/radvisor"
-      command: "radvisor run docker"
-      niceness: 19
-      options:
-        quiet: ""
-        directory: "/tmp/radvisor"
-        poll: "1s"
-        interval: "50ms"
-        buffer: "16MiB"
 {{post_service_node}}:
   ssh:
     username: "{{username}}"
@@ -392,7 +297,7 @@
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_tw_reuse: 1
-    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
     net.core.somaxconn: 128
   containers:
@@ -404,6 +309,7 @@
         - "/tmp/queries.log"
       options:
         name: "post_service"
+        ulimit: "nofile=131072:131072"
         publish: "9093:9093"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
@@ -411,7 +317,7 @@
         memory: "8g"
         env:
           - "port=9093"
-          - "threads=8"
+          - "threads=64"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -426,25 +332,6 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
-    tcplife-bpfcc:
-      dirpath: "/tmp/tcplife-bpfcc"
-      log: "/tmp/tcplife-bpfcc/tcplife-bpfcc.log"
-      niceness: 19
-      options:
-        wide: ""
-        csv: ""
-        timestamp: ""
-        time: ""
-    radvisor:
-      dirpath: "/tmp/radvisor"
-      command: "radvisor run docker"
-      niceness: 19
-      options:
-        quiet: ""
-        directory: "/tmp/radvisor"
-        poll: "1s"
-        interval: "50ms"
-        buffer: "16MiB"
 {{post_database_node}}:
   ssh:
     username: "{{username}}"
@@ -452,19 +339,20 @@
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_tw_reuse: 1
-    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
     net.core.somaxconn: 128
   containers:
     post_database:
-      image: "postgres:13.1 -c max_connections=128"
+      image: "postgres:13.1 -c max_connections=512"
       start_order: 1
       options:
         name: "post_database"
+        ulimit: "nofile=131072:131072"
         publish: "5434:5432"
         volume: "/var/lib/postgresql/BuzzBlog/post/data:/var/lib/postgresql/data"
         detach: ""
-        cpuset-cpus: "0-7"
+        cpuset-cpus: "0-31"
         memory: "8g"
         env:
           - "POSTGRES_USER=postgres"
@@ -481,25 +369,6 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
-    tcplife-bpfcc:
-      dirpath: "/tmp/tcplife-bpfcc"
-      log: "/tmp/tcplife-bpfcc/tcplife-bpfcc.log"
-      niceness: 19
-      options:
-        wide: ""
-        csv: ""
-        timestamp: ""
-        time: ""
-    radvisor:
-      dirpath: "/tmp/radvisor"
-      command: "radvisor run docker"
-      niceness: 19
-      options:
-        quiet: ""
-        directory: "/tmp/radvisor"
-        poll: "1s"
-        interval: "50ms"
-        buffer: "16MiB"
 {{uniquepair_service_node}}:
   ssh:
     username: "{{username}}"
@@ -507,7 +376,7 @@
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_tw_reuse: 1
-    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
     net.core.somaxconn: 128
   containers:
@@ -519,6 +388,7 @@
         - "/tmp/queries.log"
       options:
         name: "uniquepair_service"
+        ulimit: "nofile=131072:131072"
         publish: "9094:9094"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
@@ -526,7 +396,7 @@
         memory: "8g"
         env:
           - "port=9094"
-          - "threads=8"
+          - "threads=64"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -541,25 +411,6 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
-    tcplife-bpfcc:
-      dirpath: "/tmp/tcplife-bpfcc"
-      log: "/tmp/tcplife-bpfcc/tcplife-bpfcc.log"
-      niceness: 19
-      options:
-        wide: ""
-        csv: ""
-        timestamp: ""
-        time: ""
-    radvisor:
-      dirpath: "/tmp/radvisor"
-      command: "radvisor run docker"
-      niceness: 19
-      options:
-        quiet: ""
-        directory: "/tmp/radvisor"
-        poll: "1s"
-        interval: "50ms"
-        buffer: "16MiB"
 {{uniquepair_database_node}}:
   ssh:
     username: "{{username}}"
@@ -567,19 +418,20 @@
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_tw_reuse: 1
-    net.ipv4.tcp_abort_on_overflow: 1
+    net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
     net.core.somaxconn: 128
   containers:
     uniquepair_database:
-      image: "postgres:13.1 -c max_connections=128"
+      image: "postgres:13.1 -c max_connections=512"
       start_order: 1
       options:
         name: "uniquepair_database"
+        ulimit: "nofile=131072:131072"
         publish: "5435:5432"
         volume: "/var/lib/postgresql/BuzzBlog/uniquepair/data:/var/lib/postgresql/data"
         detach: ""
-        cpuset-cpus: "0-7"
+        cpuset-cpus: "0-31"
         memory: "8g"
         env:
           - "POSTGRES_USER=postgres"
@@ -596,22 +448,3 @@
         subsys: "CDM"
         options: "Tm"
         plot: ""
-    tcplife-bpfcc:
-      dirpath: "/tmp/tcplife-bpfcc"
-      log: "/tmp/tcplife-bpfcc/tcplife-bpfcc.log"
-      niceness: 19
-      options:
-        wide: ""
-        csv: ""
-        timestamp: ""
-        time: ""
-    radvisor:
-      dirpath: "/tmp/radvisor"
-      command: "radvisor run docker"
-      niceness: 19
-      options:
-        quiet: ""
-        directory: "/tmp/radvisor"
-        poll: "1s"
-        interval: "50ms"
-        buffer: "16MiB"
