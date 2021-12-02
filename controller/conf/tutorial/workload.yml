@@ -1,40 +1,13 @@
 # Copyright (C) 2020 Georgia Tech Center for Experimental Research in Computer
 # Systems
 
-sessions: 100
-throughput: 20
+sessions: 1024
+throughput: 100
 duration:
   total: 720
   ramp_up: 60
   ramp_down: 60
-surges:
-  - start: 120
-    duration: 10
-    intensity: 2
-  - start: 180
-    duration: 10
-    intensity: 2
-  - start: 240
-    duration: 10
-    intensity: 2
-  - start: 300
-    duration: 10
-    intensity: 2
-  - start: 360
-    duration: 10
-    intensity: 2
-  - start: 420
-    duration: 10
-    intensity: 2
-  - start: 480
-    duration: 10
-    intensity: 2
-  - start: 540
-    duration: 10
-    intensity: 2
-  - start: 600
-    duration: 10
-    intensity: 2
+surges: []
 request_graph:
   main:
     create_account: 1.00
