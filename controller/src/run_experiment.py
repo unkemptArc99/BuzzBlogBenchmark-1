@@ -41,7 +41,7 @@ def update_metadata(metadata):
 
 def start_container(node_hostname, node_conf, container_name, ssh_client):
   container_conf = node_conf["containers"][container_name]
-  ssh_client.exec("sudo docker run " +
+  ssh_client.exec("ulimit -n `ulimit -Hn`; sudo docker run " +
       " ".join(["--%s %s" % (param, value) if isinstance(value, str) else
           " ".join(["--%s %s" % (param, v) for v in value])
           for (param, value) in container_conf.get("options", {}).items()]) +
