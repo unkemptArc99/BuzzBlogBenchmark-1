@@ -39,7 +39,7 @@
     net.ipv4.tcp_tw_reuse: 1
     net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
-    net.core.somaxconn: 128
+    net.core.somaxconn: 4096
   templates:
     nginx.conf:
       output: "/etc/nginx/nginx.conf"
@@ -138,7 +138,7 @@
     net.ipv4.tcp_tw_reuse: 1
     net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
-    net.core.somaxconn: 128
+    net.core.somaxconn: 4096
   containers:
     account_service:
       image: "rodrigoalveslima/buzzblog:account_v0.1"
@@ -180,7 +180,7 @@
     net.ipv4.tcp_tw_reuse: 1
     net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
-    net.core.somaxconn: 128
+    net.core.somaxconn: 4096
   containers:
     account_database:
       image: "postgres:13.1 -c max_connections=512"
@@ -217,7 +217,7 @@
     net.ipv4.tcp_tw_reuse: 1
     net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
-    net.core.somaxconn: 128
+    net.core.somaxconn: 4096
   containers:
     follow_service:
       image: "rodrigoalveslima/buzzblog:follow_v0.1"
@@ -258,7 +258,7 @@
     net.ipv4.tcp_tw_reuse: 1
     net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
-    net.core.somaxconn: 128
+    net.core.somaxconn: 4096
   containers:
     like_service:
       image: "rodrigoalveslima/buzzblog:like_v0.1"
@@ -299,7 +299,7 @@
     net.ipv4.tcp_tw_reuse: 1
     net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
-    net.core.somaxconn: 128
+    net.core.somaxconn: 4096
   containers:
     post_service:
       image: "rodrigoalveslima/buzzblog:post_v0.1"
@@ -341,7 +341,7 @@
     net.ipv4.tcp_tw_reuse: 1
     net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
-    net.core.somaxconn: 128
+    net.core.somaxconn: 4096
   containers:
     post_database:
       image: "postgres:13.1 -c max_connections=512"
@@ -378,7 +378,7 @@
     net.ipv4.tcp_tw_reuse: 1
     net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
-    net.core.somaxconn: 128
+    net.core.somaxconn: 4096
   containers:
     uniquepair_service:
       image: "rodrigoalveslima/buzzblog:uniquepair_v0.1"
@@ -420,7 +420,7 @@
     net.ipv4.tcp_tw_reuse: 1
     net.ipv4.tcp_abort_on_overflow: 0
     net.ipv4.ip_local_port_range: "32768 65535"
-    net.core.somaxconn: 128
+    net.core.somaxconn: 4096
   containers:
     uniquepair_database:
       image: "postgres:13.1 -c max_connections=512"
