@@ -57,6 +57,16 @@ def start_container(node_hostname, node_conf, container_name, ssh_client):
             format(service=container_name.split('_')[0])), shell=True)
 
 
+def count_containers(container_name_pat):
+  """Count number of instances of the specified container (regex supported)."""
+  count = 0
+  for _, node_conf in SYS_CONF.items():
+    for container_name in node_conf.get("containers", {}):
+      if re.match(container_name_pat, container_name):
+        count += 1
+  return count
+
+
 def all_nodes(func):
   """Run func for all nodes in parallel."""
   def func_wrapper(*args, **kwargs):
@@ -217,7 +227,7 @@ def pull_docker_images(node_hostname, node_conf, ssh_client):
     thread.join()
 
 
-@nodes_with_container("loadgen")
+@nodes_with_container("loadgen.*")
 def copy_workload_configuration_file(node_hostname, node_conf, ssh_client):
   if WL_CONF:
     ssh_client.exec(
@@ -286,9 +296,16 @@ def start_containers():
         node_conf.get("containers", {}).items():
       containers.append((container_conf["start_order"], node_hostname,
           node_conf, container_name, ssh_client))
-  containers.sort()
-  for (_, node_hostname, node_conf, container_name, ssh_client) in containers:
-    start_container(node_hostname, node_conf, container_name, ssh_client)
+  for current_start_order in sorted(set([container[0] for container in containers])):
+    threads = []
+    for (start_order, node_hostname, node_conf, container_name, ssh_client) in containers:
+      if start_order == current_start_order:
+        threads.append(threading.Thread(target=start_container,
+            args=[node_hostname, node_conf, container_name, ssh_client]))
+    for thread in threads:
+      thread.start()
+    for thread in threads:
+      thread.join()
 
 
 @nodes_with_monitor(".+")
@@ -369,6 +386,9 @@ def main():
   if args.workload_conf:
     with open(args.workload_conf) as workload_conf_file:
       WL_CONF = yaml.load(workload_conf_file, Loader=yaml.Loader)
+      count_loadgen_containers = count_containers("loadgen.*")
+      WL_CONF["sessions"] //= count_loadgen_containers
+      WL_CONF["throughput"] //= count_loadgen_containers
   # Set Docker hub credentials.
   global DOCKER_HUB_USERNAME
   DOCKER_HUB_USERNAME = args.docker_hub_username or ""
