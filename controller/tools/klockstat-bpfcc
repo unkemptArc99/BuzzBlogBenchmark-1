@@ -19,8 +19,6 @@ from sys import stderr, stdout
 from psutil import boot_time
 import os
 
-f = open("lock.log", "a+")
-
 examples = """
     klockstat                           # trace system wide
     klockstat -d 5                      # trace for 5 seconds only
@@ -83,8 +81,12 @@ parser.add_argument("--stack-storage-size", default=16384,
     type=positive_nonzero_int,
     help="the number of unique stack traces that can be stored and "
          "displayed (default 16384)")
+parser.add_argument("-l", "--log", type=str, default="lock.log",
+    help="log file name")
 
 args = parser.parse_args()
+
+f = open(args.log, "a+")
 
 program = """
 #include <uapi/linux/ptrace.h>

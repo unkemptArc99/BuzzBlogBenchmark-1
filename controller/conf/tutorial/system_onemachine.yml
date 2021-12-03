@@ -279,3 +279,9 @@ pc759.emulab.net:
         poll: "1s"
         interval: "50ms"
         buffer: "16MiB"
+    klockstat-bpfcc:
+      dirpath: "/tmp/klockstat-bpfcc"
+      command: "/users/abhishar/klockstat-bpfcc"
+      niceness: 19
+      options:
+        log: "/tmp/klockstat-bpfcc/klockstat-bpfcc.log"
