@@ -170,7 +170,7 @@
         publish: "9090:9090"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "0-5"
+        cpuset-cpus: "0-3"
         memory: "8g"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
@@ -209,7 +209,7 @@
         publish: "5433:5432"
         volume: "/var/lib/postgresql/BuzzBlog/account/data:/var/lib/postgresql/data"
         detach: ""
-        cpuset-cpus: "0-25"
+        cpuset-cpus: "0-15"
         memory: "8g"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
@@ -248,7 +248,7 @@
         publish: "9091:9091"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "0-5"
+        cpuset-cpus: "0-3"
         memory: "8g"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
@@ -289,7 +289,7 @@
         publish: "9092:9092"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "0-5"
+        cpuset-cpus: "0-3"
         memory: "8g"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
@@ -331,7 +331,7 @@
         publish: "9093:9093"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        cpuset-cpus: "0-5"
+        cpuset-cpus: "0-3"
         memory: "8g"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
@@ -370,7 +370,7 @@
         publish: "5434:5432"
         volume: "/var/lib/postgresql/BuzzBlog/post/data:/var/lib/postgresql/data"
         detach: ""
-        cpuset-cpus: "0-25"
+        cpuset-cpus: "0-15"
         memory: "8g"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
@@ -449,7 +449,7 @@
         publish: "5435:5432"
         volume: "/var/lib/postgresql/BuzzBlog/uniquepair/data:/var/lib/postgresql/data"
         detach: ""
-        cpuset-cpus: "0-25"
+        cpuset-cpus: "0-15"
         memory: "8g"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
