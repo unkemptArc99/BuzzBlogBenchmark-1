@@ -1,0 +1,5 @@
+analysis/data
+__pycache__/
+*.pyc
+analysis/*/__pycache__/
+dataAnalysis/
