@@ -52,14 +52,16 @@ def get_query_logfiles(experiment_dirname):
 
 def get_loadgen_logfiles(experiment_dirname):
     for node_name in get_node_names(experiment_dirname):
-        tarball_path = os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs", node_name,
-                "loadgen.tar.gz")
-        if os.path.exists(tarball_path):
-            with tarfile.open(tarball_path, "r:gz") as tar:
-                for filename in tar.getnames():
-                    if filename.endswith("loadgen.log"):
-                        with tar.extractfile(filename) as logfile:
-                            yield logfile
+        for tarball_name in os.listdir(os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname,
+                "logs",  node_name)):
+            if re.match(r"^loadgen.*\.tar\.gz$", tarball_name):
+                tarball_path = os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs",
+                        node_name, tarball_name)
+                with tarfile.open(tarball_path, "r:gz") as tar:
+                    for filename in tar.getnames():
+                        if filename.endswith("loadgen.log"):
+                            with tar.extractfile(filename) as logfile:
+                                yield logfile
 
 
 def get_collectl_cpu_logfiles(experiment_dirname):
