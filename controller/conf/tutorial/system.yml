@@ -7,13 +7,13 @@
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
-    loadgen:
+    loadgen1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
         - "/var/log/loadgen.log"
       options:
-        name: "loadgen"
+        name: "loadgen1"
         ulimit: "nofile=131072:131072"
         volume:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
@@ -22,7 +22,55 @@
           - "net.ipv4.ip_local_port_range=\"32768 65535\""
         env:
           - "hostname={{apigateway_node}}"
-          - "port=8888"
+          - "port=8080"
+    loadgen2:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      logs:
+        - "/var/log/loadgen.log"
+      options:
+        name: "loadgen2"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        sysctl:
+          - "net.ipv4.tcp_tw_reuse=1"
+          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+        env:
+          - "hostname={{apigateway_node}}"
+          - "port=8081"
+    loadgen3:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      logs:
+        - "/var/log/loadgen.log"
+      options:
+        name: "loadgen3"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        sysctl:
+          - "net.ipv4.tcp_tw_reuse=1"
+          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+        env:
+          - "hostname={{apigateway_node}}"
+          - "port=8082"
+    loadgen4:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      logs:
+        - "/var/log/loadgen.log"
+      options:
+        name: "loadgen4"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        sysctl:
+          - "net.ipv4.tcp_tw_reuse=1"
+          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+        env:
+          - "hostname={{apigateway_node}}"
+          - "port=8083"
   monitors:
     collectl:
       dirpath: "/tmp/collectl"
@@ -39,37 +87,12 @@
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   templates:
-    nginx.conf:
-      output: "/etc/nginx/nginx.conf"
-      params:
-        port: 80
-        worker_processes: 8
-        worker_connections: 512
-        apigateway_servers:
-          - "172.17.0.1:8080"
-          - "172.17.0.1:8081"
-          - "172.17.0.1:8082"
-          - "172.17.0.1:8083"
     gunicorn.conf.py:
       output: "/etc/gunicorn/gunicorn.conf.py"
       params:
         bind: "0.0.0.0:81"
         threads: 64
   containers:
-    loadbalancer:
-      image: "nginx:1.18.0"
-      start_order: 3
-      options:
-        name: "loadbalancer"
-        ulimit: "nofile=131072:131072"
-        publish: "8888:80"
-        volume: "/etc/nginx:/etc/nginx"
-        detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
     apigateway1:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
