@@ -50,7 +50,8 @@ def start_container(node_hostname, node_conf, container_name, ssh_client):
   time.sleep(16)
   if container_conf["image"].startswith("postgres"):
     # Setup the database.
-    subprocess.run("psql -U postgres -h %s -p %s -f %s" % (
+    subprocess.run("psql -U postgres -d %s -h %s -p %s -f %s" % (
+        container_name.split('_')[0],
         node_hostname,
         container_conf["options"]["publish"].split(':')[0],
         "/opt/BuzzBlog/app/{service}/database/{service}_schema.sql".\
@@ -257,18 +258,6 @@ def generate_backend_configuration_file(node_hostname, node_conf, ssh_client):
       "echo \"{content}\" | sudo tee {filepath}".format(
           content=yaml.dump(BACKEND_CONF),
           filepath="/etc/opt/BuzzBlog/backend.yml"))
-
-
-@nodes_with_container(".+_database")
-def setup_databases(node_hostname, node_conf, ssh_client):
-  for container_name in node_conf["containers"]:
-    if re.match(".+_database", container_name):
-      subprocess.run("psql -U postgres -h %s -p %s -f %s" % (
-          node_hostname,
-          node_conf["containers"][container_name]["options"]["publish"].\
-              split(':')[0],
-          "/opt/BuzzBlog/app/{service}/database/{service}_schema.sql".\
-              format(service=container_name.split('_')[0])), shell=True)
 
 
 @nodes_with_monitor(".+")

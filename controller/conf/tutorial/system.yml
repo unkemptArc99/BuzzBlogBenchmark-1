@@ -206,7 +206,6 @@
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
-          - "postgres_dbname=postgres"
   monitors:
     collectl:
       dirpath: "/tmp/collectl"
@@ -242,7 +241,7 @@
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
-          - "POSTGRES_DB=postgres"
+          - "POSTGRES_DB=account"
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
     collectl:
@@ -284,7 +283,6 @@
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
-          - "postgres_dbname=postgres"
   monitors:
     collectl:
       dirpath: "/tmp/collectl"
@@ -325,7 +323,6 @@
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
-          - "postgres_dbname=postgres"
   monitors:
     collectl:
       dirpath: "/tmp/collectl"
@@ -367,7 +364,6 @@
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
-          - "postgres_dbname=postgres"
   monitors:
     collectl:
       dirpath: "/tmp/collectl"
@@ -403,7 +399,7 @@
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
-          - "POSTGRES_DB=postgres"
+          - "POSTGRES_DB=post"
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
     collectl:
@@ -446,7 +442,6 @@
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
-          - "postgres_dbname=postgres"
   monitors:
     collectl:
       dirpath: "/tmp/collectl"
@@ -482,7 +477,7 @@
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
-          - "POSTGRES_DB=postgres"
+          - "POSTGRES_DB=uniquepair"
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
     collectl:
