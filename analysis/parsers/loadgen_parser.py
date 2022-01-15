@@ -5,7 +5,7 @@ from .base_parser import BaseParser
 
 # Constants
 REQUEST_LOG_PATTERN = r"^\[(\d+\-\d+\-\d+ \d+:\d+:\d+.\d+)\] (.+) (.+) (\d+) - latency=(\d+.\d+)$"
-URL_PATTERN = r"^http://[\w\.]+:\d+/{path}/?\??{qs}$"
+URL_PATTERN = r"^http://[\w\.\-]+:\d+/{path}/?\??{qs}$"
 REQUEST_TO_TYPE = {
     (URL_PATTERN.format(path="account/\d+", qs=""), "GET"): "retrieve_account",
     (URL_PATTERN.format(path="account", qs=""), "POST"): "create_account",
