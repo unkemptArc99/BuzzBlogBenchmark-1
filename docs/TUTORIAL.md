@@ -11,8 +11,8 @@ account](CLOUDLAB.md) first.
 1. Access the [CloudLab login page](https://cloudlab.us/login.php) and sign in.
 2. In the main menu, click on [Start Experiment](https://www.cloudlab.us/instantiate.php).
 3. Click on *Change Profile*.
-4. Search profile *BuzzBlog-10_d430_nodes* of project *Infosphere*. This
-profile contains the specification of a cloud comprising 10 d430 machines (x86)
+4. Search profile *BuzzBlog-12_xl170_nodes* of project *Infosphere*. This
+profile contains the specification of a cloud comprising 12 xl170 machines (x86)
 connected to a LAN and running Ubuntu 20.04 LTS (focal) 64-bit. Click on
 *Select Profile*.
 5. Optionally, you can give a name to your experiment. Click on *Next*.
@@ -58,17 +58,11 @@ chmod +x tutorial_configuration_setup.sh
 ./tutorial_configuration_setup.sh \
     --username [your cloudlab username] \
     --controller_node [node-0 hostname] \
-    --loadgen_node [node-0 hostname] \
-    --apigateway_node [node-1 hostname] \
-    --account_service_node [node-2 hostname] \
-    --account_database_node [node-3 hostname] \
-    --follow_service_node [node-4 hostname] \
-    --like_service_node [node-5 hostname] \
-    --post_service_node [node-6 hostname] \
-    --post_database_node [node-7 hostname] \
-    --uniquepair_service_node [node-8 hostname] \
-    --uniquepair_database_node [node-9 hostname]
+    --system_template BuzzBlog-12_xl170_nodes.yml
 ```
+
+In this example, we use the system configuration specified in the file
+`controller/conf/tutorial/BuzzBlog-12_xl170_nodes.yml`.
 
 Log into `node-0`.
 ```
@@ -113,7 +107,7 @@ sudo docker run \
     rodrigoalveslima/buzzblog:benchmarkcontroller_v0.1
 ```
 
-This experiment will take approximately 30 minutes to finish. The results will
+This experiment will take approximately 45 minutes to finish. The results will
 be in a directory named `BuzzBlogBenchmark_[%Y-%m-%d-%H-%M-%S]` located in the
 home directory.
 

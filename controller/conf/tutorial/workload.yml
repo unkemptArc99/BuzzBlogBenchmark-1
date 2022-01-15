@@ -1,12 +1,12 @@
 # Copyright (C) 2020 Georgia Tech Center for Experimental Research in Computer
 # Systems
 
-sessions: 1024
+sessions: 4098
 throughput: 100
 duration:
   total: 720
-  ramp_up: 60
-  ramp_down: 60
+  ramp_up: 720
+  ramp_down: 360
 surges: []
 request_graph:
   main:
