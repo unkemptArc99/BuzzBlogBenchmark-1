@@ -141,7 +141,7 @@
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -307,7 +307,7 @@
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -348,7 +348,7 @@
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -385,7 +385,7 @@
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -425,7 +425,7 @@
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -465,7 +465,7 @@
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -506,7 +506,7 @@
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -543,7 +543,7 @@
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -584,7 +584,7 @@
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -621,7 +621,7 @@
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
