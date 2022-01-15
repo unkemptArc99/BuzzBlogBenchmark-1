@@ -46,7 +46,7 @@ def start_container(node_hostname, node_conf, container_name, ssh_client):
           " ".join(["--%s %s" % (param, v) for v in value])
           for (param, value) in container_conf.get("options", {}).items()]) +
       " " +
-      "$(echo $(cat /etc/hosts | grep node- | sed 's/[[:space:]]/ /g' | cut -d ' ' -f 1,4 | sed 's:^\(.*\) \(.*\):\2\:\1:' | awk '{print \"--add-host=\"$1\"\"}'))" +
+      """\$(echo \$(cat /etc/hosts | grep node- | sed 's/[[:space:]]/ /g' | cut -d ' ' -f 1,4 | sed 's:^\(.*\) \(.*\):\\2\:\\1:' | awk '{print "--add-host="\$1""}'))""" +
       " " +
       container_conf["image"])
   time.sleep(16)
