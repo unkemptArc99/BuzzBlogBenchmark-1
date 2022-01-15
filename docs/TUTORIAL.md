@@ -104,7 +104,7 @@ sudo docker run \
     --volume $(pwd):/usr/local/etc/BuzzBlogBenchmark \
     --volume $(pwd):/var/log/BuzzBlogBenchmark \
     --volume $(pwd)/.ssh:/home/$(whoami)/.ssh \
-    $(echo $(cat /etc/hosts | grep node- | sed 's/[[:space:]]/ /g' | cut -d ' ' -f 1,4 | sed 's:^\(.*\) \(.*\):\2\:\1:' | awk '{print "--add-host="$1""}'))
+    $(echo $(cat /etc/hosts | grep node- | sed 's/[[:space:]]/ /g' | cut -d ' ' -f 1,4 | sed 's:^\(.*\) \(.*\):\2\:\1:' | awk '{print "--add-host="$1""}')) \
     rodrigoalveslima/buzzblog:benchmarkcontroller_v0.1
 ```
 
