@@ -266,6 +266,7 @@ node-3:
       params:
         bind: "0.0.0.0:81"
         threads: 64
+  containers:
     apigateway5:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
