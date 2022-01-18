@@ -103,3 +103,11 @@ def get_experiment_start_time(experiment_dirname):
             for logfile in get_loadgen_logfiles(experiment_dirname)
     ], ignore_index=True)
     return requests["timestamp"].values.min()
+
+
+def get_experiment_end_time(experiment_dirname):
+    requests = pd.concat([
+            pd.DataFrame.from_dict(LoadgenParser(logfile).parse())
+            for logfile in get_loadgen_logfiles(experiment_dirname)
+    ], ignore_index=True)
+    return requests["timestamp"].values.max()
