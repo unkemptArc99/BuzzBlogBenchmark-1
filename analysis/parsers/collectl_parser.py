@@ -9,8 +9,8 @@ from .base_parser import BaseParser
 HW_METRICS = {
     "cpu": ["user", "nice", "system", "wait", "irq", "soft", "steal", "idle", "total", "guest", "guest_n", "intrpt"],
     "mem": ["used", "free", "slab", "mapped", "anon", "anonh", "inactive", "hits"],
-    "dsk": ["reads", "rmerge", "rkbytes", "waitr", "writes", "wmerge", "wkbytes", "waitw", "request", "quelen", "wait",
-            "svctim", "util"]
+    "dsk": ["name", "reads", "rmerge", "rkbytes", "waitr", "writes", "wmerge", "wkbytes", "waitw", "request", "quelen",
+            "wait", "svctim", "util"]
 }
 
 
