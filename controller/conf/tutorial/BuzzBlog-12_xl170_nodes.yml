@@ -177,6 +177,10 @@ node-0:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-1:
   ssh:
     username: "{{username}}"

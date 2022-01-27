@@ -215,6 +215,19 @@ def install_radvisor(node_hostname, node_conf, ssh_client):
       "sudo cp /opt/radvisor/radvisor /usr/bin/".format(VERSION=VERSION))
 
 
+@nodes_with_monitor("pcm")
+def install_pcm(node_hostname, node_conf, ssh_client):
+  ssh_client.exec(
+    "sudo apt-get update && "
+    "echo 'deb http://download.opensuse.org/repositories/home:/opcm/xUbuntu_19.10/ /' | "
+      "sudo tee /etc/apt/sources.list.d/home:opcm.list && "
+    "curl -fsSL https://download.opensuse.org/repositories/home:opcm/xUbuntu_19.10/Release.key | " 
+      "gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_opcm.gpg > /dev/null && "
+    "sudo apt-get update && "
+    "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y pcm && "
+    "sudo modprobe msr")
+
+
 @nodes_with_container(".+")
 def pull_docker_images(node_hostname, node_conf, ssh_client):
   if DOCKER_HUB_USERNAME and DOCKER_HUB_PASSWORD:
@@ -341,6 +354,7 @@ def run():
   install_bpfcc()
   install_collectl()
   install_radvisor()
+  install_pcm()
   pull_docker_images()
   copy_workload_configuration_file()
   render_configuration_templates()
