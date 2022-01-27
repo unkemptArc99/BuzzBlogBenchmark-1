@@ -28,7 +28,7 @@ done
 ssh -o StrictHostKeyChecking=no ${username}@${controller_node} "
   # Clone this repository to get the experiment configuration files.
   ssh-keygen -F github.com || ssh-keyscan github.com >> ~/.ssh/known_hosts
-  git clone git@github.com:rodrigoalveslima/BuzzBlogBenchmark.git
+  git clone https://github.com/unkemptArc99/BuzzBlogBenchmark-1.git -b abhi/pcm BuzzBlogBenchmark
   mv BuzzBlogBenchmark/controller/conf/tutorial/workload.yml .
   mv BuzzBlogBenchmark/controller/conf/tutorial/${system_template} system.yml
   rm -rf BuzzBlogBenchmark
