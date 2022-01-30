@@ -357,6 +357,10 @@ node-1:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-2:
   ssh:
     username: "{{username}}"
@@ -559,6 +563,10 @@ node-2:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-3:
   ssh:
     username: "{{username}}"
@@ -761,6 +769,10 @@ node-3:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-4:
   ssh:
     username: "{{username}}"
@@ -800,6 +812,10 @@ node-4:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-5:
   ssh:
     username: "{{username}}"
@@ -835,6 +851,10 @@ node-5:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-6:
   ssh:
     username: "{{username}}"
@@ -873,6 +893,10 @@ node-6:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-7:
   ssh:
     username: "{{username}}"
@@ -911,6 +935,10 @@ node-7:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-8:
   ssh:
     username: "{{username}}"
@@ -950,6 +978,10 @@ node-8:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-9:
   ssh:
     username: "{{username}}"
@@ -985,6 +1017,10 @@ node-9:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-10:
   ssh:
     username: "{{username}}"
@@ -1024,6 +1060,10 @@ node-10:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
 node-11:
   ssh:
     username: "{{username}}"
@@ -1059,3 +1099,7 @@ node-11:
         subsys: "CDM"
         options: "Tm"
         plot: ""
+    pcm:
+      dirpath: "/tmp/pcm"
+      niceness: 19
+      command: "pcm 0.05 -csv=/tmp/pcm/pcm.csv"
