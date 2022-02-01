@@ -1,0 +1,19 @@
+account:
+  database: node-5:5433
+  service:
+  - node-4:9090
+follow:
+  service:
+  - node-6:9091
+like:
+  service:
+  - node-7:9092
+post:
+  database: node-9:5434
+  service:
+  - node-8:9093
+uniquepair:
+  database: node-11:5435
+  service:
+  - node-10:9094
+

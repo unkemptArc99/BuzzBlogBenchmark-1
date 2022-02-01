@@ -1,0 +1,3122 @@
+node-10.pcm-test-7.infosphere-pg0.utah.cloudlab.us
+    description: Multi-system
+    product: ProLiant XL170r Gen9 (798155-B21)
+    vendor: HP
+    serial: 2M2746036D
+    width: 64 bits
+    capabilities: smbios-2.8 dmi-2.8 smp vsyscall32
+    configuration: boot=normal chassis=multi-system family=ProLiant sku=798155-B21 uuid=37393831-3535-324D-3237-343630333644
+  *-core
+       description: Motherboard
+       product: ProLiant XL170r Gen9
+       vendor: HP
+       physical id: 0
+       serial: 2M2746036D
+       slot: Node 4
+     *-cache:0
+          description: L1 cache
+          physical id: 0
+          slot: L1-Cache
+          size: 640KiB
+          capacity: 640KiB
+          capabilities: synchronous internal write-back unified
+          configuration: level=1
+     *-cache:1
+          description: L2 cache
+          physical id: 1
+          slot: L2-Cache
+          size: 2560KiB
+          capacity: 2560KiB
+          capabilities: synchronous internal varies unified
+          configuration: level=2
+     *-cache:2
+          description: L3 cache
+          physical id: 2
+          slot: L3-Cache
+          size: 25MiB
+          capacity: 25MiB
+          capabilities: synchronous internal varies unified
+          configuration: level=3
+     *-cpu:0
+          description: CPU
+          product: Intel(R) Xeon(R) CPU E5-2640 v4 @ 2.40GHz
+          vendor: Intel Corp.
+          physical id: 3
+          bus info: cpu@0
+          version: Intel(R) Xeon(R) CPU E5-2640 v4 @ 2.40GHz
+          slot: Proc 1
+          size: 1197MHz
+          capacity: 4GHz
+          width: 64 bits
+          clock: 100MHz
+          capabilities: lm fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp x86-64 constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm rdt_a rdseed adx smap intel_pt xsaveopt cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts md_clear flush_l1d cpufreq
+          configuration: cores=10 enabledcores=10 threads=20
+     *-cpu:1 DISABLED
+          description: CPU [empty]
+          physical id: 4
+          slot: Proc 2
+     *-firmware
+          description: BIOS
+          vendor: HP
+          physical id: 5
+          version: U14
+          date: 02/17/2017
+          size: 64KiB
+          capacity: 16MiB
+          capabilities: pci pnp upgrade shadowing escd cdboot bootselect edd int13floppy360 int13floppy1200 int13floppy720 int5printscreen int9keyboard int14serial int17printer int10video acpi usb biosbootspecification netboot uefi
+     *-memory
+          description: System Memory
+          physical id: 7
+          slot: System board or motherboard
+          size: 64GiB
+          capabilities: ecc
+          configuration: errordetection=multi-bit-ecc
+        *-bank:0
+             description: DIMM DDR4 Synchronous Registered (Buffered) 2400 MHz (0.4 ns)
+             product: 809082-091
+             vendor: HP
+             physical id: 0
+             slot: PROC 1 DIMM 1
+             size: 16GiB
+             width: 64 bits
+             clock: 2400MHz (0.4ns)
+        *-bank:1
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: 1
+             slot: PROC 1 DIMM 2
+             width: 64 bits
+        *-bank:2
+             description: DIMM DDR4 Synchronous Registered (Buffered) 2400 MHz (0.4 ns)
+             product: 809082-091
+             vendor: HP
+             physical id: 2
+             slot: PROC 1 DIMM 3
+             size: 16GiB
+             width: 64 bits
+             clock: 2400MHz (0.4ns)
+        *-bank:3
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: 3
+             slot: PROC 1 DIMM 4
+             width: 64 bits
+        *-bank:4
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: 4
+             slot: PROC 1 DIMM 5
+             width: 64 bits
+        *-bank:5
+             description: DIMM DDR4 Synchronous Registered (Buffered) 2400 MHz (0.4 ns)
+             product: 809082-091
+             vendor: HP
+             physical id: 5
+             slot: PROC 1 DIMM 6
+             size: 16GiB
+             width: 64 bits
+             clock: 2400MHz (0.4ns)
+        *-bank:6
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: 6
+             slot: PROC 1 DIMM 7
+             width: 64 bits
+        *-bank:7
+             description: DIMM DDR4 Synchronous Registered (Buffered) 2400 MHz (0.4 ns)
+             product: 809082-091
+             vendor: HP
+             physical id: 7
+             slot: PROC 1 DIMM 8
+             size: 16GiB
+             width: 64 bits
+             clock: 2400MHz (0.4ns)
+        *-bank:8
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: 8
+             slot: PROC 2 DIMM 1
+             width: 64 bits
+        *-bank:9
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: 9
+             slot: PROC 2 DIMM 2
+             width: 64 bits
+        *-bank:10
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: a
+             slot: PROC 2 DIMM 3
+             width: 64 bits
+        *-bank:11
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: b
+             slot: PROC 2 DIMM 4
+             width: 64 bits
+        *-bank:12
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: c
+             slot: PROC 2 DIMM 5
+             width: 64 bits
+        *-bank:13
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: d
+             slot: PROC 2 DIMM 6
+             width: 64 bits
+        *-bank:14
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: e
+             slot: PROC 2 DIMM 7
+             width: 64 bits
+        *-bank:15
+             description: DIMM DDR4 Synchronous [empty]
+             product: NOT AVAILABLE
+             vendor: UNKNOWN
+             physical id: f
+             slot: PROC 2 DIMM 8
+             width: 64 bits
+     *-pci
+          description: Host bridge
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DMI2
+          vendor: Intel Corporation
+          physical id: 100
+          bus info: pci@0000:00:00.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+        *-pci:0
+             description: PCI bridge
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D PCI Express Root Port 1
+             vendor: Intel Corporation
+             physical id: 1
+             bus info: pci@0000:00:01.0
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci msi pciexpress pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:26
+        *-pci:1
+             description: PCI bridge
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D PCI Express Root Port 1
+             vendor: Intel Corporation
+             physical id: 1.1
+             bus info: pci@0000:00:01.1
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci msi pciexpress pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:27
+        *-pci:2
+             description: PCI bridge
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D PCI Express Root Port 2
+             vendor: Intel Corporation
+             physical id: 2
+             bus info: pci@0000:00:02.0
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci msi pciexpress pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:28
+        *-pci:3
+             description: PCI bridge
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D PCI Express Root Port 2
+             vendor: Intel Corporation
+             physical id: 2.1
+             bus info: pci@0000:00:02.1
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci msi pciexpress pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:29
+        *-pci:4
+             description: PCI bridge
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D PCI Express Root Port 2
+             vendor: Intel Corporation
+             physical id: 2.2
+             bus info: pci@0000:00:02.2
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci msi pciexpress pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:30 memory:98000000-9bffffff ioport:39ffdf00000(size=16777216)
+           *-network:0
+                description: Ethernet interface
+                product: MT27710 Family [ConnectX-4 Lx]
+                vendor: Mellanox Technologies
+                physical id: 0
+                bus info: pci@0000:07:00.0
+                logical name: eno49
+                version: 00
+                serial: 98:f2:b3:ca:c0:70
+                size: 10Gbit/s
+                capacity: 25Gbit/s
+                width: 64 bits
+                clock: 33MHz
+                capabilities: pciexpress vpd msix pm bus_master cap_list ethernet physical fibre 1000bt-fd 10000bt-fd 25000bt-fd autonegotiation
+                configuration: autonegotiation=on broadcast=yes driver=mlx5_core driverversion=5.0-0 duplex=full firmware=14.18.2030 (HP_2690110034) ip=128.110.218.175 latency=0 link=yes multicast=yes speed=10Gbit/s
+                resources: irq:16 memory:98000000-99ffffff memory:39ffe700000-39ffeefffff
+           *-network:1 DISABLED
+                description: Ethernet interface
+                product: MT27710 Family [ConnectX-4 Lx]
+                vendor: Mellanox Technologies
+                physical id: 0.1
+                bus info: pci@0000:07:00.1
+                logical name: eno50
+                version: 00
+                serial: 98:f2:b3:ca:c0:71
+                capacity: 25Gbit/s
+                width: 64 bits
+                clock: 33MHz
+                capabilities: pciexpress vpd msix pm bus_master cap_list ethernet physical fibre 1000bt-fd 10000bt-fd 25000bt-fd autonegotiation
+                configuration: autonegotiation=on broadcast=yes driver=mlx5_core driverversion=5.0-0 firmware=14.18.2030 (HP_2690110034) latency=0 link=no multicast=yes port=fibre
+                resources: irq:17 memory:9a000000-9bffffff memory:39ffdf00000-39ffe6fffff
+        *-pci:5
+             description: PCI bridge
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D PCI Express Root Port 2
+             vendor: Intel Corporation
+             physical id: 2.3
+             bus info: pci@0000:00:02.3
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci msi pciexpress pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:31
+        *-pci:6
+             description: PCI bridge
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D PCI Express Root Port 3
+             vendor: Intel Corporation
+             physical id: 3
+             bus info: pci@0000:00:03.0
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci msi pciexpress pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:32 memory:94000000-97ffffff ioport:39ffef00000(size=16777216)
+           *-network:0 DISABLED
+                description: Ethernet interface
+                product: MT27710 Family [ConnectX-4 Lx]
+                vendor: Mellanox Technologies
+                physical id: 0
+                bus info: pci@0000:03:00.0
+                logical name: ens1f0
+                version: 00
+                serial: 9c:dc:71:5e:1f:f0
+                capacity: 25Gbit/s
+                width: 64 bits
+                clock: 33MHz
+                capabilities: pciexpress vpd msix pm bus_master cap_list ethernet physical fibre 1000bt-fd 10000bt-fd 25000bt-fd autonegotiation
+                configuration: autonegotiation=on broadcast=yes driver=mlx5_core driverversion=5.0-0 firmware=14.18.2030 (HP_2420110034) latency=0 link=no multicast=yes port=fibre
+                resources: irq:16 memory:94000000-95ffffff memory:39fff700000-39fffefffff
+           *-network:1
+                description: Ethernet interface
+                product: MT27710 Family [ConnectX-4 Lx]
+                vendor: Mellanox Technologies
+                physical id: 0.1
+                bus info: pci@0000:03:00.1
+                logical name: ens1f1
+                version: 00
+                serial: 9c:dc:71:5e:1f:f1
+                capacity: 25Gbit/s
+                width: 64 bits
+                clock: 33MHz
+                capabilities: pciexpress vpd msix pm bus_master cap_list ethernet physical 1000bt-fd 10000bt-fd 25000bt-fd autonegotiation
+                configuration: autonegotiation=off broadcast=yes driver=mlx5_core driverversion=5.0-0 duplex=full firmware=14.18.2030 (HP_2420110034) ip=10.10.1.11 latency=0 link=yes multicast=yes
+                resources: irq:17 memory:96000000-97ffffff memory:39ffef00000-39fff6fffff
+        *-pci:7
+             description: PCI bridge
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D PCI Express Root Port 3
+             vendor: Intel Corporation
+             physical id: 3.1
+             bus info: pci@0000:00:03.1
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci msi pciexpress pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:33
+        *-pci:8
+             description: PCI bridge
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D PCI Express Root Port 3
+             vendor: Intel Corporation
+             physical id: 3.2
+             bus info: pci@0000:00:03.2
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci msi pciexpress pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:34
+        *-pci:9
+             description: PCI bridge
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D PCI Express Root Port 3
+             vendor: Intel Corporation
+             physical id: 3.3
+             bus info: pci@0000:00:03.3
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci msi pciexpress pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:35
+        *-generic:0
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Crystal Beach DMA Channel 0
+             vendor: Intel Corporation
+             physical id: 4
+             bus info: pci@0000:00:04.0
+             logical name: /dev/fb0
+             version: 01
+             width: 64 bits
+             clock: 33MHz
+             capabilities: msix pciexpress pm bus_master cap_list fb
+             configuration: depth=32 driver=ioatdma latency=0 mode=1024x768 visual=truecolor xres=1024 yres=768
+             resources: iomemory:39f0-39ef irq:126 memory:39ffff2c000-39ffff2ffff
+        *-generic:1
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Crystal Beach DMA Channel 1
+             vendor: Intel Corporation
+             physical id: 4.1
+             bus info: pci@0000:00:04.1
+             version: 01
+             width: 64 bits
+             clock: 33MHz
+             capabilities: msix pciexpress pm bus_master cap_list
+             configuration: driver=ioatdma latency=0
+             resources: iomemory:39f0-39ef irq:128 memory:39ffff28000-39ffff2bfff
+        *-generic:2
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Crystal Beach DMA Channel 2
+             vendor: Intel Corporation
+             physical id: 4.2
+             bus info: pci@0000:00:04.2
+             version: 01
+             width: 64 bits
+             clock: 33MHz
+             capabilities: msix pciexpress pm bus_master cap_list
+             configuration: driver=ioatdma latency=0
+             resources: iomemory:39f0-39ef irq:126 memory:39ffff24000-39ffff27fff
+        *-generic:3
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Crystal Beach DMA Channel 3
+             vendor: Intel Corporation
+             physical id: 4.3
+             bus info: pci@0000:00:04.3
+             version: 01
+             width: 64 bits
+             clock: 33MHz
+             capabilities: msix pciexpress pm bus_master cap_list
+             configuration: driver=ioatdma latency=0
+             resources: iomemory:39f0-39ef irq:128 memory:39ffff20000-39ffff23fff
+        *-generic:4
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Crystal Beach DMA Channel 4
+             vendor: Intel Corporation
+             physical id: 4.4
+             bus info: pci@0000:00:04.4
+             version: 01
+             width: 64 bits
+             clock: 33MHz
+             capabilities: msix pciexpress pm bus_master cap_list
+             configuration: driver=ioatdma latency=0
+             resources: iomemory:39f0-39ef irq:126 memory:39ffff1c000-39ffff1ffff
+        *-generic:5
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Crystal Beach DMA Channel 5
+             vendor: Intel Corporation
+             physical id: 4.5
+             bus info: pci@0000:00:04.5
+             version: 01
+             width: 64 bits
+             clock: 33MHz
+             capabilities: msix pciexpress pm bus_master cap_list
+             configuration: driver=ioatdma latency=0
+             resources: iomemory:39f0-39ef irq:128 memory:39ffff18000-39ffff1bfff
+        *-generic:6
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Crystal Beach DMA Channel 6
+             vendor: Intel Corporation
+             physical id: 4.6
+             bus info: pci@0000:00:04.6
+             version: 01
+             width: 64 bits
+             clock: 33MHz
+             capabilities: msix pciexpress pm bus_master cap_list
+             configuration: driver=ioatdma latency=0
+             resources: iomemory:39f0-39ef irq:126 memory:39ffff14000-39ffff17fff
+        *-generic:7
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Crystal Beach DMA Channel 7
+             vendor: Intel Corporation
+             physical id: 4.7
+             bus info: pci@0000:00:04.7
+             version: 01
+             width: 64 bits
+             clock: 33MHz
+             capabilities: msix pciexpress pm bus_master cap_list
+             configuration: driver=ioatdma latency=0
+             resources: iomemory:39f0-39ef irq:128 memory:39ffff10000-39ffff13fff
+        *-generic:8 UNCLAIMED
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Map/VTd_Misc/System Management
+             vendor: Intel Corporation
+             physical id: 5
+             bus info: pci@0000:00:05.0
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pciexpress cap_list
+             configuration: latency=0
+        *-generic:9 UNCLAIMED
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D IIO Hot Plug
+             vendor: Intel Corporation
+             physical id: 5.1
+             bus info: pci@0000:00:05.1
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pciexpress msi cap_list
+             configuration: latency=0
+        *-generic:10 UNCLAIMED
+             description: System peripheral
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D IIO RAS/Control Status/Global Errors
+             vendor: Intel Corporation
+             physical id: 5.2
+             bus info: pci@0000:00:05.2
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pciexpress cap_list
+             configuration: latency=0
+        *-generic:11 UNCLAIMED
+             description: PIC
+             product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D I/O APIC
+             vendor: Intel Corporation
+             physical id: 5.4
+             bus info: pci@0000:00:05.4
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pciexpress pm io_x_-apic bus_master cap_list
+             configuration: latency=0
+             resources: memory:9c004000-9c004fff
+        *-generic:12 UNCLAIMED
+             description: Unassigned class
+             product: C610/X99 series chipset SPSR
+             vendor: Intel Corporation
+             physical id: 11
+             bus info: pci@0000:00:11.0
+             version: 05
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pciexpress pm bus_master cap_list
+             configuration: latency=0
+        *-usb:0
+             description: USB controller
+             product: C610/X99 series chipset USB xHCI Host Controller
+             vendor: Intel Corporation
+             physical id: 14
+             bus info: pci@0000:00:14.0
+             version: 05
+             width: 64 bits
+             clock: 33MHz
+             capabilities: pm msi xhci bus_master cap_list
+             configuration: driver=xhci_hcd latency=0
+             resources: iomemory:39f0-39ef irq:39 memory:39ffff00000-39ffff0ffff
+           *-usbhost:0
+                product: xHCI Host Controller
+                vendor: Linux 5.4.0-91-generic xhci-hcd
+                physical id: 0
+                bus info: usb@4
+                logical name: usb4
+                version: 5.04
+                capabilities: usb-2.00
+                configuration: driver=hub slots=15 speed=480Mbit/s
+              *-usb
+                   description: USB hub
+                   product: Hub
+                   vendor: Microchip Technology, Inc. (formerly SMSC)
+                   physical id: 3
+                   bus info: usb@4:3
+                   version: 8.01
+                   capabilities: usb-2.00
+                   configuration: driver=hub maxpower=2mA slots=2 speed=480Mbit/s
+           *-usbhost:1
+                product: xHCI Host Controller
+                vendor: Linux 5.4.0-91-generic xhci-hcd
+                physical id: 1
+                bus info: usb@5
+                logical name: usb5
+                version: 5.04
+                capabilities: usb-3.00
+                configuration: driver=hub slots=6 speed=5000Mbit/s
+        *-usb:1
+             description: USB controller
+             product: C610/X99 series chipset USB Enhanced Host Controller #2
+             vendor: Intel Corporation
+             physical id: 1a
+             bus info: pci@0000:00:1a.0
+             version: 05
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pm debug ehci bus_master cap_list
+             configuration: driver=ehci-pci latency=0
+             resources: irq:18 memory:9c002000-9c0023ff
+           *-usbhost
+                product: EHCI Host Controller
+                vendor: Linux 5.4.0-91-generic ehci_hcd
+                physical id: 1
+                bus info: usb@1
+                logical name: usb1
+                version: 5.04
+                capabilities: usb-2.00
+                configuration: driver=hub slots=2 speed=480Mbit/s
+              *-usb
+                   description: USB hub
+                   vendor: Intel Corp.
+                   physical id: 1
+                   bus info: usb@1:1
+                   version: 0.05
+                   capabilities: usb-2.00
+                   configuration: driver=hub slots=6 speed=480Mbit/s
+        *-pci:10
+             description: PCI bridge
+             product: C610/X99 series chipset PCI Express Root Port #1
+             vendor: Intel Corporation
+             physical id: 1c
+             bus info: pci@0000:00:1c.0
+             version: d5
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci pciexpress msi pm subtractive_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:36
+        *-pci:11
+             description: PCI bridge
+             product: C610/X99 series chipset PCI Express Root Port #3
+             vendor: Intel Corporation
+             physical id: 1c.2
+             bus info: pci@0000:00:1c.2
+             version: d5
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci pciexpress msi pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:37 ioport:1000(size=4096) memory:90000000-92afffff
+           *-generic:0 UNCLAIMED
+                description: System peripheral
+                product: Integrated Lights-Out Standard Slave Instrumentation & System Support
+                vendor: Hewlett-Packard Company
+                physical id: 0
+                bus info: pci@0000:01:00.0
+                version: 06
+                width: 32 bits
+                clock: 33MHz
+                capabilities: pm msi pciexpress bus_master cap_list
+                configuration: latency=0
+                resources: ioport:1200(size=256) memory:92a8d000-92a8d1ff ioport:1100(size=256)
+           *-display
+                description: VGA compatible controller
+                product: MGA G200EH
+                vendor: Matrox Electronics Systems Ltd.
+                physical id: 0.1
+                bus info: pci@0000:01:00.1
+                version: 01
+                width: 32 bits
+                clock: 33MHz
+                capabilities: pm msi pciexpress vga_controller bus_master cap_list rom
+                configuration: driver=mgag200 latency=0
+                resources: irq:19 memory:91000000-91ffffff memory:92a88000-92a8bfff memory:92000000-927fffff memory:c0000-dffff
+           *-generic:1 UNCLAIMED
+                description: System peripheral
+                product: Integrated Lights-Out Standard Management Processor Support and Messaging
+                vendor: Hewlett-Packard Company
+                physical id: 0.2
+                bus info: pci@0000:01:00.2
+                version: 06
+                width: 32 bits
+                clock: 33MHz
+                capabilities: pm msi pciexpress bus_master cap_list
+                configuration: latency=0
+                resources: ioport:1000(size=256) memory:92a8c000-92a8c0ff memory:92900000-929fffff memory:92a00000-92a7ffff memory:92a80000-92a87fff memory:92800000-928fffff memory:90000000-9000ffff
+           *-usb
+                description: USB controller
+                product: Integrated Lights-Out Standard Virtual USB Controller
+                vendor: Hewlett-Packard Company
+                physical id: 0.4
+                bus info: pci@0000:01:00.4
+                version: 03
+                width: 32 bits
+                clock: 33MHz
+                capabilities: msi pciexpress pm uhci bus_master cap_list
+                configuration: driver=uhci_hcd latency=0
+                resources: irq:19 ioport:1300(size=32)
+              *-usbhost
+                   product: UHCI Host Controller
+                   vendor: Linux 5.4.0-91-generic uhci_hcd
+                   physical id: 1
+                   bus info: usb@3
+                   logical name: usb3
+                   version: 5.04
+                   capabilities: usb-1.10
+                   configuration: driver=hub slots=2 speed=12Mbit/s
+        *-pci:12
+             description: PCI bridge
+             product: C610/X99 series chipset PCI Express Root Port #5
+             vendor: Intel Corporation
+             physical id: 1c.4
+             bus info: pci@0000:00:1c.4
+             version: d5
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci pciexpress msi pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:38
+        *-usb:2
+             description: USB controller
+             product: C610/X99 series chipset USB Enhanced Host Controller #1
+             vendor: Intel Corporation
+             physical id: 1d
+             bus info: pci@0000:00:1d.0
+             version: 05
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pm debug ehci bus_master cap_list
+             configuration: driver=ehci-pci latency=0
+             resources: irq:18 memory:9c001000-9c0013ff
+           *-usbhost
+                product: EHCI Host Controller
+                vendor: Linux 5.4.0-91-generic ehci_hcd
+                physical id: 1
+                bus info: usb@2
+                logical name: usb2
+                version: 5.04
+                capabilities: usb-2.00
+                configuration: driver=hub slots=2 speed=480Mbit/s
+              *-usb
+                   description: USB hub
+                   vendor: Intel Corp.
+                   physical id: 1
+                   bus info: usb@2:1
+                   version: 0.05
+                   capabilities: usb-2.00
+                   configuration: driver=hub slots=8 speed=480Mbit/s
+        *-isa
+             description: ISA bridge
+             product: C610/X99 series chipset LPC Controller
+             vendor: Intel Corporation
+             physical id: 1f
+             bus info: pci@0000:00:1f.0
+             version: 05
+             width: 32 bits
+             clock: 33MHz
+             capabilities: isa bus_master cap_list
+             configuration: driver=lpc_ich latency=0
+             resources: irq:0
+        *-sata
+             description: SATA controller
+             product: C610/X99 series chipset 6-Port SATA Controller [AHCI mode]
+             vendor: Intel Corporation
+             physical id: 1f.2
+             bus info: pci@0000:00:1f.2
+             logical name: scsi0
+             version: 05
+             width: 32 bits
+             clock: 66MHz
+             capabilities: sata msi pm ahci_1.0 bus_master cap_list emulated
+             configuration: driver=ahci latency=0
+             resources: irq:40 ioport:2058(size=8) ioport:207c(size=4) ioport:2050(size=8) ioport:2078(size=4) ioport:2020(size=32) memory:9c000000-9c0007ff
+           *-disk
+                description: ATA Disk
+                product: VK000480GWCNQ
+                physical id: 0.0.0
+                bus info: scsi@0:0.0.0
+                logical name: /dev/sda
+                version: HPG0
+                serial: BTDV74200119480BGN
+                size: 447GiB (480GB)
+                capabilities: partitioned partitioned:dos
+                configuration: ansiversion=5 logicalsectorsize=512 sectorsize=4096 signature=90909090
+              *-volume:0
+                   description: EXT3 volume
+                   vendor: Linux
+                   physical id: 1
+                   bus info: scsi@0:0.0.0,1
+                   logical name: /dev/sda1
+                   logical name: /
+                   version: 1.0
+                   serial: 8b9e1980-828f-418f-ae44-80689ca8bd2f
+                   size: 16GiB
+                   capacity: 16GiB
+                   capabilities: primary bootable journaled extended_attributes large_files ext3 ext2 initialized
+                   configuration: created=2020-04-23 17:07:55 filesystem=ext3 lastmountpoint=/ modified=2022-01-30 15:26:12 mount.fstype=ext3 mount.options=rw,relatime,errors=remount-ro mounted=2021-12-20 09:49:48 state=mounted
+              *-volume:1
+                   description: Empty partition
+                   physical id: 2
+                   bus info: scsi@0:0.0.0,2
+                   logical name: /dev/sda2
+                   capacity: 3GiB
+                   capabilities: primary nofs
+              *-volume:2
+                   description: Linux swap / Solaris partition
+                   physical id: 3
+                   bus info: scsi@0:0.0.0,3
+                   logical name: /dev/sda3
+                   capacity: 3GiB
+                   capabilities: primary nofs
+              *-volume:3
+                   description: Empty partition
+                   physical id: 4
+                   bus info: scsi@0:0.0.0,4
+                   logical name: /dev/sda4
+                   capacity: 425GiB
+                   capabilities: primary nofs
+        *-serial
+             description: SMBus
+             product: C610/X99 series chipset SMBus Controller
+             vendor: Intel Corporation
+             physical id: 1f.3
+             bus info: pci@0000:00:1f.3
+             version: 05
+             width: 64 bits
+             clock: 33MHz
+             configuration: driver=i801_smbus latency=0
+             resources: iomemory:39f0-39ef irq:18 memory:39ffff31000-39ffff310ff ioport:2000(size=32)
+     *-generic:0 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D R3 QPI Link 0/1
+          vendor: Intel Corporation
+          physical id: b
+          bus info: pci@0000:ff:0b.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:1
+          description: Performance counters
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D R3 QPI Link 0/1
+          vendor: Intel Corporation
+          physical id: b.1
+          bus info: pci@0000:ff:0b.1
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: driver=bdx_uncore latency=0
+          resources: irq:0
+     *-generic:2
+          description: Performance counters
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D R3 QPI Link 0/1
+          vendor: Intel Corporation
+          physical id: b.2
+          bus info: pci@0000:ff:0b.2
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: driver=bdx_uncore latency=0
+          resources: irq:0
+     *-generic:3 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D R3 QPI Link Debug
+          vendor: Intel Corporation
+          physical id: b.3
+          bus info: pci@0000:ff:0b.3
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:4 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: c
+          bus info: pci@0000:ff:0c.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:5 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: c.1
+          bus info: pci@0000:ff:0c.1
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:6 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: c.2
+          bus info: pci@0000:ff:0c.2
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:7 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: c.3
+          bus info: pci@0000:ff:0c.3
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:8 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: c.4
+          bus info: pci@0000:ff:0c.4
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:9 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: c.5
+          bus info: pci@0000:ff:0c.5
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:10 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: c.6
+          bus info: pci@0000:ff:0c.6
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:11 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: c.7
+          bus info: pci@0000:ff:0c.7
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:12 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: d
+          bus info: pci@0000:ff:0d.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:13 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: d.1
+          bus info: pci@0000:ff:0d.1
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:14 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: f
+          bus info: pci@0000:ff:0f.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:15 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: f.1
+          bus info: pci@0000:ff:0f.1
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:16 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: f.4
+          bus info: pci@0000:ff:0f.4
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:17 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: f.5
+          bus info: pci@0000:ff:0f.5
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:18 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Caching Agent
+          vendor: Intel Corporation
+          physical id: f.6
+          bus info: pci@0000:ff:0f.6
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:19 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D R2PCIe Agent
+          vendor: Intel Corporation
+          physical id: 10
+          bus info: pci@0000:ff:10.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:20
+          description: Performance counters
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D R2PCIe Agent
+          vendor: Intel Corporation
+          physical id: 10.1
+          bus info: pci@0000:ff:10.1
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: driver=bdx_uncore latency=0
+          resources: irq:0
+     *-generic:21 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Ubox
+          vendor: Intel Corporation
+          physical id: 10.5
+          bus info: pci@0000:ff:10.5
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:22 UNCLAIMED
+          description: Performance counters
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Ubox
+          vendor: Intel Corporation
+          physical id: 10.6
+          bus info: pci@0000:ff:10.6
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:23 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Ubox
+          vendor: Intel Corporation
+          physical id: 10.7
+          bus info: pci@0000:ff:10.7
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:24 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Home Agent 0
+          vendor: Intel Corporation
+          physical id: 12
+          bus info: pci@0000:ff:12.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:25
+          description: Performance counters
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Home Agent 0
+          vendor: Intel Corporation
+          physical id: 12.1
+          bus info: pci@0000:ff:12.1
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: driver=bdx_uncore latency=0
+          resources: irq:0
+     *-generic:26 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Home Agent 0 Debug
+          vendor: Intel Corporation
+          physical id: 12.2
+          bus info: pci@0000:ff:12.2
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:27 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Target Address/Thermal/RAS
+          vendor: Intel Corporation
+          physical id: 13
+          bus info: pci@0000:ff:13.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: latency=0
+     *-generic:28 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Target Address/Thermal/RAS
+          vendor: Intel Corporation
+          physical id: 13.1
+          bus info: pci@0000:ff:13.1
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: latency=0
+     *-generic:29 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel Target Address Decoder
+          vendor: Intel Corporation
+          physical id: 13.2
+          bus info: pci@0000:ff:13.2
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: latency=0
+     *-generic:30 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel Target Address Decoder
+          vendor: Intel Corporation
+          physical id: 13.3
+          bus info: pci@0000:ff:13.3
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: latency=0
+     *-generic:31 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel Target Address Decoder
+          vendor: Intel Corporation
+          physical id: 13.4
+          bus info: pci@0000:ff:13.4
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: latency=0
+     *-generic:32 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel Target Address Decoder
+          vendor: Intel Corporation
+          physical id: 13.5
+          bus info: pci@0000:ff:13.5
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: latency=0
+     *-generic:33 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Channel 0/1 Broadcast
+          vendor: Intel Corporation
+          physical id: 13.6
+          bus info: pci@0000:ff:13.6
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:34 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Global Broadcast
+          vendor: Intel Corporation
+          physical id: 13.7
+          bus info: pci@0000:ff:13.7
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:35
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel 0 Thermal Control
+          vendor: Intel Corporation
+          physical id: 14
+          bus info: pci@0000:ff:14.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: driver=bdx_uncore latency=0
+          resources: irq:0
+     *-generic:36
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel 1 Thermal Control
+          vendor: Intel Corporation
+          physical id: 14.1
+          bus info: pci@0000:ff:14.1
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: driver=bdx_uncore latency=0
+          resources: irq:0
+     *-generic:37 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel 0 Error
+          vendor: Intel Corporation
+          physical id: 14.2
+          bus info: pci@0000:ff:14.2
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: latency=0
+     *-generic:38 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel 1 Error
+          vendor: Intel Corporation
+          physical id: 14.3
+          bus info: pci@0000:ff:14.3
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: latency=0
+     *-generic:39 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Channel 0/1 Interface
+          vendor: Intel Corporation
+          physical id: 14.4
+          bus info: pci@0000:ff:14.4
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:40 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Channel 0/1 Interface
+          vendor: Intel Corporation
+          physical id: 14.5
+          bus info: pci@0000:ff:14.5
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:41 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Channel 0/1 Interface
+          vendor: Intel Corporation
+          physical id: 14.6
+          bus info: pci@0000:ff:14.6
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:42 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Channel 0/1 Interface
+          vendor: Intel Corporation
+          physical id: 14.7
+          bus info: pci@0000:ff:14.7
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:43
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel 2 Thermal Control
+          vendor: Intel Corporation
+          physical id: 15
+          bus info: pci@0000:ff:15.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: driver=bdx_uncore latency=0
+          resources: irq:0
+     *-generic:44
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel 3 Thermal Control
+          vendor: Intel Corporation
+          physical id: 15.1
+          bus info: pci@0000:ff:15.1
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: driver=bdx_uncore latency=0
+          resources: irq:0
+     *-generic:45 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel 2 Error
+          vendor: Intel Corporation
+          physical id: 15.2
+          bus info: pci@0000:ff:15.2
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: latency=0
+     *-generic:46 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 0 - Channel 3 Error
+          vendor: Intel Corporation
+          physical id: 15.3
+          bus info: pci@0000:ff:15.3
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: pciexpress cap_list
+          configuration: latency=0
+     *-generic:47 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Target Address/Thermal/RAS
+          vendor: Intel Corporation
+          physical id: 16
+          bus info: pci@0000:ff:16.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: cap_list
+          configuration: latency=0
+     *-generic:48 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Channel 2/3 Broadcast
+          vendor: Intel Corporation
+          physical id: 16.6
+          bus info: pci@0000:ff:16.6
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:49 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Global Broadcast
+          vendor: Intel Corporation
+          physical id: 16.7
+          bus info: pci@0000:ff:16.7
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:50
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Memory Controller 1 - Channel 0 Thermal Control
+          vendor: Intel Corporation
+          physical id: 17
+          bus info: pci@0000:ff:17.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          capabilities: cap_list
+          configuration: driver=bdx_uncore latency=0
+          resources: irq:0
+     *-generic:51 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Channel 2/3 Interface
+          vendor: Intel Corporation
+          physical id: 17.4
+          bus info: pci@0000:ff:17.4
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:52 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Channel 2/3 Interface
+          vendor: Intel Corporation
+          physical id: 17.5
+          bus info: pci@0000:ff:17.5
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:53 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Channel 2/3 Interface
+          vendor: Intel Corporation
+          physical id: 17.6
+          bus info: pci@0000:ff:17.6
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:54 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D DDRIO Channel 2/3 Interface
+          vendor: Intel Corporation
+          physical id: 17.7
+          bus info: pci@0000:ff:17.7
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:55 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Power Control Unit
+          vendor: Intel Corporation
+          physical id: 1e
+          bus info: pci@0000:ff:1e.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:56 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Power Control Unit
+          vendor: Intel Corporation
+          physical id: 1e.1
+          bus info: pci@0000:ff:1e.1
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:57 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Power Control Unit
+          vendor: Intel Corporation
+          physical id: 1e.2
+          bus info: pci@0000:ff:1e.2
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:58 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Power Control Unit
+          vendor: Intel Corporation
+          physical id: 1e.3
+          bus info: pci@0000:ff:1e.3
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:59 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Power Control Unit
+          vendor: Intel Corporation
+          physical id: 1e.4
+          bus info: pci@0000:ff:1e.4
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:60 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Power Control Unit
+          vendor: Intel Corporation
+          physical id: 1f
+          bus info: pci@0000:ff:1f.0
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-generic:61 UNCLAIMED
+          description: System peripheral
+          product: Xeon E7 v4/Xeon E5 v4/Xeon E3 v4/Xeon D Power Control Unit
+          vendor: Intel Corporation
+          physical id: 1f.2
+          bus info: pci@0000:ff:1f.2
+          version: 01
+          width: 32 bits
+          clock: 33MHz
+          configuration: latency=0
+     *-pnp00:00
+          product: PnP device PNP0b00
+          physical id: 6
+          capabilities: pnp
+          configuration: driver=rtc_cmos
+     *-pnp00:01
+          product: PnP device PNP0c02
+          physical id: 8
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:02
+          product: PnP device PNP0501
+          physical id: 9
+          capabilities: pnp
+          configuration: driver=serial
+     *-pnp00:03
+          product: PnP device PNP0501
+          physical id: a
+          capabilities: pnp
+          configuration: driver=serial
+  *-power:0 UNCLAIMED
+       description: Power Supply 1
+       product: 720479-B21
+       vendor: HP
+       physical id: 1
+       serial: 5DLVD0CLL90DY6
+       capacity: 32768mWh
+  *-power:1 UNCLAIMED
+       description: Power Supply 2
+       product: 720479-B21
+       vendor: HP
+       physical id: 2
+       serial: 5DLVD0CLL90EPT
+       capacity: 32768mWh
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Byte Order:                      Little Endian
+Address sizes:                   46 bits physical, 48 bits virtual
+CPU(s):                          20
+On-line CPU(s) list:             0-19
+Thread(s) per core:              2
+Core(s) per socket:              10
+Socket(s):                       1
+NUMA node(s):                    1
+Vendor ID:                       GenuineIntel
+CPU family:                      6
+Model:                           79
+Model name:                      Intel(R) Xeon(R) CPU E5-2640 v4 @ 2.40GHz
+Stepping:                        1
+CPU MHz:                         1201.271
+CPU max MHz:                     3400.0000
+CPU min MHz:                     1200.0000
+BogoMIPS:                        4789.30
+Virtualization:                  VT-x
+L1d cache:                       320 KiB
+L1i cache:                       320 KiB
+L2 cache:                        2.5 MiB
+L3 cache:                        25 MiB
+NUMA node0 CPU(s):               0-19
+Vulnerability Itlb multihit:     KVM: Mitigation: Split huge pages
+Vulnerability L1tf:              Mitigation; PTE Inversion; VMX conditional cache flushes, SMT vulnerable
+Vulnerability Mds:               Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Meltdown:          Mitigation; PTI
+Vulnerability Spec store bypass: Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:        Mitigation; Full generic retpoline, IBPB conditional, IBRS_FW, STIBP conditional, RSB filling
+Vulnerability Srbds:             Not affected
+Vulnerability Tsx async abort:   Mitigation; Clear CPU buffers; SMT vulnerable
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm rdt_a rdseed adx smap intel_pt xsaveopt cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts md_clear flush_l1d
+RANGE                                 SIZE  STATE REMOVABLE BLOCK
+0x0000000000000000-0x000000007fffffff   2G online       yes     0
+0x0000000100000000-0x000000107fffffff  62G online       yes  2-32
+
+Memory block size:         2G
+Total online memory:      64G
+Total offline memory:      0B
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 447.1G  0 disk 
+├─sda1   8:1    0    16G  0 part /
+├─sda2   8:2    0     3G  0 part 
+├─sda3   8:3    0     3G  0 part [SWAP]
+└─sda4   8:4    0 425.1G  0 part 
+abi.vsyscall32 = 1
+debug.exception-trace = 1
+debug.kprobes-optimization = 1
+dev.cdrom.autoclose = 1
+dev.cdrom.autoeject = 0
+dev.cdrom.check_media = 0
+dev.cdrom.debug = 0
+dev.cdrom.info = CD-ROM information, Id: cdrom.c 3.20 2003/12/17
+dev.cdrom.info = 
+dev.cdrom.info = drive name:	
+dev.cdrom.info = drive speed:	
+dev.cdrom.info = drive # of slots:
+dev.cdrom.info = Can close tray:	
+dev.cdrom.info = Can open tray:	
+dev.cdrom.info = Can lock tray:	
+dev.cdrom.info = Can change speed:
+dev.cdrom.info = Can select disk:
+dev.cdrom.info = Can read multisession:
+dev.cdrom.info = Can read MCN:	
+dev.cdrom.info = Reports media changed:
+dev.cdrom.info = Can play audio:	
+dev.cdrom.info = Can write CD-R:	
+dev.cdrom.info = Can write CD-RW:
+dev.cdrom.info = Can read DVD:	
+dev.cdrom.info = Can write DVD-R:
+dev.cdrom.info = Can write DVD-RAM:
+dev.cdrom.info = Can read MRW:	
+dev.cdrom.info = Can write MRW:	
+dev.cdrom.info = Can write RAM:	
+dev.cdrom.info = 
+dev.cdrom.info = 
+dev.cdrom.lock = 0
+dev.hpet.max-user-freq = 64
+dev.mac_hid.mouse_button2_keycode = 97
+dev.mac_hid.mouse_button3_keycode = 100
+dev.mac_hid.mouse_button_emulation = 0
+dev.raid.speed_limit_max = 200000
+dev.raid.speed_limit_min = 1000
+dev.scsi.logging_level = 0
+dev.tty.ldisc_autoload = 1
+fs.aio-max-nr = 65536
+fs.aio-nr = 0
+fs.binfmt_misc.python3/8 = enabled
+fs.binfmt_misc.python3/8 = interpreter /usr/bin/python3.8
+fs.binfmt_misc.python3/8 = flags: 
+fs.binfmt_misc.python3/8 = offset 0
+fs.binfmt_misc.python3/8 = magic 550d0d0a
+fs.binfmt_misc.ksh = enabled
+fs.binfmt_misc.ksh = interpreter /bin/ksh
+fs.binfmt_misc.ksh = flags: 
+fs.binfmt_misc.ksh = offset 0
+fs.binfmt_misc.ksh = magic 0b1308
+fs.binfmt_misc.status = enabled
+fs.dentry-state = 42527	21013	45	0	1693	0
+fs.dir-notify-enable = 1
+fs.epoll.max_user_watches = 13451345
+fs.file-max = 9223372036854775807
+fs.file-nr = 1160	0	9223372036854775807
+fs.inode-nr = 41267	658
+fs.inode-state = 41267	658	0	0	0	0	0
+fs.inotify.max_queued_events = 16384
+fs.inotify.max_user_instances = 128
+fs.inotify.max_user_watches = 8192
+fs.lease-break-time = 45
+fs.leases-enable = 1
+fs.mount-max = 100000
+fs.mqueue.msg_default = 10
+fs.mqueue.msg_max = 10
+fs.mqueue.msgsize_default = 8192
+fs.mqueue.msgsize_max = 8192
+fs.mqueue.queues_max = 256
+fs.nfs.nfs_congestion_kb = 259392
+fs.nfs.nfs_mountpoint_timeout = 500
+fs.nfs.nlm_grace_period = 0
+fs.nfs.nlm_tcpport = 0
+fs.nfs.nlm_timeout = 10
+fs.nfs.nlm_udpport = 0
+fs.nfs.nsm_local_state = 0
+fs.nfs.nsm_use_hostnames = 0
+fs.nr_open = 1048576
+fs.overflowgid = 65534
+fs.overflowuid = 65534
+fs.pipe-max-size = 1048576
+fs.pipe-user-pages-hard = 0
+fs.pipe-user-pages-soft = 16384
+fs.protected_fifos = 1
+fs.protected_hardlinks = 1
+fs.protected_regular = 2
+fs.protected_symlinks = 1
+fs.quota.allocated_dquots = 0
+fs.quota.cache_hits = 0
+fs.quota.drops = 0
+fs.quota.free_dquots = 0
+fs.quota.lookups = 0
+fs.quota.reads = 0
+fs.quota.syncs = 0
+fs.quota.writes = 0
+fs.suid_dumpable = 0
+fs.verity.require_signatures = 0
+fscache.object_max_active = 20
+fscache.operation_max_active = 10
+kernel.acct = 4	2	30
+kernel.acpi_video_flags = 0
+kernel.auto_msgmni = 0
+kernel.bootloader_type = 114
+kernel.bootloader_version = 2
+kernel.bpf_stats_enabled = 0
+kernel.cad_pid = 1
+kernel.cap_last_cap = 37
+kernel.core_pattern = core
+kernel.core_pipe_limit = 0
+kernel.core_uses_pid = 0
+kernel.ctrl-alt-del = 0
+kernel.dmesg_restrict = 0
+kernel.domainname = (none)
+kernel.firmware_config.force_sysfs_fallback = 0
+kernel.firmware_config.ignore_sysfs_fallback = 0
+kernel.ftrace_dump_on_oops = 0
+kernel.ftrace_enabled = 1
+kernel.hardlockup_all_cpu_backtrace = 0
+kernel.hardlockup_panic = 0
+kernel.hostname = node-10.pcm-test-7.infosphere-pg0.utah.cloudlab.us
+kernel.hotplug = 
+kernel.hung_task_check_count = 4194304
+kernel.hung_task_check_interval_secs = 0
+kernel.hung_task_panic = 0
+kernel.hung_task_timeout_secs = 120
+kernel.hung_task_warnings = 10
+kernel.io_delay_type = 1
+kernel.kexec_load_disabled = 0
+kernel.keys.gc_delay = 300
+kernel.keys.maxbytes = 20000
+kernel.keys.maxkeys = 200
+kernel.keys.persistent_keyring_expiry = 259200
+kernel.keys.root_maxbytes = 25000000
+kernel.keys.root_maxkeys = 1000000
+kernel.kptr_restrict = 1
+kernel.max_lock_depth = 1024
+kernel.modprobe = /sbin/modprobe
+kernel.modules_disabled = 0
+kernel.msg_next_id = -1
+kernel.msgmax = 8192
+kernel.msgmnb = 16384
+kernel.msgmni = 32000
+kernel.ngroups_max = 65536
+kernel.nmi_watchdog = 1
+kernel.ns_last_pid = 1523
+kernel.numa_balancing = 0
+kernel.numa_balancing_scan_delay_ms = 1000
+kernel.numa_balancing_scan_period_max_ms = 60000
+kernel.numa_balancing_scan_period_min_ms = 1000
+kernel.numa_balancing_scan_size_mb = 256
+kernel.osrelease = 5.4.0-91-generic
+kernel.ostype = Linux
+kernel.overflowgid = 65534
+kernel.overflowuid = 65534
+kernel.panic = 0
+kernel.panic_on_io_nmi = 0
+kernel.panic_on_oops = 0
+kernel.panic_on_rcu_stall = 0
+kernel.panic_on_unrecovered_nmi = 0
+kernel.panic_on_warn = 0
+kernel.panic_print = 0
+kernel.perf_cpu_time_max_percent = 25
+kernel.perf_event_max_contexts_per_stack = 8
+kernel.perf_event_max_sample_rate = 100000
+kernel.perf_event_max_stack = 127
+kernel.perf_event_mlock_kb = 516
+kernel.perf_event_paranoid = 3
+kernel.pid_max = 4194304
+kernel.poweroff_cmd = /sbin/poweroff
+kernel.print-fatal-signals = 0
+kernel.printk = 4	4	1	7
+kernel.printk_delay = 0
+kernel.printk_devkmsg = on
+kernel.printk_ratelimit = 5
+kernel.printk_ratelimit_burst = 10
+kernel.pty.max = 4096
+kernel.pty.nr = 0
+kernel.pty.reserve = 1024
+kernel.random.boot_id = cbd35d99-861a-4018-92f0-d2af9a95c6c2
+kernel.random.entropy_avail = 1344
+kernel.random.poolsize = 4096
+kernel.random.read_wakeup_threshold = 64
+kernel.random.urandom_min_reseed_secs = 60
+kernel.random.uuid = 7b8a6114-2d7e-4984-9cac-c4313ace80c9
+kernel.random.write_wakeup_threshold = 896
+kernel.randomize_va_space = 2
+kernel.real-root-dev = 0
+kernel.sched_autogroup_enabled = 1
+kernel.sched_cfs_bandwidth_slice_us = 5000
+kernel.sched_child_runs_first = 0
+kernel.sched_domain.cpu0.domain0.busy_factor = 32
+kernel.sched_domain.cpu0.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu0.domain0.flags = 4783
+kernel.sched_domain.cpu0.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu0.domain0.max_interval = 4
+kernel.sched_domain.cpu0.domain0.max_newidle_lb_cost = 6123
+kernel.sched_domain.cpu0.domain0.min_interval = 2
+kernel.sched_domain.cpu0.domain0.name = SMT
+kernel.sched_domain.cpu0.domain1.busy_factor = 32
+kernel.sched_domain.cpu0.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu0.domain1.flags = 4655
+kernel.sched_domain.cpu0.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu0.domain1.max_interval = 40
+kernel.sched_domain.cpu0.domain1.max_newidle_lb_cost = 24463
+kernel.sched_domain.cpu0.domain1.min_interval = 20
+kernel.sched_domain.cpu0.domain1.name = MC
+kernel.sched_domain.cpu1.domain0.busy_factor = 32
+kernel.sched_domain.cpu1.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu1.domain0.flags = 4783
+kernel.sched_domain.cpu1.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu1.domain0.max_interval = 4
+kernel.sched_domain.cpu1.domain0.max_newidle_lb_cost = 3927
+kernel.sched_domain.cpu1.domain0.min_interval = 2
+kernel.sched_domain.cpu1.domain0.name = SMT
+kernel.sched_domain.cpu1.domain1.busy_factor = 32
+kernel.sched_domain.cpu1.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu1.domain1.flags = 4655
+kernel.sched_domain.cpu1.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu1.domain1.max_interval = 40
+kernel.sched_domain.cpu1.domain1.max_newidle_lb_cost = 12860
+kernel.sched_domain.cpu1.domain1.min_interval = 20
+kernel.sched_domain.cpu1.domain1.name = MC
+kernel.sched_domain.cpu10.domain0.busy_factor = 32
+kernel.sched_domain.cpu10.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu10.domain0.flags = 4783
+kernel.sched_domain.cpu10.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu10.domain0.max_interval = 4
+kernel.sched_domain.cpu10.domain0.max_newidle_lb_cost = 5989
+kernel.sched_domain.cpu10.domain0.min_interval = 2
+kernel.sched_domain.cpu10.domain0.name = SMT
+kernel.sched_domain.cpu10.domain1.busy_factor = 32
+kernel.sched_domain.cpu10.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu10.domain1.flags = 4655
+kernel.sched_domain.cpu10.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu10.domain1.max_interval = 40
+kernel.sched_domain.cpu10.domain1.max_newidle_lb_cost = 10818
+kernel.sched_domain.cpu10.domain1.min_interval = 20
+kernel.sched_domain.cpu10.domain1.name = MC
+kernel.sched_domain.cpu11.domain0.busy_factor = 32
+kernel.sched_domain.cpu11.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu11.domain0.flags = 4783
+kernel.sched_domain.cpu11.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu11.domain0.max_interval = 4
+kernel.sched_domain.cpu11.domain0.max_newidle_lb_cost = 8690
+kernel.sched_domain.cpu11.domain0.min_interval = 2
+kernel.sched_domain.cpu11.domain0.name = SMT
+kernel.sched_domain.cpu11.domain1.busy_factor = 32
+kernel.sched_domain.cpu11.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu11.domain1.flags = 4655
+kernel.sched_domain.cpu11.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu11.domain1.max_interval = 40
+kernel.sched_domain.cpu11.domain1.max_newidle_lb_cost = 110848
+kernel.sched_domain.cpu11.domain1.min_interval = 20
+kernel.sched_domain.cpu11.domain1.name = MC
+kernel.sched_domain.cpu12.domain0.busy_factor = 32
+kernel.sched_domain.cpu12.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu12.domain0.flags = 4783
+kernel.sched_domain.cpu12.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu12.domain0.max_interval = 4
+kernel.sched_domain.cpu12.domain0.max_newidle_lb_cost = 2959
+kernel.sched_domain.cpu12.domain0.min_interval = 2
+kernel.sched_domain.cpu12.domain0.name = SMT
+kernel.sched_domain.cpu12.domain1.busy_factor = 32
+kernel.sched_domain.cpu12.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu12.domain1.flags = 4655
+kernel.sched_domain.cpu12.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu12.domain1.max_interval = 40
+kernel.sched_domain.cpu12.domain1.max_newidle_lb_cost = 13472
+kernel.sched_domain.cpu12.domain1.min_interval = 20
+kernel.sched_domain.cpu12.domain1.name = MC
+kernel.sched_domain.cpu13.domain0.busy_factor = 32
+kernel.sched_domain.cpu13.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu13.domain0.flags = 4783
+kernel.sched_domain.cpu13.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu13.domain0.max_interval = 4
+kernel.sched_domain.cpu13.domain0.max_newidle_lb_cost = 6362
+kernel.sched_domain.cpu13.domain0.min_interval = 2
+kernel.sched_domain.cpu13.domain0.name = SMT
+kernel.sched_domain.cpu13.domain1.busy_factor = 32
+kernel.sched_domain.cpu13.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu13.domain1.flags = 4655
+kernel.sched_domain.cpu13.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu13.domain1.max_interval = 40
+kernel.sched_domain.cpu13.domain1.max_newidle_lb_cost = 10800
+kernel.sched_domain.cpu13.domain1.min_interval = 20
+kernel.sched_domain.cpu13.domain1.name = MC
+kernel.sched_domain.cpu14.domain0.busy_factor = 32
+kernel.sched_domain.cpu14.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu14.domain0.flags = 4783
+kernel.sched_domain.cpu14.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu14.domain0.max_interval = 4
+kernel.sched_domain.cpu14.domain0.max_newidle_lb_cost = 8580
+kernel.sched_domain.cpu14.domain0.min_interval = 2
+kernel.sched_domain.cpu14.domain0.name = SMT
+kernel.sched_domain.cpu14.domain1.busy_factor = 32
+kernel.sched_domain.cpu14.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu14.domain1.flags = 4655
+kernel.sched_domain.cpu14.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu14.domain1.max_interval = 40
+kernel.sched_domain.cpu14.domain1.max_newidle_lb_cost = 22361
+kernel.sched_domain.cpu14.domain1.min_interval = 20
+kernel.sched_domain.cpu14.domain1.name = MC
+kernel.sched_domain.cpu15.domain0.busy_factor = 32
+kernel.sched_domain.cpu15.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu15.domain0.flags = 4783
+kernel.sched_domain.cpu15.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu15.domain0.max_interval = 4
+kernel.sched_domain.cpu15.domain0.max_newidle_lb_cost = 6606
+kernel.sched_domain.cpu15.domain0.min_interval = 2
+kernel.sched_domain.cpu15.domain0.name = SMT
+kernel.sched_domain.cpu15.domain1.busy_factor = 32
+kernel.sched_domain.cpu15.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu15.domain1.flags = 4655
+kernel.sched_domain.cpu15.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu15.domain1.max_interval = 40
+kernel.sched_domain.cpu15.domain1.max_newidle_lb_cost = 11238
+kernel.sched_domain.cpu15.domain1.min_interval = 20
+kernel.sched_domain.cpu15.domain1.name = MC
+kernel.sched_domain.cpu16.domain0.busy_factor = 32
+kernel.sched_domain.cpu16.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu16.domain0.flags = 4783
+kernel.sched_domain.cpu16.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu16.domain0.max_interval = 4
+kernel.sched_domain.cpu16.domain0.max_newidle_lb_cost = 9202
+kernel.sched_domain.cpu16.domain0.min_interval = 2
+kernel.sched_domain.cpu16.domain0.name = SMT
+kernel.sched_domain.cpu16.domain1.busy_factor = 32
+kernel.sched_domain.cpu16.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu16.domain1.flags = 4655
+kernel.sched_domain.cpu16.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu16.domain1.max_interval = 40
+kernel.sched_domain.cpu16.domain1.max_newidle_lb_cost = 13442
+kernel.sched_domain.cpu16.domain1.min_interval = 20
+kernel.sched_domain.cpu16.domain1.name = MC
+kernel.sched_domain.cpu17.domain0.busy_factor = 32
+kernel.sched_domain.cpu17.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu17.domain0.flags = 4783
+kernel.sched_domain.cpu17.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu17.domain0.max_interval = 4
+kernel.sched_domain.cpu17.domain0.max_newidle_lb_cost = 12360
+kernel.sched_domain.cpu17.domain0.min_interval = 2
+kernel.sched_domain.cpu17.domain0.name = SMT
+kernel.sched_domain.cpu17.domain1.busy_factor = 32
+kernel.sched_domain.cpu17.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu17.domain1.flags = 4655
+kernel.sched_domain.cpu17.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu17.domain1.max_interval = 40
+kernel.sched_domain.cpu17.domain1.max_newidle_lb_cost = 14974
+kernel.sched_domain.cpu17.domain1.min_interval = 20
+kernel.sched_domain.cpu17.domain1.name = MC
+kernel.sched_domain.cpu18.domain0.busy_factor = 32
+kernel.sched_domain.cpu18.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu18.domain0.flags = 4783
+kernel.sched_domain.cpu18.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu18.domain0.max_interval = 4
+kernel.sched_domain.cpu18.domain0.max_newidle_lb_cost = 3227
+kernel.sched_domain.cpu18.domain0.min_interval = 2
+kernel.sched_domain.cpu18.domain0.name = SMT
+kernel.sched_domain.cpu18.domain1.busy_factor = 32
+kernel.sched_domain.cpu18.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu18.domain1.flags = 4655
+kernel.sched_domain.cpu18.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu18.domain1.max_interval = 40
+kernel.sched_domain.cpu18.domain1.max_newidle_lb_cost = 8740
+kernel.sched_domain.cpu18.domain1.min_interval = 20
+kernel.sched_domain.cpu18.domain1.name = MC
+kernel.sched_domain.cpu19.domain0.busy_factor = 32
+kernel.sched_domain.cpu19.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu19.domain0.flags = 4783
+kernel.sched_domain.cpu19.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu19.domain0.max_interval = 4
+kernel.sched_domain.cpu19.domain0.max_newidle_lb_cost = 7129
+kernel.sched_domain.cpu19.domain0.min_interval = 2
+kernel.sched_domain.cpu19.domain0.name = SMT
+kernel.sched_domain.cpu19.domain1.busy_factor = 32
+kernel.sched_domain.cpu19.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu19.domain1.flags = 4655
+kernel.sched_domain.cpu19.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu19.domain1.max_interval = 40
+kernel.sched_domain.cpu19.domain1.max_newidle_lb_cost = 14181
+kernel.sched_domain.cpu19.domain1.min_interval = 20
+kernel.sched_domain.cpu19.domain1.name = MC
+kernel.sched_domain.cpu2.domain0.busy_factor = 32
+kernel.sched_domain.cpu2.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu2.domain0.flags = 4783
+kernel.sched_domain.cpu2.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu2.domain0.max_interval = 4
+kernel.sched_domain.cpu2.domain0.max_newidle_lb_cost = 7059
+kernel.sched_domain.cpu2.domain0.min_interval = 2
+kernel.sched_domain.cpu2.domain0.name = SMT
+kernel.sched_domain.cpu2.domain1.busy_factor = 32
+kernel.sched_domain.cpu2.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu2.domain1.flags = 4655
+kernel.sched_domain.cpu2.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu2.domain1.max_interval = 40
+kernel.sched_domain.cpu2.domain1.max_newidle_lb_cost = 18138
+kernel.sched_domain.cpu2.domain1.min_interval = 20
+kernel.sched_domain.cpu2.domain1.name = MC
+kernel.sched_domain.cpu3.domain0.busy_factor = 32
+kernel.sched_domain.cpu3.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu3.domain0.flags = 4783
+kernel.sched_domain.cpu3.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu3.domain0.max_interval = 4
+kernel.sched_domain.cpu3.domain0.max_newidle_lb_cost = 3503
+kernel.sched_domain.cpu3.domain0.min_interval = 2
+kernel.sched_domain.cpu3.domain0.name = SMT
+kernel.sched_domain.cpu3.domain1.busy_factor = 32
+kernel.sched_domain.cpu3.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu3.domain1.flags = 4655
+kernel.sched_domain.cpu3.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu3.domain1.max_interval = 40
+kernel.sched_domain.cpu3.domain1.max_newidle_lb_cost = 14653
+kernel.sched_domain.cpu3.domain1.min_interval = 20
+kernel.sched_domain.cpu3.domain1.name = MC
+kernel.sched_domain.cpu4.domain0.busy_factor = 32
+kernel.sched_domain.cpu4.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu4.domain0.flags = 4783
+kernel.sched_domain.cpu4.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu4.domain0.max_interval = 4
+kernel.sched_domain.cpu4.domain0.max_newidle_lb_cost = 9275
+kernel.sched_domain.cpu4.domain0.min_interval = 2
+kernel.sched_domain.cpu4.domain0.name = SMT
+kernel.sched_domain.cpu4.domain1.busy_factor = 32
+kernel.sched_domain.cpu4.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu4.domain1.flags = 4655
+kernel.sched_domain.cpu4.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu4.domain1.max_interval = 40
+kernel.sched_domain.cpu4.domain1.max_newidle_lb_cost = 33567
+kernel.sched_domain.cpu4.domain1.min_interval = 20
+kernel.sched_domain.cpu4.domain1.name = MC
+kernel.sched_domain.cpu5.domain0.busy_factor = 32
+kernel.sched_domain.cpu5.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu5.domain0.flags = 4783
+kernel.sched_domain.cpu5.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu5.domain0.max_interval = 4
+kernel.sched_domain.cpu5.domain0.max_newidle_lb_cost = 9193
+kernel.sched_domain.cpu5.domain0.min_interval = 2
+kernel.sched_domain.cpu5.domain0.name = SMT
+kernel.sched_domain.cpu5.domain1.busy_factor = 32
+kernel.sched_domain.cpu5.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu5.domain1.flags = 4655
+kernel.sched_domain.cpu5.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu5.domain1.max_interval = 40
+kernel.sched_domain.cpu5.domain1.max_newidle_lb_cost = 17609
+kernel.sched_domain.cpu5.domain1.min_interval = 20
+kernel.sched_domain.cpu5.domain1.name = MC
+kernel.sched_domain.cpu6.domain0.busy_factor = 32
+kernel.sched_domain.cpu6.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu6.domain0.flags = 4783
+kernel.sched_domain.cpu6.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu6.domain0.max_interval = 4
+kernel.sched_domain.cpu6.domain0.max_newidle_lb_cost = 7229
+kernel.sched_domain.cpu6.domain0.min_interval = 2
+kernel.sched_domain.cpu6.domain0.name = SMT
+kernel.sched_domain.cpu6.domain1.busy_factor = 32
+kernel.sched_domain.cpu6.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu6.domain1.flags = 4655
+kernel.sched_domain.cpu6.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu6.domain1.max_interval = 40
+kernel.sched_domain.cpu6.domain1.max_newidle_lb_cost = 16557
+kernel.sched_domain.cpu6.domain1.min_interval = 20
+kernel.sched_domain.cpu6.domain1.name = MC
+kernel.sched_domain.cpu7.domain0.busy_factor = 32
+kernel.sched_domain.cpu7.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu7.domain0.flags = 4783
+kernel.sched_domain.cpu7.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu7.domain0.max_interval = 4
+kernel.sched_domain.cpu7.domain0.max_newidle_lb_cost = 7010
+kernel.sched_domain.cpu7.domain0.min_interval = 2
+kernel.sched_domain.cpu7.domain0.name = SMT
+kernel.sched_domain.cpu7.domain1.busy_factor = 32
+kernel.sched_domain.cpu7.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu7.domain1.flags = 4655
+kernel.sched_domain.cpu7.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu7.domain1.max_interval = 40
+kernel.sched_domain.cpu7.domain1.max_newidle_lb_cost = 22688
+kernel.sched_domain.cpu7.domain1.min_interval = 20
+kernel.sched_domain.cpu7.domain1.name = MC
+kernel.sched_domain.cpu8.domain0.busy_factor = 32
+kernel.sched_domain.cpu8.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu8.domain0.flags = 4783
+kernel.sched_domain.cpu8.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu8.domain0.max_interval = 4
+kernel.sched_domain.cpu8.domain0.max_newidle_lb_cost = 7849
+kernel.sched_domain.cpu8.domain0.min_interval = 2
+kernel.sched_domain.cpu8.domain0.name = SMT
+kernel.sched_domain.cpu8.domain1.busy_factor = 32
+kernel.sched_domain.cpu8.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu8.domain1.flags = 4655
+kernel.sched_domain.cpu8.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu8.domain1.max_interval = 40
+kernel.sched_domain.cpu8.domain1.max_newidle_lb_cost = 11893
+kernel.sched_domain.cpu8.domain1.min_interval = 20
+kernel.sched_domain.cpu8.domain1.name = MC
+kernel.sched_domain.cpu9.domain0.busy_factor = 32
+kernel.sched_domain.cpu9.domain0.cache_nice_tries = 0
+kernel.sched_domain.cpu9.domain0.flags = 4783
+kernel.sched_domain.cpu9.domain0.imbalance_pct = 110
+kernel.sched_domain.cpu9.domain0.max_interval = 4
+kernel.sched_domain.cpu9.domain0.max_newidle_lb_cost = 3466
+kernel.sched_domain.cpu9.domain0.min_interval = 2
+kernel.sched_domain.cpu9.domain0.name = SMT
+kernel.sched_domain.cpu9.domain1.busy_factor = 32
+kernel.sched_domain.cpu9.domain1.cache_nice_tries = 1
+kernel.sched_domain.cpu9.domain1.flags = 4655
+kernel.sched_domain.cpu9.domain1.imbalance_pct = 117
+kernel.sched_domain.cpu9.domain1.max_interval = 40
+kernel.sched_domain.cpu9.domain1.max_newidle_lb_cost = 32684
+kernel.sched_domain.cpu9.domain1.min_interval = 20
+kernel.sched_domain.cpu9.domain1.name = MC
+kernel.sched_latency_ns = 24000000
+kernel.sched_migration_cost_ns = 500000
+kernel.sched_min_granularity_ns = 3000000
+kernel.sched_nr_migrate = 32
+kernel.sched_rr_timeslice_ms = 100
+kernel.sched_rt_period_us = 1000000
+kernel.sched_rt_runtime_us = 950000
+kernel.sched_schedstats = 0
+kernel.sched_tunable_scaling = 1
+kernel.sched_util_clamp_max = 1024
+kernel.sched_util_clamp_min = 1024
+kernel.sched_wakeup_granularity_ns = 4000000
+kernel.seccomp.actions_avail = kill_process kill_thread trap errno user_notif trace log allow
+kernel.seccomp.actions_logged = kill_process kill_thread trap errno user_notif trace log
+kernel.sem = 32000	1024000000	500	32000
+kernel.sem_next_id = -1
+kernel.sg-big-buff = 32768
+kernel.shm_next_id = -1
+kernel.shm_rmid_forced = 0
+kernel.shmall = 18446744073692774399
+kernel.shmmax = 18446744073692774399
+kernel.shmmni = 4096
+kernel.soft_watchdog = 1
+kernel.softlockup_all_cpu_backtrace = 0
+kernel.softlockup_panic = 0
+kernel.stack_tracer_enabled = 0
+kernel.sysctl_writes_strict = 1
+kernel.sysrq = 176
+kernel.tainted = 12288
+kernel.threads-max = 513128
+kernel.timer_migration = 1
+kernel.traceoff_on_warning = 0
+kernel.tracepoint_printk = 0
+kernel.unknown_nmi_panic = 0
+kernel.unprivileged_bpf_disabled = 0
+kernel.unprivileged_userns_apparmor_policy = 1
+kernel.unprivileged_userns_clone = 1
+kernel.usermodehelper.bset = 4294967295	63
+kernel.usermodehelper.inheritable = 4294967295	63
+kernel.version = #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021
+kernel.watchdog = 1
+kernel.watchdog_cpumask = 0-19
+kernel.watchdog_thresh = 10
+kernel.yama.ptrace_scope = 1
+net.core.bpf_jit_enable = 1
+net.core.bpf_jit_harden = 0
+net.core.bpf_jit_kallsyms = 0
+net.core.bpf_jit_limit = 264241152
+net.core.busy_poll = 0
+net.core.busy_read = 0
+net.core.default_qdisc = fq_codel
+net.core.dev_weight = 64
+net.core.dev_weight_rx_bias = 1
+net.core.dev_weight_tx_bias = 1
+net.core.devconf_inherit_init_net = 0
+net.core.fb_tunnels_only_for_init_net = 0
+net.core.flow_limit_cpu_bitmap = 00000
+net.core.flow_limit_table_len = 4096
+net.core.gro_normal_batch = 8
+net.core.high_order_alloc_disable = 0
+net.core.max_skb_frags = 17
+net.core.message_burst = 10
+net.core.message_cost = 5
+net.core.netdev_budget = 300
+net.core.netdev_budget_usecs = 8000
+net.core.netdev_max_backlog = 1000
+net.core.netdev_rss_key = ad:8c:b6:bd:2e:f1:34:28:03:4d:03:0c:29:b7:52:21:4a:83:eb:3c:3b:22:9b:8b:7e:37:63:9e:bd:53:86:3d:e7:2e:dd:98:64:5e:8d:d2:ee:35:94:43:c4:d4:da:c3:f0:eb:62:8f
+net.core.netdev_tstamp_prequeue = 1
+net.core.optmem_max = 20480
+net.core.rmem_default = 212992
+net.core.rmem_max = 212992
+net.core.rps_sock_flow_entries = 0
+net.core.somaxconn = 4096
+net.core.tstamp_allow_data = 1
+net.core.warnings = 0
+net.core.wmem_default = 212992
+net.core.wmem_max = 212992
+net.core.xfrm_acq_expires = 30
+net.core.xfrm_aevent_etime = 10
+net.core.xfrm_aevent_rseqth = 2
+net.core.xfrm_larval_drop = 1
+net.ipv4.cipso_cache_bucket_size = 10
+net.ipv4.cipso_cache_enable = 1
+net.ipv4.cipso_rbm_optfmt = 0
+net.ipv4.cipso_rbm_strictvalid = 1
+net.ipv4.conf.all.accept_local = 0
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.all.arp_accept = 0
+net.ipv4.conf.all.arp_announce = 0
+net.ipv4.conf.all.arp_filter = 0
+net.ipv4.conf.all.arp_ignore = 0
+net.ipv4.conf.all.arp_notify = 0
+net.ipv4.conf.all.bc_forwarding = 0
+net.ipv4.conf.all.bootp_relay = 0
+net.ipv4.conf.all.disable_policy = 0
+net.ipv4.conf.all.disable_xfrm = 0
+net.ipv4.conf.all.drop_gratuitous_arp = 0
+net.ipv4.conf.all.drop_unicast_in_l2_multicast = 0
+net.ipv4.conf.all.force_igmp_version = 0
+net.ipv4.conf.all.forwarding = 1
+net.ipv4.conf.all.igmpv2_unsolicited_report_interval = 10000
+net.ipv4.conf.all.igmpv3_unsolicited_report_interval = 1000
+net.ipv4.conf.all.ignore_routes_with_linkdown = 0
+net.ipv4.conf.all.log_martians = 0
+net.ipv4.conf.all.mc_forwarding = 0
+net.ipv4.conf.all.medium_id = 0
+net.ipv4.conf.all.promote_secondaries = 0
+net.ipv4.conf.all.proxy_arp = 0
+net.ipv4.conf.all.proxy_arp_pvlan = 0
+net.ipv4.conf.all.route_localnet = 0
+net.ipv4.conf.all.rp_filter = 0
+net.ipv4.conf.all.secure_redirects = 1
+net.ipv4.conf.all.send_redirects = 1
+net.ipv4.conf.all.shared_media = 1
+net.ipv4.conf.all.src_valid_mark = 0
+net.ipv4.conf.all.tag = 0
+net.ipv4.conf.default.accept_local = 0
+net.ipv4.conf.default.accept_redirects = 1
+net.ipv4.conf.default.accept_source_route = 1
+net.ipv4.conf.default.arp_accept = 0
+net.ipv4.conf.default.arp_announce = 0
+net.ipv4.conf.default.arp_filter = 0
+net.ipv4.conf.default.arp_ignore = 0
+net.ipv4.conf.default.arp_notify = 0
+net.ipv4.conf.default.bc_forwarding = 0
+net.ipv4.conf.default.bootp_relay = 0
+net.ipv4.conf.default.disable_policy = 0
+net.ipv4.conf.default.disable_xfrm = 0
+net.ipv4.conf.default.drop_gratuitous_arp = 0
+net.ipv4.conf.default.drop_unicast_in_l2_multicast = 0
+net.ipv4.conf.default.force_igmp_version = 0
+net.ipv4.conf.default.forwarding = 1
+net.ipv4.conf.default.igmpv2_unsolicited_report_interval = 10000
+net.ipv4.conf.default.igmpv3_unsolicited_report_interval = 1000
+net.ipv4.conf.default.ignore_routes_with_linkdown = 0
+net.ipv4.conf.default.log_martians = 0
+net.ipv4.conf.default.mc_forwarding = 0
+net.ipv4.conf.default.medium_id = 0
+net.ipv4.conf.default.promote_secondaries = 1
+net.ipv4.conf.default.proxy_arp = 0
+net.ipv4.conf.default.proxy_arp_pvlan = 0
+net.ipv4.conf.default.route_localnet = 0
+net.ipv4.conf.default.rp_filter = 0
+net.ipv4.conf.default.secure_redirects = 1
+net.ipv4.conf.default.send_redirects = 1
+net.ipv4.conf.default.shared_media = 1
+net.ipv4.conf.default.src_valid_mark = 0
+net.ipv4.conf.default.tag = 0
+net.ipv4.conf.eno49.accept_local = 0
+net.ipv4.conf.eno49.accept_redirects = 1
+net.ipv4.conf.eno49.accept_source_route = 1
+net.ipv4.conf.eno49.arp_accept = 0
+net.ipv4.conf.eno49.arp_announce = 0
+net.ipv4.conf.eno49.arp_filter = 0
+net.ipv4.conf.eno49.arp_ignore = 0
+net.ipv4.conf.eno49.arp_notify = 0
+net.ipv4.conf.eno49.bc_forwarding = 0
+net.ipv4.conf.eno49.bootp_relay = 0
+net.ipv4.conf.eno49.disable_policy = 0
+net.ipv4.conf.eno49.disable_xfrm = 0
+net.ipv4.conf.eno49.drop_gratuitous_arp = 0
+net.ipv4.conf.eno49.drop_unicast_in_l2_multicast = 0
+net.ipv4.conf.eno49.force_igmp_version = 0
+net.ipv4.conf.eno49.forwarding = 1
+net.ipv4.conf.eno49.igmpv2_unsolicited_report_interval = 10000
+net.ipv4.conf.eno49.igmpv3_unsolicited_report_interval = 1000
+net.ipv4.conf.eno49.ignore_routes_with_linkdown = 0
+net.ipv4.conf.eno49.log_martians = 0
+net.ipv4.conf.eno49.mc_forwarding = 0
+net.ipv4.conf.eno49.medium_id = 0
+net.ipv4.conf.eno49.promote_secondaries = 1
+net.ipv4.conf.eno49.proxy_arp = 0
+net.ipv4.conf.eno49.proxy_arp_pvlan = 0
+net.ipv4.conf.eno49.route_localnet = 0
+net.ipv4.conf.eno49.rp_filter = 0
+net.ipv4.conf.eno49.secure_redirects = 1
+net.ipv4.conf.eno49.send_redirects = 1
+net.ipv4.conf.eno49.shared_media = 1
+net.ipv4.conf.eno49.src_valid_mark = 0
+net.ipv4.conf.eno49.tag = 0
+net.ipv4.conf.eno50.accept_local = 0
+net.ipv4.conf.eno50.accept_redirects = 1
+net.ipv4.conf.eno50.accept_source_route = 1
+net.ipv4.conf.eno50.arp_accept = 0
+net.ipv4.conf.eno50.arp_announce = 0
+net.ipv4.conf.eno50.arp_filter = 0
+net.ipv4.conf.eno50.arp_ignore = 0
+net.ipv4.conf.eno50.arp_notify = 0
+net.ipv4.conf.eno50.bc_forwarding = 0
+net.ipv4.conf.eno50.bootp_relay = 0
+net.ipv4.conf.eno50.disable_policy = 0
+net.ipv4.conf.eno50.disable_xfrm = 0
+net.ipv4.conf.eno50.drop_gratuitous_arp = 0
+net.ipv4.conf.eno50.drop_unicast_in_l2_multicast = 0
+net.ipv4.conf.eno50.force_igmp_version = 0
+net.ipv4.conf.eno50.forwarding = 1
+net.ipv4.conf.eno50.igmpv2_unsolicited_report_interval = 10000
+net.ipv4.conf.eno50.igmpv3_unsolicited_report_interval = 1000
+net.ipv4.conf.eno50.ignore_routes_with_linkdown = 0
+net.ipv4.conf.eno50.log_martians = 0
+net.ipv4.conf.eno50.mc_forwarding = 0
+net.ipv4.conf.eno50.medium_id = 0
+net.ipv4.conf.eno50.promote_secondaries = 1
+net.ipv4.conf.eno50.proxy_arp = 0
+net.ipv4.conf.eno50.proxy_arp_pvlan = 0
+net.ipv4.conf.eno50.route_localnet = 0
+net.ipv4.conf.eno50.rp_filter = 0
+net.ipv4.conf.eno50.secure_redirects = 1
+net.ipv4.conf.eno50.send_redirects = 1
+net.ipv4.conf.eno50.shared_media = 1
+net.ipv4.conf.eno50.src_valid_mark = 0
+net.ipv4.conf.eno50.tag = 0
+net.ipv4.conf.ens1f0.accept_local = 0
+net.ipv4.conf.ens1f0.accept_redirects = 1
+net.ipv4.conf.ens1f0.accept_source_route = 1
+net.ipv4.conf.ens1f0.arp_accept = 0
+net.ipv4.conf.ens1f0.arp_announce = 0
+net.ipv4.conf.ens1f0.arp_filter = 0
+net.ipv4.conf.ens1f0.arp_ignore = 0
+net.ipv4.conf.ens1f0.arp_notify = 0
+net.ipv4.conf.ens1f0.bc_forwarding = 0
+net.ipv4.conf.ens1f0.bootp_relay = 0
+net.ipv4.conf.ens1f0.disable_policy = 0
+net.ipv4.conf.ens1f0.disable_xfrm = 0
+net.ipv4.conf.ens1f0.drop_gratuitous_arp = 0
+net.ipv4.conf.ens1f0.drop_unicast_in_l2_multicast = 0
+net.ipv4.conf.ens1f0.force_igmp_version = 0
+net.ipv4.conf.ens1f0.forwarding = 1
+net.ipv4.conf.ens1f0.igmpv2_unsolicited_report_interval = 10000
+net.ipv4.conf.ens1f0.igmpv3_unsolicited_report_interval = 1000
+net.ipv4.conf.ens1f0.ignore_routes_with_linkdown = 0
+net.ipv4.conf.ens1f0.log_martians = 0
+net.ipv4.conf.ens1f0.mc_forwarding = 0
+net.ipv4.conf.ens1f0.medium_id = 0
+net.ipv4.conf.ens1f0.promote_secondaries = 1
+net.ipv4.conf.ens1f0.proxy_arp = 0
+net.ipv4.conf.ens1f0.proxy_arp_pvlan = 0
+net.ipv4.conf.ens1f0.route_localnet = 0
+net.ipv4.conf.ens1f0.rp_filter = 0
+net.ipv4.conf.ens1f0.secure_redirects = 1
+net.ipv4.conf.ens1f0.send_redirects = 1
+net.ipv4.conf.ens1f0.shared_media = 1
+net.ipv4.conf.ens1f0.src_valid_mark = 0
+net.ipv4.conf.ens1f0.tag = 0
+net.ipv4.conf.ens1f1.accept_local = 0
+net.ipv4.conf.ens1f1.accept_redirects = 1
+net.ipv4.conf.ens1f1.accept_source_route = 1
+net.ipv4.conf.ens1f1.arp_accept = 0
+net.ipv4.conf.ens1f1.arp_announce = 0
+net.ipv4.conf.ens1f1.arp_filter = 0
+net.ipv4.conf.ens1f1.arp_ignore = 0
+net.ipv4.conf.ens1f1.arp_notify = 0
+net.ipv4.conf.ens1f1.bc_forwarding = 0
+net.ipv4.conf.ens1f1.bootp_relay = 0
+net.ipv4.conf.ens1f1.disable_policy = 0
+net.ipv4.conf.ens1f1.disable_xfrm = 0
+net.ipv4.conf.ens1f1.drop_gratuitous_arp = 0
+net.ipv4.conf.ens1f1.drop_unicast_in_l2_multicast = 0
+net.ipv4.conf.ens1f1.force_igmp_version = 0
+net.ipv4.conf.ens1f1.forwarding = 1
+net.ipv4.conf.ens1f1.igmpv2_unsolicited_report_interval = 10000
+net.ipv4.conf.ens1f1.igmpv3_unsolicited_report_interval = 1000
+net.ipv4.conf.ens1f1.ignore_routes_with_linkdown = 0
+net.ipv4.conf.ens1f1.log_martians = 0
+net.ipv4.conf.ens1f1.mc_forwarding = 0
+net.ipv4.conf.ens1f1.medium_id = 0
+net.ipv4.conf.ens1f1.promote_secondaries = 1
+net.ipv4.conf.ens1f1.proxy_arp = 0
+net.ipv4.conf.ens1f1.proxy_arp_pvlan = 0
+net.ipv4.conf.ens1f1.route_localnet = 0
+net.ipv4.conf.ens1f1.rp_filter = 0
+net.ipv4.conf.ens1f1.secure_redirects = 1
+net.ipv4.conf.ens1f1.send_redirects = 1
+net.ipv4.conf.ens1f1.shared_media = 1
+net.ipv4.conf.ens1f1.src_valid_mark = 0
+net.ipv4.conf.ens1f1.tag = 0
+net.ipv4.conf.lo.accept_local = 0
+net.ipv4.conf.lo.accept_redirects = 1
+net.ipv4.conf.lo.accept_source_route = 1
+net.ipv4.conf.lo.arp_accept = 0
+net.ipv4.conf.lo.arp_announce = 0
+net.ipv4.conf.lo.arp_filter = 0
+net.ipv4.conf.lo.arp_ignore = 0
+net.ipv4.conf.lo.arp_notify = 0
+net.ipv4.conf.lo.bc_forwarding = 0
+net.ipv4.conf.lo.bootp_relay = 0
+net.ipv4.conf.lo.disable_policy = 1
+net.ipv4.conf.lo.disable_xfrm = 1
+net.ipv4.conf.lo.drop_gratuitous_arp = 0
+net.ipv4.conf.lo.drop_unicast_in_l2_multicast = 0
+net.ipv4.conf.lo.force_igmp_version = 0
+net.ipv4.conf.lo.forwarding = 1
+net.ipv4.conf.lo.igmpv2_unsolicited_report_interval = 10000
+net.ipv4.conf.lo.igmpv3_unsolicited_report_interval = 1000
+net.ipv4.conf.lo.ignore_routes_with_linkdown = 0
+net.ipv4.conf.lo.log_martians = 0
+net.ipv4.conf.lo.mc_forwarding = 0
+net.ipv4.conf.lo.medium_id = 0
+net.ipv4.conf.lo.promote_secondaries = 1
+net.ipv4.conf.lo.proxy_arp = 0
+net.ipv4.conf.lo.proxy_arp_pvlan = 0
+net.ipv4.conf.lo.route_localnet = 0
+net.ipv4.conf.lo.rp_filter = 0
+net.ipv4.conf.lo.secure_redirects = 1
+net.ipv4.conf.lo.send_redirects = 1
+net.ipv4.conf.lo.shared_media = 1
+net.ipv4.conf.lo.src_valid_mark = 0
+net.ipv4.conf.lo.tag = 0
+net.ipv4.fib_multipath_hash_policy = 0
+net.ipv4.fib_multipath_use_neigh = 0
+net.ipv4.fib_sync_mem = 524288
+net.ipv4.fwmark_reflect = 0
+net.ipv4.icmp_echo_ignore_all = 0
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.icmp_errors_use_inbound_ifaddr = 0
+net.ipv4.icmp_ignore_bogus_error_responses = 1
+net.ipv4.icmp_ipod_enabled = 1
+net.ipv4.icmp_ipod_host = -2140234748
+net.ipv4.icmp_ipod_key = 1bdabf8ef8b92c073887fe82f0f940b6
+net.ipv4.icmp_ipod_mask = -1
+net.ipv4.icmp_ipod_version = 3
+net.ipv4.icmp_msgs_burst = 50
+net.ipv4.icmp_msgs_per_sec = 1000
+net.ipv4.icmp_ratelimit = 1000
+net.ipv4.icmp_ratemask = 6168
+net.ipv4.igmp_link_local_mcast_reports = 1
+net.ipv4.igmp_max_memberships = 20
+net.ipv4.igmp_max_msf = 10
+net.ipv4.igmp_qrv = 2
+net.ipv4.inet_peer_maxttl = 600
+net.ipv4.inet_peer_minttl = 120
+net.ipv4.inet_peer_threshold = 65664
+net.ipv4.ip_default_ttl = 64
+net.ipv4.ip_dynaddr = 0
+net.ipv4.ip_early_demux = 1
+net.ipv4.ip_forward = 1
+net.ipv4.ip_forward_update_priority = 1
+net.ipv4.ip_forward_use_pmtu = 0
+net.ipv4.ip_local_port_range = 32768	60999
+net.ipv4.ip_local_reserved_ports = 
+net.ipv4.ip_no_pmtu_disc = 0
+net.ipv4.ip_nonlocal_bind = 0
+net.ipv4.ip_unprivileged_port_start = 1024
+net.ipv4.ipfrag_high_thresh = 4194304
+net.ipv4.ipfrag_low_thresh = 3145728
+net.ipv4.ipfrag_max_dist = 64
+net.ipv4.ipfrag_secret_interval = 0
+net.ipv4.ipfrag_time = 30
+net.ipv4.neigh.default.anycast_delay = 100
+net.ipv4.neigh.default.app_solicit = 0
+net.ipv4.neigh.default.base_reachable_time_ms = 30000
+net.ipv4.neigh.default.delay_first_probe_time = 5
+net.ipv4.neigh.default.gc_interval = 30
+net.ipv4.neigh.default.gc_stale_time = 60
+net.ipv4.neigh.default.gc_thresh1 = 128
+net.ipv4.neigh.default.gc_thresh2 = 512
+net.ipv4.neigh.default.gc_thresh3 = 1024
+net.ipv4.neigh.default.locktime = 100
+net.ipv4.neigh.default.mcast_resolicit = 0
+net.ipv4.neigh.default.mcast_solicit = 3
+net.ipv4.neigh.default.proxy_delay = 80
+net.ipv4.neigh.default.proxy_qlen = 64
+net.ipv4.neigh.default.retrans_time_ms = 1000
+net.ipv4.neigh.default.ucast_solicit = 3
+net.ipv4.neigh.default.unres_qlen = 101
+net.ipv4.neigh.default.unres_qlen_bytes = 212992
+net.ipv4.neigh.eno49.anycast_delay = 100
+net.ipv4.neigh.eno49.app_solicit = 0
+net.ipv4.neigh.eno49.base_reachable_time_ms = 30000
+net.ipv4.neigh.eno49.delay_first_probe_time = 5
+net.ipv4.neigh.eno49.gc_stale_time = 60
+net.ipv4.neigh.eno49.locktime = 100
+net.ipv4.neigh.eno49.mcast_resolicit = 0
+net.ipv4.neigh.eno49.mcast_solicit = 3
+net.ipv4.neigh.eno49.proxy_delay = 80
+net.ipv4.neigh.eno49.proxy_qlen = 64
+net.ipv4.neigh.eno49.retrans_time_ms = 1000
+net.ipv4.neigh.eno49.ucast_solicit = 3
+net.ipv4.neigh.eno49.unres_qlen = 101
+net.ipv4.neigh.eno49.unres_qlen_bytes = 212992
+net.ipv4.neigh.eno50.anycast_delay = 100
+net.ipv4.neigh.eno50.app_solicit = 0
+net.ipv4.neigh.eno50.base_reachable_time_ms = 30000
+net.ipv4.neigh.eno50.delay_first_probe_time = 5
+net.ipv4.neigh.eno50.gc_stale_time = 60
+net.ipv4.neigh.eno50.locktime = 100
+net.ipv4.neigh.eno50.mcast_resolicit = 0
+net.ipv4.neigh.eno50.mcast_solicit = 3
+net.ipv4.neigh.eno50.proxy_delay = 80
+net.ipv4.neigh.eno50.proxy_qlen = 64
+net.ipv4.neigh.eno50.retrans_time_ms = 1000
+net.ipv4.neigh.eno50.ucast_solicit = 3
+net.ipv4.neigh.eno50.unres_qlen = 101
+net.ipv4.neigh.eno50.unres_qlen_bytes = 212992
+net.ipv4.neigh.ens1f0.anycast_delay = 100
+net.ipv4.neigh.ens1f0.app_solicit = 0
+net.ipv4.neigh.ens1f0.base_reachable_time_ms = 30000
+net.ipv4.neigh.ens1f0.delay_first_probe_time = 5
+net.ipv4.neigh.ens1f0.gc_stale_time = 60
+net.ipv4.neigh.ens1f0.locktime = 100
+net.ipv4.neigh.ens1f0.mcast_resolicit = 0
+net.ipv4.neigh.ens1f0.mcast_solicit = 3
+net.ipv4.neigh.ens1f0.proxy_delay = 80
+net.ipv4.neigh.ens1f0.proxy_qlen = 64
+net.ipv4.neigh.ens1f0.retrans_time_ms = 1000
+net.ipv4.neigh.ens1f0.ucast_solicit = 3
+net.ipv4.neigh.ens1f0.unres_qlen = 101
+net.ipv4.neigh.ens1f0.unres_qlen_bytes = 212992
+net.ipv4.neigh.ens1f1.anycast_delay = 100
+net.ipv4.neigh.ens1f1.app_solicit = 0
+net.ipv4.neigh.ens1f1.base_reachable_time_ms = 30000
+net.ipv4.neigh.ens1f1.delay_first_probe_time = 5
+net.ipv4.neigh.ens1f1.gc_stale_time = 60
+net.ipv4.neigh.ens1f1.locktime = 100
+net.ipv4.neigh.ens1f1.mcast_resolicit = 0
+net.ipv4.neigh.ens1f1.mcast_solicit = 3
+net.ipv4.neigh.ens1f1.proxy_delay = 80
+net.ipv4.neigh.ens1f1.proxy_qlen = 64
+net.ipv4.neigh.ens1f1.retrans_time_ms = 1000
+net.ipv4.neigh.ens1f1.ucast_solicit = 3
+net.ipv4.neigh.ens1f1.unres_qlen = 101
+net.ipv4.neigh.ens1f1.unres_qlen_bytes = 212992
+net.ipv4.neigh.lo.anycast_delay = 100
+net.ipv4.neigh.lo.app_solicit = 0
+net.ipv4.neigh.lo.base_reachable_time_ms = 30000
+net.ipv4.neigh.lo.delay_first_probe_time = 5
+net.ipv4.neigh.lo.gc_stale_time = 60
+net.ipv4.neigh.lo.locktime = 100
+net.ipv4.neigh.lo.mcast_resolicit = 0
+net.ipv4.neigh.lo.mcast_solicit = 3
+net.ipv4.neigh.lo.proxy_delay = 80
+net.ipv4.neigh.lo.proxy_qlen = 64
+net.ipv4.neigh.lo.retrans_time_ms = 1000
+net.ipv4.neigh.lo.ucast_solicit = 3
+net.ipv4.neigh.lo.unres_qlen = 101
+net.ipv4.neigh.lo.unres_qlen_bytes = 212992
+net.ipv4.ping_group_range = 0	2147483647
+net.ipv4.raw_l3mdev_accept = 1
+net.ipv4.route.error_burst = 1250
+net.ipv4.route.error_cost = 250
+net.ipv4.route.gc_elasticity = 8
+net.ipv4.route.gc_interval = 60
+net.ipv4.route.gc_min_interval = 0
+net.ipv4.route.gc_min_interval_ms = 500
+net.ipv4.route.gc_thresh = -1
+net.ipv4.route.gc_timeout = 300
+net.ipv4.route.max_size = 2147483647
+net.ipv4.route.min_adv_mss = 256
+net.ipv4.route.min_pmtu = 552
+net.ipv4.route.mtu_expires = 600
+net.ipv4.route.redirect_load = 5
+net.ipv4.route.redirect_number = 9
+net.ipv4.route.redirect_silence = 5120
+net.ipv4.tcp_abort_on_overflow = 0
+net.ipv4.tcp_adv_win_scale = 1
+net.ipv4.tcp_allowed_congestion_control = reno cubic
+net.ipv4.tcp_app_win = 31
+net.ipv4.tcp_autocorking = 1
+net.ipv4.tcp_available_congestion_control = reno cubic
+net.ipv4.tcp_available_ulp = tls
+net.ipv4.tcp_base_mss = 1024
+net.ipv4.tcp_challenge_ack_limit = 1000
+net.ipv4.tcp_comp_sack_delay_ns = 1000000
+net.ipv4.tcp_comp_sack_nr = 44
+net.ipv4.tcp_congestion_control = cubic
+net.ipv4.tcp_dsack = 1
+net.ipv4.tcp_early_demux = 1
+net.ipv4.tcp_early_retrans = 3
+net.ipv4.tcp_ecn = 2
+net.ipv4.tcp_ecn_fallback = 1
+net.ipv4.tcp_fack = 0
+net.ipv4.tcp_fastopen = 1
+net.ipv4.tcp_fastopen_blackhole_timeout_sec = 3600
+net.ipv4.tcp_fastopen_key = 00000000-00000000-00000000-00000000
+net.ipv4.tcp_fin_timeout = 60
+net.ipv4.tcp_frto = 2
+net.ipv4.tcp_fwmark_accept = 0
+net.ipv4.tcp_invalid_ratelimit = 500
+net.ipv4.tcp_keepalive_intvl = 75
+net.ipv4.tcp_keepalive_probes = 9
+net.ipv4.tcp_keepalive_time = 7200
+net.ipv4.tcp_l3mdev_accept = 0
+net.ipv4.tcp_limit_output_bytes = 1048576
+net.ipv4.tcp_low_latency = 0
+net.ipv4.tcp_max_orphans = 262144
+net.ipv4.tcp_max_reordering = 300
+net.ipv4.tcp_max_syn_backlog = 4096
+net.ipv4.tcp_max_tw_buckets = 262144
+net.ipv4.tcp_mem = 767361	1023149	1534722
+net.ipv4.tcp_min_rtt_wlen = 300
+net.ipv4.tcp_min_snd_mss = 48
+net.ipv4.tcp_min_tso_segs = 2
+net.ipv4.tcp_moderate_rcvbuf = 1
+net.ipv4.tcp_mtu_probe_floor = 48
+net.ipv4.tcp_mtu_probing = 0
+net.ipv4.tcp_no_metrics_save = 0
+net.ipv4.tcp_notsent_lowat = 4294967295
+net.ipv4.tcp_orphan_retries = 0
+net.ipv4.tcp_pacing_ca_ratio = 120
+net.ipv4.tcp_pacing_ss_ratio = 200
+net.ipv4.tcp_probe_interval = 600
+net.ipv4.tcp_probe_threshold = 8
+net.ipv4.tcp_recovery = 1
+net.ipv4.tcp_reordering = 3
+net.ipv4.tcp_retrans_collapse = 1
+net.ipv4.tcp_retries1 = 3
+net.ipv4.tcp_retries2 = 15
+net.ipv4.tcp_rfc1337 = 0
+net.ipv4.tcp_rmem = 4096	131072	6291456
+net.ipv4.tcp_rx_skb_cache = 0
+net.ipv4.tcp_sack = 1
+net.ipv4.tcp_slow_start_after_idle = 1
+net.ipv4.tcp_stdurg = 0
+net.ipv4.tcp_syn_retries = 6
+net.ipv4.tcp_synack_retries = 5
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_thin_linear_timeouts = 0
+net.ipv4.tcp_timestamps = 1
+net.ipv4.tcp_tso_win_divisor = 3
+net.ipv4.tcp_tw_reuse = 2
+net.ipv4.tcp_tx_skb_cache = 0
+net.ipv4.tcp_window_scaling = 1
+net.ipv4.tcp_wmem = 4096	16384	4194304
+net.ipv4.tcp_workaround_signed_windows = 0
+net.ipv4.udp_early_demux = 1
+net.ipv4.udp_l3mdev_accept = 0
+net.ipv4.udp_mem = 1534722	2046298	3069444
+net.ipv4.udp_rmem_min = 4096
+net.ipv4.udp_wmem_min = 4096
+net.ipv4.xfrm4_gc_thresh = 32768
+net.ipv6.anycast_src_echo_reply = 0
+net.ipv6.auto_flowlabels = 1
+net.ipv6.bindv6only = 0
+net.ipv6.calipso_cache_bucket_size = 10
+net.ipv6.calipso_cache_enable = 1
+net.ipv6.conf.all.accept_dad = 0
+net.ipv6.conf.all.accept_ra = 1
+net.ipv6.conf.all.accept_ra_defrtr = 1
+net.ipv6.conf.all.accept_ra_from_local = 0
+net.ipv6.conf.all.accept_ra_min_hop_limit = 1
+net.ipv6.conf.all.accept_ra_mtu = 1
+net.ipv6.conf.all.accept_ra_pinfo = 1
+net.ipv6.conf.all.accept_ra_rt_info_max_plen = 0
+net.ipv6.conf.all.accept_ra_rt_info_min_plen = 0
+net.ipv6.conf.all.accept_ra_rtr_pref = 1
+net.ipv6.conf.all.accept_redirects = 1
+net.ipv6.conf.all.accept_source_route = 0
+net.ipv6.conf.all.addr_gen_mode = 0
+net.ipv6.conf.all.autoconf = 1
+net.ipv6.conf.all.dad_transmits = 1
+net.ipv6.conf.all.disable_ipv6 = 0
+net.ipv6.conf.all.disable_policy = 0
+net.ipv6.conf.all.drop_unicast_in_l2_multicast = 0
+net.ipv6.conf.all.drop_unsolicited_na = 0
+net.ipv6.conf.all.enhanced_dad = 1
+net.ipv6.conf.all.force_mld_version = 0
+net.ipv6.conf.all.force_tllao = 0
+net.ipv6.conf.all.forwarding = 0
+net.ipv6.conf.all.hop_limit = 64
+net.ipv6.conf.all.ignore_routes_with_linkdown = 0
+net.ipv6.conf.all.keep_addr_on_down = 0
+net.ipv6.conf.all.max_addresses = 16
+net.ipv6.conf.all.max_desync_factor = 600
+net.ipv6.conf.all.mc_forwarding = 0
+net.ipv6.conf.all.mldv1_unsolicited_report_interval = 10000
+net.ipv6.conf.all.mldv2_unsolicited_report_interval = 1000
+net.ipv6.conf.all.mtu = 1280
+net.ipv6.conf.all.ndisc_notify = 0
+net.ipv6.conf.all.ndisc_tclass = 0
+net.ipv6.conf.all.proxy_ndp = 0
+net.ipv6.conf.all.regen_max_retry = 3
+net.ipv6.conf.all.router_probe_interval = 60
+net.ipv6.conf.all.router_solicitation_delay = 1
+net.ipv6.conf.all.router_solicitation_interval = 4
+net.ipv6.conf.all.router_solicitation_max_interval = 3600
+net.ipv6.conf.all.router_solicitations = -1
+net.ipv6.conf.all.seg6_enabled = 0
+net.ipv6.conf.all.seg6_require_hmac = 0
+net.ipv6.conf.all.suppress_frag_ndisc = 1
+net.ipv6.conf.all.temp_prefered_lft = 86400
+net.ipv6.conf.all.temp_valid_lft = 604800
+net.ipv6.conf.all.use_oif_addrs_only = 0
+net.ipv6.conf.all.use_tempaddr = 2
+net.ipv6.conf.default.accept_dad = 1
+net.ipv6.conf.default.accept_ra = 1
+net.ipv6.conf.default.accept_ra_defrtr = 1
+net.ipv6.conf.default.accept_ra_from_local = 0
+net.ipv6.conf.default.accept_ra_min_hop_limit = 1
+net.ipv6.conf.default.accept_ra_mtu = 1
+net.ipv6.conf.default.accept_ra_pinfo = 1
+net.ipv6.conf.default.accept_ra_rt_info_max_plen = 0
+net.ipv6.conf.default.accept_ra_rt_info_min_plen = 0
+net.ipv6.conf.default.accept_ra_rtr_pref = 1
+net.ipv6.conf.default.accept_redirects = 1
+net.ipv6.conf.default.accept_source_route = 0
+net.ipv6.conf.default.addr_gen_mode = 0
+net.ipv6.conf.default.autoconf = 1
+net.ipv6.conf.default.dad_transmits = 1
+net.ipv6.conf.default.disable_ipv6 = 0
+net.ipv6.conf.default.disable_policy = 0
+net.ipv6.conf.default.drop_unicast_in_l2_multicast = 0
+net.ipv6.conf.default.drop_unsolicited_na = 0
+net.ipv6.conf.default.enhanced_dad = 1
+net.ipv6.conf.default.force_mld_version = 0
+net.ipv6.conf.default.force_tllao = 0
+net.ipv6.conf.default.forwarding = 0
+net.ipv6.conf.default.hop_limit = 64
+net.ipv6.conf.default.ignore_routes_with_linkdown = 0
+net.ipv6.conf.default.keep_addr_on_down = 0
+net.ipv6.conf.default.max_addresses = 16
+net.ipv6.conf.default.max_desync_factor = 600
+net.ipv6.conf.default.mc_forwarding = 0
+net.ipv6.conf.default.mldv1_unsolicited_report_interval = 10000
+net.ipv6.conf.default.mldv2_unsolicited_report_interval = 1000
+net.ipv6.conf.default.mtu = 1280
+net.ipv6.conf.default.ndisc_notify = 0
+net.ipv6.conf.default.ndisc_tclass = 0
+net.ipv6.conf.default.proxy_ndp = 0
+net.ipv6.conf.default.regen_max_retry = 3
+net.ipv6.conf.default.router_probe_interval = 60
+net.ipv6.conf.default.router_solicitation_delay = 1
+net.ipv6.conf.default.router_solicitation_interval = 4
+net.ipv6.conf.default.router_solicitation_max_interval = 3600
+net.ipv6.conf.default.router_solicitations = -1
+net.ipv6.conf.default.seg6_enabled = 0
+net.ipv6.conf.default.seg6_require_hmac = 0
+net.ipv6.conf.default.suppress_frag_ndisc = 1
+net.ipv6.conf.default.temp_prefered_lft = 86400
+net.ipv6.conf.default.temp_valid_lft = 604800
+net.ipv6.conf.default.use_oif_addrs_only = 0
+net.ipv6.conf.default.use_tempaddr = 2
+net.ipv6.conf.eno49.accept_dad = 1
+net.ipv6.conf.eno49.accept_ra = 0
+net.ipv6.conf.eno49.accept_ra_defrtr = 1
+net.ipv6.conf.eno49.accept_ra_from_local = 0
+net.ipv6.conf.eno49.accept_ra_min_hop_limit = 1
+net.ipv6.conf.eno49.accept_ra_mtu = 1
+net.ipv6.conf.eno49.accept_ra_pinfo = 1
+net.ipv6.conf.eno49.accept_ra_rt_info_max_plen = 0
+net.ipv6.conf.eno49.accept_ra_rt_info_min_plen = 0
+net.ipv6.conf.eno49.accept_ra_rtr_pref = 1
+net.ipv6.conf.eno49.accept_redirects = 1
+net.ipv6.conf.eno49.accept_source_route = 0
+net.ipv6.conf.eno49.addr_gen_mode = 0
+net.ipv6.conf.eno49.autoconf = 1
+net.ipv6.conf.eno49.dad_transmits = 1
+net.ipv6.conf.eno49.disable_ipv6 = 0
+net.ipv6.conf.eno49.disable_policy = 0
+net.ipv6.conf.eno49.drop_unicast_in_l2_multicast = 0
+net.ipv6.conf.eno49.drop_unsolicited_na = 0
+net.ipv6.conf.eno49.enhanced_dad = 1
+net.ipv6.conf.eno49.force_mld_version = 0
+net.ipv6.conf.eno49.force_tllao = 0
+net.ipv6.conf.eno49.forwarding = 0
+net.ipv6.conf.eno49.hop_limit = 64
+net.ipv6.conf.eno49.ignore_routes_with_linkdown = 0
+net.ipv6.conf.eno49.keep_addr_on_down = 0
+net.ipv6.conf.eno49.max_addresses = 16
+net.ipv6.conf.eno49.max_desync_factor = 600
+net.ipv6.conf.eno49.mc_forwarding = 0
+net.ipv6.conf.eno49.mldv1_unsolicited_report_interval = 10000
+net.ipv6.conf.eno49.mldv2_unsolicited_report_interval = 1000
+net.ipv6.conf.eno49.mtu = 1500
+net.ipv6.conf.eno49.ndisc_notify = 0
+net.ipv6.conf.eno49.ndisc_tclass = 0
+net.ipv6.conf.eno49.proxy_ndp = 0
+net.ipv6.conf.eno49.regen_max_retry = 3
+net.ipv6.conf.eno49.router_probe_interval = 60
+net.ipv6.conf.eno49.router_solicitation_delay = 1
+net.ipv6.conf.eno49.router_solicitation_interval = 4
+net.ipv6.conf.eno49.router_solicitation_max_interval = 3600
+net.ipv6.conf.eno49.router_solicitations = -1
+net.ipv6.conf.eno49.seg6_enabled = 0
+net.ipv6.conf.eno49.seg6_require_hmac = 0
+net.ipv6.conf.eno49.suppress_frag_ndisc = 1
+net.ipv6.conf.eno49.temp_prefered_lft = 86400
+net.ipv6.conf.eno49.temp_valid_lft = 604800
+net.ipv6.conf.eno49.use_oif_addrs_only = 0
+net.ipv6.conf.eno49.use_tempaddr = 0
+net.ipv6.conf.eno50.accept_dad = 1
+net.ipv6.conf.eno50.accept_ra = 0
+net.ipv6.conf.eno50.accept_ra_defrtr = 1
+net.ipv6.conf.eno50.accept_ra_from_local = 0
+net.ipv6.conf.eno50.accept_ra_min_hop_limit = 1
+net.ipv6.conf.eno50.accept_ra_mtu = 1
+net.ipv6.conf.eno50.accept_ra_pinfo = 1
+net.ipv6.conf.eno50.accept_ra_rt_info_max_plen = 0
+net.ipv6.conf.eno50.accept_ra_rt_info_min_plen = 0
+net.ipv6.conf.eno50.accept_ra_rtr_pref = 1
+net.ipv6.conf.eno50.accept_redirects = 1
+net.ipv6.conf.eno50.accept_source_route = 0
+net.ipv6.conf.eno50.addr_gen_mode = 0
+net.ipv6.conf.eno50.autoconf = 1
+net.ipv6.conf.eno50.dad_transmits = 1
+net.ipv6.conf.eno50.disable_ipv6 = 0
+net.ipv6.conf.eno50.disable_policy = 0
+net.ipv6.conf.eno50.drop_unicast_in_l2_multicast = 0
+net.ipv6.conf.eno50.drop_unsolicited_na = 0
+net.ipv6.conf.eno50.enhanced_dad = 1
+net.ipv6.conf.eno50.force_mld_version = 0
+net.ipv6.conf.eno50.force_tllao = 0
+net.ipv6.conf.eno50.forwarding = 0
+net.ipv6.conf.eno50.hop_limit = 64
+net.ipv6.conf.eno50.ignore_routes_with_linkdown = 0
+net.ipv6.conf.eno50.keep_addr_on_down = 0
+net.ipv6.conf.eno50.max_addresses = 16
+net.ipv6.conf.eno50.max_desync_factor = 600
+net.ipv6.conf.eno50.mc_forwarding = 0
+net.ipv6.conf.eno50.mldv1_unsolicited_report_interval = 10000
+net.ipv6.conf.eno50.mldv2_unsolicited_report_interval = 1000
+net.ipv6.conf.eno50.mtu = 1500
+net.ipv6.conf.eno50.ndisc_notify = 0
+net.ipv6.conf.eno50.ndisc_tclass = 0
+net.ipv6.conf.eno50.proxy_ndp = 0
+net.ipv6.conf.eno50.regen_max_retry = 3
+net.ipv6.conf.eno50.router_probe_interval = 60
+net.ipv6.conf.eno50.router_solicitation_delay = 1
+net.ipv6.conf.eno50.router_solicitation_interval = 4
+net.ipv6.conf.eno50.router_solicitation_max_interval = 3600
+net.ipv6.conf.eno50.router_solicitations = -1
+net.ipv6.conf.eno50.seg6_enabled = 0
+net.ipv6.conf.eno50.seg6_require_hmac = 0
+net.ipv6.conf.eno50.suppress_frag_ndisc = 1
+net.ipv6.conf.eno50.temp_prefered_lft = 86400
+net.ipv6.conf.eno50.temp_valid_lft = 604800
+net.ipv6.conf.eno50.use_oif_addrs_only = 0
+net.ipv6.conf.eno50.use_tempaddr = 0
+net.ipv6.conf.ens1f0.accept_dad = 1
+net.ipv6.conf.ens1f0.accept_ra = 0
+net.ipv6.conf.ens1f0.accept_ra_defrtr = 1
+net.ipv6.conf.ens1f0.accept_ra_from_local = 0
+net.ipv6.conf.ens1f0.accept_ra_min_hop_limit = 1
+net.ipv6.conf.ens1f0.accept_ra_mtu = 1
+net.ipv6.conf.ens1f0.accept_ra_pinfo = 1
+net.ipv6.conf.ens1f0.accept_ra_rt_info_max_plen = 0
+net.ipv6.conf.ens1f0.accept_ra_rt_info_min_plen = 0
+net.ipv6.conf.ens1f0.accept_ra_rtr_pref = 1
+net.ipv6.conf.ens1f0.accept_redirects = 1
+net.ipv6.conf.ens1f0.accept_source_route = 0
+net.ipv6.conf.ens1f0.addr_gen_mode = 0
+net.ipv6.conf.ens1f0.autoconf = 1
+net.ipv6.conf.ens1f0.dad_transmits = 1
+net.ipv6.conf.ens1f0.disable_ipv6 = 0
+net.ipv6.conf.ens1f0.disable_policy = 0
+net.ipv6.conf.ens1f0.drop_unicast_in_l2_multicast = 0
+net.ipv6.conf.ens1f0.drop_unsolicited_na = 0
+net.ipv6.conf.ens1f0.enhanced_dad = 1
+net.ipv6.conf.ens1f0.force_mld_version = 0
+net.ipv6.conf.ens1f0.force_tllao = 0
+net.ipv6.conf.ens1f0.forwarding = 0
+net.ipv6.conf.ens1f0.hop_limit = 64
+net.ipv6.conf.ens1f0.ignore_routes_with_linkdown = 0
+net.ipv6.conf.ens1f0.keep_addr_on_down = 0
+net.ipv6.conf.ens1f0.max_addresses = 16
+net.ipv6.conf.ens1f0.max_desync_factor = 600
+net.ipv6.conf.ens1f0.mc_forwarding = 0
+net.ipv6.conf.ens1f0.mldv1_unsolicited_report_interval = 10000
+net.ipv6.conf.ens1f0.mldv2_unsolicited_report_interval = 1000
+net.ipv6.conf.ens1f0.mtu = 1500
+net.ipv6.conf.ens1f0.ndisc_notify = 0
+net.ipv6.conf.ens1f0.ndisc_tclass = 0
+net.ipv6.conf.ens1f0.proxy_ndp = 0
+net.ipv6.conf.ens1f0.regen_max_retry = 3
+net.ipv6.conf.ens1f0.router_probe_interval = 60
+net.ipv6.conf.ens1f0.router_solicitation_delay = 1
+net.ipv6.conf.ens1f0.router_solicitation_interval = 4
+net.ipv6.conf.ens1f0.router_solicitation_max_interval = 3600
+net.ipv6.conf.ens1f0.router_solicitations = -1
+net.ipv6.conf.ens1f0.seg6_enabled = 0
+net.ipv6.conf.ens1f0.seg6_require_hmac = 0
+net.ipv6.conf.ens1f0.suppress_frag_ndisc = 1
+net.ipv6.conf.ens1f0.temp_prefered_lft = 86400
+net.ipv6.conf.ens1f0.temp_valid_lft = 604800
+net.ipv6.conf.ens1f0.use_oif_addrs_only = 0
+net.ipv6.conf.ens1f0.use_tempaddr = 0
+net.ipv6.conf.ens1f1.accept_dad = 1
+net.ipv6.conf.ens1f1.accept_ra = 0
+net.ipv6.conf.ens1f1.accept_ra_defrtr = 1
+net.ipv6.conf.ens1f1.accept_ra_from_local = 0
+net.ipv6.conf.ens1f1.accept_ra_min_hop_limit = 1
+net.ipv6.conf.ens1f1.accept_ra_mtu = 1
+net.ipv6.conf.ens1f1.accept_ra_pinfo = 1
+net.ipv6.conf.ens1f1.accept_ra_rt_info_max_plen = 0
+net.ipv6.conf.ens1f1.accept_ra_rt_info_min_plen = 0
+net.ipv6.conf.ens1f1.accept_ra_rtr_pref = 1
+net.ipv6.conf.ens1f1.accept_redirects = 1
+net.ipv6.conf.ens1f1.accept_source_route = 0
+net.ipv6.conf.ens1f1.addr_gen_mode = 0
+net.ipv6.conf.ens1f1.autoconf = 1
+net.ipv6.conf.ens1f1.dad_transmits = 1
+net.ipv6.conf.ens1f1.disable_ipv6 = 0
+net.ipv6.conf.ens1f1.disable_policy = 0
+net.ipv6.conf.ens1f1.drop_unicast_in_l2_multicast = 0
+net.ipv6.conf.ens1f1.drop_unsolicited_na = 0
+net.ipv6.conf.ens1f1.enhanced_dad = 1
+net.ipv6.conf.ens1f1.force_mld_version = 0
+net.ipv6.conf.ens1f1.force_tllao = 0
+net.ipv6.conf.ens1f1.forwarding = 0
+net.ipv6.conf.ens1f1.hop_limit = 64
+net.ipv6.conf.ens1f1.ignore_routes_with_linkdown = 0
+net.ipv6.conf.ens1f1.keep_addr_on_down = 0
+net.ipv6.conf.ens1f1.max_addresses = 16
+net.ipv6.conf.ens1f1.max_desync_factor = 600
+net.ipv6.conf.ens1f1.mc_forwarding = 0
+net.ipv6.conf.ens1f1.mldv1_unsolicited_report_interval = 10000
+net.ipv6.conf.ens1f1.mldv2_unsolicited_report_interval = 1000
+net.ipv6.conf.ens1f1.mtu = 1500
+net.ipv6.conf.ens1f1.ndisc_notify = 0
+net.ipv6.conf.ens1f1.ndisc_tclass = 0
+net.ipv6.conf.ens1f1.proxy_ndp = 0
+net.ipv6.conf.ens1f1.regen_max_retry = 3
+net.ipv6.conf.ens1f1.router_probe_interval = 60
+net.ipv6.conf.ens1f1.router_solicitation_delay = 1
+net.ipv6.conf.ens1f1.router_solicitation_interval = 4
+net.ipv6.conf.ens1f1.router_solicitation_max_interval = 3600
+net.ipv6.conf.ens1f1.router_solicitations = -1
+net.ipv6.conf.ens1f1.seg6_enabled = 0
+net.ipv6.conf.ens1f1.seg6_require_hmac = 0
+net.ipv6.conf.ens1f1.suppress_frag_ndisc = 1
+net.ipv6.conf.ens1f1.temp_prefered_lft = 86400
+net.ipv6.conf.ens1f1.temp_valid_lft = 604800
+net.ipv6.conf.ens1f1.use_oif_addrs_only = 0
+net.ipv6.conf.ens1f1.use_tempaddr = 0
+net.ipv6.conf.lo.accept_dad = -1
+net.ipv6.conf.lo.accept_ra = 1
+net.ipv6.conf.lo.accept_ra_defrtr = 1
+net.ipv6.conf.lo.accept_ra_from_local = 0
+net.ipv6.conf.lo.accept_ra_min_hop_limit = 1
+net.ipv6.conf.lo.accept_ra_mtu = 1
+net.ipv6.conf.lo.accept_ra_pinfo = 1
+net.ipv6.conf.lo.accept_ra_rt_info_max_plen = 0
+net.ipv6.conf.lo.accept_ra_rt_info_min_plen = 0
+net.ipv6.conf.lo.accept_ra_rtr_pref = 1
+net.ipv6.conf.lo.accept_redirects = 1
+net.ipv6.conf.lo.accept_source_route = 0
+net.ipv6.conf.lo.addr_gen_mode = 0
+net.ipv6.conf.lo.autoconf = 1
+net.ipv6.conf.lo.dad_transmits = 1
+net.ipv6.conf.lo.disable_ipv6 = 0
+net.ipv6.conf.lo.disable_policy = 0
+net.ipv6.conf.lo.drop_unicast_in_l2_multicast = 0
+net.ipv6.conf.lo.drop_unsolicited_na = 0
+net.ipv6.conf.lo.enhanced_dad = 1
+net.ipv6.conf.lo.force_mld_version = 0
+net.ipv6.conf.lo.force_tllao = 0
+net.ipv6.conf.lo.forwarding = 0
+net.ipv6.conf.lo.hop_limit = 64
+net.ipv6.conf.lo.ignore_routes_with_linkdown = 0
+net.ipv6.conf.lo.keep_addr_on_down = 0
+net.ipv6.conf.lo.max_addresses = 16
+net.ipv6.conf.lo.max_desync_factor = 600
+net.ipv6.conf.lo.mc_forwarding = 0
+net.ipv6.conf.lo.mldv1_unsolicited_report_interval = 10000
+net.ipv6.conf.lo.mldv2_unsolicited_report_interval = 1000
+net.ipv6.conf.lo.mtu = 65536
+net.ipv6.conf.lo.ndisc_notify = 0
+net.ipv6.conf.lo.ndisc_tclass = 0
+net.ipv6.conf.lo.proxy_ndp = 0
+net.ipv6.conf.lo.regen_max_retry = 3
+net.ipv6.conf.lo.router_probe_interval = 60
+net.ipv6.conf.lo.router_solicitation_delay = 1
+net.ipv6.conf.lo.router_solicitation_interval = 4
+net.ipv6.conf.lo.router_solicitation_max_interval = 3600
+net.ipv6.conf.lo.router_solicitations = -1
+net.ipv6.conf.lo.seg6_enabled = 0
+net.ipv6.conf.lo.seg6_require_hmac = 0
+net.ipv6.conf.lo.suppress_frag_ndisc = 1
+net.ipv6.conf.lo.temp_prefered_lft = 86400
+net.ipv6.conf.lo.temp_valid_lft = 604800
+net.ipv6.conf.lo.use_oif_addrs_only = 0
+net.ipv6.conf.lo.use_tempaddr = -1
+net.ipv6.fib_multipath_hash_policy = 0
+net.ipv6.flowlabel_consistency = 1
+net.ipv6.flowlabel_reflect = 0
+net.ipv6.flowlabel_state_ranges = 0
+net.ipv6.fwmark_reflect = 0
+net.ipv6.icmp.echo_ignore_all = 0
+net.ipv6.icmp.echo_ignore_anycast = 0
+net.ipv6.icmp.echo_ignore_multicast = 0
+net.ipv6.icmp.ratelimit = 1000
+net.ipv6.icmp.ratemask = 0-1,3-127
+net.ipv6.idgen_delay = 1
+net.ipv6.idgen_retries = 3
+net.ipv6.ip6frag_high_thresh = 4194304
+net.ipv6.ip6frag_low_thresh = 3145728
+net.ipv6.ip6frag_secret_interval = 0
+net.ipv6.ip6frag_time = 60
+net.ipv6.ip_nonlocal_bind = 0
+net.ipv6.max_dst_opts_length = 2147483647
+net.ipv6.max_dst_opts_number = 8
+net.ipv6.max_hbh_length = 2147483647
+net.ipv6.max_hbh_opts_number = 8
+net.ipv6.mld_max_msf = 64
+net.ipv6.mld_qrv = 2
+net.ipv6.neigh.default.anycast_delay = 100
+net.ipv6.neigh.default.app_solicit = 0
+net.ipv6.neigh.default.base_reachable_time_ms = 30000
+net.ipv6.neigh.default.delay_first_probe_time = 5
+net.ipv6.neigh.default.gc_interval = 30
+net.ipv6.neigh.default.gc_stale_time = 60
+net.ipv6.neigh.default.gc_thresh1 = 128
+net.ipv6.neigh.default.gc_thresh2 = 512
+net.ipv6.neigh.default.gc_thresh3 = 1024
+net.ipv6.neigh.default.locktime = 0
+net.ipv6.neigh.default.mcast_resolicit = 0
+net.ipv6.neigh.default.mcast_solicit = 3
+net.ipv6.neigh.default.proxy_delay = 80
+net.ipv6.neigh.default.proxy_qlen = 64
+net.ipv6.neigh.default.retrans_time_ms = 1000
+net.ipv6.neigh.default.ucast_solicit = 3
+net.ipv6.neigh.default.unres_qlen = 101
+net.ipv6.neigh.default.unres_qlen_bytes = 212992
+net.ipv6.neigh.eno49.anycast_delay = 100
+net.ipv6.neigh.eno49.app_solicit = 0
+net.ipv6.neigh.eno49.base_reachable_time_ms = 30000
+net.ipv6.neigh.eno49.delay_first_probe_time = 5
+net.ipv6.neigh.eno49.gc_stale_time = 60
+net.ipv6.neigh.eno49.locktime = 0
+net.ipv6.neigh.eno49.mcast_resolicit = 0
+net.ipv6.neigh.eno49.mcast_solicit = 3
+net.ipv6.neigh.eno49.proxy_delay = 80
+net.ipv6.neigh.eno49.proxy_qlen = 64
+net.ipv6.neigh.eno49.retrans_time_ms = 1000
+net.ipv6.neigh.eno49.ucast_solicit = 3
+net.ipv6.neigh.eno49.unres_qlen = 101
+net.ipv6.neigh.eno49.unres_qlen_bytes = 212992
+net.ipv6.neigh.eno50.anycast_delay = 100
+net.ipv6.neigh.eno50.app_solicit = 0
+net.ipv6.neigh.eno50.base_reachable_time_ms = 30000
+net.ipv6.neigh.eno50.delay_first_probe_time = 5
+net.ipv6.neigh.eno50.gc_stale_time = 60
+net.ipv6.neigh.eno50.locktime = 0
+net.ipv6.neigh.eno50.mcast_resolicit = 0
+net.ipv6.neigh.eno50.mcast_solicit = 3
+net.ipv6.neigh.eno50.proxy_delay = 80
+net.ipv6.neigh.eno50.proxy_qlen = 64
+net.ipv6.neigh.eno50.retrans_time_ms = 1000
+net.ipv6.neigh.eno50.ucast_solicit = 3
+net.ipv6.neigh.eno50.unres_qlen = 101
+net.ipv6.neigh.eno50.unres_qlen_bytes = 212992
+net.ipv6.neigh.ens1f0.anycast_delay = 100
+net.ipv6.neigh.ens1f0.app_solicit = 0
+net.ipv6.neigh.ens1f0.base_reachable_time_ms = 30000
+net.ipv6.neigh.ens1f0.delay_first_probe_time = 5
+net.ipv6.neigh.ens1f0.gc_stale_time = 60
+net.ipv6.neigh.ens1f0.locktime = 0
+net.ipv6.neigh.ens1f0.mcast_resolicit = 0
+net.ipv6.neigh.ens1f0.mcast_solicit = 3
+net.ipv6.neigh.ens1f0.proxy_delay = 80
+net.ipv6.neigh.ens1f0.proxy_qlen = 64
+net.ipv6.neigh.ens1f0.retrans_time_ms = 1000
+net.ipv6.neigh.ens1f0.ucast_solicit = 3
+net.ipv6.neigh.ens1f0.unres_qlen = 101
+net.ipv6.neigh.ens1f0.unres_qlen_bytes = 212992
+net.ipv6.neigh.ens1f1.anycast_delay = 100
+net.ipv6.neigh.ens1f1.app_solicit = 0
+net.ipv6.neigh.ens1f1.base_reachable_time_ms = 30000
+net.ipv6.neigh.ens1f1.delay_first_probe_time = 5
+net.ipv6.neigh.ens1f1.gc_stale_time = 60
+net.ipv6.neigh.ens1f1.locktime = 0
+net.ipv6.neigh.ens1f1.mcast_resolicit = 0
+net.ipv6.neigh.ens1f1.mcast_solicit = 3
+net.ipv6.neigh.ens1f1.proxy_delay = 80
+net.ipv6.neigh.ens1f1.proxy_qlen = 64
+net.ipv6.neigh.ens1f1.retrans_time_ms = 1000
+net.ipv6.neigh.ens1f1.ucast_solicit = 3
+net.ipv6.neigh.ens1f1.unres_qlen = 101
+net.ipv6.neigh.ens1f1.unres_qlen_bytes = 212992
+net.ipv6.neigh.lo.anycast_delay = 100
+net.ipv6.neigh.lo.app_solicit = 0
+net.ipv6.neigh.lo.base_reachable_time_ms = 30000
+net.ipv6.neigh.lo.delay_first_probe_time = 5
+net.ipv6.neigh.lo.gc_stale_time = 60
+net.ipv6.neigh.lo.locktime = 0
+net.ipv6.neigh.lo.mcast_resolicit = 0
+net.ipv6.neigh.lo.mcast_solicit = 3
+net.ipv6.neigh.lo.proxy_delay = 80
+net.ipv6.neigh.lo.proxy_qlen = 64
+net.ipv6.neigh.lo.retrans_time_ms = 1000
+net.ipv6.neigh.lo.ucast_solicit = 3
+net.ipv6.neigh.lo.unres_qlen = 101
+net.ipv6.neigh.lo.unres_qlen_bytes = 212992
+net.ipv6.route.gc_elasticity = 9
+net.ipv6.route.gc_interval = 30
+net.ipv6.route.gc_min_interval = 0
+net.ipv6.route.gc_min_interval_ms = 500
+net.ipv6.route.gc_thresh = 1024
+net.ipv6.route.gc_timeout = 60
+net.ipv6.route.max_size = 4096
+net.ipv6.route.min_adv_mss = 1220
+net.ipv6.route.mtu_expires = 600
+net.ipv6.route.skip_notify_on_dev_down = 0
+net.ipv6.seg6_flowlabel = 0
+net.ipv6.xfrm6_gc_thresh = 32768
+net.netfilter.nf_log.0 = NONE
+net.netfilter.nf_log.1 = NONE
+net.netfilter.nf_log.10 = NONE
+net.netfilter.nf_log.11 = NONE
+net.netfilter.nf_log.12 = NONE
+net.netfilter.nf_log.2 = NONE
+net.netfilter.nf_log.3 = NONE
+net.netfilter.nf_log.4 = NONE
+net.netfilter.nf_log.5 = NONE
+net.netfilter.nf_log.6 = NONE
+net.netfilter.nf_log.7 = NONE
+net.netfilter.nf_log.8 = NONE
+net.netfilter.nf_log.9 = NONE
+net.netfilter.nf_log_all_netns = 0
+net.unix.max_dgram_qlen = 512
+sunrpc.max_resvport = 1023
+sunrpc.min_resvport = 665
+sunrpc.nfs_debug = 0x0000
+sunrpc.nfsd_debug = 0x0000
+sunrpc.nlm_debug = 0x0000
+sunrpc.rpc_debug = 0x0000
+sunrpc.tcp_fin_timeout = 15
+sunrpc.tcp_max_slot_table_entries = 65536
+sunrpc.tcp_slot_table_entries = 2
+sunrpc.transports = tcp 1048576
+sunrpc.transports = udp 32768
+sunrpc.udp_slot_table_entries = 16
+user.max_cgroup_namespaces = 256564
+user.max_inotify_instances = 128
+user.max_inotify_watches = 8192
+user.max_ipc_namespaces = 256564
+user.max_mnt_namespaces = 256564
+user.max_net_namespaces = 256564
+user.max_pid_namespaces = 256564
+user.max_user_namespaces = 256564
+user.max_uts_namespaces = 256564
+vm.admin_reserve_kbytes = 8192
+vm.block_dump = 0
+vm.compact_unevictable_allowed = 1
+vm.dirty_background_bytes = 0
+vm.dirty_background_ratio = 10
+vm.dirty_bytes = 0
+vm.dirty_expire_centisecs = 3000
+vm.dirty_ratio = 20
+vm.dirty_writeback_centisecs = 500
+vm.dirtytime_expire_seconds = 43200
+vm.extfrag_threshold = 500
+vm.hugetlb_shm_group = 0
+vm.laptop_mode = 0
+vm.legacy_va_layout = 0
+vm.lowmem_reserve_ratio = 256	256	32	0	0
+vm.max_map_count = 65530
+vm.memory_failure_early_kill = 0
+vm.memory_failure_recovery = 1
+vm.min_free_kbytes = 67584
+vm.min_slab_ratio = 5
+vm.min_unmapped_ratio = 1
+vm.mmap_min_addr = 65536
+vm.mmap_rnd_bits = 28
+vm.mmap_rnd_compat_bits = 8
+vm.nr_hugepages = 0
+vm.nr_hugepages_mempolicy = 0
+vm.nr_overcommit_hugepages = 0
+vm.numa_stat = 1
+vm.numa_zonelist_order = Node
+vm.oom_dump_tasks = 1
+vm.oom_kill_allocating_task = 0
+vm.overcommit_kbytes = 0
+vm.overcommit_memory = 0
+vm.overcommit_ratio = 50
+vm.page-cluster = 3
+vm.panic_on_oom = 0
+vm.percpu_pagelist_fraction = 0
+vm.stat_interval = 1
+vm.swappiness = 60
+vm.unprivileged_userfaultfd = 1
+vm.user_reserve_kbytes = 131072
+vm.vfs_cache_pressure = 100
+vm.watermark_boost_factor = 0
+vm.watermark_scale_factor = 10
+vm.zone_reclaim_mode = 0

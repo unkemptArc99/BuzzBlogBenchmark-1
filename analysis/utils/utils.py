@@ -97,6 +97,17 @@ def get_collectl_dsk_logfiles(experiment_dirname):
                         yield (node_name, logfile)
 
 
+def get_experiment_pcm_logfiles(experiment_dirname):
+    for node_name in get_node_names(experiment_dirname):
+        tarball_path = os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs", node_name,
+                "pcm.tar.gz")
+        with tarfile.open(tarball_path, "r:gz") as tar:
+            for filename in tar.getnames():
+                if filename.endswith(".csv"):
+                    with tar.extractfile(filename) as logfile:
+                        yield (node_name, logfile)
+
+
 def get_experiment_start_time(experiment_dirname):
     requests = pd.concat([
             pd.DataFrame.from_dict(LoadgenParser(logfile).parse())

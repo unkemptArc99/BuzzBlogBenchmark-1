@@ -1,0 +1,1102 @@
+node-0:
+  containers:
+    loadgen1:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-2
+        - port=8080
+        name: loadgen1
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen10:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-2
+        - port=8089
+        name: loadgen10
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen2:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-2
+        - port=8081
+        name: loadgen2
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen3:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-2
+        - port=8082
+        name: loadgen3
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen4:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-2
+        - port=8083
+        name: loadgen4
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen5:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-2
+        - port=8084
+        name: loadgen5
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen6:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-2
+        - port=8085
+        name: loadgen6
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen7:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-2
+        - port=8086
+        name: loadgen7
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen8:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-2
+        - port=8087
+        name: loadgen8
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen9:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-2
+        - port=8088
+        name: loadgen9
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+node-1:
+  containers:
+    loadgen11:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-3
+        - port=8080
+        name: loadgen11
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen12:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-3
+        - port=8081
+        name: loadgen12
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen13:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-3
+        - port=8082
+        name: loadgen13
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen14:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-3
+        - port=8083
+        name: loadgen14
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen15:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-3
+        - port=8084
+        name: loadgen15
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen16:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-3
+        - port=8085
+        name: loadgen16
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen17:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-3
+        - port=8086
+        name: loadgen17
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen18:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-3
+        - port=8087
+        name: loadgen18
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen19:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-3
+        - port=8088
+        name: loadgen19
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+    loadgen20:
+      image: rodrigoalveslima/buzzblog:loadgen_v0.1
+      logs:
+      - /var/log/loadgen.log
+      options:
+        env:
+        - hostname=node-3
+        - port=8089
+        name: loadgen20
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.ip_local_port_range="32768 65535"
+        ulimit: nofile=131072:131072
+        volume:
+        - /usr/local/etc/loadgen:/usr/local/etc/loadgen
+      start_order: 4
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+node-10:
+  containers:
+    uniquepair_service:
+      image: rodrigoalveslima/buzzblog:uniquepair_v0.1
+      logs:
+      - /tmp/calls.log
+      - /tmp/queries.log
+      options:
+        detach: ''
+        env:
+        - port=9094
+        - threads=512
+        - backend_filepath=/etc/opt/BuzzBlog/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        name: uniquepair_service
+        publish: 9094:9094
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume: /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 2
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+node-11:
+  containers:
+    uniquepair_database:
+      image: postgres:13.1 -c max_connections=512
+      options:
+        detach: ''
+        env:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=uniquepair
+        - POSTGRES_HOST_AUTH_METHOD=trust
+        name: uniquepair_database
+        publish: 5435:5432
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume: /var/lib/postgresql/BuzzBlog/uniquepair/data:/var/lib/postgresql/data
+      start_order: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+node-2:
+  containers:
+    apigateway1:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway1
+        publish: 8080:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway10:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway10
+        publish: 8089:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway2:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway2
+        publish: 8081:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway3:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway3
+        publish: 8082:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway4:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway4
+        publish: 8083:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway5:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway5
+        publish: 8084:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway6:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway6
+        publish: 8085:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway7:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway7
+        publish: 8086:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway8:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway8
+        publish: 8087:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway9:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway9
+        publish: 8088:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+  templates:
+    gunicorn.conf.py:
+      output: /etc/gunicorn/gunicorn.conf.py
+      params:
+        bind: 0.0.0.0:81
+        threads: 64
+node-3:
+  containers:
+    apigateway11:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway11
+        publish: 8080:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway12:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway12
+        publish: 8081:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway13:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway13
+        publish: 8082:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway14:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway14
+        publish: 8083:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway15:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway15
+        publish: 8084:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway16:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway16
+        publish: 8085:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway17:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway17
+        publish: 8086:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway18:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway18
+        publish: 8087:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway19:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway19
+        publish: 8088:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+    apigateway20:
+      image: rodrigoalveslima/buzzblog:apigateway_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        name: apigateway20
+        publish: 8089:81
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume:
+        - /etc/gunicorn:/etc/gunicorn
+        - /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 3
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+  templates:
+    gunicorn.conf.py:
+      output: /etc/gunicorn/gunicorn.conf.py
+      params:
+        bind: 0.0.0.0:81
+        threads: 64
+node-4:
+  containers:
+    account_service:
+      image: rodrigoalveslima/buzzblog:account_v0.1
+      logs:
+      - /tmp/calls.log
+      - /tmp/queries.log
+      options:
+        detach: ''
+        env:
+        - port=9090
+        - threads=512
+        - backend_filepath=/etc/opt/BuzzBlog/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        name: account_service
+        publish: 9090:9090
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume: /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 2
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+node-5:
+  containers:
+    account_database:
+      image: postgres:13.1 -c max_connections=512
+      options:
+        detach: ''
+        env:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=account
+        - POSTGRES_HOST_AUTH_METHOD=trust
+        name: account_database
+        publish: 5433:5432
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume: /var/lib/postgresql/BuzzBlog/account/data:/var/lib/postgresql/data
+      start_order: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+node-6:
+  containers:
+    follow_service:
+      image: rodrigoalveslima/buzzblog:follow_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        env:
+        - port=9091
+        - threads=512
+        - backend_filepath=/etc/opt/BuzzBlog/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        name: follow_service
+        publish: 9091:9091
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume: /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 2
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+node-7:
+  containers:
+    like_service:
+      image: rodrigoalveslima/buzzblog:like_v0.1
+      logs:
+      - /tmp/calls.log
+      options:
+        detach: ''
+        env:
+        - port=9092
+        - threads=512
+        - backend_filepath=/etc/opt/BuzzBlog/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        name: like_service
+        publish: 9092:9092
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume: /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 2
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+node-8:
+  containers:
+    post_service:
+      image: rodrigoalveslima/buzzblog:post_v0.1
+      logs:
+      - /tmp/calls.log
+      - /tmp/queries.log
+      options:
+        detach: ''
+        env:
+        - port=9093
+        - threads=512
+        - backend_filepath=/etc/opt/BuzzBlog/backend.yml
+        - postgres_user=postgres
+        - postgres_password=postgres
+        name: post_service
+        publish: 9093:9093
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume: /etc/opt/BuzzBlog:/etc/opt/BuzzBlog
+      start_order: 2
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
+node-9:
+  containers:
+    post_database:
+      image: postgres:13.1 -c max_connections=512
+      options:
+        detach: ''
+        env:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=post
+        - POSTGRES_HOST_AUTH_METHOD=trust
+        name: post_database
+        publish: 5434:5432
+        sysctl:
+        - net.ipv4.tcp_tw_reuse=1
+        - net.ipv4.tcp_abort_on_overflow=0
+        - net.ipv4.ip_local_port_range="32768 65535"
+        - net.core.somaxconn=4096
+        ulimit: nofile=131072:131072
+        volume: /var/lib/postgresql/BuzzBlog/post/data:/var/lib/postgresql/data
+      start_order: 1
+  monitors:
+    collectl:
+      dirpath: /tmp/collectl
+      niceness: 19
+      options:
+        filename: /tmp/collectl/coll
+        interval: '0.01'
+        options: Tm
+        plot: ''
+        subsys: CDM
+    pcm:
+      command: pcm 0.05 -csv=/tmp/pcm/pcm.csv
+      dirpath: /tmp/pcm
+      niceness: 19
+  ssh:
+    key_filename: /home/abhishar/.ssh/id_rsa
+    port: 22
+    username: abhishar
