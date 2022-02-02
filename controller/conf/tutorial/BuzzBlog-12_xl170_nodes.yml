@@ -782,7 +782,8 @@ node-4:
           - "net.core.somaxconn=4096"
         env:
           - "port=9090"
-          - "threads=512"
+          - "threads=65536"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -855,7 +856,8 @@ node-6:
           - "net.core.somaxconn=4096"
         env:
           - "port=9091"
-          - "threads=512"
+          - "threads=65536"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -893,7 +895,8 @@ node-7:
           - "net.core.somaxconn=4096"
         env:
           - "port=9092"
-          - "threads=512"
+          - "threads=65536"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -932,7 +935,8 @@ node-8:
           - "net.core.somaxconn=4096"
         env:
           - "port=9093"
-          - "threads=512"
+          - "threads=65536"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -1006,7 +1010,8 @@ node-10:
           - "net.core.somaxconn=4096"
         env:
           - "port=9094"
-          - "threads=512"
+          - "threads=65536"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"

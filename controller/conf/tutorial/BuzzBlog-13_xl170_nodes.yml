@@ -375,6 +375,7 @@ node-4:
         env:
           - "port=9090"
           - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -414,6 +415,7 @@ node-5:
         env:
           - "port=9090"
           - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -487,6 +489,7 @@ node-7:
         env:
           - "port=9091"
           - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -525,6 +528,7 @@ node-8:
         env:
           - "port=9092"
           - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -564,6 +568,7 @@ node-9:
         env:
           - "port=9093"
           - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
@@ -638,6 +643,7 @@ node-11:
         env:
           - "port=9094"
           - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
