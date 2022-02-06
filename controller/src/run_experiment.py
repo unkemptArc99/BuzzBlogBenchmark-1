@@ -217,7 +217,6 @@ def install_radvisor(node_hostname, node_conf, ssh_client):
 
 @nodes_with_monitor("pcm")
 def install_pcm(node_hostname, node_conf, ssh_client):
-  ssh_client.exec("echo 'pcm install'")
   ssh_client.exec(
       "sudo apt-get update && "
       "echo 'deb http://download.opensuse.org/repositories/home:/opcm/xUbuntu_19.10/ /' | "
@@ -226,7 +225,9 @@ def install_pcm(node_hostname, node_conf, ssh_client):
           "gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_opcm.gpg > /dev/null && "
       "sudo apt-get update && "
       "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y pcm && "
-      "sudo modprobe msr")
+      "sudo modprobe msr && "
+      "sudo mkdir -p /tmp/pcm && "
+      "sudo cat /etc/timezone > /tmp/pcm/tz.log")
 
 
 @nodes_with_container(".+")
@@ -355,9 +356,7 @@ def run():
   install_bpfcc()
   install_collectl()
   install_radvisor()
-  print('PCM wrapper start')
   install_pcm()
-  print('PCM wrapper end')
   pull_docker_images()
   copy_workload_configuration_file()
   render_configuration_templates()
