@@ -1,6 +1,6 @@
 import pandas as pd
 
-from datetime import datetime
+from datetime import datetime, tzinfo
 from dateutil import tz
 from utils.utils import get_pcm_tzinfo
 
@@ -20,12 +20,11 @@ def get_csv(node_name, logfile, experiment_dirname):
     raw_csv.insert(0,'Timestamp', timestamp)
     raw_csv.drop(labels=['System Date', 'System Time'], axis=1, inplace=True)
 
-    node_tzinfo_files = [get_pcm_tzinfo(experiment_dirname, node_name)]
-    node_tzinfo = ""
-    with open(node_tzinfo_files[0]) as f:
-        node_tzinfo = f.readline()
+    node_tzinfo = get_pcm_tzinfo(experiment_dirname, node_name)
+    print(node_tzinfo)
 
     raw_csv['Timestamp'] = raw_csv.apply(lambda r: datetime.fromisoformat(r['Timestamp']), axis=1)
-    raw_csv['Timestamp'] = raw_csv.apply(lambda r: r.replace(tzinfo=tz.gettz(node_tzinfo)))
+    with_timezone = [x.replace(tzinfo=tz.gettz(node_tzinfo)) for x in raw_csv['Timestamp']]
+    raw_csv['Timestamp'] = with_timezone
     raw_csv['Node Name'] = [node_name] * raw_csv.shape[0]
     return raw_csv

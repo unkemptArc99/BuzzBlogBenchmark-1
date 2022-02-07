@@ -109,13 +109,9 @@ def get_experiment_pcm_logfiles(experiment_dirname):
 
 
 def get_pcm_tzinfo(experiment_dirname, node_name):
-    tarball_path =  os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs", node_name,
-            "pcm.tar.gz")
-    with tarfile.open(tarball_path, "r:gz") as tar:
-        for filename in tar.getnames():
-            if filename.endswith(".log"):
-                with tar.extractfile(filename) as logfile:
-                    yield logfile
+    logfile_path =  os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs", "tz.log")
+    with open(logfile_path, "r") as f:
+        return f.readline()
 
 
 def get_experiment_start_time(experiment_dirname):

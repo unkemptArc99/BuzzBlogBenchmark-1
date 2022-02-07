@@ -329,7 +329,7 @@ def fetch_monitoring_data(node_hostname, node_conf, ssh_client):
         os.path.join(DIRNAME, "logs", node_hostname))
     if monitor_name == "pcm":
       ssh_client.exec("cat /etc/timezone > ~/tz.log")
-      ssh_client.copy("~/tz.log", os.path.join(DIRNAME, "logs"))
+      ssh_client.copy("~/tz.log", os.path.join(DIRNAME, "logs", node_hostname))
 
 
 @nodes_with_container(".+")
