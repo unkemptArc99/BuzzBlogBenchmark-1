@@ -225,9 +225,7 @@ def install_pcm(node_hostname, node_conf, ssh_client):
           "gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_opcm.gpg > /dev/null && "
       "sudo apt-get update && "
       "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y pcm && "
-      "sudo modprobe msr && "
-      "sudo mkdir -p /tmp/pcm && "
-      "sudo cat /etc/timezone > /tmp/pcm/tz.log")
+      "sudo modprobe msr")
 
 
 @nodes_with_container(".+")
@@ -329,6 +327,9 @@ def fetch_monitoring_data(node_hostname, node_conf, ssh_client):
     ssh_client.copy("/tmp/{monitor_name}.tar.gz".format(
         monitor_name=monitor_name),
         os.path.join(DIRNAME, "logs", node_hostname))
+    if monitor_name == "pcm":
+      ssh_client.exec("cat /etc/timezone > ~/tz.log")
+      ssh_client.copy("~/tz.log", os.path.join(DIRNAME, "logs"))
 
 
 @nodes_with_container(".+")
