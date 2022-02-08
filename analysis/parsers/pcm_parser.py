@@ -1,8 +1,17 @@
 import pandas as pd
 
 from datetime import datetime, tzinfo
-from dateutil import tz
+import pytz
 from utils.utils import get_pcm_tzinfo
+
+def utc_diff(node_tzinfo):
+    dt = datetime.now()
+    source_timezone = pytz.timezone(node_tzinfo)
+    target_timezone = pytz.timezone('UTC')
+    source_date = source_timezone.localize(dt)
+    dest_date = target_timezone.localize(dt)
+    return (source_date - dest_date)
+
 
 def get_csv(node_name, logfile, experiment_dirname):
     raw_csv = pd.read_csv(logfile)
@@ -20,11 +29,7 @@ def get_csv(node_name, logfile, experiment_dirname):
     raw_csv.insert(0,'Timestamp', timestamp)
     raw_csv.drop(labels=['System Date', 'System Time'], axis=1, inplace=True)
 
-    node_tzinfo = get_pcm_tzinfo(experiment_dirname, node_name)
-    print(node_tzinfo)
-
-    raw_csv['Timestamp'] = raw_csv.apply(lambda r: datetime.fromisoformat(r['Timestamp']), axis=1)
-    with_timezone = [x.replace(tzinfo=tz.gettz(node_tzinfo)) for x in raw_csv['Timestamp']]
-    raw_csv['Timestamp'] = with_timezone
+    node_tzinfo = get_pcm_tzinfo(experiment_dirname, node_name).rstrip('\n')
+    raw_csv['Timestamp'] = raw_csv.apply(lambda r: datetime.fromisoformat(r['Timestamp']) + utc_diff(node_tzinfo), axis=1)
     raw_csv['Node Name'] = [node_name] * raw_csv.shape[0]
     return raw_csv

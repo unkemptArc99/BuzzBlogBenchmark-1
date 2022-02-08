@@ -109,7 +109,8 @@ def get_experiment_pcm_logfiles(experiment_dirname):
 
 
 def get_pcm_tzinfo(experiment_dirname, node_name):
-    logfile_path =  os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs", "tz.log")
+    logfile_path =  os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs", node_name, 
+            "tz.log")
     with open(logfile_path, "r") as f:
         return f.readline()
 
