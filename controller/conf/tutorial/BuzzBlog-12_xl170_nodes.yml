@@ -785,6 +785,7 @@ node-4:
           - "threads=65536"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
+          - "postgres_connection_pool_size=512"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -859,6 +860,7 @@ node-6:
           - "threads=65536"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
+          - "postgres_connection_pool_size=256"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -898,6 +900,7 @@ node-7:
           - "threads=65536"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
+          - "postgres_connection_pool_size=256"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -938,6 +941,7 @@ node-8:
           - "threads=65536"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
+          - "postgres_connection_pool_size=512"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -1013,6 +1017,7 @@ node-10:
           - "threads=65536"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
+          - "postgres_connection_pool_size=512"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
