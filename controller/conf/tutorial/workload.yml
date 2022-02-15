@@ -4,7 +4,7 @@
 sessions: 4098
 throughput: 100
 duration:
-  total: 1800
+  total: 2880
   ramp_up: 720
   ramp_down: 360
 surges: []
