@@ -42,8 +42,9 @@ request_graph:
     delete_follow: 0.03
     like_post: 0.12
     delete_like: 0.03
-    retrieve_post: 0.25
-    retrieve_account: 0.25
+    retrieve_post: 0.20
+    retrieve_account: 0.18
+    list_trending_hashtags: 0.12
   retrieve_post:
     retrieve_post_likes: 1.00
   retrieve_post_likes:
@@ -66,3 +67,6 @@ request_graph:
   retrieve_account_likes:
     create_post: 0.50
     retrieve_recent_posts: 0.50
+  list_trending_hashtags:
+    retrieve_recent_posts: 0.50
+    create_post: 0.50

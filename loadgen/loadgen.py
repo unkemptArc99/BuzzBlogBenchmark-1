@@ -161,6 +161,10 @@ class BuzzBlogSession(ATLoad.Session):
           params={"account_id": self._other_account["id"], "limit": 8,
               "offset": 0})
 
+  def list_trending_hashtags(self):
+    r = self._request("get", "/trending",
+        params={"limit": 10})
+
 
 if __name__ == "__main__":
   # Parse command-line arguments.
