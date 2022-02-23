@@ -13,13 +13,20 @@ import ATLoad
 
 
 LOG_PATTERN = "[{ts}] {method} {url} {status_code} - latency={latency}"
+N_HASHTAGS = 1024
+HASHTAGS = ["#" + _random_string(10) for _ in range(N_HASHTAGS)]
+
+
+def _random_string(length):
+  letters = string.ascii_lowercase + string.ascii_uppercase + string.digits
+  return "".join(random.choice(letters) for _ in range(length))
 
 
 class BuzzBlogSession(ATLoad.Session):
   def __init__(self, hostname, port):
     self._url_prefix = "http://{hostname}:{port}".format(hostname=hostname,
         port=port)
-    self._password = self._random_string(16)
+    self._password = _random_string(16)
     self._my_account = None
     self._my_posts = []
     self._my_follows = []
@@ -31,7 +38,7 @@ class BuzzBlogSession(ATLoad.Session):
     auth = HTTPBasicAuth(self._my_account["username"], self._password) \
         if self._my_account is not None else None
     params = params or {}
-    params.update({"request_id": self._random_string(8)})
+    params.update({"request_id": _random_string(8)})
     start_time = datetime.datetime.now()
     r = getattr(requests, method)(self._url_prefix + path, auth=auth,
         params=params, json=json)
@@ -47,17 +54,13 @@ class BuzzBlogSession(ATLoad.Session):
         latency=format(latency, ".3f")))
     return r
 
-  def _random_string(self, length):
-    letters = string.ascii_lowercase + string.ascii_uppercase + string.digits
-    return "".join(random.choice(letters) for i in range(length))
-
   def create_account(self):
     r = self._request("post", "/account",
         json={
-            "username": self._random_string(16),
+            "username": _random_string(16),
             "password": self._password,
-            "first_name": self._random_string(16),
-            "last_name": self._random_string(16)
+            "first_name": _random_string(16),
+            "last_name": _random_string(16)
         })
     assert r.status_code == 200
     self._my_account = r.json()
@@ -66,14 +69,14 @@ class BuzzBlogSession(ATLoad.Session):
     r = self._request("put", "/account/%s" % self._my_account["id"],
         json={
             "password": self._password,
-            "first_name": self._random_string(16),
-            "last_name": self._random_string(16)
+            "first_name": _random_string(16),
+            "last_name": _random_string(16)
         })
     if r.status_code == 200:
       self._my_account = r.json()
 
   def create_post(self):
-    r = self._request("post", "/post", json={"text": self._random_string(140)})
+    r = self._request("post", "/post", json={"text": _random_string(128) + " " + random.choice(HASHTAGS)})
     if r.status_code == 200:
       self._my_posts.append(r.json())
 
