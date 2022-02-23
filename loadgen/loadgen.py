@@ -12,14 +12,14 @@ from requests.auth import HTTPBasicAuth
 import ATLoad
 
 
-LOG_PATTERN = "[{ts}] {method} {url} {status_code} - latency={latency}"
-N_HASHTAGS = 1024
-HASHTAGS = ["#" + _random_string(10) for _ in range(N_HASHTAGS)]
-
-
 def _random_string(length):
   letters = string.ascii_lowercase + string.ascii_uppercase + string.digits
   return "".join(random.choice(letters) for _ in range(length))
+
+
+LOG_PATTERN = "[{ts}] {method} {url} {status_code} - latency={latency}"
+N_HASHTAGS = 1024
+HASHTAGS = ["#" + _random_string(10) for _ in range(N_HASHTAGS)]
 
 
 class BuzzBlogSession(ATLoad.Session):
