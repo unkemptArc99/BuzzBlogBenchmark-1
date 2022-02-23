@@ -391,7 +391,8 @@ def main():
     for container_name, container_conf in \
         node_conf.get("containers", {}).items():
       if container_name.endswith("_service") or \
-          container_name.endswith("_database"):
+          container_name.endswith("_database") or \
+          container_name.endswith("_redis"):
         container_basename = container_name[:container_name.find('_')]
         container_type = container_name[container_name.find('_') + 1:]
         container_addr = node_hostname + ":" + \
@@ -402,6 +403,8 @@ def main():
           BACKEND_CONF[container_basename][container_type].append(
               container_addr)
         elif container_type == "database":
+          BACKEND_CONF[container_basename][container_type] = container_addr
+        elif container_type == "redis":
           BACKEND_CONF[container_basename][container_type] = container_addr
   # Create directory tree.
   global DIRNAME
@@ -420,11 +423,13 @@ def main():
   # Save configuration files.
   with open(os.path.join(DIRNAME, "conf", "system.yml"), 'w') as \
       system_conf_file_copy:
-    system_conf_file_copy.write(yaml.dump(SYS_CONF))
-  if WL_CONF:
+    with open(args.system_conf) as system_conf_file:
+      system_conf_file_copy.write(system_conf_file.read())
+  if args.workload_conf:
     with open(os.path.join(DIRNAME, "conf", "workload.yml"), 'w') as \
         workload_conf_file_copy:
-      workload_conf_file_copy.write(yaml.dump(WL_CONF))
+      with open(args.workload_conf) as workload_conf_file:
+        workload_conf_file_copy.write(workload_conf_file.read())
   # Run experiment workflow.
   run()
   # Update experiment metadata.

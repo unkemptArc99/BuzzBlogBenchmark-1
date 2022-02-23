@@ -11,8 +11,8 @@ account](CLOUDLAB.md) first.
 1. Access the [CloudLab login page](https://cloudlab.us/login.php) and sign in.
 2. In the main menu, click on [Start Experiment](https://www.cloudlab.us/instantiate.php).
 3. Click on *Change Profile*.
-4. Search profile *BuzzBlog-12_xl170_nodes* of project *Infosphere*. This
-profile contains the specification of a cloud comprising 12 xl170 machines (x86)
+4. Search profile *BuzzBlog-15_xl170_nodes* of project *Infosphere*. This
+profile contains the specification of a cloud comprising 15 xl170 machines (x86)
 connected to a LAN and running Ubuntu 20.04 LTS (focal) 64-bit. Click on
 *Select Profile*.
 5. Optionally, you can give a name to your experiment. Click on *Next*.
@@ -58,11 +58,11 @@ chmod +x tutorial_configuration_setup.sh
 ./tutorial_configuration_setup.sh \
     --username [your cloudlab username] \
     --controller_node [node-0 hostname] \
-    --system_template BuzzBlog-12_xl170_nodes.yml
+    --system_template BuzzBlog-15_xl170_nodes.yml
 ```
 
 In this example, we use the system configuration specified in the file
-`controller/conf/tutorial/BuzzBlog-12_xl170_nodes.yml`.
+`controller/conf/tutorial/BuzzBlog-15_xl170_nodes.yml`.
 
 Log into `node-0`.
 ```
