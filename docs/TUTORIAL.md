@@ -59,6 +59,7 @@ chmod +x tutorial_configuration_setup.sh
     --username [your cloudlab username] \
     --controller_node [node-0 hostname] \
     --system_template BuzzBlog-15_xl170_nodes.yml
+    --workload_template BuzzBlog-write_intensive_bursty_workload.yml
 ```
 
 In this example, we use the system configuration specified in the file
@@ -108,7 +109,7 @@ sudo docker run \
     rodrigoalveslima/buzzblog:benchmarkcontroller_v0.1
 ```
 
-This experiment will take approximately 45 minutes to finish. The results will
+This experiment will take approximately 75 minutes to finish. The results will
 be in a directory named `BuzzBlogBenchmark_[%Y-%m-%d-%H-%M-%S]` located in the
 home directory.
 

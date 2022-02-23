@@ -16,6 +16,9 @@ while [[ $# > 1 ]]; do
     --system_template )
       system_template=$2
       ;;
+    --workload_template )
+      workload_template=$2
+      ;;
     * )
       echo "Invalid argument: $1"
       exit 1
@@ -29,7 +32,7 @@ ssh -o StrictHostKeyChecking=no ${username}@${controller_node} "
   # Clone this repository to get the experiment configuration files.
   ssh-keygen -F github.com || ssh-keyscan github.com >> ~/.ssh/known_hosts
   git clone git@github.com:rodrigoalveslima/BuzzBlogBenchmark.git
-  mv BuzzBlogBenchmark/controller/conf/tutorial/workload.yml .
+  mv BuzzBlogBenchmark/controller/conf/tutorial/${workload_template} workload.yml
   mv BuzzBlogBenchmark/controller/conf/tutorial/${system_template} system.yml
   rm -rf BuzzBlogBenchmark
 
