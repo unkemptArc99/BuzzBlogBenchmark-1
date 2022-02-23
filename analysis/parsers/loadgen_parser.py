@@ -22,7 +22,8 @@ REQUEST_TO_TYPE = {
     (URL_PATTERN.format(path="post", qs="author_id=\d+"), "GET"): "retrieve_account_posts",
     (URL_PATTERN.format(path="post/\d+", qs=""), "GET"): "retrieve_post",
     (URL_PATTERN.format(path="post", qs=""), "POST"): "create_post",
-    (URL_PATTERN.format(path="post/\d+", qs=""), "DELETE"): "delete_post"
+    (URL_PATTERN.format(path="post/\d+", qs=""), "DELETE"): "delete_post",
+    (URL_PATTERN.format(path="trending", qs=""), "GET"): "list_trending_hashtags"
 }
 
 
