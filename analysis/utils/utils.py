@@ -50,6 +50,23 @@ def get_query_logfiles(experiment_dirname):
                                 yield logfile
 
 
+def get_redis_logfiles(experiment_dirname):
+    tarball_patterns = [
+        r"^.+_service.*\.tar\.gz$",
+    ]
+    for node_name in get_node_names(experiment_dirname):
+        for tarball_name in os.listdir(os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname,
+                "logs", node_name)):
+            if sum([1 if re.match(tarball_pattern, tarball_name) else 0 for tarball_pattern in tarball_patterns]):
+                tarball_path = os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname, "logs",
+                        node_name, tarball_name)
+                with tarfile.open(tarball_path, "r:gz") as tar:
+                    for filename in tar.getnames():
+                        if filename.endswith("redis.log"):
+                            with tar.extractfile(filename) as logfile:
+                                yield logfile
+
+
 def get_loadgen_logfiles(experiment_dirname):
     for node_name in get_node_names(experiment_dirname):
         for tarball_name in os.listdir(os.path.join(os.path.dirname(__file__), "..", "data", experiment_dirname,
