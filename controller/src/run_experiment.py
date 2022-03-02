@@ -184,7 +184,7 @@ def install_buzzblogbenchmark(node_hostname, node_conf, ssh_client):
           "--output /opt/BuzzBlogBenchmark/v{VERSION}.tar.gz && "
       "sudo tar -C /opt/BuzzBlogBenchmark -xzf /opt/BuzzBlogBenchmark/v{VERSION}.tar.gz && "
       "sudo mv /opt/BuzzBlogBenchmark/BuzzBlogBenchmark-{VERSION}/* /opt/BuzzBlogBenchmark && "
-      "sudo rmdir /opt/BuzzBlogBenchmark/BuzzBlogBenchmark-{VERSION}".format(VERSION=VERSION))
+      "sudo rm -rf /opt/BuzzBlogBenchmark/BuzzBlogBenchmark-{VERSION}".format(VERSION=VERSION))
 
 
 @nodes_with_container(".+")
