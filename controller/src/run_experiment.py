@@ -24,9 +24,18 @@ METADATA = {}
 SYS_CONF = {}
 WL_CONF = {}
 BACKEND_CONF = {}
+PARSE_LOG_FILES = None
 
 
 ### Utilities
+
+LOG_FILENAME_TO_PARSER = {
+  "loadgen.log": "/opt/BuzzBlogBenchmark/analysis/parsers/loadgen_parser.py",
+  "queries.log": "/opt/BuzzBlogBenchmark/analysis/parsers/query_parser.py",
+  "redis.log": "/opt/BuzzBlogBenchmark/analysis/parsers/redis_parser.py",
+  "calls.log": "/opt/BuzzBlogBenchmark/analysis/parsers/rpc_parser.py",
+}
+
 
 def timestamp():
   return datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
@@ -166,6 +175,17 @@ def get_system_specs(node_hostname, node_conf, ssh_client):
 
 
 @nodes_with_container(".+")
+def install_buzzblogbenchmark(node_hostname, node_conf, ssh_client):
+  VERSION = "0.1"
+  ssh_client.exec(
+      "sudo mkdir -p /opt/BuzzBlogBenchmark && "
+      "sudo curl "
+          "https://codeload.github.com/rodrigoalveslima/BuzzBlogBenchmark/tar.gz/refs/tags/v{VERSION} "
+          "--output /opt/BuzzBlogBenchmark/v{VERSION}.tar.gz && "
+      "sudo tar -C /opt/BuzzBlogBenchmark -xzf /opt/BuzzBlogBenchmark/v{VERSION}.tar.gz".format(VERSION=VERSION))
+
+
+@nodes_with_container(".+")
 def install_docker(node_hostname, node_conf, ssh_client):
   ssh_client.exec(
       "sudo apt-get update && "
@@ -180,6 +200,15 @@ def install_docker(node_hostname, node_conf, ssh_client):
       "sudo apt-get update && "
       "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "
           "docker-ce docker-ce-cli containerd.io")
+
+
+@nodes_with_container(".+")
+def install_pandas(node_hostname, node_conf, ssh_client):
+  ssh_client.exec(
+      "sudo apt-get update && "
+      "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install "
+          "python3-pip && "
+      "pip3 install pandas==1.3.3")
 
 
 @nodes_with_monitor(".+-bpfcc")
@@ -309,6 +338,11 @@ def stop_monitors(node_hostname, node_conf, ssh_client):
 @nodes_with_monitor(".+")
 def fetch_monitoring_data(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
+    if PARSE_LOG_FILES:
+      if monitor_name == "collectl":
+        ssh_client.exec("for filename in $(find %s -name '*.gz' -type f); do "
+            "python3 /opt/BuzzBlogBenchmark/analysis/parsers/collectl_parser.py "
+            "--log_filepath ${filename} --csv_filepath ${filename/.gz/.csv}; done" % monitor_conf["dirpath"])
     ssh_client.exec("tar -C {dirpath} -czf /tmp/{monitor_name}.tar.gz .".format(
         monitor_name=monitor_name, dirpath=monitor_conf["dirpath"]))
     ssh_client.copy("/tmp/{monitor_name}.tar.gz".format(
@@ -328,6 +362,15 @@ def fetch_container_logs(node_hostname, node_conf, ssh_client):
       ssh_client.exec("sudo docker cp {container_name}:{filepath} {dirpath}".\
           format(container_name=container_name, filepath=filepath,
               dirpath=dirpath))
+      if PARSE_LOG_FILES:
+        log_filename = os.path.basename(filepath)
+        if log_filename in LOG_FILENAME_TO_PARSER:
+          ssh_client.exec("python3 {parser_path} "
+              "--log_filepath {log_filepath} "
+              "--csv_filepath {csv_filepath}".format(
+                  parser_path=LOG_FILENAME_TO_PARSER[log_filename],
+                  log_filepath=os.path.join(dirpath, log_filename),
+                  csv_filepath=os.path.join(dirpath, os.path.splitext(log_filename)[0] + ".csv")))
     ssh_client.exec("tar -C {dirpath} -czf {dirpath}.tar.gz .".format(
         dirpath=dirpath))
     ssh_client.copy("{dirpath}.tar.gz".format(dirpath=dirpath),
@@ -337,7 +380,9 @@ def fetch_container_logs(node_hostname, node_conf, ssh_client):
 def run():
   configure_kernel()
   get_system_specs()
+  install_buzzblogbenchmark()
   install_docker()
+  install_pandas()
   install_bpfcc()
   install_collectl()
   install_radvisor()
@@ -367,6 +412,7 @@ def main():
       action="store", help="Docker Hub username")
   parser.add_argument("--docker_hub_password", required=False, default="",
       action="store", help="Docker Hub password")
+  parser.add_argument("--parse_log_files", action="store_true")
   args = parser.parse_args()
   # Load system configuration.
   global SYS_CONF
@@ -385,6 +431,9 @@ def main():
   DOCKER_HUB_USERNAME = args.docker_hub_username or ""
   global DOCKER_HUB_PASSWORD
   DOCKER_HUB_PASSWORD = args.docker_hub_password or ""
+  # Set options.
+  global PARSE_LOG_FILES
+  PARSE_LOG_FILES = args.parse_log_files
   # Build backend configuration.
   global BACKEND_CONF
   for node_hostname, node_conf in SYS_CONF.items():

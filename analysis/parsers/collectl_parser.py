@@ -1,9 +1,12 @@
+# Copyright (C) 2020 Georgia Tech Center for Experimental Research in Computer
+# Systems
+
+import argparse
 import datetime
+import gzip
 import re
 
 import pandas as pd
-
-from .base_parser import BaseParser
 
 # Constants
 HW_METRICS = {
@@ -12,32 +15,47 @@ HW_METRICS = {
     "dsk": ["name", "reads", "rmerge", "rkbytes", "waitr", "writes", "wmerge", "wkbytes", "waitw", "request", "quelen",
             "wait", "svctim", "util"]
 }
+COLUMNS = {
+    "cpu": ["timestamp", "hw_no"] + HW_METRICS["cpu"],
+    "mem": ["timestamp", "hw_no"] + HW_METRICS["mem"],
+    "dsk": ["timestamp", "hw_no"] + HW_METRICS["dsk"]
+}
+FILE_EXTENSION_TO_HW_TYPE = {
+    "cpu": "cpu",
+    "numa": "mem",
+    "dsk": "dsk"
+}
 
 
-class CollectlParser(BaseParser):
-    def __init__(self, logfile, hw_type, start_time=None, end_time=None):
-        super().__init__(logfile)
-        self._hw_type = hw_type
-        self._start_time = start_time
-        self._end_time = end_time
-
-    def parse(self):
-        data = {"hw_no": [], "timestamp": [], "hw_metric": [], "value": []}
-        for log in self._logfile:
+class CollectlParser:
+    @classmethod
+    def df(cls, logfile, hw_type):
+        for log in logfile:
             if log[0] == '#':
                 timezone = re.findall(r"TZ: ([-+]\d{4})", log)
                 if timezone:
                     offset = datetime.timedelta(hours=(1 if timezone[0][0] == '+' else -1) * int(timezone[0][1:3]))
-                # Skip comments.
-                continue
-            log_entry = log.split()
-            timestamp = datetime.datetime.strptime(" ".join(log_entry[:2]), "%Y%m%d %H:%M:%S.%f") - offset
-            if (self._start_time and pd.Timestamp(timestamp) < pd.Timestamp(self._start_time)) or (self._end_time and pd.Timestamp(timestamp) > pd.Timestamp(self._end_time)):
-                continue
-            for hw_no in range((len(log_entry) - 2) // len(HW_METRICS[self._hw_type])):
-                for (i, hw_metric) in enumerate(HW_METRICS[self._hw_type]):
-                    data["hw_no"].append(hw_no)
-                    data["timestamp"].append(timestamp)
-                    data["hw_metric"].append(hw_metric)
-                    data["value"].append(log_entry[i + 2 + hw_no * len(HW_METRICS[self._hw_type])])
-        return data
+            else:
+                break
+        return pd.DataFrame([entry for log in logfile for entry in cls.extract_values_from_log(log, hw_type, offset)],
+                columns=COLUMNS[hw_type])
+
+    @staticmethod
+    def extract_values_from_log(log, hw_type, offset):
+        values = log.split()
+        timestamp = datetime.datetime.strptime(" ".join(values[:2]), "%Y%m%d %H:%M:%S.%f") - offset
+        for hw_no in range((len(values) - 2) // len(HW_METRICS[hw_type])):
+            yield (timestamp, hw_no,
+                    *values[2 + hw_no * len(HW_METRICS[hw_type]):2 + (hw_no + 1) * len(HW_METRICS[hw_type])])
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Generate CSV file")
+    parser.add_argument("--log_filepath", required=True, action="store",
+            type=str, help="Path to log file (input)")
+    parser.add_argument("--csv_filepath", required=True, action="store",
+            type=str, help="Path to CSV file (output)")
+    args = parser.parse_args()
+    with gzip.open(args.log_filepath, "rt") as logfile:
+        CollectlParser.df(logfile,
+                FILE_EXTENSION_TO_HW_TYPE[args.log_filepath.split('.')[-2]]).to_csv(args.csv_filepath, index=False)
