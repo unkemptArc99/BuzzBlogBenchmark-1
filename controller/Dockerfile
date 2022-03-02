@@ -42,4 +42,4 @@ COPY src /usr/local/src/BuzzBlogBenchmark
 RUN pip3 install -r /usr/local/src/BuzzBlogBenchmark/requirements.txt
 
 # Start the experiment.
-CMD ["/bin/bash", "-c", "python3 -u /usr/local/src/BuzzBlogBenchmark/run_experiment.py --description \"$description\" --system_conf \"$system_conf\" --workload_conf \"$workload_conf\" --docker_hub_username \"$docker_hub_username\" --docker_hub_password \"$docker_hub_password\""]
+CMD ["/bin/bash", "-c", "python3 -u /usr/local/src/BuzzBlogBenchmark/run_experiment.py --description \"$description\" --system_conf \"$system_conf\" --workload_conf \"$workload_conf\" --docker_hub_username \"$docker_hub_username\" --docker_hub_password \"$docker_hub_password\" --parse_log_files"]
