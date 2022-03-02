@@ -183,8 +183,8 @@ def install_buzzblogbenchmark(node_hostname, node_conf, ssh_client):
           "https://codeload.github.com/rodrigoalveslima/BuzzBlogBenchmark/tar.gz/refs/tags/v{VERSION} "
           "--output /opt/BuzzBlogBenchmark/v{VERSION}.tar.gz && "
       "sudo tar -C /opt/BuzzBlogBenchmark -xzf /opt/BuzzBlogBenchmark/v{VERSION}.tar.gz && "
-      "mv /opt/BuzzBlogBenchmark/BuzzBlogBenchmark-{VERSION}/* /opt/BuzzBlogBenchmark && "
-      "rmdir /opt/BuzzBlogBenchmark/BuzzBlogBenchmark-{VERSION}".format(VERSION=VERSION))
+      "sudo mv /opt/BuzzBlogBenchmark/BuzzBlogBenchmark-{VERSION}/* /opt/BuzzBlogBenchmark && "
+      "sudo rmdir /opt/BuzzBlogBenchmark/BuzzBlogBenchmark-{VERSION}".format(VERSION=VERSION))
 
 
 @nodes_with_container(".+")
