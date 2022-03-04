@@ -27,28 +27,28 @@ request_graph:
   main:
     create_account: 1.00
   create_account:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   update_account:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   create_post:
     retrieve_recent_posts: 1.00
   delete_post:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   follow_account:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   delete_follow:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   like_post:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   delete_like:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   retrieve_recent_posts:
     update_account: 0.03
     create_post: 0.08
@@ -63,25 +63,25 @@ request_graph:
   retrieve_post:
     retrieve_post_likes: 1.00
   retrieve_post_likes:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   retrieve_account:
     retrieve_account_posts: 0.25
     retrieve_account_followers: 0.25
     retrieve_account_followees: 0.25
     retrieve_account_likes: 0.25
   retrieve_account_posts:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   retrieve_account_followers:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   retrieve_account_followees:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   retrieve_account_likes:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
   list_trending_hashtags:
-    create_post: 0.30
-    retrieve_recent_posts: 0.70
+    create_post: 0.15
+    retrieve_recent_posts: 0.85
