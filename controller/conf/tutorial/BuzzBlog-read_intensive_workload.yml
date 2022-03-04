@@ -1,0 +1,72 @@
+# Copyright (C) 2020 Georgia Tech Center for Experimental Research in Computer
+# Systems
+
+sessions: 4098
+throughput: 1000
+duration:
+  total: 2880
+  ramp_up: 720
+  ramp_down: 360
+surges: []
+request_graph:
+  main:
+    create_account: 1.00
+  create_account:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  update_account:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  create_post:
+    retrieve_recent_posts: 1.00
+  delete_post:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  follow_account:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  delete_follow:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  like_post:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  delete_like:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  retrieve_recent_posts:
+    update_account: 0.03
+    create_post: 0.08
+    delete_post: 0.03
+    follow_account: 0.07
+    delete_follow: 0.01
+    like_post: 0.07
+    delete_like: 0.01
+    retrieve_post: 0.26
+    retrieve_account: 0.24
+    list_trending_hashtags: 0.20
+  retrieve_post:
+    retrieve_post_likes: 1.00
+  retrieve_post_likes:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  retrieve_account:
+    retrieve_account_posts: 0.25
+    retrieve_account_followers: 0.25
+    retrieve_account_followees: 0.25
+    retrieve_account_likes: 0.25
+  retrieve_account_posts:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  retrieve_account_followers:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  retrieve_account_followees:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  retrieve_account_likes:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
+  list_trending_hashtags:
+    create_post: 0.30
+    retrieve_recent_posts: 0.70
