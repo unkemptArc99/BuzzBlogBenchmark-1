@@ -168,6 +168,9 @@ node-0:
           - "hostname=node-2"
           - "port=8089"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -344,6 +347,9 @@ node-1:
           - "hostname=node-3"
           - "port=8089"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -546,6 +552,9 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"32768 65535\""
           - "net.core.somaxconn=4096"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -748,6 +757,9 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"32768 65535\""
           - "net.core.somaxconn=4096"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -789,6 +801,9 @@ node-4:
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -824,6 +839,9 @@ node-5:
           - "POSTGRES_DB=account"
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -861,6 +879,9 @@ node-6:
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -898,6 +919,9 @@ node-7:
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -939,6 +963,9 @@ node-8:
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -974,6 +1001,9 @@ node-9:
           - "POSTGRES_DB=post"
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -1015,6 +1045,9 @@ node-10:
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -1050,6 +1083,9 @@ node-11:
           - "POSTGRES_DB=uniquepair"
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -1090,6 +1126,9 @@ node-12:
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "redis_connection_pool_size=1024"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -1129,6 +1168,9 @@ node-13:
           - "net.ipv4.ip_local_port_range=\"32768 65535\""
           - "net.core.somaxconn=4096"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
@@ -1163,6 +1205,9 @@ node-14:
           - "accept_backlog=1024"
           - "n_invalid_words=128"
   monitors:
+    tcpretrans-bpfcc:
+      dirpath: "/tmp/tcpretrans-bpfcc"
+      niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
       niceness: 19
