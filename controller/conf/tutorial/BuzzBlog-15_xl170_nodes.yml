@@ -19,7 +19,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-2"
           - "port=8080"
@@ -35,7 +35,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-2"
           - "port=8081"
@@ -51,7 +51,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-2"
           - "port=8082"
@@ -67,7 +67,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-2"
           - "port=8083"
@@ -83,7 +83,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-2"
           - "port=8084"
@@ -99,7 +99,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-2"
           - "port=8085"
@@ -115,7 +115,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-2"
           - "port=8086"
@@ -131,7 +131,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-2"
           - "port=8087"
@@ -147,7 +147,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-2"
           - "port=8088"
@@ -163,7 +163,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-2"
           - "port=8089"
@@ -199,7 +199,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-3"
           - "port=8080"
@@ -215,7 +215,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-3"
           - "port=8081"
@@ -231,7 +231,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-3"
           - "port=8082"
@@ -247,7 +247,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-3"
           - "port=8083"
@@ -263,7 +263,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-3"
           - "port=8084"
@@ -279,7 +279,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-3"
           - "port=8085"
@@ -295,7 +295,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-3"
           - "port=8086"
@@ -311,7 +311,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-3"
           - "port=8087"
@@ -327,7 +327,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-3"
           - "port=8088"
@@ -343,7 +343,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
         env:
           - "hostname=node-3"
           - "port=8089"
@@ -389,8 +389,8 @@ node-2:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway2:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -407,8 +407,8 @@ node-2:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway3:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -425,8 +425,8 @@ node-2:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway4:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -443,8 +443,8 @@ node-2:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway5:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -461,8 +461,8 @@ node-2:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway6:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -479,8 +479,8 @@ node-2:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway7:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -497,8 +497,8 @@ node-2:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway8:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -515,8 +515,8 @@ node-2:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway9:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -533,8 +533,8 @@ node-2:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway10:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -551,8 +551,8 @@ node-2:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -595,8 +595,8 @@ node-3:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway12:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -613,8 +613,8 @@ node-3:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway13:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -631,8 +631,8 @@ node-3:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway14:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -649,8 +649,8 @@ node-3:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway15:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -667,8 +667,8 @@ node-3:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway16:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -685,8 +685,8 @@ node-3:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway17:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -703,8 +703,8 @@ node-3:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway18:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -721,8 +721,8 @@ node-3:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway19:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -739,8 +739,8 @@ node-3:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
     apigateway20:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -757,8 +757,8 @@ node-3:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -794,14 +794,14 @@ node-4:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
         env:
           - "port=9090"
-          - "threads=32768"
-          - "accept_backlog=8192"
+          - "threads=8192"
+          - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=32768"
+          - "postgres_connection_pool_size=8192"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -825,7 +825,7 @@ node-5:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     account_database:
-      image: "postgres:13.1 -c max_connections=32768"
+      image: "postgres:13.1 -c max_connections=8192"
       start_order: 1
       options:
         name: "account_database"
@@ -836,8 +836,8 @@ node-5:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
@@ -877,12 +877,12 @@ node-6:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
         env:
           - "port=9091"
-          - "threads=32768"
-          - "accept_backlog=8192"
+          - "threads=8192"
+          - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
     tcpretrans-bpfcc:
@@ -918,12 +918,12 @@ node-7:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
         env:
           - "port=9092"
-          - "threads=32768"
-          - "accept_backlog=8192"
+          - "threads=8192"
+          - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
     tcpretrans-bpfcc:
@@ -960,14 +960,14 @@ node-8:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
         env:
           - "port=9093"
-          - "threads=32768"
-          - "accept_backlog=8192"
+          - "threads=8192"
+          - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=32768"
+          - "postgres_connection_pool_size=8192"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -991,7 +991,7 @@ node-9:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     post_database:
-      image: "postgres:13.1 -c max_connections=32768"
+      image: "postgres:13.1 -c max_connections=8192"
       start_order: 1
       options:
         name: "post_database"
@@ -1002,8 +1002,8 @@ node-9:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
@@ -1044,14 +1044,14 @@ node-10:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
         env:
           - "port=9094"
-          - "threads=32768"
-          - "accept_backlog=8192"
+          - "threads=8192"
+          - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=32768"
+          - "postgres_connection_pool_size=8192"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -1075,7 +1075,7 @@ node-11:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     uniquepair_database:
-      image: "postgres:13.1 -c max_connections=32768"
+      image: "postgres:13.1 -c max_connections=8192"
       start_order: 1
       options:
         name: "uniquepair_database"
@@ -1086,8 +1086,8 @@ node-11:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
@@ -1129,14 +1129,14 @@ node-12:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
         env:
           - "port=9095"
-          - "threads=32768"
-          - "accept_backlog=8192"
+          - "threads=8192"
+          - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "redis_connection_pool_size=1024"
+          - "redis_connection_pool_size=8192"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1178,8 +1178,8 @@ node-13:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1211,12 +1211,12 @@ node-14:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"32768 65535\""
-          - "net.core.somaxconn=4096"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
         env:
           - "port=9096"
-          - "threads=32768"
-          - "accept_backlog=8192"
+          - "threads=8192"
+          - "accept_backlog=512"
           - "n_invalid_words=128"
   monitors:
     tcpretrans-bpfcc:
