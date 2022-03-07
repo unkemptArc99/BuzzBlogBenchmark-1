@@ -371,7 +371,7 @@ node-2:
       output: "/etc/gunicorn/gunicorn.conf.py"
       params:
         bind: "0.0.0.0:81"
-        threads: 1024
+        threads: 512
   containers:
     apigateway1:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -577,7 +577,7 @@ node-3:
       output: "/etc/gunicorn/gunicorn.conf.py"
       params:
         bind: "0.0.0.0:81"
-        threads: 1024
+        threads: 512
   containers:
     apigateway11:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -798,10 +798,10 @@ node-4:
           - "net.core.somaxconn=1024"
         env:
           - "port=9090"
-          - "threads=8192"
+          - "threads=2048"
           - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=8192"
+          - "postgres_connection_pool_size=2048"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -825,7 +825,7 @@ node-5:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     account_database:
-      image: "postgres:13.1 -c max_connections=8192"
+      image: "postgres:13.1 -c max_connections=2048"
       start_order: 1
       options:
         name: "account_database"
@@ -881,7 +881,7 @@ node-6:
           - "net.core.somaxconn=1024"
         env:
           - "port=9091"
-          - "threads=8192"
+          - "threads=2048"
           - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
@@ -922,7 +922,7 @@ node-7:
           - "net.core.somaxconn=1024"
         env:
           - "port=9092"
-          - "threads=8192"
+          - "threads=2048"
           - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
@@ -964,10 +964,10 @@ node-8:
           - "net.core.somaxconn=1024"
         env:
           - "port=9093"
-          - "threads=8192"
+          - "threads=2048"
           - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=8192"
+          - "postgres_connection_pool_size=2048"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -991,7 +991,7 @@ node-9:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     post_database:
-      image: "postgres:13.1 -c max_connections=8192"
+      image: "postgres:13.1 -c max_connections=2048"
       start_order: 1
       options:
         name: "post_database"
@@ -1048,10 +1048,10 @@ node-10:
           - "net.core.somaxconn=1024"
         env:
           - "port=9094"
-          - "threads=8192"
+          - "threads=2048"
           - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=8192"
+          - "postgres_connection_pool_size=2048"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -1075,7 +1075,7 @@ node-11:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     uniquepair_database:
-      image: "postgres:13.1 -c max_connections=8192"
+      image: "postgres:13.1 -c max_connections=2048"
       start_order: 1
       options:
         name: "uniquepair_database"
@@ -1133,10 +1133,10 @@ node-12:
           - "net.core.somaxconn=1024"
         env:
           - "port=9095"
-          - "threads=8192"
+          - "threads=2048"
           - "accept_backlog=512"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "redis_connection_pool_size=8192"
+          - "redis_connection_pool_size=2048"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1215,7 +1215,7 @@ node-14:
           - "net.core.somaxconn=1024"
         env:
           - "port=9096"
-          - "threads=8192"
+          - "threads=2048"
           - "accept_backlog=512"
           - "n_invalid_words=128"
   monitors:
