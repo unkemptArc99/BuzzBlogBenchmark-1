@@ -170,6 +170,7 @@ node-0:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -349,6 +350,7 @@ node-1:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -554,6 +556,7 @@ node-2:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -759,6 +762,7 @@ node-3:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -803,6 +807,7 @@ node-4:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -841,6 +846,7 @@ node-5:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -881,6 +887,7 @@ node-6:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -921,6 +928,7 @@ node-7:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -965,6 +973,7 @@ node-8:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -1003,6 +1012,7 @@ node-9:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -1047,6 +1057,7 @@ node-10:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -1085,6 +1096,7 @@ node-11:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -1128,6 +1140,7 @@ node-12:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -1170,6 +1183,7 @@ node-13:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -1207,6 +1221,7 @@ node-14:
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
+      log: "/tmp/tcpretrans-bpfcc/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
