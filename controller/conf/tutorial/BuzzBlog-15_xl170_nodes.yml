@@ -25,7 +25,6 @@ node-0:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -49,7 +48,6 @@ node-0:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -73,7 +71,6 @@ node-0:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -97,7 +94,6 @@ node-0:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -121,7 +117,6 @@ node-0:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -145,7 +140,6 @@ node-0:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -169,7 +163,6 @@ node-0:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -193,7 +186,6 @@ node-0:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -217,7 +209,6 @@ node-0:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -241,7 +232,6 @@ node-0:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -285,7 +275,6 @@ node-1:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -309,7 +298,6 @@ node-1:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -333,7 +321,6 @@ node-1:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -357,7 +344,6 @@ node-1:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -381,7 +367,6 @@ node-1:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -405,7 +390,6 @@ node-1:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -429,7 +413,6 @@ node-1:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -453,7 +436,6 @@ node-1:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -477,7 +459,6 @@ node-1:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -501,7 +482,6 @@ node-1:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -556,7 +536,6 @@ node-2:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway2:
@@ -582,7 +561,6 @@ node-2:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway3:
@@ -608,7 +586,6 @@ node-2:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway4:
@@ -634,7 +611,6 @@ node-2:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway5:
@@ -660,7 +636,6 @@ node-2:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway6:
@@ -686,7 +661,6 @@ node-2:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway7:
@@ -712,7 +686,6 @@ node-2:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway8:
@@ -738,7 +711,6 @@ node-2:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway9:
@@ -764,7 +736,6 @@ node-2:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway10:
@@ -790,7 +761,6 @@ node-2:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
   monitors:
@@ -842,7 +812,6 @@ node-3:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway12:
@@ -868,7 +837,6 @@ node-3:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway13:
@@ -894,7 +862,6 @@ node-3:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway14:
@@ -920,7 +887,6 @@ node-3:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway15:
@@ -946,7 +912,6 @@ node-3:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway16:
@@ -972,7 +937,6 @@ node-3:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway17:
@@ -998,7 +962,6 @@ node-3:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway18:
@@ -1024,7 +987,6 @@ node-3:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway19:
@@ -1050,7 +1012,6 @@ node-3:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
     apigateway20:
@@ -1076,7 +1037,6 @@ node-3:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
   monitors:
@@ -1121,7 +1081,6 @@ node-4:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -1171,7 +1130,6 @@ node-5:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -1220,7 +1178,6 @@ node-6:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -1269,7 +1226,6 @@ node-7:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -1319,7 +1275,6 @@ node-8:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -1369,7 +1324,6 @@ node-9:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -1419,7 +1373,6 @@ node-10:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -1469,7 +1422,6 @@ node-11:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -1520,7 +1472,6 @@ node-12:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
@@ -1577,7 +1528,6 @@ node-13:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
   monitors:
@@ -1618,7 +1568,6 @@ node-14:
           - "net.ipv4.tcp_syncookies=0"
           - "net.ipv4.tcp_syn_retries=1"
           - "net.ipv4.tcp_synack_retries=1"
-          - "net.ipv4.tcp_mem=\"786432 1048576 26777216\""
           - "net.ipv4.tcp_rmem=\"16384 131072 67108864\""
           - "net.ipv4.tcp_wmem=\"16384 131072 67108864\""
         env:
