@@ -21,6 +21,8 @@ node-0:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-2"
           - "port=8080"
@@ -38,6 +40,8 @@ node-0:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-2"
           - "port=8081"
@@ -55,6 +59,8 @@ node-0:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-2"
           - "port=8082"
@@ -72,6 +78,8 @@ node-0:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-2"
           - "port=8083"
@@ -89,6 +97,8 @@ node-0:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-2"
           - "port=8084"
@@ -106,6 +116,8 @@ node-0:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-2"
           - "port=8085"
@@ -123,6 +135,8 @@ node-0:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-2"
           - "port=8086"
@@ -140,6 +154,8 @@ node-0:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-2"
           - "port=8087"
@@ -157,6 +173,8 @@ node-0:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-2"
           - "port=8088"
@@ -174,6 +192,8 @@ node-0:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-2"
           - "port=8089"
@@ -211,6 +231,8 @@ node-1:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-3"
           - "port=8080"
@@ -228,6 +250,8 @@ node-1:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-3"
           - "port=8081"
@@ -245,6 +269,8 @@ node-1:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-3"
           - "port=8082"
@@ -262,6 +288,8 @@ node-1:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-3"
           - "port=8083"
@@ -279,6 +307,8 @@ node-1:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-3"
           - "port=8084"
@@ -296,6 +326,8 @@ node-1:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-3"
           - "port=8085"
@@ -313,6 +345,8 @@ node-1:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-3"
           - "port=8086"
@@ -330,6 +364,8 @@ node-1:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-3"
           - "port=8087"
@@ -347,6 +383,8 @@ node-1:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-3"
           - "port=8088"
@@ -364,6 +402,8 @@ node-1:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "hostname=node-3"
           - "port=8089"
@@ -412,6 +452,8 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway2:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -431,6 +473,8 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway3:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -450,6 +494,8 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway4:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -469,6 +515,8 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway5:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -488,6 +536,8 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway6:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -507,6 +557,8 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway7:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -526,6 +578,8 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway8:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -545,6 +599,8 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway9:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -564,6 +620,8 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway10:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -583,6 +641,8 @@ node-2:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -628,6 +688,8 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway12:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -647,6 +709,8 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway13:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -666,6 +730,8 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway14:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -685,6 +751,8 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway15:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -704,6 +772,8 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway16:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -723,6 +793,8 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway17:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -742,6 +814,8 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway18:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -761,6 +835,8 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway19:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -780,6 +856,8 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
     apigateway20:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -799,6 +877,8 @@ node-3:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -837,6 +917,8 @@ node-4:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "port=9090"
           - "threads=64"
@@ -880,6 +962,8 @@ node-5:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
@@ -922,6 +1006,8 @@ node-6:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "port=9091"
           - "threads=64"
@@ -964,6 +1050,8 @@ node-7:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "port=9092"
           - "threads=64"
@@ -1007,6 +1095,8 @@ node-8:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "port=9093"
           - "threads=64"
@@ -1050,6 +1140,8 @@ node-9:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
@@ -1093,6 +1185,8 @@ node-10:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "port=9094"
           - "threads=64"
@@ -1136,6 +1230,8 @@ node-11:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
@@ -1180,6 +1276,8 @@ node-12:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "port=9095"
           - "threads=64"
@@ -1230,6 +1328,8 @@ node-13:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1264,6 +1364,8 @@ node-14:
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_fin_timeout=20"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
         env:
           - "port=9096"
           - "threads=64"
