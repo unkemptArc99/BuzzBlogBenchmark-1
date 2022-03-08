@@ -391,7 +391,7 @@ node-2:
       output: "/etc/gunicorn/gunicorn.conf.py"
       params:
         bind: "0.0.0.0:81"
-        threads: 16
+        threads: 32
   containers:
     apigateway1:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -607,7 +607,7 @@ node-3:
       output: "/etc/gunicorn/gunicorn.conf.py"
       params:
         bind: "0.0.0.0:81"
-        threads: 16
+        threads: 32
   containers:
     apigateway11:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
