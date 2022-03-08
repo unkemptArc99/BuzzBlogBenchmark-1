@@ -41,7 +41,7 @@ class BuzzBlogSession(ATLoad.Session):
     params.update({"request_id": _random_string(8)})
     start_time = datetime.datetime.now()
     r = getattr(requests, method)(self._url_prefix + path, auth=auth,
-        params=params, json=json)
+        params=params, json=json, timeout=10)
     latency = round((datetime.datetime.now() - start_time).total_seconds(), 3)
     query_string = "&".join(["%s=%s" % (k, v) for (k, v) in params.items()]) \
         if params is not None else ""
