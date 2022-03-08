@@ -58,7 +58,7 @@ chmod +x tutorial_configuration_setup.sh
 ./tutorial_configuration_setup.sh \
     --username [your cloudlab username] \
     --controller_node [node-0 hostname] \
-    --system_template BuzzBlog-15_xl170_nodes.yml
+    --system_template BuzzBlog-15_xl170_nodes.yml \
     --workload_template BuzzBlog-write_intensive_bursty_workload.yml
 ```
 
