@@ -1086,7 +1086,7 @@ node-4:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9090"
-          - "threads=64"
+          - "threads=48"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=64"
@@ -1119,7 +1119,7 @@ node-4:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9093"
-          - "threads=64"
+          - "threads=48"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=64"
@@ -1217,7 +1217,7 @@ node-6:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9091"
-          - "threads=64"
+          - "threads=48"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
@@ -1266,7 +1266,7 @@ node-7:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9092"
-          - "threads=64"
+          - "threads=48"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
@@ -1316,7 +1316,7 @@ node-8:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9093"
-          - "threads=64"
+          - "threads=48"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=64"
@@ -1349,7 +1349,7 @@ node-8:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9090"
-          - "threads=64"
+          - "threads=48"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=64"
@@ -1448,7 +1448,7 @@ node-10:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9094"
-          - "threads=64"
+          - "threads=48"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=64"
@@ -1548,7 +1548,7 @@ node-12:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9095"
-          - "threads=64"
+          - "threads=48"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "redis_connection_pool_size=64"
@@ -1645,7 +1645,7 @@ node-14:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9096"
-          - "threads=64"
+          - "threads=48"
           - "accept_backlog=1024"
           - "n_invalid_words=128"
   monitors:
