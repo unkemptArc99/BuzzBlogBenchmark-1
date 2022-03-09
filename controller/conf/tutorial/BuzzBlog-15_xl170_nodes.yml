@@ -1069,7 +1069,7 @@ node-4:
         name: "account_service"
         ulimit: "nofile=131072:131072"
         publish: "9090:9090"
-        cpuset-cpus: "0-9"
+        cpuset-cpus: "0-4"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1086,7 +1086,7 @@ node-4:
           - "net.ipv4.tcp_wmem=\"16384 65536 16777216\""
         env:
           - "port=9090"
-          - "threads=48"
+          - "threads=20"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=64"
@@ -1167,7 +1167,7 @@ node-6:
         name: "follow_service"
         ulimit: "nofile=131072:131072"
         publish: "9091:9091"
-        cpuset-cpus: "0-9"
+        cpuset-cpus: "0-4"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1184,7 +1184,7 @@ node-6:
           - "net.ipv4.tcp_wmem=\"16384 65536 16777216\""
         env:
           - "port=9091"
-          - "threads=48"
+          - "threads=20"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
@@ -1216,7 +1216,7 @@ node-7:
         name: "like_service"
         ulimit: "nofile=131072:131072"
         publish: "9092:9092"
-        cpuset-cpus: "0-9"
+        cpuset-cpus: "0-4"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1233,7 +1233,7 @@ node-7:
           - "net.ipv4.tcp_wmem=\"16384 65536 16777216\""
         env:
           - "port=9092"
-          - "threads=48"
+          - "threads=20"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
@@ -1266,7 +1266,7 @@ node-8:
         name: "post_service"
         ulimit: "nofile=131072:131072"
         publish: "9093:9093"
-        cpuset-cpus: "0-9"
+        cpuset-cpus: "0-4"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1283,7 +1283,7 @@ node-8:
           - "net.ipv4.tcp_wmem=\"16384 65536 16777216\""
         env:
           - "port=9093"
-          - "threads=48"
+          - "threads=20"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=64"
@@ -1365,7 +1365,7 @@ node-10:
         name: "uniquepair_service"
         ulimit: "nofile=131072:131072"
         publish: "9094:9094"
-        cpuset-cpus: "0-9"
+        cpuset-cpus: "0-4"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1382,7 +1382,7 @@ node-10:
           - "net.ipv4.tcp_wmem=\"16384 65536 16777216\""
         env:
           - "port=9094"
-          - "threads=48"
+          - "threads=20"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=64"
@@ -1465,7 +1465,7 @@ node-12:
         name: "trending_service"
         ulimit: "nofile=131072:131072"
         publish: "9095:9095"
-        cpuset-cpus: "0-9"
+        cpuset-cpus: "0-4"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1482,7 +1482,7 @@ node-12:
           - "net.ipv4.tcp_wmem=\"16384 65536 16777216\""
         env:
           - "port=9095"
-          - "threads=48"
+          - "threads=20"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "redis_connection_pool_size=64"
@@ -1563,7 +1563,7 @@ node-14:
         name: "wordfilter_service"
         ulimit: "nofile=131072:131072"
         publish: "9096:9096"
-        cpuset-cpus: "0-9"
+        cpuset-cpus: "0-4"
         detach: ""
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
@@ -1579,7 +1579,7 @@ node-14:
           - "net.ipv4.tcp_wmem=\"16384 65536 16777216\""
         env:
           - "port=9096"
-          - "threads=48"
+          - "threads=20"
           - "accept_backlog=1024"
           - "n_invalid_words=128"
   monitors:
