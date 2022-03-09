@@ -1069,6 +1069,7 @@ node-4:
         name: "account_service"
         ulimit: "nofile=131072:131072"
         publish: "9090:9090"
+        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1085,6 +1086,39 @@ node-4:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9090"
+          - "threads=96"
+          - "accept_backlog=1024"
+          - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
+          - "postgres_connection_pool_size=128"
+          - "postgres_user=postgres"
+          - "postgres_password=postgres"
+    post_service:
+      image: "rodrigoalveslima/buzzblog:post_v0.1"
+      start_order: 2
+      logs:
+        - "/tmp/calls.log"
+        - "/tmp/queries.log"
+      options:
+        name: "post_service"
+        ulimit: "nofile=131072:131072"
+        publish: "9093:9093"
+        cpuset-cpus: "10-19"
+        volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
+        detach: ""
+        sysctl:
+          - "net.ipv4.tcp_tw_reuse=1"
+          - "net.ipv4.tcp_abort_on_overflow=0"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
+          - "net.ipv4.tcp_fin_timeout=10"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
+          - "net.ipv4.tcp_syn_retries=2"
+          - "net.ipv4.tcp_synack_retries=2"
+          - "net.ipv4.tcp_rmem=\"16384 65536 33554432\""
+          - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
+        env:
+          - "port=9093"
           - "threads=96"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
@@ -1112,7 +1146,7 @@ node-5:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     account_database:
-      image: "postgres:13.1 -c max_connections=128"
+      image: "postgres:13.1 -c max_connections=256"
       start_order: 1
       options:
         name: "account_database"
@@ -1166,6 +1200,7 @@ node-6:
         name: "follow_service"
         ulimit: "nofile=131072:131072"
         publish: "9091:9091"
+        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1214,6 +1249,7 @@ node-7:
         name: "like_service"
         ulimit: "nofile=131072:131072"
         publish: "9092:9092"
+        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1263,6 +1299,7 @@ node-8:
         name: "post_service"
         ulimit: "nofile=131072:131072"
         publish: "9093:9093"
+        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1279,6 +1316,39 @@ node-8:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9093"
+          - "threads=96"
+          - "accept_backlog=1024"
+          - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
+          - "postgres_connection_pool_size=128"
+          - "postgres_user=postgres"
+          - "postgres_password=postgres"
+    account_service:
+      image: "rodrigoalveslima/buzzblog:account_v0.1"
+      start_order: 2
+      logs:
+        - "/tmp/calls.log"
+        - "/tmp/queries.log"
+      options:
+        name: "account_service"
+        ulimit: "nofile=131072:131072"
+        publish: "9090:9090"
+        cpuset-cpus: "10-19"
+        volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
+        detach: ""
+        sysctl:
+          - "net.ipv4.tcp_tw_reuse=1"
+          - "net.ipv4.tcp_abort_on_overflow=0"
+          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.core.somaxconn=1024"
+          - "net.ipv4.tcp_fin_timeout=10"
+          - "net.ipv4.tcp_timestamps=0"
+          - "net.ipv4.tcp_syncookies=0"
+          - "net.ipv4.tcp_syn_retries=2"
+          - "net.ipv4.tcp_synack_retries=2"
+          - "net.ipv4.tcp_rmem=\"16384 65536 33554432\""
+          - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
+        env:
+          - "port=9090"
           - "threads=96"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
@@ -1306,7 +1376,7 @@ node-9:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     post_database:
-      image: "postgres:13.1 -c max_connections=128"
+      image: "postgres:13.1 -c max_connections=256"
       start_order: 1
       options:
         name: "post_database"
@@ -1361,6 +1431,7 @@ node-10:
         name: "uniquepair_service"
         ulimit: "nofile=131072:131072"
         publish: "9094:9094"
+        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1404,7 +1475,7 @@ node-11:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     uniquepair_database:
-      image: "postgres:13.1 -c max_connections=128"
+      image: "postgres:13.1 -c max_connections=256"
       start_order: 1
       options:
         name: "uniquepair_database"
@@ -1460,6 +1531,7 @@ node-12:
         name: "trending_service"
         ulimit: "nofile=131072:131072"
         publish: "9095:9095"
+        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         sysctl:
@@ -1557,6 +1629,7 @@ node-14:
         name: "wordfilter_service"
         ulimit: "nofile=131072:131072"
         publish: "9096:9096"
+        cpuset-cpus: "0-9"
         detach: ""
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
