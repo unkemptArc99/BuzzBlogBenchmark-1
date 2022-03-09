@@ -238,6 +238,10 @@ node-0:
           - "hostname=node-2"
           - "port=8089"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -488,6 +492,10 @@ node-1:
           - "hostname=node-3"
           - "port=8089"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -511,7 +519,7 @@ node-2:
       output: "/etc/gunicorn/gunicorn.conf.py"
       params:
         bind: "0.0.0.0:81"
-        threads: 32
+        threads: 4
   containers:
     apigateway1:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -764,6 +772,10 @@ node-2:
           - "net.ipv4.tcp_rmem=\"16384 65536 33554432\""
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -787,7 +799,7 @@ node-3:
       output: "/etc/gunicorn/gunicorn.conf.py"
       params:
         bind: "0.0.0.0:81"
-        threads: 32
+        threads: 4
   containers:
     apigateway11:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1040,6 +1052,10 @@ node-3:
           - "net.ipv4.tcp_rmem=\"16384 65536 33554432\""
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1085,13 +1101,17 @@ node-4:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9090"
-          - "threads=128"
+          - "threads=96"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=128"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1138,6 +1158,10 @@ node-5:
           - "POSTGRES_DB=account"
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1182,10 +1206,14 @@ node-6:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9091"
-          - "threads=128"
+          - "threads=96"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1230,10 +1258,14 @@ node-7:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9092"
-          - "threads=128"
+          - "threads=96"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1279,13 +1311,17 @@ node-8:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9093"
-          - "threads=128"
+          - "threads=96"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=128"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1332,6 +1368,10 @@ node-9:
           - "POSTGRES_DB=post"
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1377,13 +1417,17 @@ node-10:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9094"
-          - "threads=128"
+          - "threads=96"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=128"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1430,6 +1474,10 @@ node-11:
           - "POSTGRES_DB=uniquepair"
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1476,11 +1524,15 @@ node-12:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9095"
-          - "threads=128"
+          - "threads=96"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "redis_connection_pool_size=128"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1531,6 +1583,10 @@ node-13:
           - "net.ipv4.tcp_rmem=\"16384 65536 33554432\""
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
@@ -1572,10 +1628,14 @@ node-14:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9096"
-          - "threads=128"
+          - "threads=96"
           - "accept_backlog=1024"
           - "n_invalid_words=128"
   monitors:
+    tcpdrop-bpfcc:
+      dirpath: "/tmp/tcpdrop-bpfcc"
+      log: "/tmp/tcpdrop-bpfcc/log"
+      niceness: 19
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
       log: "/tmp/tcpretrans-bpfcc/log"
