@@ -1086,10 +1086,10 @@ node-4:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9090"
-          - "threads=96"
+          - "threads=64"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=128"
+          - "postgres_connection_pool_size=64"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
     post_service:
@@ -1119,10 +1119,10 @@ node-4:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9093"
-          - "threads=96"
+          - "threads=64"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=128"
+          - "postgres_connection_pool_size=64"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -1146,7 +1146,7 @@ node-5:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     account_database:
-      image: "postgres:13.1 -c max_connections=256"
+      image: "postgres:13.1 -c max_connections=128"
       start_order: 1
       options:
         name: "account_database"
@@ -1217,7 +1217,7 @@ node-6:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9091"
-          - "threads=96"
+          - "threads=64"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
@@ -1266,7 +1266,7 @@ node-7:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9092"
-          - "threads=96"
+          - "threads=64"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
@@ -1316,10 +1316,10 @@ node-8:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9093"
-          - "threads=96"
+          - "threads=64"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=128"
+          - "postgres_connection_pool_size=64"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
     account_service:
@@ -1349,10 +1349,10 @@ node-8:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9090"
-          - "threads=96"
+          - "threads=64"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=128"
+          - "postgres_connection_pool_size=64"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -1376,7 +1376,7 @@ node-9:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     post_database:
-      image: "postgres:13.1 -c max_connections=256"
+      image: "postgres:13.1 -c max_connections=128"
       start_order: 1
       options:
         name: "post_database"
@@ -1448,10 +1448,10 @@ node-10:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9094"
-          - "threads=96"
+          - "threads=64"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=128"
+          - "postgres_connection_pool_size=64"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -1475,7 +1475,7 @@ node-11:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   containers:
     uniquepair_database:
-      image: "postgres:13.1 -c max_connections=256"
+      image: "postgres:13.1 -c max_connections=128"
       start_order: 1
       options:
         name: "uniquepair_database"
@@ -1548,10 +1548,10 @@ node-12:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9095"
-          - "threads=96"
+          - "threads=64"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "redis_connection_pool_size=128"
+          - "redis_connection_pool_size=64"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1645,7 +1645,7 @@ node-14:
           - "net.ipv4.tcp_wmem=\"16384 65536 33554432\""
         env:
           - "port=9096"
-          - "threads=96"
+          - "threads=64"
           - "accept_backlog=1024"
           - "n_invalid_words=128"
   monitors:
