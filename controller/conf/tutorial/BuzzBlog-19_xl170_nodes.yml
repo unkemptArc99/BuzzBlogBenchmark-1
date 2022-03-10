@@ -27,7 +27,6 @@ node-0:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-4"
           - "port=8080"
@@ -51,7 +50,6 @@ node-0:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-4"
           - "port=8081"
@@ -75,7 +73,6 @@ node-0:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-4"
           - "port=8082"
@@ -99,7 +96,6 @@ node-0:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-4"
           - "port=8083"
@@ -123,7 +119,6 @@ node-0:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-4"
           - "port=8084"
@@ -147,7 +142,6 @@ node-0:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-4"
           - "port=8085"
@@ -171,7 +165,6 @@ node-0:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-4"
           - "port=8086"
@@ -195,7 +188,6 @@ node-0:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-4"
           - "port=8087"
@@ -219,7 +211,6 @@ node-0:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-4"
           - "port=8088"
@@ -243,7 +234,6 @@ node-0:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-4"
           - "port=8089"
@@ -287,7 +277,6 @@ node-1:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-5"
           - "port=8080"
@@ -311,7 +300,6 @@ node-1:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-5"
           - "port=8081"
@@ -335,7 +323,6 @@ node-1:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-5"
           - "port=8082"
@@ -359,7 +346,6 @@ node-1:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-5"
           - "port=8083"
@@ -383,7 +369,6 @@ node-1:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-5"
           - "port=8084"
@@ -407,7 +392,6 @@ node-1:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-5"
           - "port=8085"
@@ -431,7 +415,6 @@ node-1:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-5"
           - "port=8086"
@@ -455,7 +438,6 @@ node-1:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-5"
           - "port=8087"
@@ -479,7 +461,6 @@ node-1:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-5"
           - "port=8088"
@@ -503,7 +484,6 @@ node-1:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-5"
           - "port=8089"
@@ -547,7 +527,6 @@ node-2:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-6"
           - "port=8080"
@@ -571,7 +550,6 @@ node-2:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-6"
           - "port=8081"
@@ -595,7 +573,6 @@ node-2:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-6"
           - "port=8082"
@@ -619,7 +596,6 @@ node-2:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-6"
           - "port=8083"
@@ -643,7 +619,6 @@ node-2:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-6"
           - "port=8084"
@@ -667,7 +642,6 @@ node-2:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-6"
           - "port=8085"
@@ -691,7 +665,6 @@ node-2:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-6"
           - "port=8086"
@@ -715,7 +688,6 @@ node-2:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-6"
           - "port=8087"
@@ -739,7 +711,6 @@ node-2:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-6"
           - "port=8088"
@@ -763,7 +734,6 @@ node-2:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-6"
           - "port=8089"
@@ -807,7 +777,6 @@ node-3:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-7"
           - "port=8080"
@@ -831,7 +800,6 @@ node-3:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-7"
           - "port=8081"
@@ -855,7 +823,6 @@ node-3:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-7"
           - "port=8082"
@@ -879,7 +846,6 @@ node-3:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-7"
           - "port=8083"
@@ -903,7 +869,6 @@ node-3:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-7"
           - "port=8084"
@@ -927,7 +892,6 @@ node-3:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-7"
           - "port=8085"
@@ -951,7 +915,6 @@ node-3:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-7"
           - "port=8086"
@@ -975,7 +938,6 @@ node-3:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-7"
           - "port=8087"
@@ -999,7 +961,6 @@ node-3:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-7"
           - "port=8088"
@@ -1023,7 +984,6 @@ node-3:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "hostname=node-7"
           - "port=8089"
@@ -1078,7 +1038,6 @@ node-4:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway2:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1104,7 +1063,6 @@ node-4:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway3:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1130,7 +1088,6 @@ node-4:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway4:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1156,7 +1113,6 @@ node-4:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway5:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1182,7 +1138,6 @@ node-4:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway6:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1208,7 +1163,6 @@ node-4:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway7:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1234,7 +1188,6 @@ node-4:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway8:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1260,7 +1213,6 @@ node-4:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway9:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1286,7 +1238,6 @@ node-4:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway10:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1312,7 +1263,6 @@ node-4:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1364,7 +1314,6 @@ node-5:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway12:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1390,7 +1339,6 @@ node-5:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway13:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1416,7 +1364,6 @@ node-5:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway14:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1442,7 +1389,6 @@ node-5:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway15:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1468,7 +1414,6 @@ node-5:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway16:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1494,7 +1439,6 @@ node-5:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway17:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1520,7 +1464,6 @@ node-5:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway18:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1546,7 +1489,6 @@ node-5:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway19:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1572,7 +1514,6 @@ node-5:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway20:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1598,7 +1539,6 @@ node-5:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1650,7 +1590,6 @@ node-6:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway22:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1676,7 +1615,6 @@ node-6:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway23:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1702,7 +1640,6 @@ node-6:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway24:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1728,7 +1665,6 @@ node-6:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway25:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1754,7 +1690,6 @@ node-6:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway26:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1780,7 +1715,6 @@ node-6:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway27:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1806,7 +1740,6 @@ node-6:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway28:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1832,7 +1765,6 @@ node-6:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway29:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1858,7 +1790,6 @@ node-6:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway30:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1884,7 +1815,6 @@ node-6:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1936,7 +1866,6 @@ node-7:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway32:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1962,7 +1891,6 @@ node-7:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway33:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1988,7 +1916,6 @@ node-7:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway34:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2014,7 +1941,6 @@ node-7:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway35:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2040,7 +1966,6 @@ node-7:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway36:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2066,7 +1991,6 @@ node-7:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway37:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2092,7 +2016,6 @@ node-7:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway38:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2118,7 +2041,6 @@ node-7:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway39:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2144,7 +2066,6 @@ node-7:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
     apigateway40:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2170,7 +2091,6 @@ node-7:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -2216,7 +2136,6 @@ node-8:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "port=9090"
           - "threads=80"
@@ -2266,7 +2185,6 @@ node-9:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
@@ -2316,7 +2234,6 @@ node-10:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "port=9091"
           - "threads=80"
@@ -2366,7 +2283,6 @@ node-11:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "port=9092"
           - "threads=80"
@@ -2417,7 +2333,6 @@ node-12:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "port=9093"
           - "threads=80"
@@ -2467,7 +2382,6 @@ node-13:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
@@ -2518,7 +2432,6 @@ node-14:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "port=9094"
           - "threads=80"
@@ -2568,7 +2481,6 @@ node-15:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "POSTGRES_USER=postgres"
           - "POSTGRES_PASSWORD=postgres"
@@ -2620,7 +2532,6 @@ node-16:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "port=9095"
           - "threads=80"
@@ -2677,7 +2588,6 @@ node-17:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -2719,7 +2629,6 @@ node-18:
           - "net.ipv4.tcp_synack_retries=2"
           - "net.ipv4.tcp_rmem=\"4096 5242880 33554432\""
           - "net.ipv4.tcp_wmem=\"4096 5242880 33554432\""
-          - "net.core.netdev_budget=600"
         env:
           - "port=9096"
           - "threads=80"
