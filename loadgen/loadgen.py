@@ -113,7 +113,7 @@ class BuzzBlogSession(ATLoad.Session):
 
   def retrieve_recent_posts(self):
     r = self._request("get", "/post",
-        params={"limit": 8, "offset": 0})
+        params={"limit": 1, "offset": 0})
     if r.status_code == 200 and r.json():
       self._other_post = random.choice(r.json())
       self._other_account = random.choice(r.json())["author"]
@@ -125,7 +125,7 @@ class BuzzBlogSession(ATLoad.Session):
   def retrieve_post_likes(self):
     if self._other_post:
       self._request("get", "/like", params={"post_id": self._other_post["id"],
-          "limit": 8, "offset": 0})
+          "limit": 1, "offset": 0})
 
   def retrieve_account(self):
     if self._other_account:
@@ -134,7 +134,7 @@ class BuzzBlogSession(ATLoad.Session):
   def retrieve_account_posts(self):
     if self._other_account:
       r = self._request("get", "/post",
-          params={"author_id": self._other_account["id"], "limit": 8,
+          params={"author_id": self._other_account["id"], "limit": 1,
               "offset": 0})
       if r.status_code == 200:
         self._other_post = random.choice(r.json())
@@ -142,7 +142,7 @@ class BuzzBlogSession(ATLoad.Session):
   def retrieve_account_followers(self):
     if self._other_account:
       r = self._request("get", "/follow",
-          params={"followee_id": self._other_account["id"], "limit": 8,
+          params={"followee_id": self._other_account["id"], "limit": 1,
               "offset": 0})
       if r.status_code == 200 and r.json():
         self._other_account = random.choice(r.json())["follower"]
@@ -150,7 +150,7 @@ class BuzzBlogSession(ATLoad.Session):
   def retrieve_account_followees(self):
     if self._other_account:
       r = self._request("get", "/follow",
-          params={"follower_id": self._other_account["id"], "limit": 8,
+          params={"follower_id": self._other_account["id"], "limit": 1,
               "offset": 0})
       if r.status_code == 200 and r.json():
         self._other_account = random.choice(r.json())["followee"]
@@ -158,7 +158,7 @@ class BuzzBlogSession(ATLoad.Session):
   def retrieve_account_likes(self):
     if self._other_account:
       self._request("get", "/like",
-          params={"account_id": self._other_account["id"], "limit": 8,
+          params={"account_id": self._other_account["id"], "limit": 1,
               "offset": 0})
 
   def list_trending_hashtags(self):
