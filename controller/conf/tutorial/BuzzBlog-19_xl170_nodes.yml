@@ -8,6 +8,9 @@ node-0:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     loadgen1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
@@ -290,6 +293,9 @@ node-1:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     loadgen11:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
@@ -572,6 +578,9 @@ node-2:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     loadgen21:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
@@ -854,6 +863,9 @@ node-3:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     loadgen31:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
@@ -1136,6 +1148,9 @@ node-4:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   templates:
     gunicorn.conf.py:
       output: "/etc/gunicorn/gunicorn.conf.py"
@@ -1424,6 +1439,9 @@ node-5:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   templates:
     gunicorn.conf.py:
       output: "/etc/gunicorn/gunicorn.conf.py"
@@ -1712,6 +1730,9 @@ node-6:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   templates:
     gunicorn.conf.py:
       output: "/etc/gunicorn/gunicorn.conf.py"
@@ -2000,6 +2021,9 @@ node-7:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   templates:
     gunicorn.conf.py:
       output: "/etc/gunicorn/gunicorn.conf.py"
@@ -2288,6 +2312,9 @@ node-8:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     account_service:
       image: "rodrigoalveslima/buzzblog:account_v0.1"
@@ -2306,7 +2333,6 @@ node-8:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
           - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.netdev_budget=1000"
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_max_syn_backlog=1024"
           - "net.ipv4.tcp_fin_timeout=60"
@@ -2345,6 +2371,9 @@ node-9:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     account_database:
       image: "postgres:13.1 -c max_connections=128"
@@ -2394,6 +2423,9 @@ node-10:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     follow_service:
       image: "rodrigoalveslima/buzzblog:follow_v0.1"
@@ -2446,6 +2478,9 @@ node-11:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     like_service:
       image: "rodrigoalveslima/buzzblog:like_v0.1"
@@ -2498,6 +2533,9 @@ node-12:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     post_service:
       image: "rodrigoalveslima/buzzblog:post_v0.1"
@@ -2554,6 +2592,9 @@ node-13:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     post_database:
       image: "postgres:13.1 -c max_connections=128"
@@ -2603,6 +2644,9 @@ node-14:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     uniquepair_service:
       image: "rodrigoalveslima/buzzblog:uniquepair_v0.1"
@@ -2659,6 +2703,9 @@ node-15:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     uniquepair_database:
       image: "postgres:13.1 -c max_connections=128"
@@ -2708,6 +2755,9 @@ node-16:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     trending_service:
       image: "rodrigoalveslima/buzzblog:trending_v0.1"
@@ -2763,6 +2813,9 @@ node-17:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   templates:
     redis.conf:
       output: "/etc/redis/redis.conf"
@@ -2816,6 +2869,9 @@ node-18:
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.core.netdev_budget: "1000"
+    net.core.netdev_max_backlog: "500000"
+    net.core.netdev_budget_usecs: "32000"
   containers:
     wordfilter_service:
       image: "rodrigoalveslima/buzzblog:wordfilter_v0.1"
