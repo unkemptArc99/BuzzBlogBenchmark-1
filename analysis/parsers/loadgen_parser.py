@@ -43,7 +43,7 @@ class LoadgenParser:
         if not match:
             return None
         timestamp, method, url, status_code, latency = match.groups()
-        request_id = re.findall(r"request_id=([a-zA-Z0-9]+)&?", url)
+        request_id = re.findall(r"request_id=([a-zA-Z0-9]+)&?", url)[0]
         url = re.sub("limit=\d+&?", "", url)
         url = re.sub("offset=\d+&?", "", url)
         url = re.sub("request_id=[a-zA-Z0-9]+&?", "", url)
