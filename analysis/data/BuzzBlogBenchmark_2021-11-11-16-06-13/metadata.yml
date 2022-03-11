@@ -1,4 +1,0 @@
-description: 'Workload: 10 req/s, no surges; 10 ms interval'
-end_time: 2021-11-11-16-28-22
-start_time: 2021-11-11-16-06-13
-user: root

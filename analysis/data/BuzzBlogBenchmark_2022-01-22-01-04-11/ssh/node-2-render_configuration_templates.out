@@ -1,3 +1,0 @@
-bind = "0.0.0.0:81"
-workers = 1
-threads = 64
