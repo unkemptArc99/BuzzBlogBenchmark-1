@@ -1147,16 +1147,22 @@ node-4:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
-    net.ipv4.tcp_mem: "767307	3069228	6138456"
     net.core.netdev_budget: "1000"
-    net.core.netdev_max_backlog: "500000"
     net.core.netdev_budget_usecs: "32000"
-  templates:
-    gunicorn.conf.py:
-      output: "/etc/gunicorn/gunicorn.conf.py"
-      params:
-        bind: "0.0.0.0:81"
-        threads: 8
+    net.core.netdev_max_backlog: "500000"
+    net.core.somaxconn: "1024"
+    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.tcp_abort_on_overflow: "0"
+    net.ipv4.tcp_fin_timeout: "60"
+    net.ipv4.tcp_max_syn_backlog: "1024"
+    net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.ipv4.tcp_syn_retries: "3"
+    net.ipv4.tcp_synack_retries: "3"
+    net.ipv4.tcp_syncookies: "0"
+    net.ipv4.tcp_timestamps: "0"
+    net.ipv4.tcp_tw_reuse: "1"
+    net.ipv4.tcp_rmem: "4096 524288 16777216"
+    net.ipv4.tcp_wmem: "4096 524288 16777216"
   containers:
     apigateway1:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1165,25 +1171,14 @@ node-4:
         - "/tmp/calls.log"
       options:
         name: "apigateway1"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8080:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8080"
     apigateway2:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1191,25 +1186,14 @@ node-4:
         - "/tmp/calls.log"
       options:
         name: "apigateway2"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8081:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8081"
     apigateway3:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1217,25 +1201,14 @@ node-4:
         - "/tmp/calls.log"
       options:
         name: "apigateway3"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8082:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8082"
     apigateway4:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1243,25 +1216,14 @@ node-4:
         - "/tmp/calls.log"
       options:
         name: "apigateway4"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8083:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8083"
     apigateway5:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1269,25 +1231,14 @@ node-4:
         - "/tmp/calls.log"
       options:
         name: "apigateway5"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8084:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8084"
     apigateway6:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1295,25 +1246,14 @@ node-4:
         - "/tmp/calls.log"
       options:
         name: "apigateway6"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8085:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8085"
     apigateway7:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1321,25 +1261,14 @@ node-4:
         - "/tmp/calls.log"
       options:
         name: "apigateway7"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8086:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8086"
     apigateway8:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1347,25 +1276,14 @@ node-4:
         - "/tmp/calls.log"
       options:
         name: "apigateway8"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8087:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8087"
     apigateway9:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1373,25 +1291,14 @@ node-4:
         - "/tmp/calls.log"
       options:
         name: "apigateway9"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8088:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8088"
     apigateway10:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1399,25 +1306,14 @@ node-4:
         - "/tmp/calls.log"
       options:
         name: "apigateway10"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8089:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1438,16 +1334,22 @@ node-5:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
-    net.ipv4.tcp_mem: "767307	3069228	6138456"
     net.core.netdev_budget: "1000"
-    net.core.netdev_max_backlog: "500000"
     net.core.netdev_budget_usecs: "32000"
-  templates:
-    gunicorn.conf.py:
-      output: "/etc/gunicorn/gunicorn.conf.py"
-      params:
-        bind: "0.0.0.0:81"
-        threads: 8
+    net.core.netdev_max_backlog: "500000"
+    net.core.somaxconn: "1024"
+    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.tcp_abort_on_overflow: "0"
+    net.ipv4.tcp_fin_timeout: "60"
+    net.ipv4.tcp_max_syn_backlog: "1024"
+    net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.ipv4.tcp_syn_retries: "3"
+    net.ipv4.tcp_synack_retries: "3"
+    net.ipv4.tcp_syncookies: "0"
+    net.ipv4.tcp_timestamps: "0"
+    net.ipv4.tcp_tw_reuse: "1"
+    net.ipv4.tcp_rmem: "4096 524288 16777216"
+    net.ipv4.tcp_wmem: "4096 524288 16777216"
   containers:
     apigateway11:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1456,25 +1358,14 @@ node-5:
         - "/tmp/calls.log"
       options:
         name: "apigateway11"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8080:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8080"
     apigateway12:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1482,25 +1373,14 @@ node-5:
         - "/tmp/calls.log"
       options:
         name: "apigateway12"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8081:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8081"
     apigateway13:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1508,25 +1388,14 @@ node-5:
         - "/tmp/calls.log"
       options:
         name: "apigateway13"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8082:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8082"
     apigateway14:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1534,25 +1403,14 @@ node-5:
         - "/tmp/calls.log"
       options:
         name: "apigateway14"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8083:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8083"
     apigateway15:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1560,25 +1418,14 @@ node-5:
         - "/tmp/calls.log"
       options:
         name: "apigateway15"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8084:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8084"
     apigateway16:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1586,25 +1433,14 @@ node-5:
         - "/tmp/calls.log"
       options:
         name: "apigateway16"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8085:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8085"
     apigateway17:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1612,25 +1448,14 @@ node-5:
         - "/tmp/calls.log"
       options:
         name: "apigateway17"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8086:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8086"
     apigateway18:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1638,25 +1463,14 @@ node-5:
         - "/tmp/calls.log"
       options:
         name: "apigateway18"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8087:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8087"
     apigateway19:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1664,25 +1478,14 @@ node-5:
         - "/tmp/calls.log"
       options:
         name: "apigateway19"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8088:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8088"
     apigateway20:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1690,25 +1493,14 @@ node-5:
         - "/tmp/calls.log"
       options:
         name: "apigateway20"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8089:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1729,16 +1521,22 @@ node-6:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
-    net.ipv4.tcp_mem: "767307	3069228	6138456"
     net.core.netdev_budget: "1000"
-    net.core.netdev_max_backlog: "500000"
     net.core.netdev_budget_usecs: "32000"
-  templates:
-    gunicorn.conf.py:
-      output: "/etc/gunicorn/gunicorn.conf.py"
-      params:
-        bind: "0.0.0.0:81"
-        threads: 8
+    net.core.netdev_max_backlog: "500000"
+    net.core.somaxconn: "1024"
+    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.tcp_abort_on_overflow: "0"
+    net.ipv4.tcp_fin_timeout: "60"
+    net.ipv4.tcp_max_syn_backlog: "1024"
+    net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.ipv4.tcp_syn_retries: "3"
+    net.ipv4.tcp_synack_retries: "3"
+    net.ipv4.tcp_syncookies: "0"
+    net.ipv4.tcp_timestamps: "0"
+    net.ipv4.tcp_tw_reuse: "1"
+    net.ipv4.tcp_rmem: "4096 524288 16777216"
+    net.ipv4.tcp_wmem: "4096 524288 16777216"
   containers:
     apigateway21:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1747,25 +1545,14 @@ node-6:
         - "/tmp/calls.log"
       options:
         name: "apigateway21"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8080:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8080"
     apigateway22:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1773,25 +1560,14 @@ node-6:
         - "/tmp/calls.log"
       options:
         name: "apigateway22"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8081:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8081"
     apigateway23:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1799,25 +1575,14 @@ node-6:
         - "/tmp/calls.log"
       options:
         name: "apigateway23"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8082:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8082"
     apigateway24:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1825,25 +1590,14 @@ node-6:
         - "/tmp/calls.log"
       options:
         name: "apigateway24"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8083:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8083"
     apigateway25:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1851,25 +1605,14 @@ node-6:
         - "/tmp/calls.log"
       options:
         name: "apigateway25"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8084:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8084"
     apigateway26:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1877,25 +1620,14 @@ node-6:
         - "/tmp/calls.log"
       options:
         name: "apigateway26"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8085:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8085"
     apigateway27:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1903,25 +1635,14 @@ node-6:
         - "/tmp/calls.log"
       options:
         name: "apigateway27"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8086:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8086"
     apigateway28:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1929,25 +1650,14 @@ node-6:
         - "/tmp/calls.log"
       options:
         name: "apigateway28"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8087:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8087"
     apigateway29:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1955,25 +1665,14 @@ node-6:
         - "/tmp/calls.log"
       options:
         name: "apigateway29"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8088:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8088"
     apigateway30:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1981,25 +1680,14 @@ node-6:
         - "/tmp/calls.log"
       options:
         name: "apigateway30"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8089:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -2020,16 +1708,22 @@ node-7:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   kernel:
-    net.ipv4.tcp_mem: "767307	3069228	6138456"
     net.core.netdev_budget: "1000"
-    net.core.netdev_max_backlog: "500000"
     net.core.netdev_budget_usecs: "32000"
-  templates:
-    gunicorn.conf.py:
-      output: "/etc/gunicorn/gunicorn.conf.py"
-      params:
-        bind: "0.0.0.0:81"
-        threads: 8
+    net.core.netdev_max_backlog: "500000"
+    net.core.somaxconn: "1024"
+    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.tcp_abort_on_overflow: "0"
+    net.ipv4.tcp_fin_timeout: "60"
+    net.ipv4.tcp_max_syn_backlog: "1024"
+    net.ipv4.tcp_mem: "767307	3069228	6138456"
+    net.ipv4.tcp_syn_retries: "3"
+    net.ipv4.tcp_synack_retries: "3"
+    net.ipv4.tcp_syncookies: "0"
+    net.ipv4.tcp_timestamps: "0"
+    net.ipv4.tcp_tw_reuse: "1"
+    net.ipv4.tcp_rmem: "4096 524288 16777216"
+    net.ipv4.tcp_wmem: "4096 524288 16777216"
   containers:
     apigateway31:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -2038,25 +1732,14 @@ node-7:
         - "/tmp/calls.log"
       options:
         name: "apigateway31"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8080:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8080"
     apigateway32:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2064,25 +1747,14 @@ node-7:
         - "/tmp/calls.log"
       options:
         name: "apigateway32"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8081:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8081"
     apigateway33:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2090,25 +1762,14 @@ node-7:
         - "/tmp/calls.log"
       options:
         name: "apigateway33"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8082:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8082"
     apigateway34:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2116,25 +1777,14 @@ node-7:
         - "/tmp/calls.log"
       options:
         name: "apigateway34"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8083:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8083"
     apigateway35:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2142,25 +1792,14 @@ node-7:
         - "/tmp/calls.log"
       options:
         name: "apigateway35"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8084:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8084"
     apigateway36:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2168,25 +1807,14 @@ node-7:
         - "/tmp/calls.log"
       options:
         name: "apigateway36"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8085:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8085"
     apigateway37:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2194,25 +1822,14 @@ node-7:
         - "/tmp/calls.log"
       options:
         name: "apigateway37"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8086:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8086"
     apigateway38:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2220,25 +1837,14 @@ node-7:
         - "/tmp/calls.log"
       options:
         name: "apigateway38"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8087:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8087"
     apigateway39:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2246,25 +1852,14 @@ node-7:
         - "/tmp/calls.log"
       options:
         name: "apigateway39"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8088:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8088"
     apigateway40:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -2272,25 +1867,14 @@ node-7:
         - "/tmp/calls.log"
       options:
         name: "apigateway40"
+        network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "8089:81"
         volume:
-          - "/etc/gunicorn:/etc/gunicorn"
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
-        sysctl:
-          - "net.ipv4.tcp_tw_reuse=1"
-          - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
-          - "net.core.somaxconn=1024"
-          - "net.ipv4.tcp_max_syn_backlog=1024"
-          - "net.ipv4.tcp_fin_timeout=60"
-          - "net.ipv4.tcp_timestamps=0"
-          - "net.ipv4.tcp_syncookies=0"
-          - "net.ipv4.tcp_syn_retries=3"
-          - "net.ipv4.tcp_synack_retries=3"
-          - "net.ipv4.tcp_rmem=\"4096 524288 16777216\""
-          - "net.ipv4.tcp_wmem=\"4096 524288 16777216\""
+        env:
+          - "threads=8"
+          - "port=8089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
