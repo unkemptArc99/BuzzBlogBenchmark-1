@@ -218,7 +218,7 @@ def install_bpfcc(node_hostname, node_conf, ssh_client):
   ssh_client.exec(
       "sudo apt-get update && "
       "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "
-          "bpfcc-tools linux-headers-$(uname -r)")
+          "bpfcc-tools linux-headers-5.4.0-100-generic")
 
 
 @nodes_with_monitor("collectl")
