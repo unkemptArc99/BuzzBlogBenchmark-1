@@ -11,7 +11,7 @@ node-0:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -37,7 +37,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-4"
-          - "port=8080"
+          - "port=1080"
     loadgen2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -51,7 +51,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-4"
-          - "port=8081"
+          - "port=1081"
     loadgen3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -65,7 +65,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-4"
-          - "port=8082"
+          - "port=1082"
     loadgen4:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -79,7 +79,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-4"
-          - "port=8083"
+          - "port=1083"
     loadgen5:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -93,7 +93,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-4"
-          - "port=8084"
+          - "port=1084"
     loadgen6:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -107,7 +107,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-4"
-          - "port=8085"
+          - "port=1085"
     loadgen7:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -121,7 +121,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-4"
-          - "port=8086"
+          - "port=1086"
     loadgen8:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -135,7 +135,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-4"
-          - "port=8087"
+          - "port=1087"
     loadgen9:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -149,7 +149,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-4"
-          - "port=8088"
+          - "port=1088"
     loadgen10:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -163,7 +163,7 @@ node-0:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-4"
-          - "port=8089"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -174,7 +174,7 @@ node-0:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -188,7 +188,7 @@ node-1:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -214,7 +214,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-5"
-          - "port=8080"
+          - "port=1080"
     loadgen12:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -228,7 +228,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-5"
-          - "port=8081"
+          - "port=1081"
     loadgen13:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -242,7 +242,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-5"
-          - "port=8082"
+          - "port=1082"
     loadgen14:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -256,7 +256,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-5"
-          - "port=8083"
+          - "port=1083"
     loadgen15:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -270,7 +270,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-5"
-          - "port=8084"
+          - "port=1084"
     loadgen16:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -284,7 +284,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-5"
-          - "port=8085"
+          - "port=1085"
     loadgen17:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -298,7 +298,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-5"
-          - "port=8086"
+          - "port=1086"
     loadgen18:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -312,7 +312,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-5"
-          - "port=8087"
+          - "port=1087"
     loadgen19:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -326,7 +326,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-5"
-          - "port=8088"
+          - "port=1088"
     loadgen20:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -340,7 +340,7 @@ node-1:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-5"
-          - "port=8089"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -351,7 +351,7 @@ node-1:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -365,7 +365,7 @@ node-2:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -391,7 +391,7 @@ node-2:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-6"
-          - "port=8080"
+          - "port=1080"
     loadgen22:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -405,7 +405,7 @@ node-2:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-6"
-          - "port=8081"
+          - "port=1081"
     loadgen23:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -419,7 +419,7 @@ node-2:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-6"
-          - "port=8082"
+          - "port=1082"
     loadgen24:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -433,7 +433,7 @@ node-2:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-6"
-          - "port=8083"
+          - "port=1083"
     loadgen25:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -447,7 +447,7 @@ node-2:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-6"
-          - "port=8084"
+          - "port=1084"
     loadgen26:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -461,7 +461,7 @@ node-2:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-6"
-          - "port=8085"
+          - "port=1085"
     loadgen27:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -475,7 +475,7 @@ node-2:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-6"
-          - "port=8086"
+          - "port=1086"
     loadgen28:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -489,7 +489,7 @@ node-2:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-6"
-          - "port=8087"
+          - "port=1087"
     loadgen29:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -503,7 +503,7 @@ node-2:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-6"
-          - "port=8088"
+          - "port=1088"
     loadgen30:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -517,7 +517,7 @@ node-2:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-6"
-          - "port=8089"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -528,7 +528,7 @@ node-2:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -542,7 +542,7 @@ node-3:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -568,7 +568,7 @@ node-3:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-7"
-          - "port=8080"
+          - "port=1080"
     loadgen32:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -582,7 +582,7 @@ node-3:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-7"
-          - "port=8081"
+          - "port=1081"
     loadgen33:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -596,7 +596,7 @@ node-3:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-7"
-          - "port=8082"
+          - "port=1082"
     loadgen34:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -610,7 +610,7 @@ node-3:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-7"
-          - "port=8083"
+          - "port=1083"
     loadgen35:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -624,7 +624,7 @@ node-3:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-7"
-          - "port=8084"
+          - "port=1084"
     loadgen36:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -638,7 +638,7 @@ node-3:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-7"
-          - "port=8085"
+          - "port=1085"
     loadgen37:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -652,7 +652,7 @@ node-3:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-7"
-          - "port=8086"
+          - "port=1086"
     loadgen38:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -666,7 +666,7 @@ node-3:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-7"
-          - "port=8087"
+          - "port=1087"
     loadgen39:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -680,7 +680,7 @@ node-3:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-7"
-          - "port=8088"
+          - "port=1088"
     loadgen40:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -694,7 +694,7 @@ node-3:
           - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
         env:
           - "hostname=node-7"
-          - "port=8089"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -705,7 +705,7 @@ node-3:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -719,7 +719,7 @@ node-4:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -746,7 +746,7 @@ node-4:
         detach: ""
         env:
           - "threads=8"
-          - "port=8080"
+          - "port=1080"
     apigateway2:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -761,7 +761,7 @@ node-4:
         detach: ""
         env:
           - "threads=8"
-          - "port=8081"
+          - "port=1081"
     apigateway3:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -776,7 +776,7 @@ node-4:
         detach: ""
         env:
           - "threads=8"
-          - "port=8082"
+          - "port=1082"
     apigateway4:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -791,7 +791,7 @@ node-4:
         detach: ""
         env:
           - "threads=8"
-          - "port=8083"
+          - "port=1083"
     apigateway5:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -806,7 +806,7 @@ node-4:
         detach: ""
         env:
           - "threads=8"
-          - "port=8084"
+          - "port=1084"
     apigateway6:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -821,7 +821,7 @@ node-4:
         detach: ""
         env:
           - "threads=8"
-          - "port=8085"
+          - "port=1085"
     apigateway7:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -836,7 +836,7 @@ node-4:
         detach: ""
         env:
           - "threads=8"
-          - "port=8086"
+          - "port=1086"
     apigateway8:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -851,7 +851,7 @@ node-4:
         detach: ""
         env:
           - "threads=8"
-          - "port=8087"
+          - "port=1087"
     apigateway9:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -866,7 +866,7 @@ node-4:
         detach: ""
         env:
           - "threads=8"
-          - "port=8088"
+          - "port=1088"
     apigateway10:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -881,7 +881,7 @@ node-4:
         detach: ""
         env:
           - "threads=8"
-          - "port=8089"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -892,7 +892,7 @@ node-4:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -906,7 +906,7 @@ node-5:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -933,7 +933,7 @@ node-5:
         detach: ""
         env:
           - "threads=8"
-          - "port=8080"
+          - "port=1080"
     apigateway12:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -948,7 +948,7 @@ node-5:
         detach: ""
         env:
           - "threads=8"
-          - "port=8081"
+          - "port=1081"
     apigateway13:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -963,7 +963,7 @@ node-5:
         detach: ""
         env:
           - "threads=8"
-          - "port=8082"
+          - "port=1082"
     apigateway14:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -978,7 +978,7 @@ node-5:
         detach: ""
         env:
           - "threads=8"
-          - "port=8083"
+          - "port=1083"
     apigateway15:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -993,7 +993,7 @@ node-5:
         detach: ""
         env:
           - "threads=8"
-          - "port=8084"
+          - "port=1084"
     apigateway16:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1008,7 +1008,7 @@ node-5:
         detach: ""
         env:
           - "threads=8"
-          - "port=8085"
+          - "port=1085"
     apigateway17:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1023,7 +1023,7 @@ node-5:
         detach: ""
         env:
           - "threads=8"
-          - "port=8086"
+          - "port=1086"
     apigateway18:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1038,7 +1038,7 @@ node-5:
         detach: ""
         env:
           - "threads=8"
-          - "port=8087"
+          - "port=1087"
     apigateway19:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1053,7 +1053,7 @@ node-5:
         detach: ""
         env:
           - "threads=8"
-          - "port=8088"
+          - "port=1088"
     apigateway20:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1068,7 +1068,7 @@ node-5:
         detach: ""
         env:
           - "threads=8"
-          - "port=8089"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1079,7 +1079,7 @@ node-5:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1093,7 +1093,7 @@ node-6:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -1120,7 +1120,7 @@ node-6:
         detach: ""
         env:
           - "threads=8"
-          - "port=8080"
+          - "port=1080"
     apigateway22:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1135,7 +1135,7 @@ node-6:
         detach: ""
         env:
           - "threads=8"
-          - "port=8081"
+          - "port=1081"
     apigateway23:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1150,7 +1150,7 @@ node-6:
         detach: ""
         env:
           - "threads=8"
-          - "port=8082"
+          - "port=1082"
     apigateway24:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1165,7 +1165,7 @@ node-6:
         detach: ""
         env:
           - "threads=8"
-          - "port=8083"
+          - "port=1083"
     apigateway25:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1180,7 +1180,7 @@ node-6:
         detach: ""
         env:
           - "threads=8"
-          - "port=8084"
+          - "port=1084"
     apigateway26:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1195,7 +1195,7 @@ node-6:
         detach: ""
         env:
           - "threads=8"
-          - "port=8085"
+          - "port=1085"
     apigateway27:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1210,7 +1210,7 @@ node-6:
         detach: ""
         env:
           - "threads=8"
-          - "port=8086"
+          - "port=1086"
     apigateway28:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1225,7 +1225,7 @@ node-6:
         detach: ""
         env:
           - "threads=8"
-          - "port=8087"
+          - "port=1087"
     apigateway29:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1240,7 +1240,7 @@ node-6:
         detach: ""
         env:
           - "threads=8"
-          - "port=8088"
+          - "port=1088"
     apigateway30:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1255,7 +1255,7 @@ node-6:
         detach: ""
         env:
           - "threads=8"
-          - "port=8089"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1266,7 +1266,7 @@ node-6:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1280,7 +1280,7 @@ node-7:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -1307,7 +1307,7 @@ node-7:
         detach: ""
         env:
           - "threads=8"
-          - "port=8080"
+          - "port=1080"
     apigateway32:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1322,7 +1322,7 @@ node-7:
         detach: ""
         env:
           - "threads=8"
-          - "port=8081"
+          - "port=1081"
     apigateway33:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1337,7 +1337,7 @@ node-7:
         detach: ""
         env:
           - "threads=8"
-          - "port=8082"
+          - "port=1082"
     apigateway34:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1352,7 +1352,7 @@ node-7:
         detach: ""
         env:
           - "threads=8"
-          - "port=8083"
+          - "port=1083"
     apigateway35:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1367,7 +1367,7 @@ node-7:
         detach: ""
         env:
           - "threads=8"
-          - "port=8084"
+          - "port=1084"
     apigateway36:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1382,7 +1382,7 @@ node-7:
         detach: ""
         env:
           - "threads=8"
-          - "port=8085"
+          - "port=1085"
     apigateway37:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1397,7 +1397,7 @@ node-7:
         detach: ""
         env:
           - "threads=8"
-          - "port=8086"
+          - "port=1086"
     apigateway38:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1412,7 +1412,7 @@ node-7:
         detach: ""
         env:
           - "threads=8"
-          - "port=8087"
+          - "port=1087"
     apigateway39:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1427,7 +1427,7 @@ node-7:
         detach: ""
         env:
           - "threads=8"
-          - "port=8088"
+          - "port=1088"
     apigateway40:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
@@ -1442,7 +1442,7 @@ node-7:
         detach: ""
         env:
           - "threads=8"
-          - "port=8089"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -1453,7 +1453,7 @@ node-7:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1467,7 +1467,7 @@ node-8:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -1490,12 +1490,12 @@ node-8:
         name: "account_service"
         network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "9090:9090"
+        publish: "1090:1090"
         cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "port=9090"
+          - "port=1090"
           - "threads=80"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
@@ -1512,7 +1512,7 @@ node-8:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1539,7 +1539,7 @@ node-9:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.ipv4.ip_local_port_range=\"2048 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_max_syn_backlog=1024"
           - "net.ipv4.tcp_fin_timeout=60"
@@ -1564,7 +1564,7 @@ node-9:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1578,7 +1578,7 @@ node-10:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -1600,12 +1600,12 @@ node-10:
         name: "follow_service"
         network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "9091:9091"
+        publish: "1091:1091"
         cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "port=9091"
+          - "port=1091"
           - "threads=80"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
@@ -1619,7 +1619,7 @@ node-10:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1633,7 +1633,7 @@ node-11:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -1655,12 +1655,12 @@ node-11:
         name: "like_service"
         network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "9092:9092"
+        publish: "1092:1092"
         cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "port=9092"
+          - "port=1092"
           - "threads=80"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
@@ -1674,7 +1674,7 @@ node-11:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1688,7 +1688,7 @@ node-12:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -1711,12 +1711,12 @@ node-12:
         name: "post_service"
         network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "9093:9093"
+        publish: "1093:1093"
         cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "port=9093"
+          - "port=1093"
           - "threads=80"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
@@ -1733,7 +1733,7 @@ node-12:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1760,7 +1760,7 @@ node-13:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.ipv4.ip_local_port_range=\"2048 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_max_syn_backlog=1024"
           - "net.ipv4.tcp_fin_timeout=60"
@@ -1785,7 +1785,7 @@ node-13:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1799,7 +1799,7 @@ node-14:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -1822,12 +1822,12 @@ node-14:
         name: "uniquepair_service"
         network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "9094:9094"
+        publish: "1094:1094"
         cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "port=9094"
+          - "port=1094"
           - "threads=80"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
@@ -1844,7 +1844,7 @@ node-14:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1871,7 +1871,7 @@ node-15:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.ipv4.ip_local_port_range=\"2048 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_max_syn_backlog=1024"
           - "net.ipv4.tcp_fin_timeout=60"
@@ -1896,7 +1896,7 @@ node-15:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1910,7 +1910,7 @@ node-16:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -1934,12 +1934,12 @@ node-16:
         name: "trending_service"
         network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "9095:9095"
+        publish: "1095:1095"
         cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "port=9095"
+          - "port=1095"
           - "threads=80"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
@@ -1954,7 +1954,7 @@ node-16:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1990,7 +1990,7 @@ node-17:
         sysctl:
           - "net.ipv4.tcp_tw_reuse=1"
           - "net.ipv4.tcp_abort_on_overflow=0"
-          - "net.ipv4.ip_local_port_range=\"16384 65535\""
+          - "net.ipv4.ip_local_port_range=\"2048 65535\""
           - "net.core.somaxconn=1024"
           - "net.ipv4.tcp_max_syn_backlog=1024"
           - "net.ipv4.tcp_fin_timeout=60"
@@ -2010,7 +2010,7 @@ node-17:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2024,7 +2024,7 @@ node-18:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
-    net.ipv4.ip_local_port_range: "16384 65535"
+    net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
     net.ipv4.tcp_max_syn_backlog: "1024"
@@ -2044,11 +2044,11 @@ node-18:
         name: "wordfilter_service"
         network: "host"
         ulimit: "nofile=131072:131072"
-        publish: "9096:9096"
+        publish: "1096:1096"
         cpuset-cpus: "0-9"
         detach: ""
         env:
-          - "port=9096"
+          - "port=1096"
           - "threads=80"
           - "accept_backlog=1024"
           - "n_invalid_words=128"
@@ -2062,7 +2062,7 @@ node-18:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.01"
+        interval: "0.05"
         subsys: "CDM"
         options: "Tm"
         plot: ""
