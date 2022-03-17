@@ -28,7 +28,7 @@ node-0:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen1"
         network: "host"
@@ -42,7 +42,7 @@ node-0:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen2"
         network: "host"
@@ -56,7 +56,7 @@ node-0:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen3"
         network: "host"
@@ -70,7 +70,7 @@ node-0:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen4"
         network: "host"
@@ -84,7 +84,7 @@ node-0:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen5"
         network: "host"
@@ -98,7 +98,7 @@ node-0:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen6"
         network: "host"
@@ -112,7 +112,7 @@ node-0:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen7"
         network: "host"
@@ -126,7 +126,7 @@ node-0:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen8"
         network: "host"
@@ -140,7 +140,7 @@ node-0:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen9"
         network: "host"
@@ -154,7 +154,7 @@ node-0:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen10"
         network: "host"
@@ -205,7 +205,7 @@ node-1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen11"
         network: "host"
@@ -219,7 +219,7 @@ node-1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen12"
         network: "host"
@@ -233,7 +233,7 @@ node-1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen13"
         network: "host"
@@ -247,7 +247,7 @@ node-1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen14"
         network: "host"
@@ -261,7 +261,7 @@ node-1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen15"
         network: "host"
@@ -275,7 +275,7 @@ node-1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen16"
         network: "host"
@@ -289,7 +289,7 @@ node-1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen17"
         network: "host"
@@ -303,7 +303,7 @@ node-1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen18"
         network: "host"
@@ -317,7 +317,7 @@ node-1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen19"
         network: "host"
@@ -331,7 +331,7 @@ node-1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen20"
         network: "host"
@@ -382,7 +382,7 @@ node-2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen21"
         network: "host"
@@ -396,7 +396,7 @@ node-2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen22"
         network: "host"
@@ -410,7 +410,7 @@ node-2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen23"
         network: "host"
@@ -424,7 +424,7 @@ node-2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen24"
         network: "host"
@@ -438,7 +438,7 @@ node-2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen25"
         network: "host"
@@ -452,7 +452,7 @@ node-2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen26"
         network: "host"
@@ -466,7 +466,7 @@ node-2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen27"
         network: "host"
@@ -480,7 +480,7 @@ node-2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen28"
         network: "host"
@@ -494,7 +494,7 @@ node-2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen29"
         network: "host"
@@ -508,7 +508,7 @@ node-2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen30"
         network: "host"
@@ -559,7 +559,7 @@ node-3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen31"
         network: "host"
@@ -573,7 +573,7 @@ node-3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen32"
         network: "host"
@@ -587,7 +587,7 @@ node-3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen33"
         network: "host"
@@ -601,7 +601,7 @@ node-3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen34"
         network: "host"
@@ -615,7 +615,7 @@ node-3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen35"
         network: "host"
@@ -629,7 +629,7 @@ node-3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen36"
         network: "host"
@@ -643,7 +643,7 @@ node-3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen37"
         network: "host"
@@ -657,7 +657,7 @@ node-3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen38"
         network: "host"
@@ -671,7 +671,7 @@ node-3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen39"
         network: "host"
@@ -685,7 +685,7 @@ node-3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
       logs:
-        - "/var/log/loadgen.log"
+        - "/tmp/loadgen.log"
       options:
         name: "loadgen40"
         network: "host"
