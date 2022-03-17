@@ -50,7 +50,9 @@ def update_metadata(metadata):
 
 def start_container(node_hostname, node_conf, container_name, ssh_client):
   container_conf = node_conf["containers"][container_name]
+  ssh_client.exec("mkdir -p /tmp/%s" % container_name)
   ssh_client.exec("sudo docker run " +
+      ("--volume /tmp/%s:/tmp " % container_name) +
       " ".join(["--%s %s" % (param, value) if isinstance(value, str) else
           " ".join(["--%s %s" % (param, v) for v in value])
           for (param, value) in container_conf.get("options", {}).items()]) +
@@ -356,16 +358,13 @@ def fetch_monitoring_data(node_hostname, node_conf, ssh_client):
 def fetch_container_logs(node_hostname, node_conf, ssh_client):
   for container_name, container_conf in node_conf["containers"].items():
     dirpath = "/tmp/%s" % container_name
-    ssh_client.exec("mkdir -p {dirpath}".format(dirpath=dirpath))
     ssh_client.exec("sudo docker logs {container_name} > "
         "{dirpath}/{container_name}.log 2>&1".format(
             container_name=container_name, dirpath=dirpath))
-    for filepath in container_conf.get("logs", []):
-      ssh_client.exec("sudo docker cp {container_name}:{filepath} {dirpath}".\
-          format(container_name=container_name, filepath=filepath,
-              dirpath=dirpath))
-      if PARSE_LOG_FILES:
-        log_filename = os.path.basename(filepath)
+    if PARSE_LOG_FILES:
+      for log_filename in ssh_client.exec("ls {dirpath}/*.log".format(dirpath=dirpath))[0].split():
+        if isinstance(log_filename, bytes):
+          log_filename = log_filename.decode("utf-8")
         if log_filename in LOG_FILENAME_TO_PARSER:
           ssh_client.exec("python3 {parser_path} "
               "--log_filepath {log_filepath} "

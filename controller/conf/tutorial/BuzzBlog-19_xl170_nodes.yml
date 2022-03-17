@@ -27,8 +27,6 @@ node-0:
     loadgen1:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen1"
         network: "host"
@@ -41,8 +39,6 @@ node-0:
     loadgen2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen2"
         network: "host"
@@ -55,8 +51,6 @@ node-0:
     loadgen3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen3"
         network: "host"
@@ -69,8 +63,6 @@ node-0:
     loadgen4:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen4"
         network: "host"
@@ -83,8 +75,6 @@ node-0:
     loadgen5:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen5"
         network: "host"
@@ -97,8 +87,6 @@ node-0:
     loadgen6:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen6"
         network: "host"
@@ -111,8 +99,6 @@ node-0:
     loadgen7:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen7"
         network: "host"
@@ -125,8 +111,6 @@ node-0:
     loadgen8:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen8"
         network: "host"
@@ -139,8 +123,6 @@ node-0:
     loadgen9:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen9"
         network: "host"
@@ -153,8 +135,6 @@ node-0:
     loadgen10:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen10"
         network: "host"
@@ -204,8 +184,6 @@ node-1:
     loadgen11:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen11"
         network: "host"
@@ -218,8 +196,6 @@ node-1:
     loadgen12:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen12"
         network: "host"
@@ -232,8 +208,6 @@ node-1:
     loadgen13:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen13"
         network: "host"
@@ -246,8 +220,6 @@ node-1:
     loadgen14:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen14"
         network: "host"
@@ -260,8 +232,6 @@ node-1:
     loadgen15:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen15"
         network: "host"
@@ -274,8 +244,6 @@ node-1:
     loadgen16:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen16"
         network: "host"
@@ -288,8 +256,6 @@ node-1:
     loadgen17:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen17"
         network: "host"
@@ -302,8 +268,6 @@ node-1:
     loadgen18:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen18"
         network: "host"
@@ -316,8 +280,6 @@ node-1:
     loadgen19:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen19"
         network: "host"
@@ -330,8 +292,6 @@ node-1:
     loadgen20:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen20"
         network: "host"
@@ -381,8 +341,6 @@ node-2:
     loadgen21:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen21"
         network: "host"
@@ -395,8 +353,6 @@ node-2:
     loadgen22:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen22"
         network: "host"
@@ -409,8 +365,6 @@ node-2:
     loadgen23:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen23"
         network: "host"
@@ -423,8 +377,6 @@ node-2:
     loadgen24:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen24"
         network: "host"
@@ -437,8 +389,6 @@ node-2:
     loadgen25:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen25"
         network: "host"
@@ -451,8 +401,6 @@ node-2:
     loadgen26:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen26"
         network: "host"
@@ -465,8 +413,6 @@ node-2:
     loadgen27:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen27"
         network: "host"
@@ -479,8 +425,6 @@ node-2:
     loadgen28:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen28"
         network: "host"
@@ -493,8 +437,6 @@ node-2:
     loadgen29:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen29"
         network: "host"
@@ -507,8 +449,6 @@ node-2:
     loadgen30:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen30"
         network: "host"
@@ -558,8 +498,6 @@ node-3:
     loadgen31:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen31"
         network: "host"
@@ -572,8 +510,6 @@ node-3:
     loadgen32:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen32"
         network: "host"
@@ -586,8 +522,6 @@ node-3:
     loadgen33:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen33"
         network: "host"
@@ -600,8 +534,6 @@ node-3:
     loadgen34:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen34"
         network: "host"
@@ -614,8 +546,6 @@ node-3:
     loadgen35:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen35"
         network: "host"
@@ -628,8 +558,6 @@ node-3:
     loadgen36:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen36"
         network: "host"
@@ -642,8 +570,6 @@ node-3:
     loadgen37:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen37"
         network: "host"
@@ -656,8 +582,6 @@ node-3:
     loadgen38:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen38"
         network: "host"
@@ -670,8 +594,6 @@ node-3:
     loadgen39:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen39"
         network: "host"
@@ -684,8 +606,6 @@ node-3:
     loadgen40:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
-      logs:
-        - "/tmp/loadgen.log"
       options:
         name: "loadgen40"
         network: "host"
@@ -735,8 +655,6 @@ node-4:
     apigateway1:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway1"
         network: "host"
@@ -750,8 +668,6 @@ node-4:
     apigateway2:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway2"
         network: "host"
@@ -765,8 +681,6 @@ node-4:
     apigateway3:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway3"
         network: "host"
@@ -780,8 +694,6 @@ node-4:
     apigateway4:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway4"
         network: "host"
@@ -795,8 +707,6 @@ node-4:
     apigateway5:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway5"
         network: "host"
@@ -810,8 +720,6 @@ node-4:
     apigateway6:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway6"
         network: "host"
@@ -825,8 +733,6 @@ node-4:
     apigateway7:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway7"
         network: "host"
@@ -840,8 +746,6 @@ node-4:
     apigateway8:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway8"
         network: "host"
@@ -855,8 +759,6 @@ node-4:
     apigateway9:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway9"
         network: "host"
@@ -870,8 +772,6 @@ node-4:
     apigateway10:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway10"
         network: "host"
@@ -922,8 +822,6 @@ node-5:
     apigateway11:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway11"
         network: "host"
@@ -937,8 +835,6 @@ node-5:
     apigateway12:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway12"
         network: "host"
@@ -952,8 +848,6 @@ node-5:
     apigateway13:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway13"
         network: "host"
@@ -967,8 +861,6 @@ node-5:
     apigateway14:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway14"
         network: "host"
@@ -982,8 +874,6 @@ node-5:
     apigateway15:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway15"
         network: "host"
@@ -997,8 +887,6 @@ node-5:
     apigateway16:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway16"
         network: "host"
@@ -1012,8 +900,6 @@ node-5:
     apigateway17:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway17"
         network: "host"
@@ -1027,8 +913,6 @@ node-5:
     apigateway18:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway18"
         network: "host"
@@ -1042,8 +926,6 @@ node-5:
     apigateway19:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway19"
         network: "host"
@@ -1057,8 +939,6 @@ node-5:
     apigateway20:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway20"
         network: "host"
@@ -1109,8 +989,6 @@ node-6:
     apigateway21:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway21"
         network: "host"
@@ -1124,8 +1002,6 @@ node-6:
     apigateway22:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway22"
         network: "host"
@@ -1139,8 +1015,6 @@ node-6:
     apigateway23:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway23"
         network: "host"
@@ -1154,8 +1028,6 @@ node-6:
     apigateway24:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway24"
         network: "host"
@@ -1169,8 +1041,6 @@ node-6:
     apigateway25:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway25"
         network: "host"
@@ -1184,8 +1054,6 @@ node-6:
     apigateway26:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway26"
         network: "host"
@@ -1199,8 +1067,6 @@ node-6:
     apigateway27:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway27"
         network: "host"
@@ -1214,8 +1080,6 @@ node-6:
     apigateway28:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway28"
         network: "host"
@@ -1229,8 +1093,6 @@ node-6:
     apigateway29:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway29"
         network: "host"
@@ -1244,8 +1106,6 @@ node-6:
     apigateway30:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway30"
         network: "host"
@@ -1296,8 +1156,6 @@ node-7:
     apigateway31:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway31"
         network: "host"
@@ -1311,8 +1169,6 @@ node-7:
     apigateway32:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway32"
         network: "host"
@@ -1326,8 +1182,6 @@ node-7:
     apigateway33:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway33"
         network: "host"
@@ -1341,8 +1195,6 @@ node-7:
     apigateway34:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway34"
         network: "host"
@@ -1356,8 +1208,6 @@ node-7:
     apigateway35:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway35"
         network: "host"
@@ -1371,8 +1221,6 @@ node-7:
     apigateway36:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway36"
         network: "host"
@@ -1386,8 +1234,6 @@ node-7:
     apigateway37:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway37"
         network: "host"
@@ -1401,8 +1247,6 @@ node-7:
     apigateway38:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway38"
         network: "host"
@@ -1416,8 +1260,6 @@ node-7:
     apigateway39:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway39"
         network: "host"
@@ -1431,8 +1273,6 @@ node-7:
     apigateway40:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
       start_order: 3
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "apigateway40"
         network: "host"
@@ -1483,9 +1323,6 @@ node-8:
     account_service:
       image: "rodrigoalveslima/buzzblog:account_v0.1"
       start_order: 2
-      logs:
-        - "/tmp/calls.log"
-        - "/tmp/queries.log"
       options:
         name: "account_service"
         network: "host"
@@ -1594,8 +1431,6 @@ node-10:
     follow_service:
       image: "rodrigoalveslima/buzzblog:follow_v0.1"
       start_order: 2
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "follow_service"
         network: "host"
@@ -1649,8 +1484,6 @@ node-11:
     like_service:
       image: "rodrigoalveslima/buzzblog:like_v0.1"
       start_order: 2
-      logs:
-        - "/tmp/calls.log"
       options:
         name: "like_service"
         network: "host"
@@ -1704,9 +1537,6 @@ node-12:
     post_service:
       image: "rodrigoalveslima/buzzblog:post_v0.1"
       start_order: 2
-      logs:
-        - "/tmp/calls.log"
-        - "/tmp/queries.log"
       options:
         name: "post_service"
         network: "host"
@@ -1815,9 +1645,6 @@ node-14:
     uniquepair_service:
       image: "rodrigoalveslima/buzzblog:uniquepair_v0.1"
       start_order: 2
-      logs:
-        - "/tmp/calls.log"
-        - "/tmp/queries.log"
       options:
         name: "uniquepair_service"
         network: "host"
@@ -1926,10 +1753,6 @@ node-16:
     trending_service:
       image: "rodrigoalveslima/buzzblog:trending_v0.1"
       start_order: 2
-      logs:
-        - "/tmp/calls.log"
-        - "/tmp/queries.log"
-        - "/tmp/redis.log"
       options:
         name: "trending_service"
         network: "host"
