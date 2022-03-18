@@ -20,7 +20,7 @@ class SSHClient:
         key_filename=key_filename)
     self._log_filename = log_filename
 
-  def exec(self, command, retries=6):
+  def exec(self, command, retries=10):
     """Execute command remotely.
 
     Data written to stdout and stderr are appended to files named with the
@@ -34,10 +34,10 @@ class SSHClient:
         _, stdout, stderr = self._client.exec_command(command)
         stdout.channel.recv_exit_status()
         break
-      except paramiko.ssh_exception.ChannelException as e:
+      except (paramiko.ssh_exception.ChannelException, paramiko.ssh_exception.SSHException) as e:
         retries -= 1
         if retries + 1 > 0:
-          time.sleep(10)
+          time.sleep(12)
         else:
           raise e
     with open(self._log_filename + ".out", "ab+") as stdout_log_file:
