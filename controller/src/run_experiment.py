@@ -362,7 +362,7 @@ def fetch_container_logs(node_hostname, node_conf, ssh_client):
         "{dirpath}/{container_name}.log 2>&1".format(
             container_name=container_name, dirpath=dirpath))
     if PARSE_LOG_FILES:
-      for log_filename in ssh_client.exec("ls {dirpath}/*.log".format(dirpath=dirpath))[0].split():
+      for log_filename in ssh_client.exec("ls {dirpath}".format(dirpath=dirpath))[0].split():
         if isinstance(log_filename, bytes):
           log_filename = log_filename.decode("utf-8")
         if log_filename in LOG_FILENAME_TO_PARSER:
