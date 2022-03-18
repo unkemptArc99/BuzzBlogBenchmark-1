@@ -5,6 +5,7 @@ import datetime
 
 import paramiko
 import scp
+import time
 
 
 class SSHClient:
@@ -19,7 +20,7 @@ class SSHClient:
         key_filename=key_filename)
     self._log_filename = log_filename
 
-  def exec(self, command):
+  def exec(self, command, retries=6):
     """Execute command remotely.
 
     Data written to stdout and stderr are appended to files named with the
@@ -28,8 +29,17 @@ class SSHClient:
     print("[{ts}][{hostname}] {command}".format(
         ts=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         hostname=self._hostname, command=command))
-    _, stdout, stderr = self._client.exec_command(command)
-    stdout.channel.recv_exit_status()
+    while retries + 1 > 0:
+      try:
+        _, stdout, stderr = self._client.exec_command(command)
+        stdout.channel.recv_exit_status()
+        break
+      except paramiko.ssh_exception.ChannelException as e:
+        retries -= 1
+        if retries + 1 > 0:
+          time.sleep(10)
+        else:
+          raise e
     with open(self._log_filename + ".out", "ab+") as stdout_log_file:
       stdout_b = stdout.read()
       stdout_log_file.write(stdout_b)
