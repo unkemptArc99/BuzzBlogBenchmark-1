@@ -38,6 +38,7 @@ ssh -o StrictHostKeyChecking=no ${username}@${controller_node} "
       # Set ownership and permissions of /tmp.
       sudo chown -R ${username}:infosphere-PG0 /tmp
       sudo chmod -R 777 /tmp
-    \"
+    \" &
   done
+  wait
 "
