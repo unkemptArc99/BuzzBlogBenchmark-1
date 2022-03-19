@@ -1385,7 +1385,7 @@ node-8:
           - "threads=80"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=128"
+          - "postgres_connection_pool_size=1024"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -1424,7 +1424,7 @@ node-9:
     net.core.netdev_budget_usecs: "32000"
   containers:
     account_database:
-      image: "postgres:13.1 -c max_connections=128"
+      image: "postgres:13.1 -c max_connections=2048"
       start_order: 1
       options:
         name: "account_database"
@@ -1636,7 +1636,7 @@ node-12:
           - "threads=80"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=128"
+          - "postgres_connection_pool_size=1024"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -1675,7 +1675,7 @@ node-13:
     net.core.netdev_budget_usecs: "32000"
   containers:
     post_database:
-      image: "postgres:13.1 -c max_connections=128"
+      image: "postgres:13.1 -c max_connections=2048"
       start_order: 1
       options:
         name: "post_database"
@@ -1763,7 +1763,7 @@ node-14:
           - "threads=80"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size=128"
+          - "postgres_connection_pool_size=1024"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -1802,7 +1802,7 @@ node-15:
     net.core.netdev_budget_usecs: "32000"
   containers:
     uniquepair_database:
-      image: "postgres:13.1 -c max_connections=128"
+      image: "postgres:13.1 -c max_connections=2048"
       start_order: 1
       options:
         name: "uniquepair_database"
@@ -1890,7 +1890,7 @@ node-16:
           - "threads=80"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "redis_connection_pool_size=128"
+          - "redis_connection_pool_size=1024"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
