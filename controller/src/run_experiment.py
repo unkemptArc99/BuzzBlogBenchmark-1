@@ -295,6 +295,12 @@ def generate_backend_configuration_file(node_hostname, node_conf, ssh_client):
           filepath="/etc/opt/BuzzBlog/backend.yml"))
 
 
+@all_nodes
+def run_setup_scripts(node_hostname, node_conf, ssh_client):
+  for script in node_conf.get("setup", []):
+    ssh_client.exec(script)
+
+
 @nodes_with_monitor(".+")
 def start_monitors(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
@@ -337,6 +343,12 @@ def stop_monitors(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
     ssh_client.exec("sudo pkill %s" %
         monitor_conf.get("command", monitor_name).split(' ')[0])
+
+
+@all_nodes
+def run_teardown_scripts(node_hostname, node_conf, ssh_client):
+  for script in node_conf.get("teardown", []):
+    ssh_client.exec(script)
 
 
 @nodes_with_monitor(".+")
@@ -391,9 +403,11 @@ def run():
   copy_workload_configuration_file()
   render_configuration_templates()
   generate_backend_configuration_file()
+  run_setup_scripts()
   start_monitors()
   start_containers()
   stop_monitors()
+  run_teardown_scripts()
   fetch_monitoring_data()
   fetch_container_logs()
 

@@ -634,6 +634,16 @@ node-4:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -801,6 +811,16 @@ node-5:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -968,6 +988,16 @@ node-6:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1135,6 +1165,16 @@ node-7:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1302,6 +1342,16 @@ node-8:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1328,7 +1378,6 @@ node-8:
         network: "host"
         ulimit: "nofile=131072:131072"
         publish: "1090:1090"
-        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
@@ -1358,6 +1407,16 @@ node-9:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
     net.core.netdev_budget: "1000"
@@ -1410,6 +1469,16 @@ node-10:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1436,7 +1505,6 @@ node-10:
         network: "host"
         ulimit: "nofile=131072:131072"
         publish: "1091:1091"
-        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
@@ -1463,6 +1531,16 @@ node-11:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1489,7 +1567,6 @@ node-11:
         network: "host"
         ulimit: "nofile=131072:131072"
         publish: "1092:1092"
-        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
@@ -1516,6 +1593,16 @@ node-12:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1542,7 +1629,6 @@ node-12:
         network: "host"
         ulimit: "nofile=131072:131072"
         publish: "1093:1093"
-        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
@@ -1572,6 +1658,16 @@ node-13:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
     net.core.netdev_budget: "1000"
@@ -1624,6 +1720,16 @@ node-14:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1650,7 +1756,6 @@ node-14:
         network: "host"
         ulimit: "nofile=131072:131072"
         publish: "1094:1094"
-        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
@@ -1680,6 +1785,16 @@ node-15:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
     net.core.netdev_budget: "1000"
@@ -1732,6 +1847,16 @@ node-16:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1758,7 +1883,6 @@ node-16:
         network: "host"
         ulimit: "nofile=131072:131072"
         publish: "1095:1095"
-        cpuset-cpus: "0-9"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
@@ -1786,6 +1910,16 @@ node-17:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.ipv4.tcp_mem: "767307	3069228	6138456"
     net.core.netdev_budget: "1000"
@@ -1842,6 +1976,16 @@ node-18:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Disable Intel Turbo Boost.
+    - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "0" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+  teardown:
+    # Enable Intel Turbo Boost.
+    - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo "1" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1868,7 +2012,6 @@ node-18:
         network: "host"
         ulimit: "nofile=131072:131072"
         publish: "1096:1096"
-        cpuset-cpus: "0-9"
         detach: ""
         env:
           - "port=1096"
