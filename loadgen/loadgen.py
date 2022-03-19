@@ -136,7 +136,7 @@ class BuzzBlogSession(ATLoad.Session):
       r = self._request("get", "/post",
           params={"author_id": self._other_account["id"], "limit": 1,
               "offset": 0})
-      if r.status_code == 200:
+      if r.status_code == 200 and r.json():
         self._other_post = random.choice(r.json())
 
   def retrieve_account_followers(self):
