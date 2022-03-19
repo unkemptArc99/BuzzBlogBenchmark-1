@@ -1382,7 +1382,7 @@ node-8:
         detach: ""
         env:
           - "port=1090"
-          - "threads=80"
+          - "threads=0"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=1024"
@@ -1509,7 +1509,7 @@ node-10:
         detach: ""
         env:
           - "port=1091"
-          - "threads=80"
+          - "threads=0"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
@@ -1571,7 +1571,7 @@ node-11:
         detach: ""
         env:
           - "port=1092"
-          - "threads=80"
+          - "threads=0"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
@@ -1633,7 +1633,7 @@ node-12:
         detach: ""
         env:
           - "port=1093"
-          - "threads=80"
+          - "threads=0"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=1024"
@@ -1760,7 +1760,7 @@ node-14:
         detach: ""
         env:
           - "port=1094"
-          - "threads=80"
+          - "threads=0"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "postgres_connection_pool_size=1024"
@@ -1887,7 +1887,7 @@ node-16:
         detach: ""
         env:
           - "port=1095"
-          - "threads=80"
+          - "threads=0"
           - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
           - "redis_connection_pool_size=1024"
@@ -2015,7 +2015,7 @@ node-18:
         detach: ""
         env:
           - "port=1096"
-          - "threads=80"
+          - "threads=0"
           - "accept_backlog=1024"
           - "n_invalid_words=128"
   monitors:
