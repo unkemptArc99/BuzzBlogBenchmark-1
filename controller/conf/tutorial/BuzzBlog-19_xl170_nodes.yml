@@ -673,7 +673,7 @@ node-4:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1080"
     apigateway2:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -686,7 +686,7 @@ node-4:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1081"
     apigateway3:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -699,7 +699,7 @@ node-4:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1082"
     apigateway4:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -712,7 +712,7 @@ node-4:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1083"
     apigateway5:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -725,7 +725,7 @@ node-4:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1084"
     apigateway6:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -738,7 +738,7 @@ node-4:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1085"
     apigateway7:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -751,7 +751,7 @@ node-4:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1086"
     apigateway8:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -764,7 +764,7 @@ node-4:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1087"
     apigateway9:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -777,7 +777,7 @@ node-4:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1088"
     apigateway10:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -790,7 +790,7 @@ node-4:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1089"
   monitors:
     tcpretrans-bpfcc:
@@ -850,7 +850,7 @@ node-5:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1080"
     apigateway12:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -863,7 +863,7 @@ node-5:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1081"
     apigateway13:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -876,7 +876,7 @@ node-5:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1082"
     apigateway14:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -889,7 +889,7 @@ node-5:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1083"
     apigateway15:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -902,7 +902,7 @@ node-5:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1084"
     apigateway16:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -915,7 +915,7 @@ node-5:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1085"
     apigateway17:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -928,7 +928,7 @@ node-5:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1086"
     apigateway18:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -941,7 +941,7 @@ node-5:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1087"
     apigateway19:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -954,7 +954,7 @@ node-5:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1088"
     apigateway20:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -967,7 +967,7 @@ node-5:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1089"
   monitors:
     tcpretrans-bpfcc:
@@ -1027,7 +1027,7 @@ node-6:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1080"
     apigateway22:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1040,7 +1040,7 @@ node-6:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1081"
     apigateway23:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1053,7 +1053,7 @@ node-6:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1082"
     apigateway24:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1066,7 +1066,7 @@ node-6:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1083"
     apigateway25:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1079,7 +1079,7 @@ node-6:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1084"
     apigateway26:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1092,7 +1092,7 @@ node-6:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1085"
     apigateway27:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1105,7 +1105,7 @@ node-6:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1086"
     apigateway28:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1118,7 +1118,7 @@ node-6:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1087"
     apigateway29:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1131,7 +1131,7 @@ node-6:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1088"
     apigateway30:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1144,7 +1144,7 @@ node-6:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1089"
   monitors:
     tcpretrans-bpfcc:
@@ -1204,7 +1204,7 @@ node-7:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1080"
     apigateway32:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1217,7 +1217,7 @@ node-7:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1081"
     apigateway33:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1230,7 +1230,7 @@ node-7:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1082"
     apigateway34:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1243,7 +1243,7 @@ node-7:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1083"
     apigateway35:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1256,7 +1256,7 @@ node-7:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1084"
     apigateway36:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1269,7 +1269,7 @@ node-7:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1085"
     apigateway37:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1282,7 +1282,7 @@ node-7:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1086"
     apigateway38:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1295,7 +1295,7 @@ node-7:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1087"
     apigateway39:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1308,7 +1308,7 @@ node-7:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1088"
     apigateway40:
       image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
@@ -1321,7 +1321,7 @@ node-7:
           - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
-          - "threads=8"
+          - "threads=128"
           - "port=1089"
   monitors:
     tcpretrans-bpfcc:
