@@ -12,7 +12,7 @@ import time
 class SSHClient:
   """A wrapper around paramiko.SSHClient."""
 
-  def __init__(self, hostname, port, username, key_filename, log_filename, max_sessions=8):
+  def __init__(self, hostname, port, username, key_filename, log_filename, max_sessions=40):
     """Initialize an SSH client."""
     self._hostname = hostname
     self._client = paramiko.SSHClient()
