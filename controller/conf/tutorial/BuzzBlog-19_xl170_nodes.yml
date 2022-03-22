@@ -120,6 +120,30 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1087"
+    loadgen9:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      options:
+        name: "loadgen9"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        env:
+          - "hostname=node-4"
+          - "port=1088"
+    loadgen10:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      options:
+        name: "loadgen10"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        env:
+          - "hostname=node-4"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -253,6 +277,30 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1087"
+    loadgen19:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      options:
+        name: "loadgen19"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        env:
+          - "hostname=node-5"
+          - "port=1088"
+    loadgen20:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      options:
+        name: "loadgen20"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        env:
+          - "hostname=node-5"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -386,6 +434,30 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1087"
+    loadgen29:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      options:
+        name: "loadgen29"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        env:
+          - "hostname=node-6"
+          - "port=1088"
+    loadgen30:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      options:
+        name: "loadgen30"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        env:
+          - "hostname=node-6"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -519,6 +591,30 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1087"
+    loadgen39:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      options:
+        name: "loadgen39"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        env:
+          - "hostname=node-7"
+          - "port=1088"
+    loadgen40:
+      image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
+      start_order: 4
+      options:
+        name: "loadgen40"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/usr/local/etc/loadgen:/usr/local/etc/loadgen"
+        env:
+          - "hostname=node-7"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -541,13 +637,9 @@ node-4:
   setup:
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
-    - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
-    - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -670,6 +762,32 @@ node-4:
         env:
           - "threads=128"
           - "port=1087"
+    apigateway9:
+      image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
+      start_order: 3
+      options:
+        name: "apigateway9"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
+        detach: ""
+        env:
+          - "threads=128"
+          - "port=1088"
+    apigateway10:
+      image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
+      start_order: 3
+      options:
+        name: "apigateway10"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
+        detach: ""
+        env:
+          - "threads=128"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -692,13 +810,9 @@ node-5:
   setup:
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
-    - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
-    - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -821,6 +935,32 @@ node-5:
         env:
           - "threads=128"
           - "port=1087"
+    apigateway19:
+      image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
+      start_order: 3
+      options:
+        name: "apigateway19"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
+        detach: ""
+        env:
+          - "threads=128"
+          - "port=1088"
+    apigateway20:
+      image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
+      start_order: 3
+      options:
+        name: "apigateway20"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
+        detach: ""
+        env:
+          - "threads=128"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -843,13 +983,9 @@ node-6:
   setup:
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
-    - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
-    - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -972,6 +1108,32 @@ node-6:
         env:
           - "threads=128"
           - "port=1087"
+    apigateway29:
+      image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
+      start_order: 3
+      options:
+        name: "apigateway29"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
+        detach: ""
+        env:
+          - "threads=128"
+          - "port=1088"
+    apigateway30:
+      image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
+      start_order: 3
+      options:
+        name: "apigateway30"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
+        detach: ""
+        env:
+          - "threads=128"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
@@ -994,13 +1156,9 @@ node-7:
   setup:
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
-    - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
-    - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1123,6 +1281,32 @@ node-7:
         env:
           - "threads=128"
           - "port=1087"
+    apigateway39:
+      image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
+      start_order: 3
+      options:
+        name: "apigateway39"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
+        detach: ""
+        env:
+          - "threads=128"
+          - "port=1088"
+    apigateway40:
+      image: "rodrigoalveslima/buzzblog:apigateway_v0.1"
+      start_order: 3
+      options:
+        name: "apigateway40"
+        network: "host"
+        ulimit: "nofile=131072:131072"
+        volume:
+          - "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
+        detach: ""
+        env:
+          - "threads=128"
+          - "port=1089"
   monitors:
     tcpretrans-bpfcc:
       dirpath: "/tmp/tcpretrans-bpfcc"
