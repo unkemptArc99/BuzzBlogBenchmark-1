@@ -11,6 +11,7 @@ node-0:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -168,6 +169,7 @@ node-1:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -325,6 +327,7 @@ node-2:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -482,6 +485,7 @@ node-3:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -637,14 +641,19 @@ node-4:
   setup:
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -810,14 +819,19 @@ node-5:
   setup:
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -983,14 +997,19 @@ node-6:
   setup:
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1156,14 +1175,19 @@ node-7:
   setup:
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
+    - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1341,6 +1365,7 @@ node-8:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1406,6 +1431,7 @@ node-9:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1468,6 +1494,7 @@ node-10:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1530,6 +1557,7 @@ node-11:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1592,6 +1620,7 @@ node-12:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1657,6 +1686,7 @@ node-13:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1719,6 +1749,7 @@ node-14:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1784,6 +1815,7 @@ node-15:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1846,6 +1878,7 @@ node-16:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1909,6 +1942,7 @@ node-17:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
@@ -1975,6 +2009,7 @@ node-18:
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
     net.core.somaxconn: "1024"
+    net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
     net.ipv4.tcp_fin_timeout: "60"
