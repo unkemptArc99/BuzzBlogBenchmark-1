@@ -6,6 +6,11 @@ node-0:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -164,6 +169,11 @@ node-1:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -322,6 +332,11 @@ node-2:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -480,6 +495,11 @@ node-3:
     username: "{{username}}"
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
+  setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -639,6 +659,10 @@ node-4:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -817,6 +841,10 @@ node-5:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -995,6 +1023,10 @@ node-6:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1173,6 +1205,10 @@ node-7:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1351,6 +1387,10 @@ node-8:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1417,6 +1457,10 @@ node-9:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1480,6 +1524,10 @@ node-10:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1543,6 +1591,10 @@ node-11:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1606,6 +1658,10 @@ node-12:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1672,6 +1728,10 @@ node-13:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1735,6 +1795,10 @@ node-14:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1801,6 +1865,10 @@ node-15:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1864,6 +1932,10 @@ node-16:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192" 
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1928,6 +2000,10 @@ node-17:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
@@ -1995,6 +2071,10 @@ node-18:
     port: 22
     key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
+    # Set TCP queue sizes.
+    - "sudo ethtool -G ens1f1 rx 8192"
+    - "sudo ethtool -G ens1f1 tx 8192"
+    - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
     # Disable Intel Hyper-Threading (vCPUs 10 to 19).
