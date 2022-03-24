@@ -10,16 +10,13 @@ duration:
 surges:
   - start: 240
     duration: 3
-    intensity: 1.1
-  - start: 300
-    duration: 3
-    intensity: 1.15
+    intensity: 1.5
   - start: 360
     duration: 3
-    intensity: 1.2
-  - start: 420
+    intensity: 1.5
+  - start: 540
     duration: 3
-    intensity: 1.25
+    intensity: 1.5
 request_graph:
   main:
     create_account: 1.00
