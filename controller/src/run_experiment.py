@@ -223,6 +223,17 @@ def install_bpfcc(node_hostname, node_conf, ssh_client):
           "bpfcc-tools linux-headers-5.4.0-100-generic")
 
 
+@nodes_with_monitor(".+-bpftrace")
+def install_bpftrace(node_hostname, node_conf, ssh_client):
+  ssh_client.exec(
+      "sudo apt-get update && "
+      "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "
+          "linux-headers-5.4.0-100-generic && "
+      "sudo docker run -v $(pwd):/output quay.io/iovisor/bpftrace:v0.14.1-vanilla_llvm12_clang_glibc2.27 "
+          "/bin/bash -c \"cp /usr/bin/bpftrace /output\" && "
+      "sudo mv bpftrace /usr/local/bin/")
+
+
 @nodes_with_monitor("collectl")
 def install_collectl(node_hostname, node_conf, ssh_client):
   ssh_client.exec(
@@ -397,6 +408,7 @@ def run():
   install_docker()
   install_pandas()
   install_bpfcc()
+  install_bpftrace()
   install_collectl()
   install_radvisor()
   pull_docker_images()
