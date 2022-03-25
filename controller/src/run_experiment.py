@@ -373,6 +373,9 @@ def fetch_monitoring_data(node_hostname, node_conf, ssh_client):
       if monitor_name == "tcplistenbl-bpftrace":
         ssh_client.exec("python3 /opt/BuzzBlogBenchmark/analysis/parsers/tcplistenbl_parser.py "
             "--log_filepath {dirpath}/log --csv_filepath {dirpath}/log.csv".format(dirpath=monitor_conf["dirpath"]))
+      if monitor_name == "tcpretrans-bpftrace":
+        ssh_client.exec("python3 /opt/BuzzBlogBenchmark/analysis/parsers/tcpretrans_parser.py "
+            "--log_filepath {dirpath}/log --csv_filepath {dirpath}/log.csv".format(dirpath=monitor_conf["dirpath"]))
     ssh_client.exec("tar -C {dirpath} -czf /tmp/{monitor_name}.tar.gz .".format(
         monitor_name=monitor_name, dirpath=monitor_conf["dirpath"]))
     ssh_client.copy("/tmp/{monitor_name}.tar.gz".format(
