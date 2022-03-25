@@ -19,7 +19,7 @@ class TcplistenblParser:
 
     @staticmethod
     def extract_values_from_log(log):
-        match = re.match(TCPLISTENBL_LOG_PATTERN, log.decode("utf-8").strip())
+        match = re.match(TCPLISTENBL_LOG_PATTERN, log.strip())
         if not match:
             return None
         timestamp, pid, command, len, max = match.groups()
