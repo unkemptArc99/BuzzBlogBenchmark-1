@@ -8,7 +8,7 @@ import sys
 import tarfile
 
 sys.path.append(os.path.abspath(os.path.join("..")))
-from parsers import collectl_parser, loadgen_parser, query_parser, redis_parser, rpc_parser
+from parsers import collectl_parser, loadgen_parser, query_parser, redis_parser, rpc_parser, tcplistenbl_parser
 
 
 def get_node_names(experiment_dirpath):
@@ -148,6 +148,17 @@ def get_collectl_dsk_df(experiment_dirpath):
                             with gzip.open(tar.extractfile(filename), "rt") as logfile:
                                 yield (node_name, tarball_name,
                                         collectl_parser.CollectlParser.df(logfile, "dsk").assign(node_name=node_name))
+
+
+def get_tcplistenbl_df(experiment_dirpath):
+    tarball_name = "tcplistenbl-bpftrace.tar.gz"
+    for node_name in get_node_names(experiment_dirpath):
+        if tarball_name in os.listdir(os.path.join(experiment_dirpath, "logs", node_name)):
+            tarball_path = os.path.join(experiment_dirpath, "logs", node_name, tarball_name)
+            with tarfile.open(tarball_path, "r:gz") as tar:
+                if "./log" in tar.getnames():
+                    with tar.extractfile("./log") as logfile:
+                        yield (node_name, tarball_name, tcplistenbl_parser.TcplistenblParser.df(logfile).assign(node_name=node_name))
 
 
 def get_experiment_start_time(experiment_dirpath):
