@@ -12,10 +12,10 @@
 #endif
 
 BEGIN {
-  printf("%-26s %-6s %-15s %-13s\n", "TIME", "PID", "COMM", "BACKLOG");
+  printf("%-26s %-8s %-20s %-13s\n", "TIME", "PID", "COMM", "BACKLOG");
 }
 
 /* ACK packet arrived. */
 kprobe:tcp_v4_syn_recv_sock {
-  printf("%-26s %-6d %-15s %-6d/%-6d\n", strftime("%Y-%m-%d-%H:%M:%S.%f", nsecs), pid, comm, ((struct sock *) arg0)->sk_ack_backlog, ((struct sock *) arg0)->sk_max_ack_backlog);
+  printf("%-26s %-8d %-20s %6d/%-6d\n", strftime("%Y-%m-%d-%H:%M:%S.%f", nsecs), pid, comm, ((struct sock *) arg0)->sk_ack_backlog, ((struct sock *) arg0)->sk_max_ack_backlog);
 }
