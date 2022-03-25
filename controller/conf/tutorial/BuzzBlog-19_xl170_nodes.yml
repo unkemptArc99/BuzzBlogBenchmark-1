@@ -271,9 +271,10 @@ node-0:
           - "hostname=node-4"
           - "port=1099"
   monitors:
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -554,9 +555,10 @@ node-1:
           - "hostname=node-5"
           - "port=1099"
   monitors:
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -837,9 +839,10 @@ node-2:
           - "hostname=node-6"
           - "port=1099"
   monitors:
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -1120,9 +1123,10 @@ node-3:
           - "hostname=node-7"
           - "port=1099"
   monitors:
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -1437,9 +1441,10 @@ node-4:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -1754,9 +1759,10 @@ node-5:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -2071,9 +2077,10 @@ node-6:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -2388,9 +2395,10 @@ node-7:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -2463,9 +2471,10 @@ node-8:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -2535,9 +2544,10 @@ node-9:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -2607,9 +2617,10 @@ node-10:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -2679,9 +2690,10 @@ node-11:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -2754,9 +2766,10 @@ node-12:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -2826,9 +2839,10 @@ node-13:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -2901,9 +2915,10 @@ node-14:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -2973,9 +2988,10 @@ node-15:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -3046,9 +3062,10 @@ node-16:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -3122,9 +3139,10 @@ node-17:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
@@ -3193,9 +3211,10 @@ node-18:
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
-    tcpretrans-bpfcc:
-      dirpath: "/tmp/tcpretrans-bpfcc"
-      log: "/tmp/tcpretrans-bpfcc/log"
+    tcpretrans-bpftrace:
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
+      dirpath: "/tmp/tcpretrans-bpftrace"
+      log: "/tmp/tcpretrans-bpftrace/log"
       niceness: 19
     collectl:
       dirpath: "/tmp/collectl"
