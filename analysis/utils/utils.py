@@ -156,7 +156,11 @@ def get_tcplistenbl_df(experiment_dirpath):
         if tarball_name in os.listdir(os.path.join(experiment_dirpath, "logs", node_name)):
             tarball_path = os.path.join(experiment_dirpath, "logs", node_name, tarball_name)
             with tarfile.open(tarball_path, "r:gz") as tar:
-                if "./log" in tar.getnames():
+                if "./log.csv" in tar.getnames():
+                    with tar.extractfile("./log.csv") as csvfile:
+                        yield (node_name, tarball_name,
+                                pd.read_csv(csvfile, parse_dates=["timestamp"]).assign(node_name=node_name))
+                elif "./log" in tar.getnames():
                     with tar.extractfile("./log") as logfile:
                         yield (node_name, tarball_name, tcplistenbl_parser.TcplistenblParser.df(logfile).assign(node_name=node_name))
 
