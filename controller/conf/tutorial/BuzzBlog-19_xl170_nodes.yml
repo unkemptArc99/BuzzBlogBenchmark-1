@@ -1149,13 +1149,9 @@ node-4:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
-    # - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
-    # - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1467,13 +1463,9 @@ node-5:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
-    # - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
-    # - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -1785,13 +1777,9 @@ node-6:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
-    # - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
-    # - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
@@ -2103,13 +2091,9 @@ node-7:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable Intel Hyper-Threading (vCPUs 10 to 19).
-    # - "for cpu_no in {10..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable Intel Hyper-Threading (vCPUs 10 to 19).
-    # - "for cpu_no in {10..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
