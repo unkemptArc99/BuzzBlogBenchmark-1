@@ -2405,12 +2405,12 @@ node-8:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
@@ -2481,12 +2481,12 @@ node-9:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
@@ -2554,12 +2554,12 @@ node-10:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
@@ -2627,12 +2627,12 @@ node-11:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
@@ -2700,12 +2700,12 @@ node-12:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
@@ -2776,12 +2776,12 @@ node-13:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
@@ -2849,12 +2849,12 @@ node-14:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
@@ -2925,12 +2925,12 @@ node-15:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
@@ -2998,12 +2998,12 @@ node-16:
     - "sudo ifconfig ens1f1 txqueuelen 8192" 
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
@@ -3072,12 +3072,12 @@ node-17:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
@@ -3149,12 +3149,12 @@ node-18:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs 10 to 19.
+    # Disable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs 10 to 19.
+    # Enable VCPUs 4 to 19.
     - "for cpu_no in {4..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
