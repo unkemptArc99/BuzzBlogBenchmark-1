@@ -1433,7 +1433,7 @@ node-4:
           - "port=1099"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -1747,7 +1747,7 @@ node-5:
           - "port=1099"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -2061,7 +2061,7 @@ node-6:
           - "port=1099"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -2375,7 +2375,7 @@ node-7:
           - "port=1099"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -2451,7 +2451,7 @@ node-8:
           - "postgres_password=postgres"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -2524,7 +2524,7 @@ node-9:
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -2597,7 +2597,7 @@ node-10:
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -2670,7 +2670,7 @@ node-11:
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -2746,7 +2746,7 @@ node-12:
           - "postgres_password=postgres"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -2819,7 +2819,7 @@ node-13:
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -2895,7 +2895,7 @@ node-14:
           - "postgres_password=postgres"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -2968,7 +2968,7 @@ node-15:
           - "POSTGRES_HOST_AUTH_METHOD=trust"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -3042,7 +3042,7 @@ node-16:
           - "redis_connection_pool_size=1024"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -3119,7 +3119,7 @@ node-17:
         detach: ""
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
@@ -3191,7 +3191,7 @@ node-18:
           - "n_invalid_words=128"
   monitors:
     tcplistenbl-bpftrace:
-      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt"
+      command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
       dirpath: "/tmp/tcplistenbl-bpftrace"
       log: "/tmp/tcplistenbl-bpftrace/log"
       niceness: 19
