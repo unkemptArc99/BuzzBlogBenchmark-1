@@ -281,7 +281,7 @@ node-0:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -565,7 +565,7 @@ node-1:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -849,7 +849,7 @@ node-2:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1133,7 +1133,7 @@ node-3:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1447,7 +1447,7 @@ node-4:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -1761,7 +1761,7 @@ node-5:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2075,7 +2075,7 @@ node-6:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2389,7 +2389,7 @@ node-7:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2465,7 +2465,7 @@ node-8:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2538,7 +2538,7 @@ node-9:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2611,7 +2611,7 @@ node-10:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2684,7 +2684,7 @@ node-11:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2760,7 +2760,7 @@ node-12:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2833,7 +2833,7 @@ node-13:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2909,7 +2909,7 @@ node-14:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -2982,7 +2982,7 @@ node-15:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -3056,7 +3056,7 @@ node-16:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -3133,7 +3133,7 @@ node-17:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
@@ -3205,7 +3205,7 @@ node-18:
       niceness: 19
       options:
         filename: "/tmp/collectl/coll"
-        interval: "0.05"
+        interval: "0.01"
         subsys: "CDM"
         options: "Tm"
         plot: ""
