@@ -1,6 +1,9 @@
 # Copyright (C) 2020 Georgia Tech Center for Experimental Research in Computer
 # Systems
 
+import eventlet
+eventlet.monkey_patch(socket=True)
+
 import argparse
 import datetime
 import random
@@ -40,8 +43,12 @@ class BuzzBlogSession(ATLoad.Session):
     params = params or {}
     params.update({"request_id": _random_string(8)})
     start_time = datetime.datetime.now()
-    r = getattr(requests, method)(self._url_prefix + path, auth=auth,
-        params=params, json=json, timeout=(10, 1))
+    r = None
+    with eventlet.Timeout(10, False):
+      r = getattr(requests, method)(self._url_prefix + path, auth=auth, params=params, json=json, timeout=10)
+    if r is None:
+      r = requests.Response()
+      r.status_code = 408
     latency = round((datetime.datetime.now() - start_time).total_seconds(), 3)
     query_string = "&".join(["%s=%s" % (k, v) for (k, v) in params.items()]) \
         if params is not None else ""
