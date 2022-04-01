@@ -158,7 +158,7 @@ def configure_kernel(node_hostname, node_conf, ssh_client):
 
 
 @all_nodes
-def get_system_specs(node_hostname, node_conf, ssh_client):
+def save_system_specs(node_hostname, node_conf, ssh_client):
   with open(os.path.join(DIRNAME, "specs", node_hostname, "hw"), "wb+") as \
       hw_file:
     hw_file.write(ssh_client.exec("sudo lshw")[0])
@@ -409,7 +409,7 @@ def fetch_container_logs(node_hostname, node_conf, ssh_client):
 
 def run():
   configure_kernel()
-  get_system_specs()
+  save_system_specs()
   install_buzzblogbenchmark()
   install_docker()
   install_pandas()
