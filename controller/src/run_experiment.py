@@ -360,8 +360,8 @@ def run_teardown_scripts(node_hostname, node_conf, ssh_client):
 
 @all_nodes
 def stop_containers(node_hostname, node_conf, ssh_client):
-  ssh_client.exec("sudo docker container stop \$(sudo docker container ls -aq | grep -v ^`sudo docker ps -aqf \"name=benchmarkcontroller\"`$) && "
-      "sudo docker container rm \$(sudo docker container ls -aq | grep -v ^`sudo docker ps -aqf \"name=benchmarkcontroller\"`$) && "
+  ssh_client.exec("sudo docker container stop $(sudo docker container ls -aq | grep -v ^$(sudo docker ps -aqf \"name=benchmarkcontroller\")$) && "
+      "sudo docker container rm $(sudo docker container ls -aq | grep -v ^$(sudo docker ps -aqf \"name=benchmarkcontroller\")$) && "
       "sudo docker system prune -f --volumes")
 
 
