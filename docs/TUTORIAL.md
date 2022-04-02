@@ -120,6 +120,7 @@ BuzzBlog application.
 Still in `node-0`, run (Docker Hub credentials are optional parameters):
 ```
 sudo docker run \
+    --name benchmarkcontroller \
     --env description="My first BuzzBlog experiment." \
     --env docker_hub_username="" \
     --env docker_hub_password="" \
