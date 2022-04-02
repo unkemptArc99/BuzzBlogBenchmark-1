@@ -472,6 +472,10 @@ def main():
       with open(args.workload_conf) as workload_conf_file:
         workload_confs.append(yaml.load(workload_conf_file, Loader=yaml.Loader))
   # Configure system.
+  global DIRNAME
+  DIRNAME = "/var/log/BuzzBlogBenchmark/BuzzBlogBenchmark"
+  os.mkdir(DIRNAME)
+  os.mkdir(os.path.join(DIRNAME, "ssh"))
   install_buzzblogbenchmark()
   install_docker()
   install_pandas()
