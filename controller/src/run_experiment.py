@@ -16,19 +16,17 @@ from ssh_client import SSHClient
 
 
 ### Global variables
-
-DOCKER_HUB_USERNAME = ""
-DOCKER_HUB_PASSWORD = ""
-DIRNAME = ""
-METADATA = {}
-SYS_CONF = {}
-WL_CONF = {}
-BACKEND_CONF = {}
+DOCKER_HUB_USERNAME = None
+DOCKER_HUB_PASSWORD = None
+SYS_CONF = None
+WL_CONF = None
+BACKEND_CONF = None
 PARSE_LOG_FILES = None
+DIRNAME = None
+METADATA = None
 
 
 ### Utilities
-
 LOG_FILENAME_TO_PARSER = {
   "loadgen.log": "/opt/BuzzBlogBenchmark/analysis/parsers/loadgen_parser.py",
   "queries.log": "/opt/BuzzBlogBenchmark/analysis/parsers/query_parser.py",
@@ -149,8 +147,7 @@ def nodes_with_monitor(monitor_name_pat):
   return func_wrapper_outer
 
 
-### Workflow
-
+### Experiment workflow
 @all_nodes
 def configure_kernel(node_hostname, node_conf, ssh_client):
   ssh_client.exec(" && ".join(["sudo sysctl -w %s=\"%s\"" % (param, value)
@@ -276,12 +273,11 @@ def pull_docker_images(node_hostname, node_conf, ssh_client):
 
 @nodes_with_container("loadgen.*")
 def copy_workload_configuration_file(node_hostname, node_conf, ssh_client):
-  if WL_CONF:
-    ssh_client.exec(
-        "sudo mkdir -p /usr/local/etc/loadgen && "
-        "echo \"{content}\" | sudo tee {filepath}".format(
-            content=yaml.dump(WL_CONF),
-            filepath="/usr/local/etc/loadgen/workload.yml"))
+  ssh_client.exec(
+      "sudo mkdir -p /usr/local/etc/loadgen && "
+      "echo \"{content}\" | sudo tee {filepath}".format(
+          content=yaml.dump(WL_CONF),
+          filepath="/usr/local/etc/loadgen/workload.yml"))
 
 
 @all_nodes
@@ -362,6 +358,13 @@ def run_teardown_scripts(node_hostname, node_conf, ssh_client):
     ssh_client.exec(script)
 
 
+@all_nodes
+def stop_containers(node_hostname, node_conf, ssh_client):
+  ssh_client.exec("sudo docker container stop \$(sudo docker container ls -aq | grep -v ^`sudo docker ps -aqf \"name=benchmarkcontroller\"`$) && "
+      "sudo docker container rm \$(sudo docker container ls -aq | grep -v ^`sudo docker ps -aqf \"name=benchmarkcontroller\"`$) && "
+      "sudo docker system prune -f --volumes")
+
+
 @nodes_with_monitor(".+")
 def fetch_monitoring_data(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
@@ -407,31 +410,7 @@ def fetch_container_logs(node_hostname, node_conf, ssh_client):
         os.path.join(DIRNAME, "logs", node_hostname))
 
 
-def run():
-  configure_kernel()
-  save_system_specs()
-  install_buzzblogbenchmark()
-  install_docker()
-  install_pandas()
-  install_bpfcc()
-  install_bpftrace()
-  install_collectl()
-  install_radvisor()
-  pull_docker_images()
-  copy_workload_configuration_file()
-  render_configuration_templates()
-  generate_backend_configuration_file()
-  run_setup_scripts()
-  start_monitors()
-  start_containers()
-  stop_monitors()
-  run_teardown_scripts()
-  fetch_monitoring_data()
-  fetch_container_logs()
-
-
 ### Main program
-
 def main():
   # Parse command-line arguments.
   parser = argparse.ArgumentParser(description="Run a BuzzBlog experiment")
@@ -447,18 +426,6 @@ def main():
       action="store", help="Docker Hub password")
   parser.add_argument("--parse_log_files", action="store_true")
   args = parser.parse_args()
-  # Load system configuration.
-  global SYS_CONF
-  with open(args.system_conf) as system_conf_file:
-    SYS_CONF = yaml.load(system_conf_file, Loader=yaml.Loader)
-  # Load workload configuration.
-  global WL_CONF
-  if args.workload_conf:
-    with open(args.workload_conf) as workload_conf_file:
-      WL_CONF = yaml.load(workload_conf_file, Loader=yaml.Loader)
-      count_loadgen_containers = count_containers("loadgen.*")
-      WL_CONF["sessions"] //= count_loadgen_containers
-      WL_CONF["throughput"] //= count_loadgen_containers
   # Set Docker hub credentials.
   global DOCKER_HUB_USERNAME
   DOCKER_HUB_USERNAME = args.docker_hub_username or ""
@@ -467,8 +434,13 @@ def main():
   # Set options.
   global PARSE_LOG_FILES
   PARSE_LOG_FILES = args.parse_log_files
+  # Load system configuration.
+  global SYS_CONF
+  with open(args.system_conf) as system_conf_file:
+    SYS_CONF = yaml.load(system_conf_file, Loader=yaml.Loader)
   # Build backend configuration.
   global BACKEND_CONF
+  BACKEND_CONF = {}
   for node_hostname, node_conf in SYS_CONF.items():
     for container_name, container_conf in \
         node_conf.get("containers", {}).items():
@@ -488,34 +460,78 @@ def main():
           BACKEND_CONF[container_basename][container_type] = container_addr
         elif container_type == "redis":
           BACKEND_CONF[container_basename][container_type] = container_addr
-  # Create directory tree.
-  global DIRNAME
-  DIRNAME = "/var/log/BuzzBlogBenchmark/BuzzBlogBenchmark_%s" % timestamp()
-  os.mkdir(DIRNAME)
-  os.mkdir(os.path.join(DIRNAME, "conf"))
-  os.mkdir(os.path.join(DIRNAME, "specs"))
-  os.mkdir(os.path.join(DIRNAME, "ssh"))
-  os.mkdir(os.path.join(DIRNAME, "logs"))
-  for node_hostname in SYS_CONF.keys():
-    os.mkdir(os.path.join(DIRNAME, "specs", node_hostname))
-    os.mkdir(os.path.join(DIRNAME, "logs", node_hostname))
-  # Initialize experiment metadata.
-  update_metadata({"user": subprocess.getoutput("whoami"),
-      "start_time": timestamp(), "description": args.description})
-  # Save configuration files.
-  with open(os.path.join(DIRNAME, "conf", "system.yml"), 'w') as \
-      system_conf_file_copy:
-    with open(args.system_conf) as system_conf_file:
-      system_conf_file_copy.write(system_conf_file.read())
+  # Load workload configuration(s).
+  workload_confs = []
   if args.workload_conf:
+    if os.path.isdir(args.workload_conf):
+      for directory_entry in os.listdir(args.workload_conf):
+        if os.path.isfile(os.path.join(args.workload_conf, directory_entry)):
+          with open(os.path.join(args.workload_conf, directory_entry)) as workload_conf_file:
+            workload_confs.append(yaml.load(workload_conf_file, Loader=yaml.Loader))
+    else:
+      with open(args.workload_conf) as workload_conf_file:
+        workload_confs.append(yaml.load(workload_conf_file, Loader=yaml.Loader))
+  # Configure system.
+  install_buzzblogbenchmark()
+  install_docker()
+  install_pandas()
+  install_bpfcc()
+  install_bpftrace()
+  install_collectl()
+  install_radvisor()
+  pull_docker_images()
+  render_configuration_templates()
+  generate_backend_configuration_file()
+  configure_kernel()
+  # Run experiments.
+  for workload_conf in workload_confs:
+    # Copy and update workload configuration for individual loadgens.
+    global WL_CONF
+    WL_CONF = workload_conf.copy()
+    WL_CONF["sessions"] //= count_containers("loadgen.*")
+    WL_CONF["throughput"] //= count_containers("loadgen.*")
+    # Create experiment directory tree.
+    global DIRNAME
+    DIRNAME = "/var/log/BuzzBlogBenchmark/BuzzBlogBenchmark_%s" % timestamp()
+    os.mkdir(DIRNAME)
+    os.mkdir(os.path.join(DIRNAME, "conf"))
+    os.mkdir(os.path.join(DIRNAME, "specs"))
+    os.mkdir(os.path.join(DIRNAME, "ssh"))
+    os.mkdir(os.path.join(DIRNAME, "logs"))
+    for node_hostname in SYS_CONF.keys():
+      os.mkdir(os.path.join(DIRNAME, "specs", node_hostname))
+      os.mkdir(os.path.join(DIRNAME, "logs", node_hostname))
+    # Initialize experiment metadata.
+    global METADATA
+    METADATA = {}
+    update_metadata({"user": subprocess.getoutput("whoami"),
+        "start_time": timestamp(), "description": args.description})
+    # Save configuration files.
+    with open(os.path.join(DIRNAME, "conf", "system.yml"), 'w') as \
+        system_conf_file_copy:
+      with open(args.system_conf) as system_conf_file:
+        system_conf_file_copy.write(system_conf_file.read())
     with open(os.path.join(DIRNAME, "conf", "workload.yml"), 'w') as \
         workload_conf_file_copy:
-      with open(args.workload_conf) as workload_conf_file:
-        workload_conf_file_copy.write(workload_conf_file.read())
-  # Run experiment workflow.
-  run()
-  # Update experiment metadata.
-  update_metadata({"end_time": timestamp()})
+      workload_conf_file_copy.write(yaml.dump(workload_conf))
+    # Save system specification of each node.
+    save_system_specs()
+    # Copy workload configuration to each node with loadgen containers.
+    copy_workload_configuration_file()
+    # Configure nodes.
+    run_setup_scripts()
+    # Run benchmark.
+    start_monitors()
+    start_containers()
+    stop_monitors()
+    stop_containers()
+    # Restore nodes' configuration.
+    run_teardown_scripts()
+    # Fetch system resource and event monitoring data from nodes.
+    fetch_monitoring_data()
+    fetch_container_logs()
+    # Update experiment metadata.
+    update_metadata({"end_time": timestamp()})
 
 
 if __name__ == "__main__":
