@@ -495,7 +495,6 @@ def main():
     WL_CONF["sessions"] //= count_containers("loadgen.*")
     WL_CONF["throughput"] //= count_containers("loadgen.*")
     # Create experiment directory tree.
-    global DIRNAME
     DIRNAME = "/var/log/BuzzBlogBenchmark/BuzzBlogBenchmark_%s" % timestamp()
     os.mkdir(DIRNAME)
     os.mkdir(os.path.join(DIRNAME, "conf"))
