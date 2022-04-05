@@ -48,6 +48,7 @@ def update_metadata(metadata):
 
 def start_container(node_hostname, node_conf, container_name, ssh_client):
   container_conf = node_conf["containers"][container_name]
+  ssh_client.exec("rm -rf /tmp/%s" % container_name)
   ssh_client.exec("mkdir -p /tmp/%s" % container_name)
   ssh_client.exec("sudo docker run " +
       ("--volume /tmp/%s:/tmp " % container_name) +
@@ -311,6 +312,7 @@ def run_setup_scripts(node_hostname, node_conf, ssh_client):
 @nodes_with_monitor(".+")
 def start_monitors(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
+    ssh_client.exec("rm -rf %s" % monitor_conf["dirpath"])
     ssh_client.exec("mkdir -p %s" % monitor_conf["dirpath"])
     ssh_client.exec("sudo nohup nice -n %s " %
         monitor_conf.get("niceness", 19) +
@@ -536,12 +538,13 @@ def main():
     start_containers()
     stop_monitors()
     stop_containers()
-    clear_databases()
     # Restore nodes' configuration.
     run_teardown_scripts()
     # Fetch system resource and event monitoring data from nodes.
     fetch_monitoring_data()
     fetch_container_logs()
+    # Clear database data.
+    clear_databases()
     # Update experiment metadata.
     update_metadata({"end_time": timestamp()})
 
