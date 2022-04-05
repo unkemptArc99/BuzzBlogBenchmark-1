@@ -35,7 +35,7 @@ class LoadgenParser:
     @classmethod
     def df(cls, logfile):
         data = [cls.extract_values_from_log(log) for log in logfile]
-        return pd.DataFrame(data=data if data[-1] else data[:-1], columns=COLUMNS)
+        return pd.DataFrame(data=[d for d in data if d], columns=COLUMNS)
 
     @staticmethod
     def extract_values_from_log(log):
