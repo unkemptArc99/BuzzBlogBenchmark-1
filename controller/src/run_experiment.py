@@ -365,6 +365,14 @@ def stop_containers(node_hostname, node_conf, ssh_client):
       "sudo docker system prune -f --volumes")
 
 
+@nodes_with_container(".*_database")
+def clear_databases(node_hostname, node_conf, ssh_client):
+  for node_hostname, node_conf in SYS_CONF.items():
+    for container_name, container_conf in node_conf.get("containers", {}).items():
+      if container_name.endswith("_database"):
+        ssh_client.exec("sudo rm -rf %s" % container_conf["options"]["volume"].split(':')[0])
+
+
 @nodes_with_monitor(".+")
 def fetch_monitoring_data(node_hostname, node_conf, ssh_client):
   for monitor_name, monitor_conf in node_conf["monitors"].items():
@@ -528,6 +536,7 @@ def main():
     start_containers()
     stop_monitors()
     stop_containers()
+    clear_databases()
     # Restore nodes' configuration.
     run_teardown_scripts()
     # Fetch system resource and event monitoring data from nodes.
