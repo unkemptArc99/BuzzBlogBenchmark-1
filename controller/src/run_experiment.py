@@ -5,6 +5,7 @@ import argparse
 import datetime
 import os
 import re
+import shutil
 import subprocess
 import threading
 import time
@@ -505,11 +506,12 @@ def main():
     WL_CONF["sessions"] //= count_containers("loadgen.*")
     WL_CONF["throughput"] //= count_containers("loadgen.*")
     # Create experiment directory tree.
-    DIRNAME = "/var/log/BuzzBlogBenchmark/BuzzBlogBenchmark_%s" % timestamp()
-    os.mkdir(DIRNAME)
+    dirname = "/var/log/BuzzBlogBenchmark/BuzzBlogBenchmark_%s" % timestamp()
+    os.mkdir(dirname)
+    shutil.copytree(os.path.join(DIRNAME, "ssh"), os.path.join(dirname, "ssh"))
+    DIRNAME = dirname
     os.mkdir(os.path.join(DIRNAME, "conf"))
     os.mkdir(os.path.join(DIRNAME, "specs"))
-    os.mkdir(os.path.join(DIRNAME, "ssh"))
     os.mkdir(os.path.join(DIRNAME, "logs"))
     for node_hostname in SYS_CONF.keys():
       os.mkdir(os.path.join(DIRNAME, "specs", node_hostname))
