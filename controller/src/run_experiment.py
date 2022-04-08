@@ -494,31 +494,32 @@ def main():
   for system_conf in system_confs:
     global SYS_CONF
     SYS_CONF = system_conf.copy()
-    # Create directory tree.
-    global DIRNAME
-    DIRNAME = "/var/log/BuzzBlogBenchmark/BuzzBlogBenchmark_%s" % timestamp()
-    os.mkdir(DIRNAME)
-    os.mkdir(os.path.join(DIRNAME, "ssh"))
-    os.mkdir(os.path.join(DIRNAME, "conf"))
-    os.mkdir(os.path.join(DIRNAME, "specs"))
-    os.mkdir(os.path.join(DIRNAME, "logs"))
-    for node_hostname in SYS_CONF.keys():
-      os.mkdir(os.path.join(DIRNAME, "specs", node_hostname))
-      os.mkdir(os.path.join(DIRNAME, "logs", node_hostname))
-    # Configure system.
     build_backend_conf()
-    install_buzzblogbenchmark()
-    install_docker()
-    install_pandas()
-    install_bpfcc()
-    install_bpftrace()
-    install_collectl()
-    install_radvisor()
-    pull_docker_images()
-    render_configuration_templates()
-    generate_backend_configuration_file()
-    configure_kernel()
-    for workload_conf in workload_confs:
+    for (i, workload_conf) in enumerate(workload_confs):
+      # Create directory tree.
+      global DIRNAME
+      DIRNAME = "/var/log/BuzzBlogBenchmark/BuzzBlogBenchmark_%s" % timestamp()
+      os.mkdir(DIRNAME)
+      os.mkdir(os.path.join(DIRNAME, "ssh"))
+      os.mkdir(os.path.join(DIRNAME, "conf"))
+      os.mkdir(os.path.join(DIRNAME, "specs"))
+      os.mkdir(os.path.join(DIRNAME, "logs"))
+      for node_hostname in SYS_CONF.keys():
+        os.mkdir(os.path.join(DIRNAME, "specs", node_hostname))
+        os.mkdir(os.path.join(DIRNAME, "logs", node_hostname))
+      # Configure system, if needed.
+      if i > 0:
+        install_buzzblogbenchmark()
+        install_docker()
+        install_pandas()
+        install_bpfcc()
+        install_bpftrace()
+        install_collectl()
+        install_radvisor()
+        pull_docker_images()
+        render_configuration_templates()
+        generate_backend_configuration_file()
+        configure_kernel()
       # Copy and update workload configuration for individual loadgens.
       global WL_CONF
       WL_CONF = workload_conf.copy()
