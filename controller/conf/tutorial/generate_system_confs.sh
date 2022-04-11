@@ -47,12 +47,12 @@ for c in $cpu; do
         for w in $words; do
           filename="${cloudlab_profile}_${c}CPU_${g}GB_${q}QUEUE_${t}THREADS_${w}WORDS.yml"
           cp ${cloudlab_profile}_TEMPLATE.yml $filename
-          sed -i 's/{{username}}/${username}/g' $filename
-          sed -i 's/{{cpu}}/${cpu}/g' $filename
-          sed -i 's/{{gb}}/${gb}g/g' $filename
-          sed -i 's/{{queue}}/${queue}/g' $filename
-          sed -i 's/{{threads}}/${threads}/g' $filename
-          sed -i 's/{{words}}/${words}/g' $filename
+          sed -i "s/{{username}}/${username}/g" $filename
+          sed -i "s/{{CPU}}/${c}/g" $filename
+          sed -i "s/{{GB}}/${g}g/g" $filename
+          sed -i "s/{{QUEUE}}/${q}/g" $filename
+          sed -i "s/{{THREADS}}/${t}/g" $filename
+          sed -i "s/{{WORDS}}/${w}/g" $filename
         done
       done
     done

@@ -3,9 +3,9 @@
 
 node-0:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -287,9 +287,9 @@ node-0:
         plot: ""
 node-1:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -571,9 +571,9 @@ node-1:
         plot: ""
 node-2:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -855,9 +855,9 @@ node-2:
         plot: ""
 node-3:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -1139,9 +1139,9 @@ node-3:
         plot: ""
 node-4:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -1453,9 +1453,9 @@ node-4:
         plot: ""
 node-5:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -1767,9 +1767,9 @@ node-5:
         plot: ""
 node-6:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2081,9 +2081,9 @@ node-6:
         plot: ""
 node-7:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2395,9 +2395,9 @@ node-7:
         plot: ""
 node-8:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2405,18 +2405,18 @@ node-8:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -2437,17 +2437,17 @@ node-8:
       options:
         name: "account_service"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "1090:1090"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
           - "port=1090"
-          - "threads={{THREADS}}"
-          - "accept_backlog={{QUEUE}}"
+          - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size={{THREADS}}"
+          - "postgres_connection_pool_size=64"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -2472,9 +2472,9 @@ node-8:
         plot: ""
 node-9:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2482,18 +2482,18 @@ node-9:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -2514,7 +2514,7 @@ node-9:
       options:
         name: "account_database"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "5432:5432"
         volume: "/var/lib/postgresql/BuzzBlog/account/data:/var/lib/postgresql/data"
@@ -2546,9 +2546,9 @@ node-9:
         plot: ""
 node-10:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2556,18 +2556,18 @@ node-10:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -2588,15 +2588,15 @@ node-10:
       options:
         name: "follow_service"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "1091:1091"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
           - "port=1091"
-          - "threads={{THREADS}}"
-          - "accept_backlog={{QUEUE}}"
+          - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
     tcplistenbl-bpftrace:
@@ -2620,9 +2620,9 @@ node-10:
         plot: ""
 node-11:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2630,18 +2630,18 @@ node-11:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -2662,15 +2662,15 @@ node-11:
       options:
         name: "like_service"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "1092:1092"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
           - "port=1092"
-          - "threads={{THREADS}}"
-          - "accept_backlog={{QUEUE}}"
+          - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
   monitors:
     tcplistenbl-bpftrace:
@@ -2694,9 +2694,9 @@ node-11:
         plot: ""
 node-12:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2704,18 +2704,18 @@ node-12:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -2736,17 +2736,17 @@ node-12:
       options:
         name: "post_service"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "1093:1093"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
           - "port=1093"
-          - "threads={{THREADS}}"
-          - "accept_backlog={{QUEUE}}"
+          - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size={{THREADS}}"
+          - "postgres_connection_pool_size=64"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -2771,9 +2771,9 @@ node-12:
         plot: ""
 node-13:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2781,18 +2781,18 @@ node-13:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -2813,7 +2813,7 @@ node-13:
       options:
         name: "post_database"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "5432:5432"
         volume: "/var/lib/postgresql/BuzzBlog/post/data:/var/lib/postgresql/data"
@@ -2845,9 +2845,9 @@ node-13:
         plot: ""
 node-14:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2855,18 +2855,18 @@ node-14:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -2887,17 +2887,17 @@ node-14:
       options:
         name: "uniquepair_service"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "1094:1094"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
           - "port=1094"
-          - "threads={{THREADS}}"
-          - "accept_backlog={{QUEUE}}"
+          - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "postgres_connection_pool_size={{THREADS}}"
+          - "postgres_connection_pool_size=64"
           - "postgres_user=postgres"
           - "postgres_password=postgres"
   monitors:
@@ -2922,9 +2922,9 @@ node-14:
         plot: ""
 node-15:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2932,18 +2932,18 @@ node-15:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -2964,7 +2964,7 @@ node-15:
       options:
         name: "uniquepair_database"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "5432:5432"
         volume: "/var/lib/postgresql/BuzzBlog/uniquepair/data:/var/lib/postgresql/data"
@@ -2996,9 +2996,9 @@ node-15:
         plot: ""
 node-16:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -3006,18 +3006,18 @@ node-16:
     - "sudo ifconfig ens1f1 txqueuelen 8192" 
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -3038,17 +3038,17 @@ node-16:
       options:
         name: "trending_service"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "1095:1095"
         volume: "/etc/opt/BuzzBlog:/etc/opt/BuzzBlog"
         detach: ""
         env:
           - "port=1095"
-          - "threads={{THREADS}}"
-          - "accept_backlog={{QUEUE}}"
+          - "threads=64"
+          - "accept_backlog=1024"
           - "backend_filepath=/etc/opt/BuzzBlog/backend.yml"
-          - "redis_connection_pool_size={{THREADS}}"
+          - "redis_connection_pool_size=64"
   monitors:
     tcplistenbl-bpftrace:
       command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
@@ -3071,9 +3071,9 @@ node-16:
         plot: ""
 node-17:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -3081,18 +3081,18 @@ node-17:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -3112,7 +3112,7 @@ node-17:
       params:
         snapshot_interval: 60
         maxclients: 2048
-        tcp_backlog: {{QUEUE}}
+        tcp_backlog: 1024
   containers:
     trending_redis:
       image: "redis:6.2 redis-server /etc/redis/redis.conf"
@@ -3120,7 +3120,7 @@ node-17:
       options:
         name: "trending_redis"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "6379:6379"
         volume:
@@ -3149,9 +3149,9 @@ node-17:
         plot: ""
 node-18:
   ssh:
-    username: "${username}"
+    username: "ral"
     port: 22
-    key_filename: "/home/${username}/.ssh/id_rsa"
+    key_filename: "/home/ral/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -3159,18 +3159,18 @@ node-18:
     - "sudo ifconfig ens1f1 txqueuelen 8192"
     # Disable Intel Turbo Boost.
     - "echo \"1\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Disable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Disable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"0\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   teardown:
     # Enable Intel Turbo Boost.
     - "echo \"0\" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-    # Enable VCPUs {{CPU}} to 19.
-    - "for cpu_no in {{{CPU}}..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
+    # Enable VCPUs 2 to 19.
+    - "for cpu_no in {2..19}; do echo \"1\" | sudo tee /sys/devices/system/cpu/cpu${cpu_no}/online; done"
   kernel:
     net.core.netdev_budget: "1000"
     net.core.netdev_budget_usecs: "32000"
     net.core.netdev_max_backlog: "500000"
-    net.core.somaxconn: "{{QUEUE}}"
+    net.core.somaxconn: "1024"
     net.ipv4.tcp_no_metrics_save: "1"
     net.ipv4.ip_local_port_range: "2048 65535"
     net.ipv4.tcp_abort_on_overflow: "0"
@@ -3191,15 +3191,15 @@ node-18:
       options:
         name: "wordfilter_service"
         network: "host"
-        memory: "{{GB}}"
+        memory: "16g"
         ulimit: "nofile=131072:131072"
         publish: "1096:1096"
         detach: ""
         env:
           - "port=1096"
-          - "threads={{THREADS}}"
-          - "accept_backlog={{QUEUE}}"
-          - "n_invalid_words={{WORDS}}"
+          - "threads=64"
+          - "accept_backlog=1024"
+          - "n_invalid_words=2048"
   monitors:
     tcplistenbl-bpftrace:
       command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcplistenbl.bt 1"
