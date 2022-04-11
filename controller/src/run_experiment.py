@@ -502,8 +502,10 @@ def main():
         if os.path.isdir(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry)) and \
             os.path.exists(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry, "conf", "system.yml")) and \
             os.path.exists(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry, "conf", "workload.yml")):
-          prev_system_conf = yaml.load(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry, "conf", "system.yml", Loader=yaml.Loader))
-          prev_workload_conf = yaml.load(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry, "conf", "workload.yml", Loader=yaml.Loader))
+          with open(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry, "conf", "system.yml")) as prev_system_conf_file:
+            prev_system_conf = yaml.load(prev_system_conf_file, Loader=yaml.Loader)
+          with open(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry, "conf", "workload.yml")) as prev_workload_conf_file:
+            prev_workload_conf = yaml.load(prev_workload_conf_file, Loader=yaml.Loader)
           if prev_system_conf == system_conf and prev_workload_conf == workload_conf:
             already_run = True
             break
