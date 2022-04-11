@@ -10,9 +10,6 @@ while [[ $# > 1 ]]; do
     --cloudlab_profile )
       cloudlab_profile=$2
       ;;
-    --username )
-      username=$2
-      ;;
     --cpu )
       cpu=$2
       ;;
@@ -47,7 +44,6 @@ for c in $cpu; do
         for w in $words; do
           filename="${cloudlab_profile}_${c}CPU_${g}GB_${q}QUEUE_${t}THREADS_${w}WORDS.yml"
           cp ${cloudlab_profile}_TEMPLATE.yml $filename
-          sed -i "s/{{username}}/${username}/g" $filename
           sed -i "s/{{CPU}}/${c}/g" $filename
           sed -i "s/{{GB}}/${g}g/g" $filename
           sed -i "s/{{QUEUE}}/${q}/g" $filename

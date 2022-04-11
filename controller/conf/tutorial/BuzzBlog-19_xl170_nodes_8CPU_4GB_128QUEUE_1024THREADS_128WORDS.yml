@@ -3,9 +3,9 @@
 
 node-0:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -287,9 +287,9 @@ node-0:
         plot: ""
 node-1:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -571,9 +571,9 @@ node-1:
         plot: ""
 node-2:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -855,9 +855,9 @@ node-2:
         plot: ""
 node-3:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -1139,9 +1139,9 @@ node-3:
         plot: ""
 node-4:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -1453,9 +1453,9 @@ node-4:
         plot: ""
 node-5:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -1767,9 +1767,9 @@ node-5:
         plot: ""
 node-6:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2081,9 +2081,9 @@ node-6:
         plot: ""
 node-7:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2395,9 +2395,9 @@ node-7:
         plot: ""
 node-8:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2472,9 +2472,9 @@ node-8:
         plot: ""
 node-9:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2546,9 +2546,9 @@ node-9:
         plot: ""
 node-10:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2620,9 +2620,9 @@ node-10:
         plot: ""
 node-11:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2694,9 +2694,9 @@ node-11:
         plot: ""
 node-12:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2771,9 +2771,9 @@ node-12:
         plot: ""
 node-13:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2845,9 +2845,9 @@ node-13:
         plot: ""
 node-14:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2922,9 +2922,9 @@ node-14:
         plot: ""
 node-15:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -2996,9 +2996,9 @@ node-15:
         plot: ""
 node-16:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -3071,9 +3071,9 @@ node-16:
         plot: ""
 node-17:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
@@ -3149,9 +3149,9 @@ node-17:
         plot: ""
 node-18:
   ssh:
-    username: "ral"
+    username: "{{username}}"
     port: 22
-    key_filename: "/home/ral/.ssh/id_rsa"
+    key_filename: "/home/{{username}}/.ssh/id_rsa"
   setup:
     # Set TCP queue sizes.
     - "sudo ethtool -G ens1f1 rx 8192"
