@@ -496,6 +496,19 @@ def main():
     SYS_CONF = system_conf.copy()
     build_backend_conf()
     for (i, workload_conf) in enumerate(workload_confs):
+      # Check if this experiment configuration has already been run.
+      already_run = False
+      for directory_entry in os.listdir("/var/log/BuzzBlogBenchmark"):
+        if os.path.isdir(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry)) and \
+            os.path.exists(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry, "conf", "system.yml")) and \
+            os.path.exists(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry, "conf", "workload.yml")):
+          prev_system_conf = yaml.load(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry, "conf", "system.yml", Loader=yaml.Loader))
+          prev_workload_conf = yaml.load(os.path.join("/var/log/BuzzBlogBenchmark", directory_entry, "conf", "workload.yml", Loader=yaml.Loader))
+          if prev_system_conf == system_conf and prev_workload_conf == workload_conf:
+            already_run = True
+            break
+      if already_run:
+        continue
       # Create directory tree.
       global DIRNAME
       DIRNAME = "/var/log/BuzzBlogBenchmark/BuzzBlogBenchmark_%s" % timestamp()
