@@ -1,7 +1,7 @@
 # Copyright (C) 2020 Georgia Tech Center for Experimental Research in Computer
 # Systems
 
-sessions: 100000
+sessions: 10000
 throughput: 1000
 duration:
   total: 720
