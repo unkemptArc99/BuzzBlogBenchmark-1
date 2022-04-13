@@ -9,31 +9,31 @@ duration:
   ramp_down: 60
 surges:
   - start: 240
-    duration: 3
+    duration: 5
     intensity: 1.25
   - start: 360
-    duration: 3
+    duration: 5
     intensity: 1.25
   - start: 540
-    duration: 3
+    duration: 5
     intensity: 1.25
   - start: 720
-    duration: 3
+    duration: 5
     intensity: 1.25
   - start: 900
-    duration: 3
+    duration: 5
     intensity: 1.25
   - start: 1080
-    duration: 3
+    duration: 5
     intensity: 1.25
   - start: 1260
-    duration: 3
+    duration: 5
     intensity: 1.25
   - start: 1440
-    duration: 3
+    duration: 5
     intensity: 1.25
   - start: 1620
-    duration: 3
+    duration: 5
     intensity: 1.25
 request_graph:
   main:
