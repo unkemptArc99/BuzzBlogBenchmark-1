@@ -523,7 +523,7 @@ def main():
         os.mkdir(os.path.join(DIRNAME, "specs", node_hostname))
         os.mkdir(os.path.join(DIRNAME, "logs", node_hostname))
       # Configure system, if needed.
-      if i > 0:
+      if i == 0:
         install_buzzblogbenchmark()
         install_docker()
         install_pandas()
