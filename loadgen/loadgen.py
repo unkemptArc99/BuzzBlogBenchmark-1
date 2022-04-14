@@ -44,8 +44,8 @@ class BuzzBlogSession(ATLoad.Session):
     params.update({"request_id": _random_string(8)})
     start_time = datetime.datetime.now()
     r = None
-    with eventlet.Timeout(10, False):
-      r = getattr(requests, method)(self._url_prefix + path, auth=auth, params=params, json=json, timeout=10)
+    with eventlet.Timeout(30, False):
+      r = getattr(requests, method)(self._url_prefix + path, auth=auth, params=params, json=json, timeout=30)
     if r is None:
       r = requests.Response()
       r.status_code = 408
