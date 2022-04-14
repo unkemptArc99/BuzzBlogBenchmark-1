@@ -17,7 +17,7 @@ ENV duration_in_ms 500
 COPY src/cpuinterference.c src
 
 # Compile source code.
-RUN gcc -Wall -O2 -o bin/cpuinterference src/cpuinterference.c -lpthread
+RUN gcc -Wall -O0 -o bin/cpuinterference src/cpuinterference.c -lpthread
 
 # Start the program.
 CMD ["/bin/bash", "-c", "bin/cpuinterference ${min_threads} ${max_threads} ${thread_step} ${period_in_sec} ${duration_in_ms}"]
