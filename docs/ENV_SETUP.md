@@ -4,9 +4,9 @@ The BuzzBlogBenchmark uses Anaconda python package manager to take care of all t
 
 TIP - On step 7, do initialize the Anaconda3 by running `conda init` through the installer script. But then on step 11, diable the `auto_activate_base` config in Anaconda.
 
-After you have installed Anaconda, simply create the environment `bbb_pyenv` from the `.yml` file in the folder by running the following commands -
+After you have installed Anaconda, simply create the environment `bbb_pyenv` from the `.yml` file in the folder `analysis/environment` by running the following commands -
 ```
-conda env create -f buzzblogbenchmark_pythonEnv.yml
+conda env create -f analysis/environment/buzzblogbenchmark_pythonEnv.yml
 ```
 
 After creation of the environment, whenever you want to work on BuzzBlogBenchmark, simply run `conda activate bbb_pyenv`. After your work is finished, you can deactivate it by `conda deactivate`.
