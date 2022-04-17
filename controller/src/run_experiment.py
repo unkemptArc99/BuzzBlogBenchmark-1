@@ -539,7 +539,6 @@ def main():
       global WL_CONF
       WL_CONF = workload_conf.copy()
       WL_CONF["sessions"] //= count_containers("loadgen.*")
-      WL_CONF["throughput"] //= count_containers("loadgen.*")
       # Initialize experiment metadata.
       global METADATA
       METADATA = {}
