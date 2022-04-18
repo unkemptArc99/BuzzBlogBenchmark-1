@@ -190,4 +190,5 @@ if __name__ == "__main__":
   # Generate workload.
   workload = ATLoad.Workload(args.workload_conf, args.log, BuzzBlogSession,
       int(args.seed), args.hostname, args.port)
+  random.seed(None)
   workload.run()
