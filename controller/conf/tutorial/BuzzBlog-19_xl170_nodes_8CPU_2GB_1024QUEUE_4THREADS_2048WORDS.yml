@@ -42,6 +42,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1080"
+          - "seed=42"
     loadgen2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -54,6 +55,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1081"
+          - "seed=42"
     loadgen3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -66,6 +68,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1082"
+          - "seed=42"
     loadgen4:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -78,6 +81,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1083"
+          - "seed=42"
     loadgen5:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -90,6 +94,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1084"
+          - "seed=42"
     loadgen6:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -102,6 +107,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1085"
+          - "seed=42"
     loadgen7:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -114,6 +120,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1086"
+          - "seed=42"
     loadgen8:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -126,6 +133,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1087"
+          - "seed=42"
     loadgen9:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -138,6 +146,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1088"
+          - "seed=42"
     loadgen10:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -150,6 +159,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1089"
+          - "seed=42"
     loadgen11:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -162,6 +172,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1090"
+          - "seed=42"
     loadgen12:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -174,6 +185,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1091"
+          - "seed=42"
     loadgen13:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -186,6 +198,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1092"
+          - "seed=42"
     loadgen14:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -198,6 +211,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1093"
+          - "seed=42"
     loadgen15:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -210,6 +224,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1094"
+          - "seed=42"
     loadgen16:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -222,6 +237,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1095"
+          - "seed=42"
     loadgen17:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -234,6 +250,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1096"
+          - "seed=42"
     loadgen18:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -246,6 +263,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1097"
+          - "seed=42"
     loadgen19:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -258,6 +276,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1098"
+          - "seed=42"
     loadgen20:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -270,6 +289,7 @@ node-0:
         env:
           - "hostname=node-4"
           - "port=1099"
+          - "seed=42"
   monitors:
     tcpretrans-bpftrace:
       command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
@@ -326,6 +346,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1080"
+          - "seed=42"
     loadgen2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -338,6 +359,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1081"
+          - "seed=42"
     loadgen3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -350,6 +372,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1082"
+          - "seed=42"
     loadgen4:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -362,6 +385,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1083"
+          - "seed=42"
     loadgen5:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -374,6 +398,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1084"
+          - "seed=42"
     loadgen6:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -386,6 +411,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1085"
+          - "seed=42"
     loadgen7:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -398,6 +424,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1086"
+          - "seed=42"
     loadgen8:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -410,6 +437,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1087"
+          - "seed=42"
     loadgen9:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -422,6 +450,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1088"
+          - "seed=42"
     loadgen10:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -434,6 +463,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1089"
+          - "seed=42"
     loadgen11:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -446,6 +476,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1090"
+          - "seed=42"
     loadgen12:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -458,6 +489,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1091"
+          - "seed=42"
     loadgen13:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -470,6 +502,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1092"
+          - "seed=42"
     loadgen14:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -482,6 +515,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1093"
+          - "seed=42"
     loadgen15:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -494,6 +528,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1094"
+          - "seed=42"
     loadgen16:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -506,6 +541,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1095"
+          - "seed=42"
     loadgen17:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -518,6 +554,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1096"
+          - "seed=42"
     loadgen18:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -530,6 +567,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1097"
+          - "seed=42"
     loadgen19:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -542,6 +580,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1098"
+          - "seed=42"
     loadgen20:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -554,6 +593,7 @@ node-1:
         env:
           - "hostname=node-5"
           - "port=1099"
+          - "seed=42"
   monitors:
     tcpretrans-bpftrace:
       command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
@@ -610,6 +650,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1080"
+          - "seed=1910"
     loadgen2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -622,6 +663,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1081"
+          - "seed=1910"
     loadgen3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -634,6 +676,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1082"
+          - "seed=1910"
     loadgen4:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -646,6 +689,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1083"
+          - "seed=1910"
     loadgen5:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -658,6 +702,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1084"
+          - "seed=1910"
     loadgen6:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -670,6 +715,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1085"
+          - "seed=1910"
     loadgen7:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -682,6 +728,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1086"
+          - "seed=1910"
     loadgen8:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -694,6 +741,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1087"
+          - "seed=1910"
     loadgen9:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -706,6 +754,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1088"
+          - "seed=1910"
     loadgen10:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -718,6 +767,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1089"
+          - "seed=1910"
     loadgen11:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -730,6 +780,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1090"
+          - "seed=1910"
     loadgen12:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -742,6 +793,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1091"
+          - "seed=1910"
     loadgen13:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -754,6 +806,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1092"
+          - "seed=1910"
     loadgen14:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -766,6 +819,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1093"
+          - "seed=1910"
     loadgen15:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -778,6 +832,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1094"
+          - "seed=1910"
     loadgen16:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -790,6 +845,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1095"
+          - "seed=1910"
     loadgen17:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -802,6 +858,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1096"
+          - "seed=1910"
     loadgen18:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -814,6 +871,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1097"
+          - "seed=1910"
     loadgen19:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -826,6 +884,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1098"
+          - "seed=1910"
     loadgen20:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -838,6 +897,7 @@ node-2:
         env:
           - "hostname=node-6"
           - "port=1099"
+          - "seed=1910"
   monitors:
     tcpretrans-bpftrace:
       command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"
@@ -894,6 +954,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1080"
+          - "seed=1910"
     loadgen2:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -906,6 +967,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1081"
+          - "seed=1910"
     loadgen3:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -918,6 +980,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1082"
+          - "seed=1910"
     loadgen4:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -930,6 +993,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1083"
+          - "seed=1910"
     loadgen5:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -942,6 +1006,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1084"
+          - "seed=1910"
     loadgen6:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -954,6 +1019,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1085"
+          - "seed=1910"
     loadgen7:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -966,6 +1032,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1086"
+          - "seed=1910"
     loadgen8:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -978,6 +1045,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1087"
+          - "seed=1910"
     loadgen9:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -990,6 +1058,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1088"
+          - "seed=1910"
     loadgen10:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1002,6 +1071,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1089"
+          - "seed=1910"
     loadgen11:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1014,6 +1084,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1090"
+          - "seed=1910"
     loadgen12:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1026,6 +1097,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1091"
+          - "seed=1910"
     loadgen13:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1038,6 +1110,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1092"
+          - "seed=1910"
     loadgen14:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1050,6 +1123,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1093"
+          - "seed=1910"
     loadgen15:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1062,6 +1136,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1094"
+          - "seed=1910"
     loadgen16:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1074,6 +1149,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1095"
+          - "seed=1910"
     loadgen17:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1086,6 +1162,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1096"
+          - "seed=1910"
     loadgen18:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1098,6 +1175,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1097"
+          - "seed=1910"
     loadgen19:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1110,6 +1188,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1098"
+          - "seed=1910"
     loadgen20:
       image: "rodrigoalveslima/buzzblog:loadgen_v0.1"
       start_order: 4
@@ -1122,6 +1201,7 @@ node-3:
         env:
           - "hostname=node-7"
           - "port=1099"
+          - "seed=1910"
   monitors:
     tcpretrans-bpftrace:
       command: "bpftrace /opt/BuzzBlogBenchmark/bpftrace/tcpretrans.bt"

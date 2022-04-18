@@ -9,6 +9,7 @@ WORKDIR /usr/local/
 # Declare environment variables.
 ENV hostname null
 ENV port null
+ENV seed null
 
 # Install ATLoad v0.1.
 RUN cd lib \
@@ -26,4 +27,4 @@ RUN pip install --no-cache-dir -r src/loadgen/requirements.txt
 RUN pip install --no-cache-dir -r lib/ATLoad-0.1/requirements.txt
 
 # Start the workload generator.
-CMD ["/bin/bash", "-c", "PYTHONPATH=/usr/local/lib/ATLoad-0.1/src python3 src/loadgen/loadgen.py --workload_conf etc/loadgen/workload.yml --log /tmp/loadgen.log --hostname $hostname --port $port"]
+CMD ["/bin/bash", "-c", "PYTHONPATH=/usr/local/lib/ATLoad-0.1/src python3 src/loadgen/loadgen.py --workload_conf etc/loadgen/workload.yml --log /tmp/loadgen.log --hostname $hostname --port $port --seed $seed"]
