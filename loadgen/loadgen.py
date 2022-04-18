@@ -189,5 +189,5 @@ if __name__ == "__main__":
   args = parser.parse_args()
   # Generate workload.
   workload = ATLoad.Workload(args.workload_conf, args.log, BuzzBlogSession,
-      args.hostname, args.port, args.seed)
+      args.seed, args.hostname, args.port)
   workload.run()
