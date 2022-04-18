@@ -184,10 +184,10 @@ if __name__ == "__main__":
       help="Load balancer (or API Gateway) hostname")
   parser.add_argument("--port", required=True, action="store", type=str,
       help="Load balancer (or API Gateway) server")
-  parser.add_argument("--seed", required=True, action="store", type=int,
+  parser.add_argument("--seed", required=True, action="store", type=str,
       help="Random number generator seed")
   args = parser.parse_args()
   # Generate workload.
   workload = ATLoad.Workload(args.workload_conf, args.log, BuzzBlogSession,
-      args.seed, args.hostname, args.port)
+      int(args.seed), args.hostname, args.port)
   workload.run()
