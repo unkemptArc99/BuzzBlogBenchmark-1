@@ -17,6 +17,31 @@ class Experiment:
 
     OUTPUT_DIRECTORY = None
 
+    LOADGEN_CPU_CORES = 20
+    APIGATEWAY_CPU_CORES = 20
+    MICROSERVICE_CPU_CORES = 2
+    DATABASE_CPU_CORES = 2
+    REDIS_CPU_CORES = 2
+    # Analyzed metric (options: "user", "nice", "system", "wait", "irq", "soft",
+    # "steal", "idle", "total", "guest", "guest_n", "intrpt")
+    COLLECTL_CPU_METRIC = "total"
+    # Filter CPU cores
+    COLLECTL_CPU_CORES = {
+        "node-0": range(LOADGEN_CPU_CORES), "node-1": range(LOADGEN_CPU_CORES), "node-2": range(LOADGEN_CPU_CORES), "node-3": range(LOADGEN_CPU_CORES),
+        "node-4": range(APIGATEWAY_CPU_CORES), "node-5": range(APIGATEWAY_CPU_CORES), "node-6": range(APIGATEWAY_CPU_CORES), "node-7": range(APIGATEWAY_CPU_CORES),
+        "node-8": range(MICROSERVICE_CPU_CORES),
+        "node-9": range(DATABASE_CPU_CORES),
+        "node-10": range(MICROSERVICE_CPU_CORES),
+        "node-11": range(MICROSERVICE_CPU_CORES),
+        "node-12": range(MICROSERVICE_CPU_CORES),
+        "node-13": range(DATABASE_CPU_CORES),
+        "node-14": range(MICROSERVICE_CPU_CORES),
+        "node-15": range(DATABASE_CPU_CORES),
+        "node-16": range(MICROSERVICE_CPU_CORES),
+        "node-17": range(REDIS_CPU_CORES),
+        "node-18": range(MICROSERVICE_CPU_CORES),
+    }
+
     experiment_dirpath = None
     output_dirpath = None
     loadgen_requests = None
@@ -30,13 +55,14 @@ class Experiment:
                              'uniquepair:fetch']
     bl = None
     node_names = None
-    nodes_of_interest = {'node-8': 'Account Service',
-                        'node-9': 'Account DB',
-                        'node-11': 'Like Service',
-                        'node-12': 'Post Service',
-                        'node-13': 'Post DB',
-                        'node-14': 'Uniquepair Service',
-                        'node-15': 'Uniquepair DB'}
+    nodes_of_interest = ['node-8',
+                        'node-9',
+                        'node-11',
+                        'node-12',
+                        'node-13',
+                        'node-14',
+                        'node-15']
+    cpu = None
     start_time = None
     max_latency_in_s = None
     n_request_types = None
@@ -87,14 +113,24 @@ class Experiment:
         print("RPC Request Cache Complete.")
 
         print("TCP Backlog Cache Start...")
+        strt_t = get_experiment_start_time(self.experiment_dirpath) - pd.Timedelta(hours=6)
         self.bl =  pd.concat([df[2] for df in get_tcplistenbl_df(self.experiment_dirpath)])
         self.node_names = get_node_names(self.experiment_dirpath)
-        self.bl["timestamp"] = self.bl.apply(lambda r: (r["timestamp"] - self.start_time).total_seconds(), axis=1)
+        self.bl["timestamp"] = self.bl.apply(lambda r: (r["timestamp"] - strt_t).total_seconds(), axis=1)
         self.bl["window_1000"] = self.bl["timestamp"].round(0).multiply(1000)
         self.bl["window_10"] = self.bl["timestamp"].round(2).multiply(1000)
         self.bl.set_index("timestamp", inplace=True)
         self.bl.sort_index(inplace=True)
         print("TCP Backlog Cache Complete.")
+
+        print("CPU Collectl Caching Start...")
+        self.cpu = pd.concat([df[2] for df in get_collectl_cpu_df(self.experiment_dirpath)])
+        self.cpu["timestamp"] = self.cpu.apply(lambda r: (r["timestamp"] - self.start_time).total_seconds(), axis=1)
+        self.cpu["window_1000"] = self.cpu["timestamp"].round(0).multiply(1000)
+        self.cpu.set_index("timestamp", inplace=True)
+        self.cpu.sort_index(inplace=True)
+        print("CPU Collectl Caching Complete.")
+
 
     def success_fail_metric(self):
         self.df = self.loadgen_requests[(self.loadgen_requests.index >= self.RAMP_UP_DURATION)]
@@ -148,6 +184,7 @@ class Experiment:
             title="Latency Distribution of Successful Requests Excluding Ramping Periods", \
                 bins=range(int((1000 // LATENCY_BIN_IN_MS) * self.max_latency_in_s)), grid=True)
         fig.savefig(os.path.join(self.output_dirpath, 'latdist.png'))
+        plt.close()
 
     def pit_graph(self):
         # Data frame
@@ -173,6 +210,7 @@ class Experiment:
             xticks=range(int(df.index.min()), int(df.index.max()) + 1, 60000)
             )
         fig.savefig(os.path.join(self.output_dirpath, 'pit_graph.png'))
+        plt.close()
 
     def thput_graph(self):
         # Data frame
@@ -197,6 +235,7 @@ class Experiment:
             xticks=range(int(df.index.min()), int(df.index.max()) + 1, 60000)
             )
         fig.savefig(os.path.join(self.output_dirpath, 'thput_graph.png'))
+        plt.close()
 
     def print_summary(self):
         df = self.loadgen_requests[(self.loadgen_requests.index >= self.RAMP_UP_DURATION) & (self.loadgen_requests.index <= self.loadgen_requests.index.max() - self.RAMP_DOWN_DURATION)]
@@ -239,9 +278,9 @@ class Experiment:
 
     def rpc_lat_distr(self):
         LATENCY_BIN_IN_MS = 200
-        fig = plt.figure(figsize=(24, len(self.functions_of_interest) * 12))
         for (i, function) in enumerate(self.functions_of_interest):
             # Data frame
+            fig = plt.figure(figsize=(24,12))
             df = self.rpc_requests[(self.rpc_requests["function"] == function)]
             if df.empty:
                 continue
@@ -249,15 +288,15 @@ class Experiment:
             p999 = df["latency"].quantile(0.999)
             p50 = df["latency"].quantile(0.50)
             # Plot
-            ax = fig.add_subplot(len(self.functions_of_interest), 1, i + 1)
+            ax = fig.add_subplot(1, 1, 1)
             ax.set_yscale("log")
             ax.grid(alpha=0.75)
             ax.set_xlim((0, (1000 // LATENCY_BIN_IN_MS) * self.max_latency_in_s))
             ax.set_xticks(range(int((1000 // LATENCY_BIN_IN_MS) * self.max_latency_in_s) + 1))
             ax.set_xticklabels(
                 range(
-                    0, 
-                    (int((1000 // LATENCY_BIN_IN_MS) * self.max_latency_in_s) + 1) * LATENCY_BIN_IN_MS, 
+                    0,
+                    (int((1000 // LATENCY_BIN_IN_MS) * self.max_latency_in_s) + 1) * LATENCY_BIN_IN_MS,
                     LATENCY_BIN_IN_MS
                     )
                 )
@@ -266,42 +305,81 @@ class Experiment:
             ax.axvline(x=p999 / LATENCY_BIN_IN_MS, ls="dotted", lw=5, color="darkorange")
             ax.text(x=p999 / LATENCY_BIN_IN_MS, y=10, s=" P99.9", fontsize=22, color="darkorange")
             df["latency_bin"].plot(
-                ax=ax, 
-                kind="hist", 
-                title="Latency Distribution - %s" % function, 
-                xlabel="Latency (milliseconds)", 
-                ylabel="Calls (count)", 
-                bins=range((1000 // LATENCY_BIN_IN_MS) * int(self.max_latency_in_s)), 
+                ax=ax,
+                kind="hist",
+                title="Latency Distribution - %s" % function,
+                xlabel="Latency (milliseconds)",
+                ylabel="Calls (count)",
+                bins=range((1000 // LATENCY_BIN_IN_MS) * int(self.max_latency_in_s)),
                 grid=True
                 )
             plt.subplots_adjust(hspace=0.25)
-        fig.savefig(os.path.join(self.output_dirpath, 'rpc_lat_dist.png'))
+            fig.savefig(os.path.join(self.output_dirpath, 'rpc', 'latency_distribution', 'rpc_lat_dist_' + function +'.png'))
+            plt.close()
 
     def rpc_pit_graph(self):
-        fig = plt.figure(figsize=(24, len(self.functions_of_interest) * 12))
         for (i, function) in enumerate(self.functions_of_interest):
             # Data frame
+            fig = plt.figure(figsize=(24,12))
             df = self.rpc_requests[(self.rpc_requests["function"] == function)].groupby(["window_1000"])["latency"].max().reindex(
                 range(0, int(self.rpc_requests["window_1000"].max()) + 1, 1000), fill_value=0)
             # Plot
-            ax = fig.add_subplot(len(self.functions_of_interest), 1, i + 1)
+            ax = fig.add_subplot(1, 1, 1)
             ax.grid(alpha=0.75)
             ax.set_xlim((0, int(df.index.max())))
             ax.set_ylim((0, df.values.max()))
             df.plot(
-                ax=ax, 
-                kind="line", 
-                title="Instantaneous Latency - %s" % function, 
-                xlabel="Time (millisec)", 
-                ylabel="Latency (millisec)", 
+                ax=ax,
+                kind="line",
+                title="Instantaneous Latency - %s" % function,
+                xlabel="Time (millisec)",
+                ylabel="Latency (millisec)",
                 grid=True
                 )
             plt.subplots_adjust(hspace=0.25)
-        fig.savefig(os.path.join(self.output_dirpath, 'rpc_pit_graph.png'))
+            fig.savefig(os.path.join(self.output_dirpath, 'rpc', 'pit', 'rpc_pit_' + function +'.png'))
+            plt.close()
 
-    # def list_service_server_queue(self):
 
-    # def list_service_cpu(self):
+    def server_queue(self):
+        for (i, node_name) in enumerate(self.nodes_of_interest):
+            fig = plt.figure(figsize=(24, 12))
+            # Data frame
+            df = self.bl[(self.bl["node_name"] == node_name)].groupby(["window_1000"])["len"].max().reindex(range(0, int(self.bl["window_1000"].max()) + 1, 1000), fill_value=0)
+            # Plot
+            if df.empty:
+                print(node_name)
+                continue
+            ax = fig.add_subplot(1, 1, 1)
+            ax.set_xlim((0, df.index.max()))
+            ax.set_ylim((0, df.values.max()))
+            ax.grid(alpha=0.75)
+            df.plot(
+                ax=ax, 
+                kind="line", 
+                title="%s - Queue Length" % node_name, 
+                xlabel="Time (millisec)", 
+                ylabel="Requests (count)", 
+                grid=True, 
+                legend=False
+                )
+            fig.savefig(os.path.join(self.output_dirpath, 'queue', 'server_queue_' + node_name +'.png'))
+            plt.close()
+
+    def server_cpu(self):
+        for (i, node_name) in enumerate(self.nodes_of_interest):
+            fig = plt.figure(figsize=(24, 12))
+            # Data frame
+            df = self.cpu[(self.cpu["node_name"] == node_name) & (self.cpu["hw_no"].isin(self.COLLECTL_CPU_CORES[node_name]))].groupby(["window_1000"])[self.COLLECTL_CPU_METRIC].mean()
+            # Plot
+            ax = fig.add_subplot(1, 1, 1)
+            ax.set_xlim((0, df.index.max()))
+            ax.set_ylim((0, 100))
+            ax.grid(alpha=0.75)
+            df.plot(ax=ax, kind="line", title="%s - CPU Utilization" % node_name, xlabel="Time (millisec)", ylabel="%s (%%)" % self.COLLECTL_CPU_METRIC, grid=True, legend=False, yticks=range(0, 101, 10))
+            fig.savefig(os.path.join(self.output_dirpath, 'cpu', 'server_cpu_' + node_name +'.png'))
+            plt.close()
+
 
     def rpc_stats(self):
         for (i, function) in enumerate(self.functions_of_interest):
@@ -310,17 +388,17 @@ class Experiment:
                 f.write('RPC Summary\n')
                 f.write('-----------\n')
                 f.write(function)
-                f.write("  Number of RPCs/s")
-                f.write("    Total:       %7d" % df.shape[0])
-                f.write("    Avg:         %7.2f" % (df.shape[0] / (df.index.max() - df.index.min())))
-                f.write("  Latency (ms)")
-                f.write(" P99.99:         %7.2f" % (df["latency"].quantile(0.9999)))
-                f.write("  P99.9:         %7.2f" % (df["latency"].quantile(0.999)))
-                f.write("    P99:         %7.2f" % (df["latency"].quantile(0.99)))
-                f.write("    P95:         %7.2f" % (df["latency"].quantile(0.95)))
-                f.write("    P50:         %7.2f" % (df["latency"].quantile(0.50)))
-                f.write("    Avg:         %7.2f" % (df["latency"].mean()))
-                f.write("    Std:         %7.2f" % (df["latency"].std()))
+                f.write("  Number of RPCs/s\n")
+                f.write("    Total:       %7d\n" % df.shape[0])
+                f.write("    Avg:         %7.2f\n" % (df.shape[0] / (df.index.max() - df.index.min())))
+                f.write("  Latency (ms)\n")
+                f.write(" P99.99:         %7.2f\n" % (df["latency"].quantile(0.9999)))
+                f.write("  P99.9:         %7.2f\n" % (df["latency"].quantile(0.999)))
+                f.write("    P99:         %7.2f\n" % (df["latency"].quantile(0.99)))
+                f.write("    P95:         %7.2f\n" % (df["latency"].quantile(0.95)))
+                f.write("    P50:         %7.2f\n" % (df["latency"].quantile(0.50)))
+                f.write("    Avg:         %7.2f\n" % (df["latency"].mean()))
+                f.write("    Std:         %7.2f\n" % (df["latency"].std()))
                 f.write("\n")
 
     def print(self):
@@ -347,6 +425,11 @@ if __name__ == "__main__":
         raise FileNotFoundError("Input Directory not found")
     if not os.path.isdir(os.path.join(os.path.abspath(""), '..', 'data', args.output_directory)):
         os.mkdir(os.path.join(os.path.abspath(""), '..', 'data', args.output_directory))
+        os.mkdir(os.path.join(os.path.abspath(""), '..', 'data', args.output_directory, 'rpc'))
+        os.mkdir(os.path.join(os.path.abspath(""), '..', 'data', args.output_directory, 'rpc', 'latency_distribution'))
+        os.mkdir(os.path.join(os.path.abspath(""), '..', 'data', args.output_directory, 'rpc', 'pit'))
+        os.mkdir(os.path.join(os.path.abspath(""), '..', 'data', args.output_directory, 'queue'))
+        os.mkdir(os.path.join(os.path.abspath(""), '..', 'data', args.output_directory, 'cpu'))
     exp = Experiment(args.experiment_dirname, args.ramp_up, args.ramp_down, args.output_directory)
     # exp.print()
     exp.cache_request()
@@ -357,3 +440,5 @@ if __name__ == "__main__":
     exp.thput_graph()
     exp.print_summary()
     exp.rpc()
+    exp.server_queue()
+    exp.server_cpu()
